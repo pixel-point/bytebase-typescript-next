@@ -1,16 +1,16 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     container: {
       center: true,
     },
-    // FIXME: Uncomment this part of the code and the import of "defaultTheme" above, and complete TODOs
-    // fontFamily: {
-    //   // FIXME: Add font families
-    //   //       Delete "mono" if it isn't needed
-    //   sans: ['', ...defaultTheme.fontFamily.sans],
-    //   mono: ['', ...defaultTheme.fontFamily.mono],
-    // },
+    fontFamily: {
+      'sans-default': ['Inter', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
+      'sans-titles': ['Sharp Grotesk', 'Sharp Grotesk Fallback', ...defaultTheme.fontFamily.sans],
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
