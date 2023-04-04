@@ -58,18 +58,23 @@ const Header = () => {
               loading="eager"
             />
           </Link>
-          <ul className="flex items-center gap-x-12 xl:gap-x-8 lg:hidden">
+          <ul className="flex items-center gap-x-6 xl:gap-x-2 lg:hidden">
             {MENUS.header.map(({ title, href = '', items }: Header) => {
               return (
                 <li key={title} className="group relative inline-block">
                   {href ? (
-                    <Link additionalClassName="font-medium" to={href} size="md" theme="gray">
+                    <Link
+                      additionalClassName="font-medium px-3 py-[9px]"
+                      to={href}
+                      size="md"
+                      theme="gray"
+                    >
                       {title}
                     </Link>
                   ) : (
                     <button
                       className={clsx(
-                        'font-medium text-16 leading-none transition-colors duration-200 rounded-[44px] px-3 py-[9px] -mx-3',
+                        'font-medium text-16 leading-none transition-colors duration-200 rounded-[44px] px-3 py-[9px]',
                         {
                           'group-hover:bg-gray-94': items,
                         },
