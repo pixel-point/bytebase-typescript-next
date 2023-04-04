@@ -112,13 +112,10 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen }) => {
           {MENUS.mobile.map(({ title, href = '', items }: MobileLinksProps, index: number) => {
             const Tag = href ? Link : 'button';
             return (
-              <li
-                key={index}
-                className="relative py-4 first:pt-0 last:border-b last:border-gray-90"
-              >
+              <li key={index} className="first:-mt-4 relative last:border-b last:border-gray-90">
                 <Tag
                   to={href}
-                  className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
+                  className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
                   tabIndex={0}
                   onClick={() => handleDropdownOpen(index)}
                   onKeyDown={() => handleDropdownOpen(index)}

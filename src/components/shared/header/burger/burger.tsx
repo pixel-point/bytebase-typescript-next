@@ -14,29 +14,29 @@ type BurgerProps = {
 const Burger: FC<BurgerProps> = ({ className = null, isToggled = false, onClick }) => (
   <LazyMotion features={domAnimation}>
     <m.button
-      className={clsx('relative h-5 w-7 shrink-0', className)}
+      className={clsx('relative h-[72px] w-[72px] shrink-0 py-[22px]', className)}
       type="button"
       animate={isToggled ? 'toggled' : 'initial'}
       aria-label={isToggled ? 'Close menu' : 'Open menu'}
       onClick={onClick}
     >
       <m.span
-        className="absolute top-0 right-0 block h-0.5 w-full rounded-full bg-gray-15 transition-colors duration-200"
+        className="absolute top-[22px] right-0 block h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
         variants={{
           initial: {
-            top: 0,
+            top: 22,
             display: 'block',
             transition: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
           },
           toggled: {
-            top: 9,
+            top: 31,
             transition: { duration: ANIMATION_DURATION },
             transitionEnd: { display: 'none' },
           },
         }}
       />
       <m.span
-        className="absolute top-[9px] left-0 block h-0.5 w-full rounded-full bg-gray-15 transition-colors duration-200"
+        className="absolute top-[31px] right-0 block h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
         variants={{
           initial: {
             display: 'block',
@@ -49,22 +49,22 @@ const Burger: FC<BurgerProps> = ({ className = null, isToggled = false, onClick 
         }}
       />
       <m.span
-        className="absolute bottom-0 right-0 block h-0.5 w-full rounded-full bg-gray-15 transition-colors duration-200"
+        className="absolute top-10 right-0 block h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
         variants={{
           initial: {
-            bottom: 0,
+            bottom: 22,
             display: 'block',
             transition: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
           },
           toggled: {
-            bottom: 9,
+            bottom: 31,
             transition: { duration: ANIMATION_DURATION },
             transitionEnd: { display: 'none' },
           },
         }}
       />
       <m.span
-        className="absolute top-[9px] right-0 hidden h-0.5 w-full rounded-full bg-gray-15 transition-colors duration-200"
+        className="absolute top-[31px] right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
         variants={{
           initial: {
             rotate: '0deg',
@@ -79,7 +79,7 @@ const Burger: FC<BurgerProps> = ({ className = null, isToggled = false, onClick 
         }}
       />
       <m.span
-        className="absolute top-[9px] right-0 hidden h-0.5 w-full rounded-full bg-gray-15 transition-colors duration-200"
+        className="absolute top-[31px] right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
         variants={{
           initial: {
             rotate: '0deg',
