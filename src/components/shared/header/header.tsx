@@ -1,4 +1,5 @@
 import Button from '@/components/shared/button';
+import GithubStarsButton from '@/components/shared/github-stars-button';
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus';
@@ -31,9 +32,12 @@ const Header = () => (
           </li>
         ))}
       </ul>
-      <Button additionalClassName="lg:hidden" to="/" theme="gray-filled" size="sm">
-        Sign up for Cloud
-      </Button>
+      <div className="flex items-center gap-x-9 2xl:gap-x-7 xl:gap-x-5 lg:hidden">
+        <GithubStarsButton />
+        <Button to="/" theme="gray-filled" size="sm">
+          Sign up for Cloud
+        </Button>
+      </div>
     </nav>
   </header>
 );

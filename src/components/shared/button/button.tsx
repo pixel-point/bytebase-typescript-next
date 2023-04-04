@@ -31,6 +31,8 @@ type ButtonProps = {
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   withArrow?: boolean;
+  target?: string;
+  rel?: string;
 };
 
 const Button: FC<ButtonProps> = ({

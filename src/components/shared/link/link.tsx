@@ -24,6 +24,8 @@ type LinkProps = {
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   withArrow?: boolean;
+  target?: string;
+  rel?: string;
 };
 
 const Link: FC<LinkProps> = ({
