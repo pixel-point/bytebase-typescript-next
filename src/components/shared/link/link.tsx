@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 
 import { FC } from 'react';
 
+import ArrowIcon from '@/svgs/arrow.inline.svg';
 import clsx from 'clsx';
 
 const styles = {
@@ -42,7 +43,12 @@ const Link: FC<LinkProps> = ({
     additionalClassName,
   );
 
-  const content = <>{withArrow ? <span>{children}</span> : children}</>;
+  const content = (
+    <>
+      {withArrow ? <span>{children}</span> : children}
+      {withArrow && <ArrowIcon className={clsx('ml-5 w-4 shrink-0')} />}
+    </>
+  );
 
   if (to.startsWith('/')) {
     return (

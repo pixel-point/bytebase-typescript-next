@@ -99,7 +99,18 @@ module.exports = {
       104: '104px',
       112: '112px',
     },
+    letterSpacing: {
+      tighter: '-0.025em',
+      tight: '-0.02em',
+      normal: '0',
+    },
+    extend: {
+      spacing: {
+        4.5: '1.125rem',
+      },
+    },
   },
+
   corePlugins: {
     container: false,
   },
