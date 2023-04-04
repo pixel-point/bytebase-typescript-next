@@ -5,8 +5,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      'sans-default': ['Inter', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
-      'sans-titles': ['Sharp Grotesk', 'Sharp Grotesk Fallback', ...defaultTheme.fontFamily.sans],
+      sans: ['Inter', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
+      title: ['Sharp Grotesk', 'Sharp Grotesk Fallback', ...defaultTheme.fontFamily.sans],
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
