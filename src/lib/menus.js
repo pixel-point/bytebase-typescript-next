@@ -6,23 +6,30 @@ export const MENUS = {
     { title: 'Blog', href: ROUTE.BLOG },
     {
       title: 'Docs',
-      href: ROUTE.DOCS,
       items: [
         {
           name: 'Get Started',
           description: 'Instantly validates tax ID numbers ',
+          linkUrl: '/',
+          iconName: 'rocket',
         },
         {
           name: 'CLI',
           description: 'Ensures your compliance with DAC7',
+          linkUrl: '/',
+          iconName: 'cli',
         },
         {
           name: 'API',
           description: 'Issues locally compliant invoices',
+          linkUrl: '/',
+          iconName: 'api',
         },
         {
           name: 'How-To',
           description: 'Sends authorities tax data in real',
+          linkUrl: '/',
+          iconName: 'howTo',
         },
       ],
     },
