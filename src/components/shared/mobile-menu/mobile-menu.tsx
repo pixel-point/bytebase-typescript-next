@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import APIIcon from '@/svgs/api.inline.svg';
 import ChevronIcon from '@/svgs/chevron.inline.svg';
@@ -80,7 +80,7 @@ type MobileLinksProps = {
   items?: Array<MobileMenuItem>;
 };
 
-const MobileMenu: FC<MobileMenuProps> = ({ isOpen }) => {
+const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(-1);
 
   const controls = useAnimation();

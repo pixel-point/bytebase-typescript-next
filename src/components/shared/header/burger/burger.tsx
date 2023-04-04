@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 
 import clsx from 'clsx';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
@@ -11,7 +11,7 @@ type BurgerProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const Burger: FC<BurgerProps> = ({ className, isToggled = false, onClick }) => (
+const Burger = ({ className, isToggled = false, onClick }: BurgerProps) => (
   <LazyMotion features={domAnimation}>
     <m.button
       className={clsx('relative h-[72px] w-[72px] shrink-0 py-[22px]', className)}

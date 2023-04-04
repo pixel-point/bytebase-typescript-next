@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import ArrowIcon from '@/svgs/arrow.inline.svg';
 import clsx from 'clsx';
 
@@ -35,7 +33,7 @@ type ButtonProps = {
   rel?: string;
 };
 
-const Button: FC<ButtonProps> = ({
+const Button = ({
   additionalClassName,
   size,
   theme,
@@ -43,7 +41,7 @@ const Button: FC<ButtonProps> = ({
   children,
   withArrow = false,
   ...props
-}) => {
+}: ButtonProps) => {
   const className = clsx(
     styles.base,
     size && styles.size[size],

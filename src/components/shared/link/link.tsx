@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import NextLink from 'next/link';
 
-import { FC } from 'react';
-
 import ArrowIcon from '@/svgs/arrow.inline.svg';
 import clsx from 'clsx';
 
@@ -28,7 +26,7 @@ type LinkProps = {
   rel?: string;
 };
 
-const Link: FC<LinkProps> = ({
+const Link = ({
   additionalClassName,
   size,
   theme,
@@ -36,7 +34,7 @@ const Link: FC<LinkProps> = ({
   children,
   withArrow = false,
   ...props
-}) => {
+}: LinkProps) => {
   const linkClassName = clsx(
     styles.transition,
     size && theme && styles.base,
