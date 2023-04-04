@@ -13,7 +13,7 @@ const styles = {
     md: 'text-16',
   },
   theme: {
-    'gray-15': 'text-gray-15 hover:text-primary-1 disabled:text-gray-60',
+    gray: 'text-gray-15 hover:text-primary-1 disabled:text-gray-60',
   },
 };
 
