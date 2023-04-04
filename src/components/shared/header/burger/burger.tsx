@@ -11,7 +11,7 @@ type BurgerProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const Burger: FC<BurgerProps> = ({ className = null, isToggled = false, onClick }) => (
+const Burger: FC<BurgerProps> = ({ className, isToggled = false, onClick }) => (
   <LazyMotion features={domAnimation}>
     <m.button
       className={clsx('relative h-[72px] w-[72px] shrink-0 py-[22px]', className)}

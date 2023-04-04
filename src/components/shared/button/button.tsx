@@ -36,9 +36,9 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({
-  additionalClassName = null,
-  size = null,
-  theme = null,
+  additionalClassName,
+  size,
+  theme,
   to,
   children,
   withArrow = false,

@@ -29,9 +29,9 @@ type LinkProps = {
 };
 
 const Link: FC<LinkProps> = ({
-  additionalClassName = null,
-  size = null,
-  theme = null,
+  additionalClassName,
+  size,
+  theme,
   to,
   children,
   withArrow = false,
