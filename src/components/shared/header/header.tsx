@@ -84,46 +84,47 @@ const Header = () => {
                     </button>
                   )}
                   {items && items?.length > 0 && (
-                    <div className="z-20 absolute top-12 -left-6 transition-[opacity,visibility] duration-200 group-hover:visible invisible opacity-0 group-hover:opacity-100 rounded-lg border border-gray-80 bg-white p-4 pl-8 flex items-center gap-x-[30px] before:bg-white before:h-4 before:w-4 before:absolute before:-top-[8.5px] before:rotate-45 before:border-gray-80 before:border-t before:border-l before:rounded-tl before:z-50 before:left-11">
-                      <ul className="flex flex-col">
-                        {items?.map(({ name, linkUrl, description, iconName }, index) => {
-                          const Icon = icons[iconName];
-
-                          return (
-                            <li key={index} className="pt-6 first:pt-0">
-                              <Link
-                                additionalClassName="whitespace-nowrap group/link block"
-                                size="md"
-                                theme="gray"
-                                to={linkUrl}
-                              >
-                                <div className="flex flex-col gap-y-2.5">
-                                  <div className="flex gap-x-2 items-center group-hover/link:text-primary-1">
-                                    <Icon className="w-5 h-5 shrink-0" />
-                                    <span className="font-medium tracking-tight">{name}</span>
+                    <div className="top-6 -left-5 absolute transition-[opacity,visibility] duration-200 group-hover:visible invisible opacity-0 group-hover:opacity-100 pt-6">
+                      <div className="z-30 relative rounded-lg border border-gray-80 bg-white p-4 pl-8 flex items-center gap-x-[30px] before:bg-white before:h-4 before:w-4 before:absolute before:-top-[8.5px] before:-z-50 before:rotate-45 before:border-gray-80 before:border-t before:border-l before:rounded-tl before:left-11 shadow-menu">
+                        <ul className="flex flex-col">
+                          {items?.map(({ name, linkUrl, description, iconName }, index) => {
+                            const Icon = icons[iconName];
+                            return (
+                              <li key={index} className="pt-6 first:pt-0">
+                                <Link
+                                  additionalClassName="whitespace-nowrap group/link block"
+                                  size="md"
+                                  theme="gray"
+                                  to={linkUrl}
+                                >
+                                  <div className="flex flex-col gap-y-2.5">
+                                    <div className="flex gap-x-2 items-center group-hover/link:text-primary-1">
+                                      <Icon className="w-5 h-5 shrink-0" />
+                                      <span className="font-medium tracking-tight">{name}</span>
+                                    </div>
+                                    <span className="text-16 leading-normal text-gray-40">
+                                      {description}
+                                    </span>
                                   </div>
-                                  <span className="text-16 leading-normal text-gray-40">
-                                    {description}
-                                  </span>
-                                </div>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                      <Link
-                        additionalClassName="bg-gray-97 group/box rounded-md p-6 pt-4.5 h-full grow hover:bg-gray-94 flex flex-col justify-between min-h-[324px] w-[244px] text-gray-40"
-                        to="/"
-                      >
-                        <div className="flex justify-between items-center group-hover/box:text-gray-15">
-                          <span className="text-16 leading-normal">Start Learning</span>
-                          <DiagonalArrowIcon className="w-4 h-4 shrink-0" />
-                        </div>
-                        <div className="flex flex-col gap-y-3">
-                          <span className="text-20 leading-none text-gray-15">Tutorials</span>
-                          <span>In this article, we’ll go over the benefits of</span>
-                        </div>
-                      </Link>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                        <Link
+                          additionalClassName="bg-gray-97 group/box rounded-md p-6 pt-4.5 h-full grow hover:bg-gray-94 flex flex-col justify-between min-h-[324px] w-[244px] text-gray-40"
+                          to="/"
+                        >
+                          <div className="flex justify-between items-center group-hover/box:text-gray-15">
+                            <span className="text-16 leading-normal">Start Learning</span>
+                            <DiagonalArrowIcon className="w-4 h-4 shrink-0" />
+                          </div>
+                          <div className="flex flex-col gap-y-3">
+                            <span className="text-20 leading-none text-gray-15">Tutorials</span>
+                            <span>In this article, we’ll go over the benefits of</span>
+                          </div>
+                        </Link>
+                      </div>
                     </div>
                   )}
                 </li>

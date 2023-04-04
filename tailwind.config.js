@@ -109,6 +109,9 @@ module.exports = {
       spacing: {
         4.5: '1.125rem',
       },
+      boxShadow: {
+        menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
+      },
     },
   },
 
