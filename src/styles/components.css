@@ -16,4 +16,8 @@
       @apply px-4;
     }
   }
+
+  .grid-gap {
+    @apply gap-x-10;
+  }
 }
