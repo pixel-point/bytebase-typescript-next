@@ -103,6 +103,7 @@ module.exports = {
       tighter: '-0.025em',
       tight: '-0.02em',
       normal: '0',
+      wide: '0.02em',
     },
     extend: {
       spacing: {
