@@ -99,7 +99,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen }) => {
       {isOpen && (
         <motion.nav
           className={clsx(
-            'w-[53%] safe-paddings absolute right-0 bottom-0 top-[72px] z-40 h-[calc(100vh-72px)] md:w-full overflow-y-auto bg-white px-7 pb-8 sm:px-4 sm:pb-5 text-gray-15 flex flex-col justify-between',
+            'w-[53%] safe-paddings absolute right-0 bottom-0 top-[72px] z-40 h-[calc(100vh-72px)] md:w-full overflow-y-auto bg-white px-7 pb-8 sm:px-4 sm:pb-5 text-gray-15 flex flex-col justify-between md:mt-2',
           )}
           initial="hidden"
           animate="visible"
@@ -155,7 +155,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen }) => {
                                 <div className="flex flex-col gap-y-1">
                                   <div className="flex gap-x-2 items-center group-hover:text-primary-1">
                                     <Icon className="w-5 h-5 shrink-0" />
-                                    <span className="font-medium">{name}</span>
+                                    <span className="font-medium tracking-tight">{name}</span>
                                   </div>
                                   <span className="text-16 leading-normal text-gray-40">
                                     {description}
