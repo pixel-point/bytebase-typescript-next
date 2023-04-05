@@ -103,35 +103,41 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        className="fixed -z-10 hidden lg:flex w-[53%] safe-paddings right-0 bottom-0 top-0 h-full md:w-full bg-white px-7 pb-8 sm:px-4 sm:pb-5 text-gray-15 flex-col justify-between mt-[72px] md:mt-20"
+        className="fixed bg-black bg-opacity-80 w-full -z-10 hidden lg:flex safe-paddings inset-0 h-full text-gray-15 justify-end"
         initial="from"
         animate={controls}
         variants={variants}
       >
-        <ul className="flex flex-col items-stretch divide-y divide-gray-90">
-          {MENUS.mobile.map(({ title, href = '', items }: MobileLinksProps, index: number) => {
-            const Tag = href ? Link : 'button';
-            return (
+        <div className="pt-[72px] md:pt-20 flex flex-col justify-between bg-white md:w-full w-[53%] h-full px-7 pb-8 sm:px-4 sm:pb-5">
+          <ul className="flex flex-col items-stretch divide-y divide-gray-90">
+            {MENUS.mobile.map(({ title, href = '', items }: MobileLinksProps, index: number) => (
               <li key={index} className="first:-mt-4 relative last:border-b last:border-gray-90">
-                <Tag
-                  to={href}
-                  className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
-                  tabIndex={0}
-                  onClick={() => handleDropdownOpen(index)}
-                  onKeyDown={() => handleDropdownOpen(index)}
-                >
-                  <div className="flex w-full items-center justify-between">
+                {items ? (
+                  <button
+                    className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                    tabIndex={0}
+                    onClick={() => handleDropdownOpen(index)}
+                  >
+                    <div className="flex w-full items-center justify-between">
+                      <span>{title}</span>
+                      {items && (
+                        <ChevronIcon
+                          className={clsx(
+                            'h-4 w-4 shrink-0 transition-transform duration-200 ',
+                            isDropdownOpen === index && 'rotate-180',
+                          )}
+                        />
+                      )}
+                    </div>
+                  </button>
+                ) : (
+                  <Link
+                    to={href}
+                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                  >
                     <span>{title}</span>
-                    {items && (
-                      <ChevronIcon
-                        className={clsx(
-                          'h-4 w-4 shrink-0 transition-transform duration-200 ',
-                          isDropdownOpen === index && 'rotate-180',
-                        )}
-                      />
-                    )}
-                  </div>
-                </Tag>
+                  </Link>
+                )}
                 <LazyMotion features={domAnimation}>
                   {isDropdownOpen === index && items && (
                     <m.ul
@@ -144,7 +150,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                       {items.map(({ name, description, iconName, linkUrl }: MobileMenuItem) => {
                         const Icon = icons[iconName];
                         return (
-                          <li className="w-full" key={name}>
+                          <li className="w-full last:pb-4 first:-mt-4" key={name}>
                             <Link
                               additionalClassName="group block pt-4"
                               size="md"
@@ -168,14 +174,14 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                   )}
                 </LazyMotion>
               </li>
-            );
-          })}
-        </ul>
-        <div className="mt-10 flex flex-col gap-4">
-          <GithubStarsButton />
-          <Button additionalClassName="py-4.5" to="/" theme="gray-filled" size="sm">
-            Sign up for Cloud
-          </Button>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-col gap-4">
+            <GithubStarsButton />
+            <Button additionalClassName="py-4.5" to="/" theme="gray-filled" size="sm">
+              Sign up for Cloud
+            </Button>
+          </div>
         </div>
       </m.nav>
     </LazyMotion>
