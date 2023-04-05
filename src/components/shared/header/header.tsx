@@ -83,7 +83,7 @@ const Header = () => {
                       {title}
                     </button>
                   )}
-                  {items && items?.length > 0 && (
+                  {items?.length && (
                     <div className="top-6 -left-5 absolute transition-[opacity,visibility] duration-200 group-hover:visible invisible opacity-0 group-hover:opacity-100 pt-6">
                       <div className="z-30 relative rounded-lg border border-gray-80 bg-white p-4 pl-8 flex items-center gap-x-[30px] before:bg-white before:h-4 before:w-4 before:absolute before:-top-[8.5px] before:-z-50 before:rotate-45 before:border-gray-80 before:border-t before:border-l before:rounded-tl before:left-11 shadow-menu">
                         <ul className="flex flex-col">
