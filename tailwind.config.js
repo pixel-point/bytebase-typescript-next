@@ -112,6 +112,9 @@ module.exports = {
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
       },
+      backgroundImage: {
+        cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
+      },
     },
   },
 

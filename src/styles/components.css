@@ -20,4 +20,20 @@
   .grid-gap {
     @apply gap-x-10;
   }
+
+  .logos {
+    @apply bg-center bg-repeat-x;
+
+    height: 96px;
+    background-image: url(/images/logos.svg),
+      linear-gradient(
+        272.14deg,
+        #1fd68a 1.82%,
+        #c4ff99 19.31%,
+        #1fd68a 48.1%,
+        #1fd68a 56.4%,
+        #cceeff 71.99%,
+        #1fd68a 98.18%
+      );
+  }
 }
