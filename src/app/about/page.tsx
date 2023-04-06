@@ -1,3 +1,11 @@
-export default function Page() {
-  return <h1>About</h1>;
-}
+import { Hero } from '@/components/pages/about-us/hero';
+
+const AboutUsPage = () => {
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
+};
+
+export default AboutUsPage;
