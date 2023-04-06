@@ -1,29 +1,12 @@
-import ExternalIcon from '@/svgs/external.inline.svg';
-import GithubIcon from '@/svgs/github.inline.svg';
-
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus.js';
-import ROUTE from '@/lib/route';
+import Route from '@/lib/route';
 
-const socialLinks = [
-  {
-    name: 'Discord',
-    href: ROUTE.DISCORD,
-    icon: 'images/discord.svg',
-  },
-  {
-    name: 'Twitter',
-    href: ROUTE.TWITTER,
-    icon: 'images/twitter.svg',
-  },
-
-  {
-    name: 'Github',
-    href: ROUTE.GITHUB,
-    icon: 'images/github.svg',
-  },
-];
+import DiscordIcon from '@/svgs/discord.inline.svg';
+import ExternalIcon from '@/svgs/external.inline.svg';
+import GithubIcon from '@/svgs/github.inline.svg';
+import TwitterIcon from '@/svgs/twitter.inline.svg';
 
 const Footer = () => (
   <footer className="pt-20 xl:pt-14 md:pt-12 sm:pt-10 safe-paddings z-50 shrink-0 container">
@@ -76,19 +59,31 @@ const Footer = () => (
         </p>
       </div>
       <div className="col-start-7 col-span-2 xl:col-span-3 xl:justify-self-end flex items-center gap-x-5 lg:col-start-10 lg:row-start-1 lg:row-span-1 lg:col-span-3 sm:col-span-full sm:row-start-2 sm:col-start-1 sm:justify-self-start">
-        {socialLinks.map(({ name, href, icon }, idx) => (
+        {[
+          {
+            name: 'Discord',
+            icon: DiscordIcon,
+            href: Route.DISCORD,
+          },
+          {
+            name: 'Twitter',
+            icon: TwitterIcon,
+            href: Route.TWITTER,
+          },
+
+          {
+            name: 'Github',
+            icon: GithubIcon,
+            href: Route.GITHUB,
+          },
+        ].map(({ name, href, icon: Icon }, idx) => (
           <Link
             key={idx}
             to={href}
             additionalClassName="flex items-center justify-center rounded-full"
           >
+            <Icon className="w-6 h-6 shrink-0 transition-opacity duration-200 hover:opacity-80" />
             <span className="sr-only">{name}</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={icon}
-              className="w-6 h-6 shrink-0 transition-opacity duration-200 hover:opacity-80"
-              alt={name}
-            />
           </Link>
         ))}
       </div>
@@ -97,14 +92,14 @@ const Footer = () => (
         <Link
           additionalClassName="text-16 sm:text-14 font-medium leading-none tracking-tight"
           theme="gray"
-          to={ROUTE.TERMS}
+          to={Route.TERMS}
         >
           Terms
         </Link>
         <Link
           additionalClassName="text-16 sm:text-14 font-medium leading-none tracking-tight"
           theme="gray"
-          to={ROUTE.PRIVACY}
+          to={Route.PRIVACY}
         >
           Policy
         </Link>
