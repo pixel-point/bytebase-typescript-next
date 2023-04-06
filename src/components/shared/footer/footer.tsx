@@ -27,7 +27,7 @@ const socialLinks = [
 
 const Footer = () => (
   <footer className="pt-20 xl:pt-14 md:pt-12 sm:pt-10 safe-paddings z-50 shrink-0 container">
-    <div className="grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 md:grid-cols-4 md:gap-x-4 md:gap-y-10">
+    <div className="grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:flex lg:justify-between sm:grid sm:grid-cols-4 sm:gap-x-4 sm:gap-y-10">
       {MENUS.footer.map(({ name, items }, idx) => (
         <div
           className="col-span-3 lg:last:col-start-11 lg:last:col-span-2 lg:last:justify-self-center lg:[&:nth-child(3)]:justify-self-center md:col-span-2 md:!justify-self-start md:last:col-start-3"
@@ -45,7 +45,9 @@ const Footer = () => (
                 >
                   <span>{childName}</span>
                   {withGithubIcon && (
-                    <GithubIcon className="ml-1.5 shrink-0 fill-gray-15 group-hover:fill-primary-1 h-5 w-5" />
+                    <div className="relative w-[20px] ml-3">
+                      <GithubIcon className="absolute top-0 -translate-x-1/4 -translate-y-1/2 shrink-0 fill-gray-15 group-hover:fill-primary-1 h-5 w-5" />
+                    </div>
                   )}
                   {isExternal && (
                     <ExternalIcon className="ml-3 shrink-0 stroke-gray-15 group-hover:stroke-primary-1 h-4 w-4" />
@@ -71,7 +73,7 @@ const Footer = () => (
             loading="eager"
           />
         </Link>
-        <p className="whitespace-nowrap text-16 font-medium leading-none tracking-tight text-gray-60 sm:hidden">
+        <p className="whitespace-nowrap mt-[6px] lg:mt-0 tracking-tight text-16 font-medium leading-none text-gray-60 sm:hidden">
           © {new Date().getFullYear()} Bytebase. All Rights Reserved.
         </p>
       </div>
@@ -93,7 +95,7 @@ const Footer = () => (
         ))}
       </div>
 
-      <div className="col-start-10 xl:col-start-11 flex items-center gap-x-8 xl:gap-x-6 lg:col-start-10 lg:row-start-2 lg:col-span-3 lg:justify-self-end sm:row-start-3 sm:justify-self-start sm:col-start-1">
+      <div className="mt-[6px] lg:mt-0 col-start-10 xl:col-start-11 flex items-center gap-x-8 xl:gap-x-6 lg:col-start-10 lg:row-start-2 lg:col-span-3 lg:justify-self-end sm:row-start-3 sm:justify-self-start sm:col-start-1">
         <Link
           additionalClassName="text-16 sm:text-14 font-medium leading-none tracking-tight"
           theme="gray"
