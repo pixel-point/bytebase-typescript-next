@@ -111,7 +111,7 @@ const Footer = () => (
           Policy
         </Link>
       </div>
-      <p className="whitespace-nowrap text-14 font-medium leading-none tracking-tight text-gray-60 hidden sm:block sm:row-start-4  sm:row-span-1 sm:col-span-full">
+      <p className="whitespace-nowrap text-14 font-medium leading-none tracking-tight text-gray-60 hidden sm:block sm:row-start-4 sm:row-span-1 sm:col-span-full">
         © {new Date().getFullYear()} Bytebase. All Rights Reserved.
       </p>
     </div>
