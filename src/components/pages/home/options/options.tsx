@@ -1,16 +1,9 @@
 import Image from 'next/image';
 
-import { FC } from 'react';
-
 import AccordionIconClosed from '@/svgs/accordion-arrow-closed.inline.svg';
 import AccordionIcon from '@/svgs/accordion-arrow.inline.svg';
 
-interface AccordionProps {
-  title: string;
-  content: string;
-}
-
-const Options: FC<AccordionProps> = ({ title, content }) => {
+const Options = () => {
   return (
     <section className="options">
       <h2 className="sr-only">Features</h2>
