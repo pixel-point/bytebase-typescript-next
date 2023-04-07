@@ -1,6 +1,5 @@
-import NextLink from 'next/link';
-
 import Button from '@/components/shared/button';
+import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 import Route from '@/lib/route';
 
@@ -67,7 +66,7 @@ const Hero = () => {
         <Button to={Route.INDEX} theme="primary-filled" size="lg">
           Request a Demo
         </Button>
-        <NextLink href={Route.INDEX}>See Live Demo</NextLink>
+        <LinkUnderlined to={Route.INDEX}>See Live Demo</LinkUnderlined>
       </footer>
     </section>
   );

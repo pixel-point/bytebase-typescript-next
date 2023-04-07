@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
 
 import { FC } from 'react';
 
 import clsx from 'clsx';
+
+import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 interface CardProps {
   cover: string;
@@ -29,9 +30,9 @@ const Card: FC<CardProps> = ({ cover, title, href, description }) => {
       />
       <h3 className="mt-8 text-36 font-bold leading-[112.5%]">{title}</h3>
       <p className="mt-4 text-20 leading-[150%] max-w-[75%]">{description}</p>
-      <footer className="mt-6">
-        <NextLink href={href}>Learn more</NextLink>
-      </footer>
+      <LinkUnderlined to="" className="mt-6">
+        Learn more
+      </LinkUnderlined>
     </article>
   );
 };
