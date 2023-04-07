@@ -45,7 +45,7 @@ const Features = () => {
       </header>
       <ul className="mt-14 2xl:mt-12 xl:mt-[46px] lg:mt-9 md:mt-5 grid grid-gap xl:gap-x-6 lg:gap-x-5 grid-cols-3 xl:grid-cols-12 md:flex md:flex-col md:[&>li:not(:first-child)]:mt-8">
         {cards.map((card, idx) => (
-          <li key={idx} className="col-span-4 ">
+          <li key={idx} className="xl:col-span-4 ">
             <Card {...card} />
           </li>
         ))}
