@@ -1,6 +1,16 @@
 import Image from 'next/image';
 
-const Options = () => {
+import { FC } from 'react';
+
+import AccordionIconClosed from '@/svgs/accordion-arrow-closed.inline.svg';
+import AccordionIcon from '@/svgs/accordion-arrow.inline.svg';
+
+interface AccordionProps {
+  title: string;
+  content: string;
+}
+
+const Options: FC<AccordionProps> = ({ title, content }) => {
   return (
     <section className="options">
       <h2 className="sr-only">Features</h2>
@@ -13,43 +23,55 @@ const Options = () => {
             height={320}
             alt=""
           />
-          <div className="order-1 flex-grow">
-            <p>
-              <b className="text-44 font-bold leading-[112.5%] -tracking-[0.04em]">
-                <mark className="bg-transparent text-primary-1">Auto style</mark> and anti-patterns
-                checks
+          <div className="flex">
+            <AccordionIcon className="h-14 shadow-icon rounded-[100%] shrink-0 " />
+            <div className="ml-[30px] order-1 flex-grow">
+              <p>
+                <b className="text-44 font-bold leading-[112.5%] -tracking-[0.04em]">
+                  <mark className="bg-transparent text-primary-1">Auto style</mark> and
+                  anti-patterns checks
+                </b>
+              </p>
+              <p className="mt-4.5 text-18 leading-none">
+                100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the
+                organization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-px bg-tones-purple-light">
+        <div className="container">
+          <div className="py-8">
+            <div className="flex items-center">
+              <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" />
+              <b className="ml-7 text-30 font-bold leading-[112.5%] -tracking-[0.04em]">
+                Batch schema changes to tenant databases
               </b>
-            </p>
-            <p className="mt-4.5 text-18 leading-none">
-              100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the
-              organization.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-px bg-tones-purple-light">
+        <div className="container">
+          <div className="flex items-center">
+            <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" />
+            <p className="py-8">
+              <b className="ml-7 text-30 font-bold leading-[112.5%] -tracking-[0.04em]">
+                Online schema change
+              </b>
             </p>
           </div>
         </div>
       </div>
       <div className="mt-px bg-tones-purple-light">
         <div className="container">
-          <p className="py-8">
-            <b className="text-30 font-bold leading-[112.5%] -tracking-[0.04em]">
-              Batch schema changes to tenant databases
-            </b>
-          </p>
-        </div>
-      </div>
-      <div className="mt-px bg-tones-purple-light">
-        <div className="container">
-          <p className="py-8">
-            <b className="text-30 font-bold leading-[112.5%] -tracking-[0.04em]">
-              Online schema change
-            </b>
-          </p>
-        </div>
-      </div>
-      <div className="mt-px bg-tones-purple-light">
-        <div className="container">
-          <p className="py-8">
-            <b className="text-30 font-bold leading-[112.5%] -tracking-[0.04em]">GitOps</b>
-          </p>
+          <div className="flex items-center">
+            <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" />
+            <p className="py-8">
+              <b className="ml-7 text-30 font-bold leading-[112.5%] -tracking-[0.04em]">GitOps</b>
+            </p>
+          </div>
         </div>
       </div>
     </section>

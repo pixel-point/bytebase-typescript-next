@@ -24,7 +24,7 @@ const SubscriptionForm = () => {
                 Subscribe to&nbsp;Newsletter
               </b>
             </p>
-            <p className="mt-7 flex">
+            <p className="mt-7 flex relative">
               <input
                 className="remove-autocomplete-styles outline-none flex-grow py-6 px-7 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
                 type="text"
@@ -33,7 +33,7 @@ const SubscriptionForm = () => {
                 Subscibe
               </button>
             </p>
-            <p className="mt-5 text-14 leading-[137.5%]">
+            <p className="mt-5 [&>a]:border-b-[2px] [&>a]:!border-opacity-10 [&>a]:pb-[3px] text-14 leading-[137.5%]">
               By subscribing, you agree with Revue&apos;s{' '}
               <NextLink href={Route.TERMS}>Terms of Service</NextLink> and{' '}
               <NextLink href={Route.PRIVACY}>Privacy Policy</NextLink>.

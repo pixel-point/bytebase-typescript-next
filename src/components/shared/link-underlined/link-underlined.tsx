@@ -24,7 +24,7 @@ const LinkUnderlined: FC<LinkProps> = ({ to, theme, children, className }) => {
   return (
     <div
       className={clsx(
-        'pb-1 w-fit border-b-[3px] leading-4 tracking-tight border-secondary-2 text-16 font-bold uppercase',
+        'pb-1 w-fit border-b-[3px] leading-4 tracking-[1%] border-secondary-2 text-16 lg:text-13 font-bold uppercase',
         linkClassName,
       )}
     >
