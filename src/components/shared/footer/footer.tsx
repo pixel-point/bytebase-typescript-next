@@ -38,7 +38,7 @@ const Footer = () => (
             {items.map(({ name: childName, linkUrl, isExternal, withGithubIcon }, childIdx) => (
               <li className="leading-none" key={childIdx}>
                 <Link
-                  additionalClassName="group font-medium tracking-tight flex items-center"
+                  additionalClassName="group font-medium tracking-tight flex items-center md:-mt-1 sm:mt-0"
                   size="md"
                   theme="gray"
                   to={linkUrl}
@@ -59,7 +59,7 @@ const Footer = () => (
         </div>
       ))}
     </div>
-    <div className="mt-20 xl:mt-16 grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 sm:gap-x-0 py-6 border-t-4 border-tones-purple-light lg:grid-rows-2 lg:gap-y-6 lg:py-5 sm:grid-rows-4 lg:mt-[50px] sm:mt-[42px]">
+    <div className="mt-[76px] xl:mt-[60px] grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 sm:gap-x-0 py-6 border-t-4 lg:border-t-2  border-tones-purple-light lg:grid-rows-2 lg:gap-y-6 lg:py-5 sm:py-6 sm:grid-rows-4 lg:mt-[42px] sm:mt-9">
       <div className="col-span-4 2xl:col-span-5 xl:col-span-6 flex items-center gap-x-9 lg:flex-col lg:gap-x-0 lg:gap-y-6 lg:items-start lg:justify-center lg:row-span-2 sm:row-span-1 sm:col-span-full">
         <Link additionalClassName="shrink-0" to="/">
           <span className="sr-only">Bytebase Logo</span>
@@ -77,7 +77,7 @@ const Footer = () => (
           © {new Date().getFullYear()} Bytebase. All Rights Reserved.
         </p>
       </div>
-      <div className="col-start-7 col-span-2 xl:col-span-3 xl:justify-self-end flex items-center gap-x-5 lg:col-start-10 lg:row-start-1 lg:row-span-1 lg:col-span-3 sm:col-span-full sm:row-start-2 sm:col-start-1 sm:justify-self-start">
+      <div className="col-start-7 col-span-2 xl:col-span-3 xl:justify-self-end flex items-center gap-x-5 lg:col-start-10 lg:row-start-1 lg:row-span-1 lg:col-span-3 sm:col-span-full sm:row-start-2 sm:col-start-1 sm:justify-self-start ">
         {socialLinks.map(({ name, href, icon }, idx) => (
           <Link
             key={idx}
