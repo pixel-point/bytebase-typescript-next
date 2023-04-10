@@ -9,7 +9,7 @@ const Logos = () => {
         height={64}
         className="relative left-1/2 mb-6"
       />
-      <div className="logos"></div>
+      <div className="logos" />
     </div>
   );
 };
