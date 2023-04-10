@@ -45,7 +45,7 @@ const Change = () => {
           />
         </div>
       </div>
-      <div className=" mt-10 hidden lg:block relative w-full min-h-[654px] md:min-h-[436px]">
+      <div className=" mt-10 sm:mt-8 hidden lg:block relative w-full min-h-[654px] md:min-h-[436px]">
         <Image
           className="ml-auto  hidden lg:block sm:hidden h-[654px]"
           src="/images/automate-database-changes-md.png"
