@@ -42,7 +42,7 @@ const Header = () => {
   const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   return (
     <>
-      <header className="safe-paddings absolute top-0 left-0 right-0 z-[1000] h-[72px] w-full">
+      <header className="safe-paddings absolute top-0 left-0 right-0 z-[999] h-[72px] w-full">
         <nav
           className="container flex items-center justify-between py-4.5 md:py-0"
           aria-label="Global"
