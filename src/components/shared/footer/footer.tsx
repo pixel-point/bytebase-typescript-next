@@ -16,7 +16,7 @@ const Footer = () => (
           className="col-span-3 lg:last:col-start-11 lg:last:col-span-2 lg:last:justify-self-center lg:[&:nth-child(3)]:justify-self-center md:col-span-2 md:!justify-self-start md:last:col-start-3"
           key={idx}
         >
-          <h3 className="text-14 font-bold leading-none tracking-wide text-gray-60">{name}</h3>
+          <h3 className="text-14 font-bold leading-none tracking-wider text-gray-60">{name}</h3>
           <ul className="mt-7 flex flex-col gap-6">
             {items.map(({ name: childName, linkUrl, isExternal, withGithubIcon }, childIdx) => (
               <li className="leading-none" key={childIdx}>
