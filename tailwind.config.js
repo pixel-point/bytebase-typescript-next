@@ -108,7 +108,14 @@ module.exports = {
       wide: '0.01em',
       wider: '0.02em',
     },
+    backgroundImage: {
+      'pricing-hero':
+        'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
+    },
     extend: {
+      lineHeight: {
+        'extra-tight': '1.125',
+      },
       spacing: {
         4.5: '1.125rem',
       },
