@@ -12,13 +12,13 @@ const styles = {
   },
   theme: {
     'primary-filled':
-      'text-white bg-primary-1 hover:bg-primary-2 disabled:tones-purple-dark tracking-tighter rounded-full',
+      'text-white bg-primary-1 hover:bg-primary-2 disabled:tones-purple-dark tracking-wide rounded-full',
     'primary-outline':
-      'text-black border-[3px] border-primary-1 hover:border-gray-15 disabled:text-gray-60 disabled:border-tones-purple-dark rounded-full tracking-tighter',
+      'text-black border-[3px] border-primary-1 hover:border-gray-15 disabled:text-gray-60 disabled:border-tones-purple-dark rounded-full tracking-wide',
     'gray-filled':
-      'bg-gray-15 text-white hover:bg-gray-40 disabled:bg-gray-80 tracking-tighter rounded-full',
+      'bg-gray-15 text-white hover:bg-gray-40 disabled:bg-gray-80 tracking-wide rounded-full',
     'green-underline':
-      'text-black border-b-[3px] border-secondary-2 pb-4.5 hover:border-tones-green-dark tracking-tight disabled:text-gray-60 disabled:border-tones-purple-dark',
+      'text-black border-b-[3px] border-secondary-2 pb-4.5 hover:border-tones-green-dark tracking-wide disabled:text-gray-60 disabled:border-tones-purple-dark',
   },
 };
 

@@ -105,7 +105,8 @@ module.exports = {
       tighter: '-0.025em',
       tight: '-0.02em',
       normal: '0',
-      wide: '0.02em',
+      wide: '0.01em',
+      wider: '0.02em',
     },
     extend: {
       spacing: {
@@ -113,6 +114,7 @@ module.exports = {
       },
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
+        pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
       },
     },
   },
