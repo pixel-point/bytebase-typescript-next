@@ -1,3 +1,9 @@
+import Hero from '@/components/pages/pricing/hero';
+
 export default function Page() {
-  return <h1>Pricing</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
