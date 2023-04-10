@@ -94,7 +94,6 @@ const Footer = () => (
           </Link>
         ))}
       </div>
-
       <div className="col-start-10 lg:col-start-11 flex items-center gap-x-8 lg:gap-x-6 lg:mt-1 md:col-start-10 md:row-start-2 md:col-span-3 md:justify-self-end xs:row-start-3 xs:justify-self-start xs:col-start-1">
         <Link
           additionalClassName="text-16 xs:text-14 font-medium leading-none tracking-tight"
