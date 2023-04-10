@@ -73,6 +73,7 @@ const Card = ({
         <ul className="flex flex-col gap-y-4">
           {planConditions.map((condition, index) => (
             <li className="flex items-center gap-x-2" key={index}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="w-5 h-5 shrink-0" src="/images/check.svg" alt="" />
               <span className="text-15 leading-none text-gray-15">{condition}</span>
             </li>

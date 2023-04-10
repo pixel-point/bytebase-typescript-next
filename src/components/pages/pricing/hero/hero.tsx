@@ -93,15 +93,19 @@ const Hero = () => {
           </p>
           <ul className="flex items-center gap-x-16 mt-11 justify-center">
             <li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/pricing/microsoft.svg" alt="Microsoft logo" />
             </li>
             <li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/pricing/google.svg" alt="Google logo" />
             </li>
             <li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/pricing/ant-group.svg" alt="Ant Group logo" />
             </li>
             <li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/pricing/pingcap.svg" alt="Pingcap logo" />
             </li>
           </ul>
@@ -115,7 +119,7 @@ const Hero = () => {
         </ul>
         <p className="mt-9 text-15 leading-snug text-center text-gray-40">
           You can upgrade, downgrade, or{' '}
-          <Link size="sm" to="" theme="primary-1">
+          <Link size="sm" to="/refund" theme="primary-1">
             cancel your subscription
           </Link>{' '}
           anytime. No hidden charges.
