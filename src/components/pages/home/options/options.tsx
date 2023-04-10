@@ -30,7 +30,7 @@ const Options = () => {
       description:
         '100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the organization.',
       image: '/images/git-ops.png',
-      index: 3,
+      index: 4,
     },
   ];
 
