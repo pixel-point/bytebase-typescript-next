@@ -1,6 +1,7 @@
 // TODO: add tooltip values
+import { Plan } from '@/types/pricing';
 
-const PLANS = {
+const PLANS: { free: Plan; team: Plan; enterprise: Plan } = {
   free: {
     title: 'Free',
     description: 'Personal project or small team, no DBA',

@@ -16,7 +16,7 @@ const Table = () => {
     const cells = document.querySelectorAll(`[data-row-id]`);
 
     cells.forEach((cell) => {
-      const rowId = cell.getAttribute('data-row-id');
+      const rowId = cell.getAttribute('data-row-id') || '';
 
       cell.addEventListener('mouseenter', () => setCurrentRow(rowId));
       cell.addEventListener('mouseleave', () => setCurrentRow(''));
@@ -24,7 +24,7 @@ const Table = () => {
 
     return () => {
       cells.forEach((cell) => {
-        const rowId = cell.getAttribute('data-row-id');
+        const rowId = cell.getAttribute('data-row-id') || '';
 
         cell.removeEventListener('mouseenter', () => setCurrentRow(rowId));
         cell.removeEventListener('mouseleave', () => setCurrentRow(''));

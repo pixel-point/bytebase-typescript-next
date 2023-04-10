@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import { Item } from '@/types/pricing';
+
 const presentFeature = <img src="/images/check.svg" alt="Present Feature" className="h-6 w-6" />;
 const missingFeature = <img src="/images/cross.svg" className="h-6 w-6" alt="Missing Feature" />;
 
@@ -16,7 +18,7 @@ const renderFeature = (feature: boolean | { value: string; tooltip: string } | s
 };
 
 type FeatureListProps = {
-  features: Record<string, unknown>;
+  features: Item;
   currentRow: string;
   isLastSection?: boolean;
 };

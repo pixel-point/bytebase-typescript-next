@@ -2,23 +2,9 @@ import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 
-import FeatureList from './feature-list';
+import { Plan } from '@/types/pricing';
 
-type PlanCardProps = {
-  title: string;
-  description: string;
-  additionalDescription?: string;
-  buttonText: string;
-  buttonUrl: string;
-  buttonTheme: 'primary-filled' | 'primary-outline';
-  changeManagement: Record<string, string>;
-  sql: Record<string, string>;
-  security: Record<string, string>;
-  bespoke: Record<string, string>;
-  collaboration: Record<string, string>;
-  className: string;
-  currentRow: string;
-};
+import FeatureList from './feature-list';
 
 const colors = { team: '#5647EB', free: '#3DB8F5', enterprise: '#172136' };
 
@@ -36,7 +22,10 @@ const PlanCard = ({
   collaboration,
   className,
   currentRow,
-}: PlanCardProps) => {
+}: Plan & {
+  className: string;
+  currentRow: string;
+}) => {
   const planColor = colors[title.toLowerCase() as keyof typeof colors];
 
   return (
