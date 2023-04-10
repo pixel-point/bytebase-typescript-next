@@ -35,10 +35,15 @@ const Accordion: FC<AccordionProps> = ({ title, description, image, index }) => 
     isOpen ? '!ml-0 text-44 font-bold leading-[112.5%] -tracking-[0.04em]' : ''
   }`;
 
+  const buttonClass = `py-[26px] ${isOpen ? 'py-0' : ''}`;
+
   return (
     <div className={backgroundColor}>
       <div
-        className="cursor-pointer container grid grid-cols-12 gap-x-10 items-center py-[26px]  "
+        className={clsx(
+          'cursor-pointer container grid grid-cols-12 gap-x-10 2xl:gap-x-9 items-center py-[26px]',
+          buttonClass,
+        )}
         onClick={handleToggle}
       >
         {isOpen ? (
@@ -93,7 +98,7 @@ const Accordion: FC<AccordionProps> = ({ title, description, image, index }) => 
                   className="order-2 flex-shrink-0 translate-x-3"
                   src={image}
                   width={590}
-                  height={320}
+                  height={418}
                   alt=""
                 />
               </div>
