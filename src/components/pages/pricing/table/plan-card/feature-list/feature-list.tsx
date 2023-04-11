@@ -23,12 +23,14 @@ type FeatureListProps = {
   features: Item;
   currentRow: string;
   isLastSection?: boolean;
+  withLongTitle?: boolean;
 };
 
-const FeatureList = ({ features, currentRow, isLastSection }: FeatureListProps) => (
+const FeatureList = ({ features, currentRow, isLastSection, withLongTitle }: FeatureListProps) => (
   <div
     className={clsx(
-      '[&:nth-child(2)]:mt-[19px] mt-[85px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center',
+      '[&:nth-child(2)]:mt-[19px] mt-[85px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center md:[&:nth-child(2)]:mt-[29px]',
+      { 'md:mt-[110px]': withLongTitle },
       { 'last:border-b-0': isLastSection },
     )}
   >

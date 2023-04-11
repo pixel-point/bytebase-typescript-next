@@ -33,18 +33,18 @@ const Table = () => {
     };
   }, []);
   return (
-    <section className="pt-20 xl:pt-16 md:pt-7">
-      <div className="container max-w-[1220px] px-0 2xl:px-12 2xl:max-w-full relative">
+    <section className="pt-20 xl:pt-16 md:pt-[26px]">
+      <div className="mx-auto max-w-[1220px] 2xl:px-12 xl:px-11 md:px-7 sm:px-4 2xl:max-w-full relative">
         <Image
           src="/images/pricing/table-decor.png"
           width={338}
           height={330}
           alt=""
-          className="absolute -top-[135px] -left-9 2xl:left-24 z-40 lg:w-[280px] lg:h-auto md:w-[162px] lg:-top-[100px] lg:left-11"
+          className="absolute -top-[135px] -left-9 2xl:left-24 z-40 lg:w-[280px] lg:h-auto md:w-[162px] lg:-top-[100px] lg:left-11 md:-top-10 md:left-7"
         />
-        <div className="lg:scrollbar-hidden mx-auto lg:overflow-x-auto lg:-mx-11 lg:px-11 md:-mx-7 md:px-7">
-          <div className="grid grid-cols-10 2xl:grid-cols-12 items-start relative">
-            <div className="col-span-3 2xl:col-span-4 relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
+        <div className="lg:scrollbar-hidden max-w-[1220px] mx-auto lg:overflow-x-auto lg:-mr-11 lg:pr-11 md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
+          <div className="flex items-start relative">
+            <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] lg:max-w-[321px] md:min-w-[244px] relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
               <div className="z-30 sticky top-0 left-0 bg-white h-[222px] w-full lg:h-[216px]" />
               <div className="bg-white z-20">
                 {LABELS.map(({ title, items }, index) => (
@@ -79,7 +79,7 @@ const Table = () => {
                 ))}
               </div>
             </div>
-            <div className="col-span-7 2xl:col-span-8 flex">
+            <div className="flex">
               {Object.keys(PLANS).map((plan, index) => (
                 <PlanCard
                   className="basis-1/3 grow"

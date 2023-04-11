@@ -31,7 +31,7 @@ const PlanCard = ({
   return (
     <div
       className={clsx(
-        'relative flex flex-col text-center border border-tones-purple-dark lg:max-w-[204px]',
+        'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px]',
         className,
         { 'bg-[#F9FAFF] border-l-0 border-r-0': title.toLowerCase() === 'team' },
       )}
@@ -43,7 +43,7 @@ const PlanCard = ({
         )}
         style={{ borderTopColor: planColor }}
       >
-        <h3 className="font-title text-56 leading-none lg:text-44">{title}</h3>
+        <h3 className="font-title text-56 leading-none lg:text-44 md:text-34">{title}</h3>
         <p
           className="mt-3 text-14 leading-tight tracking-tight text-gray-40 max-w-[244px] mx-auto lg:mt-2 lg:min-h-[54px]"
           dangerouslySetInnerHTML={{ __html: description }}
@@ -71,7 +71,7 @@ const PlanCard = ({
       <FeatureList features={changeManagement} currentRow={currentRow} />
       <FeatureList features={sql} currentRow={currentRow} />
       <FeatureList features={collaboration} currentRow={currentRow} />
-      <FeatureList features={security} currentRow={currentRow} />
+      <FeatureList features={security} currentRow={currentRow} withLongTitle />
       <FeatureList features={bespoke} currentRow={currentRow} isLastSection />
     </div>
   );
