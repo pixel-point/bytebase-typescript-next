@@ -50,6 +50,7 @@ const Card = ({
           height={240}
           alt={planTitle}
           className="mt-3 lg:w-[220px] md:w-[180px]"
+          priority
         />
         <span
           className={clsx(
