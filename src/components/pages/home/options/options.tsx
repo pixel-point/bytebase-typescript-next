@@ -1,8 +1,22 @@
 'use client';
 
-import Accordion from './components/Accordion';
+import { useCallback, useState } from 'react';
 
-const Options = () => {
+import Accordion from './components';
+
+const PromoOptions = () => {
+  const defaultOpenPanelId = 0;
+  const [activePanelId, setActivePanelId] = useState<number | undefined>(defaultOpenPanelId);
+
+  const createHandleToggle = useCallback(
+    (id: number) => () => {
+      setActivePanelId((prevId) => {
+        return prevId === id ? undefined : id;
+      });
+    },
+    [],
+  );
+
   const options = [
     {
       title: 'Auto style and anti-patterns checks',
@@ -43,7 +57,9 @@ const Options = () => {
               title={option.title}
               description={option.description}
               image={option.image}
-              index={index}
+              isOpenExternal={index === activePanelId}
+              defaultOpen={index === defaultOpenPanelId}
+              onChange={createHandleToggle(index)}
             />
           </li>
         ))}
@@ -52,4 +68,4 @@ const Options = () => {
   );
 };
 
-export { Options };
+export default PromoOptions;

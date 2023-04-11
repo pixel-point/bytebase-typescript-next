@@ -1,1 +1,3 @@
-export { Databases } from './databases';
+import Databases from './databases';
+
+export default Databases;

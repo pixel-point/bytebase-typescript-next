@@ -1,1 +1,3 @@
-export { SubscriptionForm } from './subscription-form';
+import SubscriptionForm from './subscription-form';
+
+export default SubscriptionForm;

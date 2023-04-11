@@ -3,7 +3,7 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 import Route from '@/lib/route';
 
-import { Card } from './card';
+import Card from './card';
 
 const Hero = () => {
   type TCard = {
@@ -72,4 +72,4 @@ const Hero = () => {
   );
 };
 
-export { Hero };
+export default Hero;

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 
-const Change = () => {
+const PromoChangeDatabase = () => {
   return (
     <section className="change mt-[160px] 2xl:mt-36 xl:mt-32 lg:mt-24 md:mt-20 bg-black text-white lg:pt-16">
       <div className="container grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5">
@@ -67,4 +67,4 @@ const Change = () => {
   );
 };
 
-export { Change };
+export default PromoChangeDatabase;

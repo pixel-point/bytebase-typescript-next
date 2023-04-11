@@ -24,4 +24,4 @@ const Databases = () => {
   );
 };
 
-export { Databases };
+export default Databases;

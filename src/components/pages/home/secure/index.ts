@@ -1,1 +1,3 @@
-export { Secure } from './secure';
+import PromoSecureAccess from './secure';
+
+export default PromoSecureAccess;

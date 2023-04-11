@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Query = () => {
+const PromoQuery = () => {
   return (
     <section className="query mt-[94px] container relative">
       <header className="pt-[66px]">
@@ -62,4 +62,4 @@ const Query = () => {
   );
 };
 
-export { Query };
+export default PromoQuery;

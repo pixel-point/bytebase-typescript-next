@@ -1,2 +1,5 @@
 'use client';
-export { Options } from './options';
+
+import PromoOptions from './options';
+
+export default PromoOptions;

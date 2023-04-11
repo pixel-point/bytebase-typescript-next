@@ -1,4 +1,4 @@
-import { Card } from './card';
+import Card from './card';
 
 const Features = () => {
   type TCard = {
@@ -54,4 +54,4 @@ const Features = () => {
   );
 };
 
-export { Features };
+export default Features;

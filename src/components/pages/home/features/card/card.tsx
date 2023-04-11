@@ -33,4 +33,4 @@ const Card: FC<CardProps> = ({ icon, title, href, description }) => {
   );
 };
 
-export { Card };
+export default Card;

@@ -37,4 +37,4 @@ const Card: FC<CardProps> = ({ cover, title, href, description }) => {
   );
 };
 
-export { Card };
+export default Card;

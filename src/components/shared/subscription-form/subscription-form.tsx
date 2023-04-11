@@ -49,4 +49,4 @@ const SubscriptionForm = () => {
   );
 };
 
-export { SubscriptionForm };
+export default SubscriptionForm;
