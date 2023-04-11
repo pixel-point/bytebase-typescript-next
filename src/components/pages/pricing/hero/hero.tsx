@@ -78,8 +78,8 @@ const Hero = () => {
   ];
 
   return (
-    <section className="hero pt-[120px] bg-pricing-hero pb-20">
-      <div className="container max-w-[1396px]">
+    <section className="hero pt-[120px] 2xl:pt-[108px] bg-pricing-hero pb-20">
+      <div className="container max-w-[1396px] 2xl:max-w-full">
         <header className="text-center">
           <h1 className="sr-only">Bytebase pricing page</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}

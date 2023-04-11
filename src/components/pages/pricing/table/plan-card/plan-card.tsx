@@ -31,20 +31,23 @@ const PlanCard = ({
   return (
     <div
       className={clsx(
-        'relative flex flex-col text-center border border-tones-purple-dark max-w-[280px]',
+        'relative flex flex-col text-center border border-tones-purple-dark',
         className,
         { 'bg-[#F9FAFF] border-l-0 border-r-0': title.toLowerCase() === 'team' },
       )}
     >
       <div
         className={clsx(
-          'border-t-8 sticky top-0 flex flex-col px-4.5 pt-6 min-h-[250px]',
+          'border-t-8 sticky top-0 flex flex-col px-4.5 2xl:px-6 pt-6 min-h-[250px]',
           title.toLowerCase() === 'team' ? 'bg-[#F9FAFF]' : 'bg-white',
         )}
         style={{ borderTopColor: planColor }}
       >
         <h3 className="font-title text-56 leading-none">{title}</h3>
-        <p className="mt-3 text-14 leading-tight tracking-tight text-gray-40">{description}</p>
+        <p
+          className="mt-3 text-14 leading-tight tracking-tight text-gray-40 2xl:max-w-[244px] 2xl:mx-auto"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
         <Button
           theme={buttonTheme}
           size="md"

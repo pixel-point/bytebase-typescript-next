@@ -4,7 +4,7 @@ import { Plan } from '@/types/pricing';
 const PLANS: { free: Plan; team: Plan; enterprise: Plan } = {
   free: {
     title: 'Free',
-    description: 'Personal project or small team, no DBA',
+    description: `Personal project or small team, no&nbsp;DBA`,
     buttonText: 'Free Deploy',
     buttonTheme: 'primary-outline',
     buttonUrl: '/docs/get-started/install/deploy-with-docker',
@@ -188,7 +188,7 @@ const LABELS = [
     },
   },
   {
-    title: 'SQL editor',
+    title: 'SQL Editor',
     items: {
       'auto-complete': 'Auto complete',
       'schema editor': 'Schema editor',

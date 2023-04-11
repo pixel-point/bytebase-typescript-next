@@ -33,25 +33,25 @@ const Table = () => {
   }, []);
   return (
     <section className="mt-20">
-      <div className="container max-w-[1386px] relative">
+      <div className="container max-w-[1220px] px-0 2xl:px-12 2xl:max-w-full relative">
         <Image
           src="/images/pricing/table-decor.png"
           width={338}
           height={330}
           alt=""
-          className="absolute -top-[135px] left-9 z-30 lg:w-[280px] lg:h-auto md:w-[162px]"
+          className="absolute -top-[135px] -left-9 2xl:left-24 z-30 lg:w-[280px] lg:h-auto md:w-[162px]"
         />
-        <div className="lg:scrollbar-hidden mx-auto mt-16 max-w-[1220px] lg:overflow-x-scroll">
-          <div className="grid min-w-[940px] grid-cols-10 items-start relative">
-            <div className="col-span-3 relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
+        <div className="lg:scrollbar-hidden mx-auto mt-16 lg:overflow-x-scroll lg:-mx-7 lg:px-7 md:-mx-4 md:px-4">
+          <div className="grid grid-cols-10 2xl:grid-cols-12 items-start relative">
+            <div className="col-span-3 2xl:col-span-4 relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
               <div className="bg-white h-[222px] w-full" />
-              <div className="-ml-3 lg:ml-0 sticky top-1 bg-white z-20 left-0">
+              <div className="sticky top-1 bg-white z-20 left-0">
                 {LABELS.map(({ title, items }, index) => (
                   <div
-                    className="relative mt-11 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
+                    className="relative mt-7 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
                     key={index}
                   >
-                    <p className="py-4 sticky top-0 bg-white text-24 font-bold leading-none lg:min-h-[50px] xl:text-20 xl:leading-tight">
+                    <p className="py-4 sticky top-0 bg-white text-24 font-bold leading-none xl:text-20 xl:leading-tight">
                       {title}
                     </p>
                     <ul className="flex flex-col divide-y divide-black divide-opacity-10">
@@ -77,7 +77,7 @@ const Table = () => {
                 ))}
               </div>
             </div>
-            <div className="col-span-7 flex">
+            <div className="col-span-7 2xl:col-span-8 flex">
               {Object.keys(PLANS).map((plan, index) => (
                 <PlanCard
                   className="basis-1/3 grow"
