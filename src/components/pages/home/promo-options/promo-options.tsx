@@ -18,7 +18,7 @@ const options = [
     description:
       '100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the organization.',
     image: '/images/batch-schemas.png',
-    imageMobile: '/images/batch-schemas.png',
+    imageMobile: '/images/batch-schemas-md.png',
     index: 2,
   },
   {
@@ -26,7 +26,7 @@ const options = [
     description:
       '100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the organization.',
     image: '/images/online-schemas.png',
-    imageMobile: '/images/online-schemas.png',
+    imageMobile: '/images/online-schemas-md.png',
     index: 3,
   },
   {
@@ -34,7 +34,7 @@ const options = [
     description:
       '100+ lint rules to detect SQL anti-patterns and enforce consistent SQL style in the organization.',
     image: '/images/git-ops.png',
-    imageMobile: '/images/git-ops.png',
+    imageMobile: '/images/git-ops-md.png',
     index: 4,
   },
 ];

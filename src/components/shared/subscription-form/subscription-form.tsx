@@ -26,7 +26,7 @@ const SubscriptionForm = () => {
             </p>
             <p className="mt-7 xl:mt-5 lg:mt-[10px] md:mt-4 flex relative">
               <input
-                className="remove-autocomplete-styles outline-none flex-grow py-6 xl:py-4 px-7 md:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
+                className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 xl:py-4 px-7 md:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
                 type="text"
                 placeholder="Your email address..."
               />

@@ -42,8 +42,8 @@ const Accordion = ({
       <div
         className={clsx(
           isOpen
-            ? 'cursor-pointer py-0 lg:pt-12 md:pt-10 container grid grid-cols-12 md:grid-cols-4 grid-gap items-center'
-            : 'container border-none py-[26px] lg:py-6 md:py-5',
+            ? 'cursor-pointer container py-0 lg:pt-12 md:pt-10 grid grid-cols-12 md:grid-cols-4 grid-gap items-center'
+            : 'cursor-pointer container border-none py-[26px] lg:py-6 md:py-5',
         )}
         onClick={handleClick}
       >
@@ -56,7 +56,6 @@ const Accordion = ({
               alt=""
               className="w-14 xl:w-11 lg:w-9 md:w-6 h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0"
             />
-            {/* <AccordionIcon className="h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0" /> */}
             <div className="ml-[30px] xl:ml-6 lg:ml-4 md:ml-3">
               <p
                 className={clsx(
@@ -83,7 +82,6 @@ const Accordion = ({
               alt=""
               className="h-11 w-11 xl:w-[38px] xl:h-[38px] lg:w-8 lg:h-8 md:w-7 md:h-7 rounded-[100%] shrink-0"
             />
-            {/* <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" /> */}
             <div
               className={clsx(
                 isOpen
