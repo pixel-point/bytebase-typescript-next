@@ -3,12 +3,11 @@ import NextLink from 'next/link';
 
 import DiscordIcon from '@/svgs/discord.inline.svg';
 import GithubIcon from '@/svgs/github.inline.svg';
-import PlusIcon from '@/svgs/plus-icon.inline.svg';
 import TwitterIcon from '@/svgs/twitter.inline.svg';
 
 const Community = () => {
   return (
-    <section className="community mt-[160px] 2xl:mt-36 xl:mt-32 lg:mt-24 md:mt-20 pb-[80px] container">
+    <section className="mt-[160px] 2xl:mt-36 xl:mt-32 lg:mt-24 md:mt-20 pb-[80px] container">
       <header className="flex 2xl:justify-between md:flex-col">
         <div className="mt-[104px] 2xl:mt-[98px] xl:mt-14 lg:mt-12 md:mt-0 flex flex-col max-w-[630px] 2xl:max-w-[575px] lg:max-w-[456px] ">
           <div className="font-title font-semibold leading-none text-112 xl:text-90 lg:text-80 md:text-56">
@@ -16,7 +15,12 @@ const Community = () => {
               <mark className="bg-transparent text-primary-1 flex items-center">
                 <span>Join</span>
               </mark>
-              <PlusIcon className="w-20 h-20 xl:h-[62px] xl:w-[62px] lg:w-[55px] lg:h-[55px] md:h-[39px] md:w-[39px] ml-[6px] mr-[6px] mt-[14px] lg:mt-2 md:mt-2" />
+              <img
+                src="/images/plus-icon.svg"
+                alt=""
+                className="w-20 h-20 xl:h-[62px] xl:w-[62px] lg:w-[55px] lg:h-[55px] md:h-[39px] md:w-[39px] ml-[6px] mr-[6px] mt-[14px] lg:mt-2 md:mt-2"
+              />
+              {/* <PlusIcon className="w-20 h-20 xl:h-[62px] xl:w-[62px] lg:w-[55px] lg:h-[55px] md:h-[39px] md:w-[39px] ml-[6px] mr-[6px] mt-[14px] lg:mt-2 md:mt-2" /> */}
               <span>the</span>
             </span>
             <p>community</p>
@@ -37,7 +41,7 @@ const Community = () => {
           />
         </div>
       </header>
-      <ul className="mt-11 2xl:mt-7 xl:mt-8 md:-mt-20 grid grid-cols-3 grid-gap 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 text-center md:flex md:flex-col md:[&>li]:translate-y-0 md:[&>li]:mt-4">
+      <ul className="mt-11 2xl:mt-7 xl:mt-8 md:-mt-20 grid grid-cols-3 grid-gap text-center md:flex md:flex-col md:[&>li]:translate-y-0 md:[&>li]:mt-4">
         <li className="flex flex-col items-center justify-between -translate-y-[132px] 2xl:-translate-y-[128px] xl:-translate-y-[57px] bg-tones-purple-light p-9 2xl:p-[31px] xl:p-[19px] lg:p-[19px] md:-[23px] pb-14 xl:pb-8 border shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)] border-tones-purple-dark md:items-start">
           <div>
             <div className="flex flex-col items-center md:flex-row md:[&>p]:mt-0 md:[&>p]:ml-4">

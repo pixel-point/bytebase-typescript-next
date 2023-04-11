@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 interface CardProps {
@@ -9,7 +7,7 @@ interface CardProps {
   description: string;
 }
 
-const Card: FC<CardProps> = ({ icon, title, href, description }) => {
+const Card = ({ icon, title, href, description }: CardProps) => {
   return (
     <article className="">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -26,7 +24,7 @@ const Card: FC<CardProps> = ({ icon, title, href, description }) => {
       <p className="mt-4 xl:mt-3 lg:mt-[6px] text-20 xl:text-18 lg:text-16 leading-[150%] xl:leading-6 lg:leading-[22px] md:max-w-[296px]">
         {description}
       </p>
-      <LinkUnderlined className="mt-6 xl:mt-5 lg:mt-3" to="">
+      <LinkUnderlined className="mt-6 xl:mt-5 lg:mt-3" to={href}>
         Learn more
       </LinkUnderlined>
     </article>

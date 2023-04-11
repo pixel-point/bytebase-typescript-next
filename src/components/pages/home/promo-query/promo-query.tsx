@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const PromoQuery = () => {
   return (
-    <section className="query mt-[94px] container relative">
+    <section className="mt-[94px] container relative">
       <header className="pt-[66px]">
         <Image
           className="absolute top-0 right-[156px]"

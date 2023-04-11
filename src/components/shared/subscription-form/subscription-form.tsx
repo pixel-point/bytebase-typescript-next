@@ -3,13 +3,11 @@ import NextLink from 'next/link';
 
 import Route from '@/lib/route';
 
-import ArrowFormIcon from '@/svgs/arrow-form.inline.svg';
-
 const SubscriptionForm = () => {
   return (
-    <section className="subscriptionForm mt-[205px] 2xl:mt-[189px] xl:mt-[156px] lg:mt-[114px] bg-primary-1 text-white">
+    <section className="mt-[205px] 2xl:mt-[189px] xl:mt-[156px] lg:mt-[114px] bg-primary-1 text-white">
       <h2 className="sr-only">Subscribtion form</h2>
-      <div className="container grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 md:flex md:flex-col overflow-x-clip">
+      <div className="container grid grid-cols-12 grid-gap md:flex md:flex-col overflow-x-clip">
         <div className="col-start-2 -ml-10 xl:ml-0 col-span-5 xl:col-start-1 md:relative">
           <Image
             className="-mt-[46px] xl:-mt-6 -mb-[22px] xl:h-[422px] xl:w-[376px] lg:w-[305px] lg:h-[342px] md:h-[201px] md:w-[170px] md:absolute md:-right-[44px] md:-top-[20px] md:-rotate-[15deg]"
@@ -34,7 +32,7 @@ const SubscriptionForm = () => {
               />
               <button className="flex-shrink-0 bg-black py-6 xl:py-4 px-11 md:px-5 md:py-3 rounded-r-full uppercase">
                 <span className="lg:hidden">Subscibe</span>{' '}
-                <ArrowFormIcon className="hidden lg:!block w-6 h-6" />
+                <img src="/images/arrow-form.svg" alt="" className="hidden lg:!block w-6 h-6" />
               </button>
             </p>
             <p className="mt-5 xl:mt-3 md:mt-2 [&>a]:border-b-[2px] [&>a]:border-[#FFFFFF40] [&>a]:pb-[3px] text-14 leading-[137.5%] xl:max-w-[290px]">

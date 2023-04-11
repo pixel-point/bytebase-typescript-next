@@ -5,40 +5,40 @@ import Route from '@/lib/route';
 
 import Card from './card';
 
+type TCard = {
+  cover: '/images/change-database.png' | '/images/query-data.png' | '/images/secure-access.png';
+  href: string;
+  title: string;
+  description: string;
+};
+
+const cards: TCard[] = [
+  {
+    href: '#',
+    cover: '/images/change-database.png',
+    title: 'Change database',
+    description:
+      'Simplify database changes with standardization, lint rules, and GitOps integration.',
+  },
+  {
+    href: '#',
+    cover: '/images/query-data.png',
+    title: 'Query data',
+    description:
+      "Perform complex SQL tasks and protect data privacy with ByteBase's web-based IDE.",
+  },
+  {
+    href: '#',
+    cover: '/images/secure-access.png',
+    title: 'Secure access',
+    description:
+      'Eliminate administrative complexity and ensure compliance with one-stop resource management.',
+  },
+];
+
 const Hero = () => {
-  type TCard = {
-    cover: '/images/change-database.png' | '/images/query-data.png' | '/images/secure-access.png';
-    href: string;
-    title: string;
-    description: string;
-  };
-
-  const cards: TCard[] = [
-    {
-      href: '#',
-      cover: '/images/change-database.png',
-      title: 'Change database',
-      description:
-        'Simplify database changes with standardization, lint rules, and GitOps integration.',
-    },
-    {
-      href: '#',
-      cover: '/images/query-data.png',
-      title: 'Query data',
-      description:
-        "Perform complex SQL tasks and protect data privacy with ByteBase's web-based IDE.",
-    },
-    {
-      href: '#',
-      cover: '/images/secure-access.png',
-      title: 'Secure access',
-      description:
-        'Eliminate administrative complexity and ensure compliance with one-stop resource management.',
-    },
-  ];
-
   return (
-    <section className="hero mt-[128px] container grid grid-cols-12 grid-gap">
+    <section className="mt-[128px] container grid grid-cols-12 grid-gap">
       <header className="mt-6 row-start-2 col-span-7 relative">
         <h1 className="font-title font-semibold leading-none text-112">
           <mark className="bg-transparent text-primary-1">Database</mark> schema change and version

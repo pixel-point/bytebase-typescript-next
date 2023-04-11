@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import { FC } from 'react';
-
 import clsx from 'clsx';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
@@ -13,7 +11,7 @@ interface CardProps {
   description: string;
 }
 
-const Card: FC<CardProps> = ({ cover, title, href, description }) => {
+const Card = ({ cover, title, href, description }: CardProps) => {
   return (
     <article>
       <Image

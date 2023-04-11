@@ -19,6 +19,18 @@
 
   .grid-gap {
     @apply gap-x-10;
+
+    @screen 2xl {
+      @apply gap-x-9;
+    }
+
+    @screen xl {
+      @apply gap-x-6;
+    }
+
+    @screen lg {
+      @apply gap-x-5;
+    }
   }
 
   .logos {

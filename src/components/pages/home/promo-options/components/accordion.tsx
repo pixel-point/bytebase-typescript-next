@@ -1,11 +1,8 @@
 import Image from 'next/image';
 
-import { FC, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import clsx from 'clsx';
-
-import AccordionIconClosed from '@/svgs/accordion-arrow-closed.inline.svg';
-import AccordionIcon from '@/svgs/accordion-arrow.inline.svg';
 
 interface AccordionProps {
   title: string;
@@ -16,14 +13,14 @@ interface AccordionProps {
   defaultOpen?: boolean;
 }
 
-const Accordion: FC<AccordionProps> = ({
+const Accordion = ({
   title,
   description,
   image,
   defaultOpen,
   onChange,
   isOpenExternal,
-}) => {
+}: AccordionProps) => {
   const [isOpenLocal, setIsOpenLocal] = useState(defaultOpen);
   const isOpen = onChange ? isOpenExternal : isOpenLocal;
 
@@ -32,34 +29,42 @@ const Accordion: FC<AccordionProps> = ({
   }, []);
   const handleClick = onChange || handleToggleLocalIsOpen;
 
-  const backgroundColor = `bg-cite bg-tones-purple-light border-t-[1px] border-b-[1px] border-white ${
-    isOpen ? 'bg-opacity-50' : ''
-  }`;
-
-  const titleText = `ml-7 text-30 font-bold leading-[112.5%] -tracking-[0.04em] ${
-    isOpen
-      ? '!ml-0 text-44 xl:text-36 lg:text-30 md:text-24 font-bold leading-[112.5%] -tracking-[0.04em]'
-      : ''
-  }`;
-
-  const buttonClass = `py-[26px] ${isOpen ? '!py-0 lg:!pt-8 md:!pt-6' : ''}`;
-
   return (
-    <div className={backgroundColor}>
+    <div
+      className={clsx(
+        isOpen
+          ? 'bg-opacity-50 bg-tones-purple-light'
+          : 'bg-cite bg-tones-purple-light border-t-[1px] border-b-[1px] border-white',
+      )}
+    >
       <div
         className={clsx(
-          'cursor-pointer container grid grid-cols-12 md:grid-cols-4 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 items-center',
-          buttonClass,
+          isOpen
+            ? 'cursor-pointer py-0 lg:pt-12 md:pt-10 container grid grid-cols-12 md:grid-cols-4 grid-gap items-center'
+            : 'container border-none py-[26px] lg:py-6 md:py-5',
         )}
         onClick={handleClick}
       >
         {isOpen ? (
           <div
-            className={clsx('flex col-start-1 col-end-8 xl:col-end-7 lg:col-end-13 md:col-end-5')}
+            className={clsx(' flex col-start-1 col-end-8 xl:col-end-7 lg:col-end-13 md:col-end-5')}
           >
-            <AccordionIcon className="h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0" />
+            <img
+              src="/images/accordion-arrow.svg"
+              alt=""
+              className="w-14 xl:w-11 lg:w-9 md:w-6 h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0"
+            />
+            {/* <AccordionIcon className="h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0" /> */}
             <div className="ml-[30px] xl:ml-6 lg:ml-4 md:ml-3">
-              <p className={titleText}>{title}</p>
+              <p
+                className={clsx(
+                  isOpen
+                    ? 'font-bold leading-[112.5%] -tracking-[0.04em] ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
+                    : 'ml-7 text-30',
+                )}
+              >
+                {title}
+              </p>
               {isOpen && (
                 <div className="order-1 flex-grow col-start-1 col-end-8 md:col-end-5">
                   <p className="mt-4.5 xl:mt-2 lg:mt-1.5 text-18 xl:text-16 lg:text-14 leading-none 2xl:max-w-[604px] xl:!max-w-[538px]">
@@ -71,8 +76,19 @@ const Accordion: FC<AccordionProps> = ({
           </div>
         ) : (
           <div className="flex items-center col-start-1 col-end-8">
-            <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" />
-            <div className={titleText}>
+            <img
+              src="/images/accordion-arrow-closed.svg"
+              alt=""
+              className="h-11 w-11 xl:w-[38px] xl:h-[38px] lg:w-8 lg:h-8 md:w-7 md:h-7 rounded-[100%] shrink-0"
+            />
+            {/* <AccordionIconClosed className="h-11 rounded-[100%] shrink-0" /> */}
+            <div
+              className={clsx(
+                isOpen
+                  ? 'font-bold leading-[112.5%] -tracking-[0.04em] ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
+                  : 'font-bold leading-[112.5%] -tracking-[0.04em] ml-7 xl:ml-6 lg:ml-4 md:ml-3 text-30 xl:text-24 lg:text-20 md:text-18',
+              )}
+            >
               {title}
               {isOpen && (
                 <div className="order-1 flex-grow col-start-1 col-end-8">
@@ -82,7 +98,6 @@ const Accordion: FC<AccordionProps> = ({
             </div>
           </div>
         )}
-
         {isOpen && (
           <div className="col-start-8 xl:col-start-7 col-end-13 lg:col-start-2 lg:col-end-12 md:col-start-1 md:col-end-5">
             <div>

@@ -8,9 +8,28 @@ import ExternalIcon from '@/svgs/external.inline.svg';
 import GithubIcon from '@/svgs/github.inline.svg';
 import TwitterIcon from '@/svgs/twitter.inline.svg';
 
+const links = [
+  {
+    name: 'Discord',
+    icon: DiscordIcon,
+    href: Route.DISCORD,
+  },
+  {
+    name: 'Twitter',
+    icon: TwitterIcon,
+    href: Route.TWITTER,
+  },
+
+  {
+    name: 'Github',
+    icon: GithubIcon,
+    href: Route.GITHUB,
+  },
+];
+
 const Footer = () => (
   <footer className="pt-20 xl:pt-14 md:pt-12 sm:pt-10 safe-paddings z-50 shrink-0 container">
-    <div className="grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 md:grid-cols-4 md:gap-x-4 md:gap-y-10">
+    <div className="grid grid-cols-12 grid-gap md:grid-cols-4 md:gap-x-4 md:gap-y-10">
       {MENUS.footer.map(({ name, items }, idx) => (
         <div
           className="col-span-3 lg:last:col-start-11 lg:last:col-span-2 lg:last:justify-self-center lg:[&:nth-child(3)]:justify-self-center md:col-span-2 md:!justify-self-start md:last:col-start-3"
@@ -40,7 +59,7 @@ const Footer = () => (
         </div>
       ))}
     </div>
-    <div className="mt-20 xl:mt-16 grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 sm:gap-x-0 py-6 border-t-4 border-tones-purple-light lg:grid-rows-2 lg:gap-y-6 lg:py-5 sm:grid-rows-4 lg:mt-[50px] sm:mt-[42px]">
+    <div className="mt-20 xl:mt-16 grid grid-cols-12 grid-gap sm:gap-x-0 py-6 border-t-4 border-tones-purple-light lg:grid-rows-2 lg:gap-y-6 lg:py-5 sm:grid-rows-4 lg:mt-[50px] sm:mt-[42px]">
       <div className="col-span-4 2xl:col-span-5 xl:col-span-6 flex items-center gap-x-9 lg:flex-col lg:gap-x-0 lg:gap-y-6 lg:items-start lg:justify-center lg:row-span-2 sm:row-span-1 sm:col-span-full">
         <Link additionalClassName="shrink-0" to="/">
           <span className="sr-only">Bytebase Logo</span>
@@ -59,24 +78,7 @@ const Footer = () => (
         </p>
       </div>
       <div className="col-start-7 col-span-2 xl:col-span-3 xl:justify-self-end flex items-center gap-x-5 lg:col-start-10 lg:row-start-1 lg:row-span-1 lg:col-span-3 sm:col-span-full sm:row-start-2 sm:col-start-1 sm:justify-self-start">
-        {[
-          {
-            name: 'Discord',
-            icon: DiscordIcon,
-            href: Route.DISCORD,
-          },
-          {
-            name: 'Twitter',
-            icon: TwitterIcon,
-            href: Route.TWITTER,
-          },
-
-          {
-            name: 'Github',
-            icon: GithubIcon,
-            href: Route.GITHUB,
-          },
-        ].map(({ name, href, icon: Icon }, idx) => (
+        {links.map(({ name, href, icon: Icon }, idx) => (
           <Link
             key={idx}
             to={href}

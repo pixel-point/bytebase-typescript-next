@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import clsx from 'clsx';
 
@@ -18,7 +18,7 @@ interface LinkProps {
   theme?: keyof typeof styles.theme;
 }
 
-const LinkUnderlined: FC<LinkProps> = ({ to, theme, children, className }) => {
+const LinkUnderlined = ({ to, theme, children, className }: LinkProps) => {
   const linkClassName = clsx(className, theme && styles.theme[theme]);
 
   return (

@@ -1,5 +1,5 @@
 'use client';
 
-import PromoOptions from './options';
+import PromoOptions from './promo-options';
 
 export default PromoOptions;
