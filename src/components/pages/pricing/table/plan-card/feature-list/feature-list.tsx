@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import { isLabelLong } from '@/components/pages/pricing/table/data/long-labels';
+
 import { Item } from '@/types/pricing';
 
 const presentFeature = <img src="/images/check.svg" alt="Present Feature" className="h-6 w-6" />;
@@ -26,7 +28,7 @@ type FeatureListProps = {
 const FeatureList = ({ features, currentRow, isLastSection }: FeatureListProps) => (
   <div
     className={clsx(
-      '[&:nth-child(2)]:mt-[19px] mt-[84px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center lg:[&:nth-child(2)]:mt-7',
+      '[&:nth-child(2)]:mt-[19px] mt-[85px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center',
       { 'last:border-b-0': isLastSection },
     )}
   >
@@ -39,6 +41,7 @@ const FeatureList = ({ features, currentRow, isLastSection }: FeatureListProps) 
             {
               'bg-[#FCFBFF]': isActive,
             },
+            { 'lg:h-[72px]': isLabelLong(item) },
           )}
           data-row-id={`${item}-${index}`}
           key={index}

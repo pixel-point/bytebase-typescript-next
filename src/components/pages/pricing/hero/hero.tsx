@@ -78,7 +78,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="hero pt-[120px] 2xl:pt-[108px] bg-pricing-hero pb-20">
+    <section className="hero pt-[120px] 2xl:pt-[108px] bg-pricing-hero pb-20 lg:pb-16">
       <div className="container max-w-[1396px] 2xl:max-w-full">
         <header className="text-center">
           <h1 className="sr-only">Bytebase pricing page</h1>
