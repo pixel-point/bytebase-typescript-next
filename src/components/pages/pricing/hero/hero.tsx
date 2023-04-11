@@ -84,42 +84,58 @@ const Hero = () => {
           <h1 className="sr-only">Bytebase pricing page</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/pricing/quote.svg" alt="" className="mx-auto" />
-          <p className="mt-4 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto">
+          <p className="mt-4 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight">
             Bytebase is not a better tool to manage database changes. It&apos;s a better way to
             manage database changes.
           </p>
-          <p className="text-gray-40 mt-3.5 text-18 leading-extra-tight">
+          <p className="text-gray-40 mt-3.5 text-18 leading-extra-tight lg:text-16 lg:leading-snug">
             Built by engineers knowing database development flow
           </p>
-          <ul className="flex items-center gap-x-16 mt-11 justify-center">
+          <ul className="flex items-center gap-x-16 mt-11 lg:gap-x-[52px] justify-center">
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/pricing/microsoft.svg" alt="Microsoft logo" />
+              <img
+                src="/images/pricing/microsoft.svg"
+                alt="Microsoft logo"
+                className="h-10 w-auto lg:h-9"
+              />
             </li>
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/pricing/google.svg" alt="Google logo" />
+              <img
+                src="/images/pricing/google.svg"
+                alt="Google logo"
+                className="h-10 w-auto lg:h-9"
+              />
             </li>
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/pricing/ant-group.svg" alt="Ant Group logo" />
+              <img
+                src="/images/pricing/ant-group.svg"
+                alt="Ant Group logo"
+                className="h-10 w-auto lg:h-9"
+              />
             </li>
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/pricing/pingcap.svg" alt="Pingcap logo" />
+              <img
+                src="/images/pricing/pingcap.svg"
+                alt="Pingcap logo"
+                className="h-10 w-auto lg:h-9"
+              />
             </li>
           </ul>
         </header>
-        <ul className="mt-14 flex gap-x-8">
+        <ul className="mt-14 lg:mt-12 flex gap-x-8 lg:gap-x-6">
           {cards.map((card, idx) => (
             <li className="grow basis-1/3" key={idx}>
               <Card {...card} />
             </li>
           ))}
         </ul>
-        <p className="mt-9 text-15 leading-snug text-center text-gray-40">
+        <p className="mt-9 text-15 leading-snug text-center text-gray-40 lg:mt-8 lg:text-14 lg:leading-tight">
           You can upgrade, downgrade, or{' '}
-          <Link size="sm" to="/refund" theme="primary-1">
+          <Link size="sm" to="/refund" theme="primary-1" additionalClassName="lg:text-14">
             cancel your subscription
           </Link>{' '}
           anytime. No hidden charges.

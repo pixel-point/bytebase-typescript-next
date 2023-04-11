@@ -32,18 +32,18 @@ const Table = () => {
     };
   }, []);
   return (
-    <section className="mt-20">
+    <section className="mt-20 xl:mt-16 md:mt-7">
       <div className="container max-w-[1220px] px-0 2xl:px-12 2xl:max-w-full relative">
-        <div className="lg:scrollbar-hidden mx-auto mt-16 lg:overflow-x-scroll lg:-mx-7 lg:px-7 md:-mx-4 md:px-4">
+        <div className="lg:scrollbar-hidden mx-auto lg:overflow-x-scroll lg:-mx-7 lg:px-7 md:-mx-4 md:px-4">
           <div className="grid grid-cols-10 2xl:grid-cols-12 items-start relative">
             <div className="col-span-3 2xl:col-span-4 relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
-              <div className="z-30 sticky top-0 left-0 bg-white h-[222px] w-full">
+              <div className="z-30 sticky top-0 left-0 bg-white h-[222px] w-full overflow-visible">
                 <Image
                   src="/images/pricing/table-decor.png"
                   width={338}
                   height={330}
                   alt=""
-                  className="absolute -top-[135px] -left-9 2xl:left-12 z-40 lg:w-[280px] lg:h-auto md:w-[162px]"
+                  className="absolute -top-[135px] -left-9 2xl:left-12 z-50 lg:w-[280px] lg:h-auto md:w-[162px]"
                 />
               </div>
               <div className="sticky top-[222px] bg-white z-20 left-0">
