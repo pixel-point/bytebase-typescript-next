@@ -8,6 +8,7 @@ interface AccordionProps {
   title: string;
   description: string;
   image: string;
+  imageMobile: string;
   isOpenExternal?: boolean;
   onChange?: () => void;
   defaultOpen?: boolean;
@@ -17,6 +18,7 @@ const Accordion = ({
   title,
   description,
   image,
+  imageMobile,
   defaultOpen,
   onChange,
   isOpenExternal,
@@ -102,10 +104,17 @@ const Accordion = ({
           <div className="col-start-8 xl:col-start-7 col-end-13 lg:col-start-2 lg:col-end-12 md:col-start-1 md:col-end-5">
             <div>
               <Image
-                className="order-2 flex-shrink-0 translate-x-3"
+                className="order-2 flex-shrink-0 translate-x-3 md:hidden"
                 src={image}
                 width={590}
                 height={418}
+                alt=""
+              />
+              <Image
+                className="order-2 mt-6 w-full flex-shrink-0 translate-x-3 hidden md:block"
+                src={imageMobile}
+                width={328}
+                height={270}
                 alt=""
               />
             </div>
