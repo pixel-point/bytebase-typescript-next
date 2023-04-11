@@ -26,7 +26,7 @@ type FeatureListProps = {
 const FeatureList = ({ features, currentRow, isLastSection }: FeatureListProps) => (
   <div
     className={clsx(
-      '[&:nth-child(2)]:mt-[27px] mt-[84px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center lg:[&:nth-child(2)]:mt-7',
+      '[&:nth-child(2)]:mt-[19px] mt-[84px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center lg:[&:nth-child(2)]:mt-7',
       { 'last:border-b-0': isLastSection },
     )}
   >

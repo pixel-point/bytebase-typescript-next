@@ -45,7 +45,7 @@ const PlanCard = ({
       >
         <h3 className="font-title text-56 leading-none">{title}</h3>
         <p
-          className="mt-3 text-14 leading-tight tracking-tight text-gray-40 2xl:max-w-[244px] 2xl:mx-auto"
+          className="mt-3 text-14 leading-tight tracking-tight text-gray-40 max-w-[244px] mx-auto"
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <Button
@@ -61,6 +61,9 @@ const PlanCard = ({
             {additionalDescription}
           </p>
         )}
+        <div
+          className={clsx('w-full h-px bg-gray-80', additionalDescription ? 'mt-5' : 'mt-[54px]')}
+        />
       </div>
       <FeatureList features={changeManagement} currentRow={currentRow} />
       <FeatureList features={sql} currentRow={currentRow} />
