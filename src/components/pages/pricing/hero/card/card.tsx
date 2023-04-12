@@ -71,7 +71,7 @@ const Card = ({
           )}
         </span>
         <p
-          className="mt-2 lg:mt-3.5 text-gray-30 text-16 leading-normal lg:leading-snug text-center lg:max-w-[180px] md:mt-1 md:text-14 sm:text-left sm:leading-normal sm:max-w-full 2xs:max-w-[180px] sm:mt-4"
+          className="mt-2 lg:mt-3.5 text-gray-30 text-16 leading-normal lg:leading-snug text-center lg:max-w-[180px] md:mt-1.5 md:text-14 sm:text-left sm:leading-normal sm:max-w-full 2xs:max-w-[180px] sm:mt-4"
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <Button

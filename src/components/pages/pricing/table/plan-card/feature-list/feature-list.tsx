@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { isLabelLong } from '@/components/pages/pricing/table/data/long-labels';
+import { isLabelLong, isLabelMedium } from '@/components/pages/pricing/table/data/long-labels';
 import Tooltip from '@/components/shared/tooltip';
 
 import { Item } from '@/types/pricing';
@@ -34,8 +34,8 @@ type FeatureListProps = {
 const FeatureList = ({ features, currentRow, isLastSection, withLongTitle }: FeatureListProps) => (
   <div
     className={clsx(
-      '[&:nth-child(2)]:mt-[19px] mt-[84px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center md:[&:nth-child(2)]:mt-[29px] lg:mt-[85px]',
-      { 'md:mt-[110px]': withLongTitle },
+      '[&:nth-child(2)]:mt-4 mt-[84px] flex flex-col divide-y divide-black divide-opacity-10 border-b border-black border-opacity-10 text-center md:[&:nth-child(2)]:mt-[23px] 2xl:[&:nth-child(2)]:mt-[19px] lg:mt-[85px] sm:[&:nth-child(2)]:mt-[37px] sm:mt-[78.5px]',
+      { 'md:mt-[110px] sm:mt-[101px]': withLongTitle },
       { 'last:border-b-0': isLastSection },
     )}
   >
@@ -48,7 +48,8 @@ const FeatureList = ({ features, currentRow, isLastSection, withLongTitle }: Fea
             {
               'bg-[#FCFBFF]': isActive,
             },
-            { 'lg:h-[72px]': isLabelLong(item) },
+            { 'lg:h-[72px] sm:h-[94px]': isLabelLong(item) },
+            { 'sm:h-[72px]': isLabelMedium(item) },
           )}
           data-row-id={`${item}-${index}`}
           key={index}
