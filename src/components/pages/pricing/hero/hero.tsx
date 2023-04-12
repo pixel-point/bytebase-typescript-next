@@ -135,12 +135,7 @@ const Hero = () => {
         </ul>
         <p className="mt-9 text-15 leading-snug text-center text-gray-40 lg:mt-8 lg:text-14 lg:leading-tight md:mt-7 sm:mt-6">
           You can upgrade, downgrade, or{' '}
-          <Link
-            size="sm"
-            to="/refund"
-            theme="primary-1"
-            additionalClassName="lg:text-14 sm:whitespace-break-spaces"
-          >
+          <Link size="sm" to="/refund" theme="primary-1" additionalClassName="lg:text-14 sm:inline">
             cancel your subscription
           </Link>{' '}
           anytime. No hidden charges.

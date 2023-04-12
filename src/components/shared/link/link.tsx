@@ -14,7 +14,7 @@ const styles = {
   theme: {
     gray: 'text-gray-15 hover:text-primary-1 disabled:text-gray-60',
     'primary-1':
-      'text-primary-1 border-b-2 border-primary-1 border-opacity-40 transition-opacity hover:border-opacity-100 pb-1',
+      'text-primary-1 border-b-2 border-primary-1 border-opacity-40 transition-opacity hover:border-opacity-100 pb-1 sm:pb-px',
   },
 };
 
