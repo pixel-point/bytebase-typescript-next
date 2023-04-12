@@ -21,7 +21,7 @@ const Card = ({ cover, title, href, description, image }: CardProps) => {
           width={92}
           height={65}
           alt=""
-          className="absolute -top-7 -left-9 xl:w-[58px] xl:h-[42px] xl:-top-4.5 xl:-left-6 md:w-16 md:h-[46px]"
+          className="absolute -top-7 -left-9 lg:w-[58px] lg:h-[42px] lg:-top-4.5 lg:-left-6 sm:w-16 sm:h-[46px]"
         />
       )}
       <Image
@@ -38,13 +38,13 @@ const Card = ({ cover, title, href, description, image }: CardProps) => {
         height={600}
         alt=""
       />
-      <h3 className="mt-8 xl:mt-6 lg:mt-5 text-36 xl:text-32 lg:text-30 font-bold leading-extra-tight tracking-tighter xl:tracking-normal">
+      <h3 className="mt-8 lg:mt-6 md:mt-5 text-36 lg:text-32 md:text-30 font-bold leading-extra-tight tracking-tighter lg:tracking-normal">
         {title}
       </h3>
-      <p className="mt-4 xl:mt-3 lg:mt-1.5 text-20 xl:text-18 lg:text-16 leading-snug max-w-[75%] 2xl:max-w-none">
+      <p className="mt-4 lg:mt-3 md:mt-1.5 text-20 lg:text-18 md:text-16 leading-snug max-w-[75%] 2xl:max-w-none">
         {description}
       </p>
-      <LinkUnderlined to={href} className="mt-6 xl:mt-5 lg:mt-3">
+      <LinkUnderlined to={href} className="mt-6 lg:mt-5 md:mt-3">
         Learn more
       </LinkUnderlined>
     </article>

@@ -8,10 +8,6 @@
       @apply px-11;
     }
 
-    @screen lg {
-      @apply px-7;
-    }
-
     @screen md {
       @apply px-7;
     }

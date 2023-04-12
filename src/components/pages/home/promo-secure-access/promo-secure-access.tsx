@@ -4,24 +4,24 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 const PromoSecureAccess = () => {
   return (
-    <section className="mt-[192px] 2xl:mt-36 xl:mt-32 lg:mt-24 md:mt-20 bg-black text-white lg:pt-16">
+    <section className="mt-[192px] 2xl:mt-36 lg:mt-32 md:mt-24 sm:mt-20 bg-black text-white md:pt-16 sm:pt-[58px]">
       <div className="container grid grid-cols-12 grid-gap">
-        <div className="self-center col-start-1 col-end-7 xl:col-end-6 lg:col-end-13">
+        <div className="self-center col-start-1 col-end-7 lg:col-end-6 md:col-end-13">
           <span className="inline-flex font-bold uppercase text-12 leading-none tracking-[0.02em] bg-secondary-1 px-2.5 py-2 rounded-3xl text-gray-15">
             Secure
           </span>
-          <h2 className="mt-[14px] xl:mt-2 font-title font-semibold leading-none text-112 xl:text-90 lg:text-80 md:text-48 max-w-[400px]">
+          <h2 className="mt-[14px] lg:mt-2 md:mt-1.5 sm:mt-2 font-title font-semibold leading-none xl:leading-95 text-112 lg:text-90 md:text-80 sm:text-48 max-w-[400px]">
             <span className="bg-transparent text-secondary-3">Security</span> by design
           </h2>
-          <p className="mt-8 xl:mt-4 lg:mt-2 text-20 xl:text-18 lg:text-16 leading-normal max-w-[416px] 2xl:max-w-[960px] lg:max-w-[590px]">
+          <p className="mt-8 lg:mt-4 md:mt-3.5 text-20 lg:text-18 md:text-16 leading-normal lg:leading-snug max-w-[416px] 2xl:max-w-[960px] md:max-w-[590px]">
             Bytebase streamlines database deployment from non-prod to prod by integrating with
             version control systems for a GitOps workflow.
           </p>
-          <div className="mt-8 md:mt-3 col-span-4 self-start">
+          <div className="mt-8 md:mt-3 sm:mt-3 col-span-4 self-start">
             <LinkUnderlined to="">Learn more</LinkUnderlined>
           </div>
         </div>
-        <div className="col-start-7 2xl:col-start-7 xl:col-start-6 col-end-13">
+        <div className="col-start-7 2xl:col-start-7 lg:col-start-6 col-end-13">
           <Image
             className="lg:hidden ml-auto w-fit 2xl:h-auto"
             src="/images/security-by-design-lg.png"
@@ -31,9 +31,9 @@ const PromoSecureAccess = () => {
           />
         </div>
       </div>
-      <div className="relative mt-10 sm:mt-8 hidden lg:block w-full">
+      <div className="relative mt-10 xs:mt-8 hidden md:block w-full">
         <Image
-          className="ml-auto hidden lg:block"
+          className="ml-auto hidden md:block"
           src="/images/security-by-design-md.png"
           alt=""
           width={1023}

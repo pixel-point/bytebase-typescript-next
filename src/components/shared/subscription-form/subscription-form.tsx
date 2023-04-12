@@ -5,37 +5,43 @@ import Route from '@/lib/route';
 
 const SubscriptionForm = () => {
   return (
-    <section className="mt-[205px] 2xl:mt-[189px] xl:mt-[156px] lg:mt-[114px] bg-primary-1 text-white">
-      <h2 className="sr-only">Subscribtion form</h2>
-      <div className="container grid grid-cols-12 grid-gap md:flex md:flex-col overflow-x-clip">
-        <div className="col-start-2 -ml-10 xl:ml-0 col-span-5 xl:col-start-1 md:relative">
+    <section className="mt-[205px] 2xl:mt-[189px] lg:mt-[156px] md:mt-[75px] bg-primary-1 text-white">
+      <div className="container grid grid-cols-12 grid-gap sm:flex sm:flex-col overflow-x-clip">
+        <div className="col-start-2 -ml-10 lg:ml-0 col-span-5 lg:col-start-1 sm:relative">
           <Image
-            className="-mt-[46px] xl:-mt-6 -mb-[22px] xl:h-[422px] xl:w-[376px] lg:w-[305px] lg:h-[342px] md:h-[201px] md:w-[170px] md:absolute md:-right-[44px] md:-top-[20px] md:-rotate-[15deg]"
+            className="-mt-[46px] lg:-mt-6 md:-mt-[15px] -mb-[22px] lg:h-[422px] lg:w-[376px] md:max-w-[305px] md:min-w-[305px] md:h-[342px] sm:h-[201px] sm:w-[170px] sm:hidden"
             src="/images/star-ship.png"
             width={464}
             height={521}
             alt=""
           />
+          <Image
+            className="sm:absolute sm:-right-[86px] sm:-top-[82px] hidden sm:block"
+            src="/images/star-ship-sm.png"
+            width={214}
+            height={200}
+            alt=""
+          />
         </div>
-        <div className="col-start-7 -ml-10 2xl:ml-0 col-span-5 xl:col-start-7 xl:-ml-6 lg:ml-0 xl:col-span-6 lg:col-start-7 lg:col-span-6 md:max-w-[80%] xs:max-w-none">
-          <form className="py-[72px] xl:py-14 lg:py-11 md:py-10">
+        <div className="col-start-7 -ml-10 2xl:ml-0 col-span-5 lg:col-start-7 lg:-ml-6 md:ml-0 lg:col-span-6 md:col-start-7 md:col-span-6 sm:max-w-[80%] 2xs:max-w-none">
+          <form className="py-[72px] lg:py-14 md:py-11 sm:py-10">
             <p>
-              <b className="text-88 xl:text-68 lg:text-56 md:text-48 font-semibold leading-none xl:leading-104 md:leading-[45px] font-title">
+              <b className="text-88 lg:text-68 md:text-56 sm:text-48 font-semibold leading-none lg:leading-104 md:leading-none sm:leading-[45px] font-title">
                 Subscribe to&nbsp;Newsletter
               </b>
             </p>
-            <p className="mt-6 xl:mt-5 lg:mt-[10px] md:mt-4 flex relative">
+            <p className="mt-6 lg:mt-5 md:mt-[10px] sm:mt-4 flex relative">
               <input
-                className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 xl:py-4 px-7 md:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
+                className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
                 type="text"
                 placeholder="Your email address..."
               />
-              <button className="flex-shrink-0 bg-black py-6 xl:py-4 px-11 md:px-5 md:py-3 rounded-r-full uppercase text-16 font-bold leading-none">
+              <button className="flex-shrink-0 bg-black py-6 lg:py-4 px-11 md:py-3 md:px-5 sm:px-5 sm:py-3 rounded-r-full uppercase text-16 font-bold leading-none">
                 <span className="lg:hidden">Subscribe</span>{' '}
-                <img src="/images/arrow-form.svg" alt="" className="hidden lg:!block w-6 h-6" />
+                <img src="/images/arrow-form.svg" alt="" className="hidden md:!block w-6 h-6" />
               </button>
             </p>
-            <p className="mt-5 xl:mt-3 md:mt-2 [&>a]:border-b-[2px] [&>a]:border-[#FFFFFF40] [&>a]:pb-[3px] text-14 leading-snug xl:max-w-[290px]">
+            <p className="mt-5 lg:mt-3 sm:mt-2 [&>a]:border-b-[2px] [&>a]:border-[#FFFFFF40] [&>a]:pb-[3px] text-14 leading-snug lg:max-w-[290px]">
               By subscribing, you agree with Revue&apos;s{' '}
               <NextLink href={Route.TERMS}>Terms of Service</NextLink> and{' '}
               <NextLink href={Route.PRIVACY}>Privacy Policy</NextLink>.

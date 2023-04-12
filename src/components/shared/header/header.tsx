@@ -2,11 +2,6 @@
 
 import { useState } from 'react';
 
-import APIIcon from '@/svgs/api.inline.svg';
-import CLIIcon from '@/svgs/cli.inline.svg';
-import DiagonalArrowIcon from '@/svgs/diagonal-arrow.inline.svg';
-import HowToIcon from '@/svgs/how-to.inline.svg';
-import RocketIcon from '@/svgs/rocket.inline.svg';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -15,6 +10,12 @@ import Link from '@/components/shared/link';
 import MobileMenu from '@/components/shared/mobile-menu';
 
 import { MENUS } from '@/lib/menus';
+
+import APIIcon from '@/svgs/api.inline.svg';
+import CLIIcon from '@/svgs/cli.inline.svg';
+import DiagonalArrowIcon from '@/svgs/diagonal-arrow.inline.svg';
+import HowToIcon from '@/svgs/how-to.inline.svg';
+import RocketIcon from '@/svgs/rocket.inline.svg';
 
 import Burger from './burger';
 
@@ -44,7 +45,7 @@ const Header = () => {
     <>
       <header className="safe-paddings absolute top-0 left-0 right-0 z-[1000] h-[72px] w-full">
         <nav
-          className="container flex items-center justify-between py-4.5 lg:py-0"
+          className="container flex items-center justify-between py-4.5 md:py-0"
           aria-label="Global"
         >
           <Link to="/">
@@ -58,7 +59,7 @@ const Header = () => {
               loading="eager"
             />
           </Link>
-          <ul className="flex items-center gap-x-6 xl:gap-x-2 lg:hidden">
+          <ul className="flex items-center gap-x-6 lg:gap-x-2 md:hidden">
             {MENUS.header.map(({ title, href = '', items }: Header) => {
               return (
                 <li key={title} className="group relative inline-block">
@@ -131,14 +132,14 @@ const Header = () => {
               );
             })}
           </ul>
-          <div className="flex items-center gap-x-9 2xl:gap-x-7 xl:gap-x-5 lg:hidden">
+          <div className="flex items-center gap-x-9 2xl:gap-x-7 lg:gap-x-5 md:hidden">
             <GithubStarsButton />
             <Button to="/" theme="gray-filled" size="sm">
               Sign up for Cloud
             </Button>
           </div>
           <Burger
-            className="hidden lg:inline-flex"
+            className="hidden md:inline-flex"
             isToggled={isMobileMenuOpen}
             onClick={handleHeaderBurgerClick}
           />

@@ -1,15 +1,15 @@
 const Logos = () => {
   return (
-    <div className="mt-[160px] 2xl:mt-36 xl:mt-[128px] lg:mt-24 md:mt-20 relative">
+    <div className="mt-[160px] 2xl:mt-36 lg:mt-[128px] md:mt-24 sm:mt-20 relative">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/logos-caption.svg"
         alt="Built by engineers knowing database development flow"
         width={321}
         height={64}
-        className="relative left-[54.5%] 2xl:left-[53.7%] xl:left-[58.2%] lg:left-[40%] md:!left-[30%] mb-6 xl:mb-[18px] xl:w-[283px] xl:h-[58px] md:w-[220px] md:h-[42px]"
+        className="relative left-[54.5%] 2xl:left-[53.7%] lg:left-[58.2%] md:left-[50.3%] sm:left-[40%] xs:left-[34%] mb-6 lg:mb-[18px] xs:mb-3 lg:w-[283px] lg:h-[58px] sm:w-[220px] sm:h-[42px]"
       />
-      <div className="logos xl:h-[76px] lg:h-[72px] md:h-14" />
+      <div className="logos lg:h-[76px] md:h-[72px] sm:h-14" />
     </div>
   );
 };
