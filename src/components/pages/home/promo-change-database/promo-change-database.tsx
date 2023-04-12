@@ -13,7 +13,7 @@ const PromoChangeDatabase = () => {
           <h2 className="mt-3.5 lg:mt-2.5 md:mt-1.5 xs:mt-2 font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
             <span className="bg-transparent text-secondary-1">Automate</span> database changes
           </h2>
-          <p className="mt-6 2xl:mt-8 lg:mt-5 md:mt-3.5 text-20 lg:text-18 md:text-16 leading-normal lg:leading-snug max-w-[504px] 2xl:max-w-[460px] md:max-w-[590px]">
+          <p className="mt-7 2xl:mt-8 lg:mt-5 md:mt-3.5 text-20 lg:text-18 md:text-16 leading-normal lg:leading-snug max-w-[504px] 2xl:max-w-[460px] md:max-w-[590px]">
             Bytebase streamlines database deployment from non-prod to prod by integrating with
             version control systems for a GitOps workflow.
           </p>

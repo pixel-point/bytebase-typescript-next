@@ -42,14 +42,16 @@ const Accordion = ({
       <div
         className={clsx(
           isOpen
-            ? 'cursor-pointer container py-0 md:pt-11 sm:pt-9 grid grid-cols-12 sm:grid-cols-4 grid-gap items-center'
+            ? 'cursor-pointer container py-0 md:pt-11 sm:pt-9 grid grid-cols-12 sm:grid-cols-4 grid-gap'
             : 'cursor-pointer container border-none py-[26px] md:py-6 sm:py-5',
         )}
         onClick={handleClick}
       >
         {isOpen ? (
           <div
-            className={clsx(' flex col-start-1 col-end-8 lg:col-end-7 md:col-end-13 sm:col-end-5')}
+            className={clsx(
+              'flex col-start-1 col-end-8 lg:col-end-7 md:col-end-13 sm:col-end-5 pt-[165px]',
+            )}
           >
             <img
               src="/images/accordion-arrow.svg"

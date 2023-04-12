@@ -41,7 +41,7 @@ const Card = ({ cover, title, href, description, image }: CardProps) => {
       <h3 className="mt-8 lg:mt-6 md:mt-5 text-36 lg:text-32 md:text-30 font-bold leading-extra-tight tracking-tighter lg:tracking-normal">
         {title}
       </h3>
-      <p className="mt-4 lg:mt-3 md:mt-1.5 text-20 lg:text-18 md:text-16 leading-snug max-w-[75%] 2xl:max-w-none">
+      <p className="mt-4 lg:mt-3 md:mt-1.5 text-20 lg:text-18 md:text-16 leading-normal lg:leading-snug max-w-[75%] 2xl:max-w-none">
         {description}
       </p>
       <LinkUnderlined to={href} className="mt-6 lg:mt-5 md:mt-3">
