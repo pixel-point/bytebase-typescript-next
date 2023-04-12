@@ -51,7 +51,7 @@ const Header = () => {
           <Link to="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="h-8 w-auto 2xl:h-7"
+              className="h-8 w-auto xl:h-7"
               src="/images/logo.svg"
               alt="Bytebase logo"
               width={150}
@@ -67,7 +67,7 @@ const Header = () => {
                     <Link
                       additionalClassName="font-medium px-3 py-[9px]"
                       to={href}
-                      size="md"
+                      size="sm"
                       theme="gray"
                     >
                       {title}
@@ -94,7 +94,7 @@ const Header = () => {
                               <li key={index} className="pt-6 first:pt-0">
                                 <Link
                                   additionalClassName="whitespace-nowrap group/link block"
-                                  size="md"
+                                  size="sm"
                                   theme="gray"
                                   to={linkUrl}
                                 >
@@ -132,7 +132,7 @@ const Header = () => {
               );
             })}
           </ul>
-          <div className="flex items-center gap-x-9 2xl:gap-x-7 lg:gap-x-5 md:hidden">
+          <div className="flex items-center gap-x-9 xl:gap-x-7 lg:gap-x-5 md:hidden">
             <GithubStarsButton />
             <Button to="/" theme="gray-filled" size="sm">
               Sign up for Cloud

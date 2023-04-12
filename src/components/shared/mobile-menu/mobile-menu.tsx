@@ -154,7 +154,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                           <li className="w-full last:pb-4 first:-mt-4" key={name}>
                             <Link
                               additionalClassName="group block pt-4"
-                              size="md"
+                              size="sm"
                               theme="gray"
                               to={linkUrl}
                             >
