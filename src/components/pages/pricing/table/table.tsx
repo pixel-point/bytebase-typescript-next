@@ -33,14 +33,14 @@ const Table = () => {
     };
   }, []);
   return (
-    <section className="pt-20 xl:pt-16 md:pt-[26px]">
+    <section className="pt-20 xl:pt-16 md:pt-[26px] sm:pt-[388px]">
       <div className="mx-auto max-w-[1220px] 2xl:px-12 xl:px-11 md:px-7 sm:px-4 2xl:max-w-full relative">
         <Image
           src="/images/pricing/table-decor.png"
           width={338}
           height={330}
           alt=""
-          className="absolute -top-[135px] -left-9 2xl:left-24 z-40 lg:w-[280px] lg:h-auto md:w-[162px] lg:-top-[100px] lg:left-11 md:-top-10 md:left-7"
+          className="absolute -top-[135px] -left-9 2xl:left-24 z-40 lg:w-[280px] lg:h-auto md:w-[162px] lg:-top-[100px] lg:left-11 md:-top-10 md:left-7 sm:w-[328px] sm:-top-[340px] sm:left-1/2 sm:-translate-x-1/2"
         />
         <div className="lg:scrollbar-hidden max-w-[1220px] mx-auto lg:overflow-x-auto lg:-mr-11 lg:pr-11 md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
           <div className="flex items-start relative">
