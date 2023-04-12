@@ -45,7 +45,7 @@ const PlanCard = ({
       >
         <h3 className="font-title text-56 leading-none lg:text-44 md:text-34">{title}</h3>
         <p
-          className="mt-3 text-14 leading-tight tracking-tight text-gray-40 max-w-[244px] mx-auto lg:mt-2 lg:min-h-[54px]"
+          className="mt-3 text-14 leading-tight tracking-tight text-gray-40 max-w-[244px] mx-auto lg:mt-2 2xl:min-h-[54px]"
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <Button

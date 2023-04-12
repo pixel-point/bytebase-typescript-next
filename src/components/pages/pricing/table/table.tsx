@@ -45,14 +45,14 @@ const Table = () => {
         <div className="lg:scrollbar-hidden max-w-[1220px] mx-auto lg:overflow-x-auto lg:-mr-11 lg:pr-11 md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
           <div className="flex items-start relative">
             <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] lg:max-w-[321px] md:min-w-[244px] relative flex flex-col lg:sticky lg:top-0 lg:left-0 lg:z-20">
-              <div className="z-30 sticky top-0 left-0 bg-white h-[222px] w-full lg:h-[216px]" />
+              <div className="z-30 sticky top-0 left-0 bg-white h-[222px] 2xl:h-[241px] w-full lg:h-[216px]" />
               <div className="bg-white z-20">
                 {LABELS.map(({ title, items }, index) => (
                   <div
                     className="relative mt-7 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
                     key={index}
                   >
-                    <p className="py-4 bg-white text-24 font-bold leading-none xl:text-20 xl:leading-tight">
+                    <p className="py-4 bg-white text-24 font-bold leading-none lg:text-20 lg:leading-tight">
                       {title}
                     </p>
                     <ul className="flex flex-col divide-y divide-black divide-opacity-10">

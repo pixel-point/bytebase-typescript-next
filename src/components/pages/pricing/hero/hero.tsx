@@ -24,7 +24,7 @@ const Hero = () => {
       image: '/images/pricing/free.jpg',
       planTitle: 'Free',
       price: 0,
-      description: 'Up to 10 seats and 10 instances',
+      description: 'Up to 10 seats and&nbsp;10&nbsp;instances',
       buttonText: 'Free Deploy',
       buttonTheme: 'primary-outline',
       buttonLink: '/docs/get-started/install/deploy-with-docker',
@@ -61,7 +61,7 @@ const Hero = () => {
       image: '/images/pricing/enterprise.jpg',
       planTitle: 'Enterprise',
       price: 'Custom',
-      description: 'Customized, billed annually',
+      description: 'Customized, billed&nbsp;annually',
       buttonText: 'Contact us',
       buttonTheme: 'primary-outline',
       buttonLink: 'mailto:support@bytebase.com',
@@ -84,14 +84,14 @@ const Hero = () => {
           <h1 className="sr-only">Bytebase pricing page</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/pricing/quote.svg" alt="" className="mx-auto md:w-10 md:h-auto" />
-          <p className="mt-4 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:text-24 md:tracking-tight md:max-w-[670px]">
+          <p className="mt-4 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:text-24 md:tracking-tight md:max-w-[670px] xs:text-20 xs:tracking-normal xs:leading-tight sm:mt-4">
             Bytebase is not a better tool to manage database changes. It&apos;s a better way to
             manage database changes.
           </p>
-          <p className="text-gray-40 mt-3.5 text-18 leading-extra-tight lg:text-16 lg:leading-snug md:mt-4.5 md:text-14">
+          <p className="text-gray-40 mt-3.5 text-18 leading-extra-tight lg:text-16 lg:leading-snug md:mt-4.5 md:text-14 xs:mt-3.5">
             Built by engineers knowing database development flow
           </p>
-          <ul className="flex items-center gap-x-16 mt-11 lg:gap-x-[52px] justify-center md:mt-10 md:gap-x-10">
+          <ul className="flex items-center gap-x-16 mt-11 lg:gap-x-[52px] justify-center md:mt-10 md:gap-x-10 sm:flex-wrap sm:gap-y-4 sm:gap-x-14 sm:mt-6">
             <li>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -126,16 +126,21 @@ const Hero = () => {
             </li>
           </ul>
         </header>
-        <ul className="mt-14 lg:mt-12 flex gap-x-8 lg:gap-x-6 md:gap-x-5">
+        <ul className="mt-14 lg:mt-12 flex gap-x-8 lg:gap-x-6 md:gap-x-5 sm:gap-x-0 sm:gap-y-5 sm:flex-wrap">
           {cards.map((card, idx) => (
-            <li className="grow basis-1/3" key={idx}>
+            <li className="grow basis-1/3 sm:basis-full" key={idx}>
               <Card {...card} />
             </li>
           ))}
         </ul>
         <p className="mt-9 text-15 leading-snug text-center text-gray-40 lg:mt-8 lg:text-14 lg:leading-tight md:mt-7 sm:mt-6">
           You can upgrade, downgrade, or{' '}
-          <Link size="sm" to="/refund" theme="primary-1" additionalClassName="lg:text-14">
+          <Link
+            size="sm"
+            to="/refund"
+            theme="primary-1"
+            additionalClassName="lg:text-14 sm:whitespace-break-spaces"
+          >
             cancel your subscription
           </Link>{' '}
           anytime. No hidden charges.
