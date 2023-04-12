@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import { isLabelLong } from '@/components/pages/pricing/table/data/long-labels';
+import Tooltip from '@/components/shared/tooltip';
 
 import { Item } from '@/types/pricing';
 
@@ -13,8 +14,12 @@ const renderFeature = (feature: boolean | { value: string; tooltip: string } | s
     if (!feature) return missingFeature;
   }
   if (typeof feature === 'object') {
-    // TODO: add tooltip component
-    return feature.value;
+    return (
+      <div className="flex items-center">
+        <span>{feature.value}</span>
+        <Tooltip text={feature.tooltip} />
+      </div>
+    );
   }
   return feature;
 };

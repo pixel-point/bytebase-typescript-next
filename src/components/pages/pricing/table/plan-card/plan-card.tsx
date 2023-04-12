@@ -38,7 +38,7 @@ const PlanCard = ({
     >
       <div
         className={clsx(
-          'border-t-8 sticky top-0 flex flex-col px-4.5 2xl:px-6 pt-6 lg:px-4.5 min-h-[250px] lg:min-h-[230px]',
+          'border-t-8 sticky top-0 flex flex-col px-4.5 2xl:px-6 pt-6 lg:px-4.5 min-h-[250px] lg:min-h-[230px] z-20',
           title.toLowerCase() === 'team' ? 'bg-[#F9FAFF]' : 'bg-white',
         )}
         style={{ borderTopColor: planColor }}
