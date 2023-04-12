@@ -7,7 +7,7 @@ const Logos = () => {
         alt="Built by engineers knowing database development flow"
         width={321}
         height={64}
-        className="relative left-[55.5%] lg:left-[40%] md:!left-[30%] mb-6 xl:mb-[18px] xl:w-[283px] xl:h-[58px] md:w-[220px] md:h-[42px]"
+        className="relative left-[54.5%] 2xl:left-[53.7%] xl:left-[58.2%] lg:left-[40%] md:!left-[30%] mb-6 xl:mb-[18px] xl:w-[283px] xl:h-[58px] md:w-[220px] md:h-[42px]"
       />
       <div className="logos xl:h-[76px] lg:h-[72px] md:h-14" />
     </div>

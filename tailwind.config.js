@@ -107,6 +107,11 @@ module.exports = {
       wider: '0.02em',
     },
     extend: {
+      lineHeight: {
+        95: '95%',
+        104: '104%',
+        'extra-tight': '1.125',
+      },
       spacing: {
         4.5: '1.125rem',
       },

@@ -38,10 +38,10 @@ const Card = ({ cover, title, href, description, image }: CardProps) => {
         height={600}
         alt=""
       />
-      <h3 className="mt-8 xl:mt-6 lg:mt-5 text-36 xl:text-32 lg:text-30 font-bold leading-[112.5%]">
+      <h3 className="mt-8 xl:mt-6 lg:mt-5 text-36 xl:text-32 lg:text-30 font-bold leading-extra-tight tracking-tighter xl:tracking-normal">
         {title}
       </h3>
-      <p className="mt-4 xl:mt-3 lg:mt-1.5 text-20 xl:text-18 lg:text-16 leading-[150%] max-w-[75%] 2xl:max-w-none">
+      <p className="mt-4 xl:mt-3 lg:mt-1.5 text-20 xl:text-18 lg:text-16 leading-snug max-w-[75%] 2xl:max-w-none">
         {description}
       </p>
       <LinkUnderlined to={href} className="mt-6 xl:mt-5 lg:mt-3">

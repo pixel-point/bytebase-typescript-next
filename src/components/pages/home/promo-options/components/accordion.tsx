@@ -54,13 +54,13 @@ const Accordion = ({
             <img
               src="/images/accordion-arrow.svg"
               alt=""
-              className="w-14 xl:w-11 lg:w-9 md:w-6 h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0"
+              className="mt-1 w-14 xl:w-11 lg:w-9 md:w-6 h-14 xl:h-11 lg:h-9 md:h-6 shadow-icon rounded-[100%] shrink-0"
             />
             <div className="ml-[30px] xl:ml-6 lg:ml-4 md:ml-3">
               <p
                 className={clsx(
                   isOpen
-                    ? 'font-bold leading-[112.5%] -tracking-[0.04em] ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
+                    ? 'mt-[7px] font-bold leading-[112.5%] -tracking-[0.04em] ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
                     : 'ml-7 text-30',
                 )}
               >
@@ -68,7 +68,7 @@ const Accordion = ({
               </p>
               {isOpen && (
                 <div className="order-1 flex-grow col-start-1 col-end-8 md:col-end-5">
-                  <p className="mt-4.5 xl:mt-2 lg:mt-1.5 text-18 xl:text-16 lg:text-14 leading-none 2xl:max-w-[604px] xl:!max-w-[538px]">
+                  <p className="mt-4 xl:mt-2 lg:mt-1.5 text-18 xl:text-16 lg:text-14 leading-[150%] 2xl:max-w-[604px] xl:!max-w-[538px]">
                     {description}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ const Accordion = ({
             </div>
           </div>
         ) : (
-          <div className="flex items-center col-start-1 col-end-8">
+          <div className="flex items-center col-start-1 col-end-8 ml-1.5 xl:ml-0">
             <img
               src="/images/accordion-arrow-closed.svg"
               alt=""
@@ -85,8 +85,8 @@ const Accordion = ({
             <div
               className={clsx(
                 isOpen
-                  ? 'font-bold leading-[112.5%] -tracking-[0.04em] ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
-                  : 'font-bold leading-[112.5%] -tracking-[0.04em] ml-7 xl:ml-6 lg:ml-4 md:ml-3 text-30 xl:text-24 lg:text-20 md:text-18',
+                  ? 'font-bold leading-[112.5%] -tracking-[0.04em] 2xl:tracking-normal ml-0 text-44 xl:text-36 lg:text-30 md:text-24'
+                  : 'font-bold leading-[112.5%] -tracking-[0.04em] 2xl:tracking-normal ml-7 xl:ml-6 lg:ml-4 md:ml-3 text-30 xl:text-24 lg:text-20 md:text-18',
               )}
             >
               {title}

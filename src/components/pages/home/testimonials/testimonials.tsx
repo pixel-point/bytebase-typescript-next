@@ -5,7 +5,7 @@ const Testimonials = () => {
         <figure className="flex flex-col items-center mx-auto max-w-[1048px] xl:max-w-[776px] lg:max-w-[590px] text-center">
           <img src="/images/quote.svg" alt="" className="h-10 xl:h-8 lg:h-7 md:h-6" />
           <blockquote>
-            <p className="mt-16 2xl:mt-14 xl:mt-12 lg:mt-10 md:mt-6 text-40 xl:text-30 lg:text-24 md:text-20 leading-[125%] tracking-tight font-semibold">
+            <p className="mt-16 2xl:mt-14 xl:mt-12 lg:mt-10 md:mt-6 text-40 xl:text-30 lg:text-24 md:text-20 leading-tight xl:leading-extra-tight tracking-tight xl:tracking-tighter font-semibold">
               Bytebase helped us save $24M in OpEx. We’re also saving 50% of our time with automated
               renewal tracking and alerting across IT, Procurement, and Finance departments
             </p>
