@@ -42,7 +42,7 @@ const Accordion = ({
                 <img
                   src="/images/accordion-arrow.svg"
                   alt=""
-                  className="h-8 md:h-7 shadow-iconGreen rounded-[100%] shrink-0"
+                  className="h-8 md:h-7 shadow-icon-green rounded-[100%] shrink-0"
                 />
                 <p className="ml-4 md:ml-3 font-bold leading-extra-tight -tracking-wider lg:tracking-normal text-24 lg:text-20 md:text-18 md:font-semibold">
                   {title}

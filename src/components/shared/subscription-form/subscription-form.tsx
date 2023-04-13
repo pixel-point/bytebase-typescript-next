@@ -30,7 +30,7 @@ const SubscriptionForm = () => {
                 Subscribe to&nbsp;Newsletter
               </b>
             </p>
-            <p className="mt-6 lg:mt-5 md:mt-[10px] sm:mt-4 flex relative">
+            <p className="mt-6 lg:mt-5 md:mt-[10px] sm:mt-4 flex relative h-16">
               <input
                 className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
                 type="text"

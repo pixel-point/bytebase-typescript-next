@@ -54,14 +54,14 @@ const PromoQuery = () => {
         <span className="inline-flex font-bold uppercase text-12 leading-none tracking-wider bg-secondary-1 px-2.5 py-2 rounded-3xl text-gray-15">
           Query
         </span>
-        <h2 className="mt-3 md:mt-2 font-title font-semibold leading-104 md:leading-none sm:leading-95 text-88 lg:text-68 max-w-3xl lg:max-w-2xl md:text-54 sm:text-48 md:max-w-lg sm:max-w-[340px]">
+        <h2 className="mt-3 md:mt-2 font-title font-semibold leading-none lg:leading-104 md:leading-none sm:leading-95 text-88 lg:text-68 max-w-3xl lg:max-w-2xl md:text-54 sm:text-48 md:max-w-lg sm:max-w-[340px]">
           Explore data with <span className="whitespace-nowrap">all-in-one</span>{' '}
           <mark className="bg-transparent text-primary-1 whitespace-nowrap sm:whitespace-normal text-center">
             SQL editor
           </mark>
         </h2>
       </header>
-      <div className="mt-11 lg:mt-7 md:mt-11 sm:mt-7 grid grid-cols-12 grid-gap sm:flex sm:flex-col-reverse">
+      <div className="mt-[46px] lg:mt-7 md:mt-11 sm:mt-7 grid grid-cols-12 grid-gap sm:flex sm:flex-col-reverse">
         <div className="row-span-full col-span-full sm:mt-2">
           <Image
             src="/images/interface.png"
@@ -72,7 +72,7 @@ const PromoQuery = () => {
           />
         </div>
 
-        <div className="row-span-full col-start-9 col-span-4 pr-10 2xl:pr-4.5 2xl:col-start-8 lg:col-start-8 lg:col-span-5 lg:-translate-x-6 md:-translate-x-0 md:col-start-7 md:col-span-6 sm:translate-y-0 sm:translate-x-0 relative sm:mt-[25px] sm:pr-0">
+        <div className="row-span-full col-start-9 col-span-4 pr-10 2xl:pr-0 2xl:col-start-8 lg:col-start-8 lg:col-span-5 lg:-translate-x-6 md:-translate-x-0 md:col-start-7 md:col-span-6 sm:translate-y-0 sm:translate-x-0 relative sm:mt-[25px]">
           <Image
             className="hidden absolute -top-[100px] sm:-top-[98px] -right-[32px] sm:h-[135px] sm:block z-20"
             src="/images/ufo.png"

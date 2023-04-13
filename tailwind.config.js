@@ -120,7 +120,7 @@ module.exports = {
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
         icon: '0px 5px 15px rgba(172, 178, 210, 0.8)',
-        iconGreen: '0px 5px 10px rgba(156, 201, 182, 0.8)',
+        'icon-green': '0px 5px 10px rgba(156, 201, 182, 0.8)',
       },
       backgroundImage: {
         cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
