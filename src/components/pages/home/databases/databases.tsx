@@ -17,7 +17,7 @@ const Databases = () => {
           width={1472}
           height={650}
           alt=""
-          className="hidden xs:block"
+          className="hidden sm:block"
         />
       </div>
     </section>

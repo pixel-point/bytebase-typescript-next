@@ -78,9 +78,9 @@ const Hero = () => {
         </div>
       </header>
 
-      <ul className="mt-20 sm:mt-7 row-start-4 col-span-12 sm:col-span-4 grid grid-cols-12 grid-gap sm:flex sm:flex-col sm:gap-y-8">
+      <ul className="mt-20 sm:mt-7 row-start-4 col-span-12 sm:col-span-4 grid grid-cols-12 grid-gap sm:grid-cols-4 sm:gap-y-8">
         {cards.map((card, idx) => (
-          <li key={idx} className="col-span-4">
+          <li key={idx} className="col-span-4 sm:col-span-3 2xs:col-span-4">
             <Card {...card} />
           </li>
         ))}
