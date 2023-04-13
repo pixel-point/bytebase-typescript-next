@@ -21,7 +21,7 @@ const Hero = () => {
     <section className="container items-center">
       <Link
         href=""
-        className='className="pt-[136px] 2xl:pt-32 xl:pt-[120px] lg:pt-[104px] sm:pt-24 pb-14 xl:pb-[48px] lg:pb-10 sm:pb-8 grid grid-cols-12 grid-gap border-b-gray-90 border-b-[1px] lg:flex lg:flex-col"'
+        className='pt-[136px] 2xl:pt-32 xl:pt-[120px] lg:pt-[104px] sm:pt-24 pb-14 xl:pb-[48px] lg:pb-10 sm:pb-8 grid grid-cols-12 grid-gap border-b-gray-90 border-b-[1px] lg:flex lg:flex-col"'
       >
         <div className="col-span-6">
           <p className="text-14 px-3 py-[5px] bg-tones-purple-medium rounded-[50px] w-fit text-tags-purple">

@@ -4,9 +4,9 @@ import NextLink from 'next/link';
 const SubscriptionForm = () => {
   return (
     <section className="bg-primary-1 mt-[90px]">
-      <form className="container flex items-center">
+      <form className="container flex justify-between items-center">
         <div className="flex items-center">
-          <div className="relative w-[252px]">
+          <div className="relative min-w-[252px] 2xl:min-w-[224px] xl:min-w-[174px]">
             <Image
               src="/images/form-image-lg.png"
               alt=""
@@ -19,14 +19,14 @@ const SubscriptionForm = () => {
             Learn product updates and database insight.
           </h2>
         </div>
-        <div className="text-white ml-[54px] max-w-[716px] w-full">
-          <p className="mt-7 lg:mt-[22px] md:mt-[10px] sm:mt-4 flex relative h-16 lg:h-12">
+        <div className="text-white ml-[54px] max-w-[calc(50%-20px)] 2xl:max-w-[604px] xl:max-w-[376px] w-full">
+          <p className="flex relative h-16 lg:h-12">
             <input
               className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 lg:px-5 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
               type="text"
               placeholder="Your email address..."
             />
-            <button className="flex-shrink-0 bg-black py-6 lg:py-4 px-11 md:py-3 md:px-5 sm:px-5 sm:py-3 rounded-r-full uppercase text-16 font-bold leading-none">
+            <button className="flex-shrink-0 bg-black py-6 xl:py-4 xl:px-[22px] lg:py-4 px-11 md:py-3 md:px-5 sm:px-5 sm:py-3 rounded-r-full uppercase text-16 font-bold leading-none">
               <span className="md:hidden">Subscribe</span>{' '}
               <img src="/images/arrow-form.svg" alt="" className="hidden md:!block w-6 h-6" />
             </button>
