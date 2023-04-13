@@ -60,7 +60,7 @@ const Hero = () => {
             <span className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
               control
             </span>
-            <p className="ml-11 2xl:ml-10 lg:ml-9 mt-5 xl:mt-[7px] md:ml-5 md:mt-2 text-20 xl:text-18 md:text-16 leading-[140%] md:max-w-sm">
+            <p className="ml-11 2xl:ml-10 lg:ml-9 mt-5 lg:mt-[7px] md:ml-5 md:mt-2 text-20 xl:text-18 md:text-16 leading-[140%] md:max-w-sm">
               Bytebase offers a web-based collaboration workspace to help DBAs and Developers manage
               the lifecycle of application database schemas.
             </p>
