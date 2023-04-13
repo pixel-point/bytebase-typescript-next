@@ -72,7 +72,7 @@ const PromoQuery = () => {
           />
         </div>
 
-        <div className="row-span-full col-start-9 col-span-4 pr-10 2xl:pr-0 2xl:col-start-8 lg:col-start-8 lg:col-span-5 lg:-translate-x-6 md:-translate-x-0 md:col-start-7 md:col-span-6 sm:translate-y-0 sm:translate-x-0 relative sm:mt-[25px]">
+        <div className="row-span-full col-start-9 col-span-4 pr-10 2xl:pr-0 md:pr-4 sm:pr-0 2xl:col-start-8 lg:col-start-8 lg:col-span-5 lg:-translate-x-6 md:-translate-x-0 md:col-start-7 md:col-span-6 sm:translate-y-0 sm:translate-x-0 relative sm:mt-[25px]">
           <Image
             className="hidden absolute -top-[100px] sm:-top-[98px] -right-[32px] sm:h-[135px] sm:block z-20"
             src="/images/ufo.png"

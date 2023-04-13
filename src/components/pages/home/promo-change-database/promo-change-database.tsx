@@ -23,7 +23,7 @@ const PromoChangeDatabase = () => {
         </div>
         <div className="col-start-7 2xl:col-start-7 lg:col-start-6 col-end-13">
           <Image
-            className="lg:hidden w-fit -ml-3 2xl:ml-0 h-[904px] 2xl:h-[874px] lg:h-[743px]"
+            className="md:hidden w-fit -ml-3 2xl:ml-0 h-[904px] 2xl:h-[874px] lg:h-[743px]"
             src="/images/automate-database-changes-lg.png"
             width={610}
             height={904}

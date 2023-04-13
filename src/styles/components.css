@@ -28,7 +28,7 @@
       @apply gap-x-6;
     }
 
-    @screen lg {
+    @screen md {
       @apply gap-x-5;
     }
   }

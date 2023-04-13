@@ -23,7 +23,7 @@ const PromoSecureAccess = () => {
         </div>
         <div className="col-start-7 2xl:col-start-7 lg:col-start-6 col-end-13">
           <Image
-            className="lg:hidden ml-auto w-fit 2xl:h-auto"
+            className="md:hidden ml-auto w-fit 2xl:h-auto"
             src="/images/security-by-design-lg.png"
             width={716}
             height={904}

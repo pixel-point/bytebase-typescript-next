@@ -50,7 +50,7 @@ const Hero = () => {
           </span>
         </span>
       </div>
-      <header className="mt-4.5 lg:mt-3.5 sm:mt-3 row-start-2 col-span-8 2xl:col-span-9 md:col-span-11 sm:col-span-4 relative max-w-[844px] 2xl:max-w-[824px] lg:max-w-[696px]">
+      <header className="mt-4.5 lg:mt-3.5 sm:mt-3 row-start-2 col-span-8 2xl:col-span-9 md:col-span-12 sm:col-span-4 relative max-w-[844px] 2xl:max-w-[824px] lg:max-w-[696px]">
         <div className="sm:hidden">
           <h1 className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
             <mark className="bg-transparent text-primary-1">Database</mark> schema change and
@@ -60,7 +60,7 @@ const Hero = () => {
             <span className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
               control
             </span>
-            <p className="ml-11 2xl:ml-10 xl:ml-[35px] lg:ml-5 mt-5 xl:mt-[7px] md:ml-0 md:mt-2 text-20 xl:text-18 lg:text-16 leading-[140%]">
+            <p className="ml-11 2xl:ml-10 lg:ml-9 mt-5 xl:mt-[7px] md:ml-5 md:mt-2 text-20 xl:text-18 md:text-16 leading-[140%] md:max-w-sm">
               Bytebase offers a web-based collaboration workspace to help DBAs and Developers manage
               the lifecycle of application database schemas.
             </p>
@@ -90,7 +90,7 @@ const Hero = () => {
           to={Route.INDEX}
           theme="primary-filled"
           size="lg"
-          additionalClassName="lg:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] tracking-wide"
+          additionalClassName="lg:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] tracking-wide w-full xl:max-w-[218px]"
         >
           Request a Demo
         </Button>

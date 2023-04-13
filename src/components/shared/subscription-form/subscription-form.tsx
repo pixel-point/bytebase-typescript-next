@@ -5,7 +5,7 @@ import Route from '@/lib/route';
 
 const SubscriptionForm = () => {
   return (
-    <section className="mt-[205px] 2xl:mt-[189px] lg:mt-[156px] md:mt-[75px] bg-primary-1 text-white">
+    <section className="mt-[205px] 2xl:mt-[189px] lg:mt-[136px] md:mt-[75px] sm:mt-9 bg-primary-1 text-white">
       <div className="container grid grid-cols-12 grid-gap sm:flex sm:flex-col overflow-x-clip">
         <div className="col-start-2 -ml-10 lg:ml-0 col-span-5 lg:col-start-1 sm:relative">
           <Image
@@ -26,18 +26,18 @@ const SubscriptionForm = () => {
         <div className="col-start-7 -ml-10 2xl:ml-0 col-span-5 lg:col-start-7 lg:-ml-6 md:ml-0 lg:col-span-6 md:col-start-7 md:col-span-6 sm:max-w-[80%] 2xs:max-w-none">
           <form className="py-[72px] lg:py-14 md:py-11 sm:py-10">
             <p>
-              <b className="text-88 lg:text-68 md:text-56 sm:text-48 font-semibold leading-none lg:leading-104 md:leading-none sm:leading-[45px] font-title">
+              <b className="text-88 lg:text-68 md:text-56 sm:text-48 font-semibold leading-none lg:leading-104 md:leading-none sm:leading-95 font-title">
                 Subscribe to&nbsp;Newsletter
               </b>
             </p>
-            <p className="mt-6 lg:mt-5 md:mt-[10px] sm:mt-4 flex relative h-16">
+            <p className="mt-7 lg:mt-[22px] md:mt-[10px] sm:mt-4 flex relative h-16 lg:h-12">
               <input
-                className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
+                className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 lg:px-5 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
                 type="text"
                 placeholder="Your email address..."
               />
               <button className="flex-shrink-0 bg-black py-6 lg:py-4 px-11 md:py-3 md:px-5 sm:px-5 sm:py-3 rounded-r-full uppercase text-16 font-bold leading-none">
-                <span className="lg:hidden">Subscribe</span>{' '}
+                <span className="md:hidden">Subscribe</span>{' '}
                 <img src="/images/arrow-form.svg" alt="" className="hidden md:!block w-6 h-6" />
               </button>
             </p>
