@@ -33,7 +33,7 @@ const Community = () => {
             height={613}
             alt=""
             objectFit="contain"
-            className="xl:h-[415px] lg:w-[400px] md:h-[357px] md:w-[346px] sm:w-[328px] sm:h-[341px]"
+            className="lg:h-[415px] lg:w-[400px] md:h-[357px] md:w-[346px] sm:w-[328px] sm:h-[341px]"
           />
         </div>
       </header>
