@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Author from '@/components/shared/author';
 
@@ -18,7 +19,10 @@ const relatedPosts = [
 const Hero = () => {
   return (
     <section className="container items-center">
-      <header className="pt-[136px] 2xl:pt-32 xl:pt-[120px] lg:pt-[104px] sm:pt-24 pb-14 xl:pb-[48px] lg:pb-10 sm:pb-8 grid grid-cols-12 grid-gap border-b-gray-90 border-b-[1px] lg:flex lg:flex-col">
+      <Link
+        href=""
+        className='className="pt-[136px] 2xl:pt-32 xl:pt-[120px] lg:pt-[104px] sm:pt-24 pb-14 xl:pb-[48px] lg:pb-10 sm:pb-8 grid grid-cols-12 grid-gap border-b-gray-90 border-b-[1px] lg:flex lg:flex-col"'
+      >
         <div className="col-span-6">
           <p className="text-14 px-3 py-[5px] bg-tones-purple-medium rounded-[50px] w-fit text-tags-purple">
             Announcement
@@ -37,19 +41,19 @@ const Hero = () => {
             className="rounded-lg shadow-image border-[1px] border-gray-70 xl:h-[284px] lg:w-full lg:h-auto"
           />
         </div>
-      </header>
-      <footer>
-        <ul className="grid grid-cols-12 sm:grid-cols-4 grid-gap pt-14 xl:pt-[48px] md:gap-y-8 lg:pt-10 sm:pt-8">
-          {relatedPosts.map((post, index) => (
-            <li
-              key={index}
-              className="col-span-3 max-w-[300px] md:max-w-[340px] sm:max-w-none md:col-span-6 sm:col-span-4"
-            >
+      </Link>
+      <ul className="grid grid-cols-12 sm:grid-cols-4 grid-gap pt-14 xl:pt-[48px] md:gap-y-8 lg:pt-10 sm:pt-8">
+        {relatedPosts.map((post, index) => (
+          <li
+            key={index}
+            className="col-span-3 max-w-[300px] md:max-w-[340px] sm:max-w-none md:col-span-6 sm:col-span-4"
+          >
+            <Link href="">
               <RelatedPosts postClass={post.postClass} title={post.title} />
-            </li>
-          ))}
-        </ul>
-      </footer>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
