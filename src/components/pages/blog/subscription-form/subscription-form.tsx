@@ -12,14 +12,14 @@ const SubscriptionForm = () => {
               alt=""
               width={252}
               height={212}
-              className=" -translate-y-10 absolute bottom-0"
+              className=" -translate-y-10 absolute -bottom-32"
             />
           </div>
-          <h2 className="py-[37px] font-title text-52 leading-none text-white max-w-[434px]">
+          <h2 className="ml-4 py-[37px] font-title text-52 leading-none text-white max-w-[434px]">
             Learn product updates and database insight.
           </h2>
         </div>
-        <div className="text-white">
+        <div className="text-white ml-[54px] max-w-[716px] w-full">
           <p className="mt-7 lg:mt-[22px] md:mt-[10px] sm:mt-4 flex relative h-16 lg:h-12">
             <input
               className=" placeholder-gray-15 remove-autocomplete-styles outline-none flex-grow py-6 lg:py-4 px-7 lg:px-5 sm:px-5 text-16 leading-none tracking-tight text-gray-40 rounded-l-full"
