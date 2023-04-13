@@ -50,7 +50,7 @@ const Accordion = ({
         {isOpen ? (
           <div
             className={clsx(
-              'flex col-start-1 col-end-8 lg:col-end-7 md:col-end-13 sm:col-end-5 pt-[165px] 2xl:pt-[124px] xl:pt-[115px] lg:pt-0',
+              'flex col-start-1 col-end-8 lg:col-end-7 md:col-end-13 sm:col-end-5 pt-[165px] 2xl:pt-[124px] xl:pt-[115px] md:pt-0',
             )}
           >
             <img
