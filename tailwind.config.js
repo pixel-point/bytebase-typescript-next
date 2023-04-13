@@ -39,6 +39,7 @@ module.exports = {
       },
       tones: {
         'purple-light': '#F0F2FF',
+        'purple-medium': '#E0E7FF',
         'purple-dark': '#ACB2D2',
         'blue-light': '#F0FAFE',
         'blue-dark': '#9CBAC9',
@@ -108,11 +109,17 @@ module.exports = {
       wide: '0.02em',
     },
     extend: {
+      lineHeight: {
+        95: '95%',
+        104: '104%',
+        'extra-tight': '1.125',
+      },
       spacing: {
         4.5: '1.125rem',
       },
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
+        image: '0px 5px 15px rgba(15, 22, 36, 0.2);',
       },
     },
   },
