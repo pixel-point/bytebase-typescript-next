@@ -7,7 +7,7 @@ const PromoChangeDatabase = () => {
     <section className="change mt-[160px] 2xl:mt-36 lg:mt-32 md:mt-24 sm:mt-20 bg-black text-white md:pt-16 xs:pt-[58px]">
       <div className="container grid grid-cols-12 grid-gap">
         <div className="self-center lg:self-auto lg:mt-[140px] md:mt-0 col-start-1 col-end-7 lg:col-end-6 md:col-end-13">
-          <span className="inline-flex font-bold uppercase text-12 leading-none xs:leading-95 tracking-[0.02em] bg-primary-1 px-2.5 py-2 rounded-3xl">
+          <span className="inline-flex font-bold uppercase text-12 leading-none xs:leading-95 tracking-wider bg-primary-1 px-2.5 py-2 rounded-3xl">
             Change
           </span>
           <h2 className="mt-3.5 lg:mt-2.5 md:mt-1.5 xs:mt-2 font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">

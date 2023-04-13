@@ -1,6 +1,6 @@
 const Logos = () => {
   return (
-    <div className="mt-[160px] 2xl:mt-36 lg:mt-[128px] md:mt-24 sm:mt-20 relative">
+    <div className="mt-[160px] 2xl:mt-36 lg:mt-[130px] md:mt-[90px] sm:mt-20 relative">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/logos-caption.svg"

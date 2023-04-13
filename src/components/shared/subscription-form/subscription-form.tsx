@@ -5,7 +5,7 @@ import Route from '@/lib/route';
 
 const SubscriptionForm = () => {
   return (
-    <section className="mt-[205px] 2xl:mt-[189px] lg:mt-[136px] md:mt-[75px] sm:mt-9 bg-primary-1 text-white">
+    <section className="mt-[205px] 2xl:mt-[189px] lg:mt-[134px] md:mt-[74px] sm:mt-9 bg-primary-1 text-white">
       <div className="container grid grid-cols-12 grid-gap sm:flex sm:flex-col overflow-x-clip">
         <div className="col-start-2 -ml-10 lg:ml-0 col-span-5 lg:col-start-1 sm:relative">
           <Image
@@ -41,10 +41,16 @@ const SubscriptionForm = () => {
                 <img src="/images/arrow-form.svg" alt="" className="hidden md:!block w-6 h-6" />
               </button>
             </p>
-            <p className="mt-5 lg:mt-3 sm:mt-2 [&>a]:border-b-[2px] [&>a]:border-[#FFFFFF40] [&>a]:pb-[3px] text-14 leading-snug lg:max-w-[290px]">
+            <p className="mt-5 lg:mt-3 sm:mt-2 [&>a]:border-b-[2px] text-14 leading-snug lg:max-w-[290px]">
               By subscribing, you agree with Revue&apos;s{' '}
-              <NextLink href={Route.TERMS}>Terms of Service</NextLink> and{' '}
-              <NextLink href={Route.PRIVACY}>Privacy Policy</NextLink>.
+              <NextLink href={Route.TERMS} className="pb-[3px] border-b-[2px] border-[#FFFFFF40]">
+                Terms of Service
+              </NextLink>{' '}
+              and{' '}
+              <NextLink href={Route.PRIVACY} className="pb-[3px] border-b-[2px] border-[#FFFFFF40]">
+                Privacy Policy
+              </NextLink>
+              .
             </p>
           </form>
         </div>

@@ -5,15 +5,7 @@ import Route from '@/lib/route';
 
 import Card from './card';
 
-type TCard = {
-  cover: '/images/change-database.png' | '/images/query-data.png' | '/images/secure-access.png';
-  href: string;
-  title: string;
-  description: string;
-  image?: string;
-};
-
-const cards: TCard[] = [
+const cards = [
   {
     href: '#',
     cover: '/images/change-database.png',
@@ -51,12 +43,12 @@ const Hero = () => {
         </span>
       </div>
       <header className="mt-4.5 lg:mt-3.5 sm:mt-3 row-start-2 col-span-8 2xl:col-span-9 md:col-span-12 sm:col-span-4 relative max-w-[844px] 2xl:max-w-[824px] lg:max-w-[696px]">
-        <div className="sm:hidden">
-          <h1 className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
+        <h1 className="sm:hidden">
+          <span className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
             <mark className="bg-transparent text-primary-1">Database</mark> schema change and
             version
-          </h1>
-          <div className="flex sm:flex-col">
+          </span>
+          <span className="flex sm:flex-col">
             <span className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-48">
               control
             </span>
@@ -64,8 +56,8 @@ const Hero = () => {
               Bytebase offers a web-based collaboration workspace to help DBAs and Developers manage
               the lifecycle of application database schemas.
             </p>
-          </div>
-        </div>
+          </span>
+        </h1>
         <div className="hidden sm:block max-w-sm">
           <h1 className="font-title font-semibold leading-95 text-48">
             <mark className="bg-transparent text-primary-1">Database</mark> schema change and
@@ -90,7 +82,7 @@ const Hero = () => {
           to={Route.INDEX}
           theme="primary-filled"
           size="lg"
-          additionalClassName="lg:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] tracking-wide w-full xl:max-w-[218px]"
+          additionalClassName="sm:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] tracking-wide w-full xl:max-w-[218px]"
         >
           Request a Demo
         </Button>

@@ -33,7 +33,7 @@ const cards: TCard[] = [
 
 const Features = () => {
   return (
-    <section className="mt-[238px] 2xl:mt-36 lg:mt-32 md:mt-24 container sm:mt-20">
+    <section className="mt-[238px] 2xl:mt-36 lg:mt-[126px] md:mt-[90px] container sm:mt-20">
       <header className="text-center flex flex-col items-center sm:items-start sm:text-start">
         <h2 className="font-title font-semibold leading-none lg:leading-104 text-88 lg:text-68 md:text-54 sm:text-48">
           Stay confident

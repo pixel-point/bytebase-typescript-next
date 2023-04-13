@@ -11,7 +11,8 @@ interface AccordionProps {
   imageMobile: string;
   isOpenExternal?: boolean;
   onChange?: () => void;
-  defaultOpen?: boolean;
+  defaultOpen: boolean;
+  className?: string;
 }
 
 const Accordion = ({
@@ -22,6 +23,7 @@ const Accordion = ({
   defaultOpen,
   onChange,
   isOpenExternal,
+  className,
 }: AccordionProps) => {
   const [isOpenLocal, setIsOpenLocal] = useState(defaultOpen);
   const isOpen = onChange ? isOpenExternal : isOpenLocal;
@@ -37,6 +39,7 @@ const Accordion = ({
         isOpen
           ? 'bg-opacity-50 bg-tones-purple-light'
           : 'bg-cite bg-tones-purple-light border-t-[1px] border-b-[1px] border-white',
+        className,
       )}
     >
       <div
@@ -62,7 +65,7 @@ const Accordion = ({
               <p
                 className={clsx(
                   isOpen
-                    ? 'mt-[7px] font-bold leading-[112.5%] -tracking-[0.04em] md:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
+                    ? 'mt-[7px] font-bold leading-extra-tight -tracking-tighter md:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
                     : 'ml-7 text-30',
                 )}
               >
@@ -70,7 +73,7 @@ const Accordion = ({
               </p>
               {isOpen && (
                 <div className="order-1 flex-grow col-start-1 col-end-8 sm:col-end-5">
-                  <p className="mt-4 lg:mt-2 md:mt-1.5 text-18 lg:text-16 md:text-14 leading-[150%] 2xl:max-w-[604px] lg:!max-w-[538px]">
+                  <p className="mt-4 lg:mt-2 md:mt-1.5 text-18 lg:text-16 md:text-14 leading-normal 2xl:max-w-[604px] lg:!max-w-[538px]">
                     {description}
                   </p>
                 </div>
@@ -87,8 +90,8 @@ const Accordion = ({
             <div
               className={clsx(
                 isOpen
-                  ? 'font-bold leading-extra-tight sm:leading-tight -tracking-[0.04em] 2xl:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
-                  : 'font-bold leading-extra-tight sm:leading-tight -tracking-[0.04em] 2xl:tracking-normal ml-7 lg:ml-6 md:ml-4 sm:ml-3 text-30 lg:text-24 md:text-20 sm:text-18',
+                  ? 'font-bold leading-extra-tight sm:leading-tight -tracking-tighter 2xl:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
+                  : 'font-bold leading-extra-tight sm:leading-tight -tracking-tighter 2xl:tracking-normal ml-7 lg:ml-6 md:ml-4 sm:ml-3 text-30 lg:text-24 md:text-20 sm:text-18',
               )}
             >
               {title}

@@ -42,7 +42,7 @@ const PromoQuery = () => {
     [],
   );
   return (
-    <section className="mt-[94px] lg:mt-[72px] md:mt-14 sm:mt-20 container relative overflow-x-clip">
+    <section className="mt-[94px] lg:mt-[60px] md:mt-7 sm:mt-20 container relative overflow-x-clip">
       <header className="pt-[66px] sm:p-0">
         <Image
           className="absolute top-0 2xl:top-4 lg:top-[11px] md:top-6 right-[156px] 2xl:right-32 lg:right-[124px] md:right-[72px] lg:w-[216px] lg:h-[204px] md:w-[183px] md:h-[172px] sm:w-[141px] sm:hidden"

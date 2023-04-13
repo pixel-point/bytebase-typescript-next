@@ -40,8 +40,8 @@ const options = [
 ];
 
 const PromoOptions = () => {
-  const defaultOpenPanelId = 0;
-  const [activePanelId, setActivePanelId] = useState<number | undefined>(defaultOpenPanelId);
+  const DEFAULT_OPEN_PANEL_ID = 0;
+  const [activePanelId, setActivePanelId] = useState<number | undefined>(DEFAULT_OPEN_PANEL_ID);
 
   const createHandleToggle = useCallback(
     (id: number) => () => {
@@ -54,6 +54,7 @@ const PromoOptions = () => {
 
   return (
     <section>
+      <h2 className="sr-only">Promo options</h2>
       <ul>
         {options.map((option, index) => (
           <li key={index}>
@@ -63,7 +64,7 @@ const PromoOptions = () => {
               image={option.image}
               imageMobile={option.imageMobile}
               isOpenExternal={index === activePanelId}
-              defaultOpen={index === defaultOpenPanelId}
+              defaultOpen={index === DEFAULT_OPEN_PANEL_ID}
               onChange={createHandleToggle(index)}
             />
           </li>
