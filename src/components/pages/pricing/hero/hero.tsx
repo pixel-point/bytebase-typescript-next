@@ -1,5 +1,6 @@
 import Link from '@/components/shared/link';
 
+import { COLORS } from '../table/data/pricing-plans';
 import Card from './card';
 
 const Hero = () => {
@@ -8,7 +9,7 @@ const Hero = () => {
       | '/images/pricing/free.jpg'
       | '/images/pricing/team.jpg'
       | '/images/pricing/enterprise.jpg';
-    planTitle: string;
+    planTitle: keyof typeof COLORS;
     price: string | number;
     description: string;
     buttonText: string;
