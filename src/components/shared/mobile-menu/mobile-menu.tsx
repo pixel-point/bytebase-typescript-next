@@ -115,7 +115,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
               <li key={index} className="first:-mt-4 relative last:border-b last:border-gray-90">
                 {items ? (
                   <button
-                    className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                    className="flex w-full flex-col items-start justify-center whitespace-nowrap text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-5"
                     tabIndex={0}
                     onClick={() => handleDropdownOpen(index)}
                   >
@@ -134,7 +134,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 ) : (
                   <Link
                     to={href}
-                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-5"
                   >
                     <span>{title}</span>
                   </Link>
@@ -179,7 +179,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
           </ul>
           <div className="mt-10 flex flex-col gap-4">
             <GithubStarsButton />
-            <Button additionalClassName="py-4.5" to="/" theme="gray-filled" size="sm">
+            <Button to="/" theme="gray-filled" size="md">
               Sign up for Cloud
             </Button>
           </div>
