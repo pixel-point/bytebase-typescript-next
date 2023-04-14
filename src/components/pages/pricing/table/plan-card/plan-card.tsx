@@ -38,7 +38,7 @@ const PlanCard = ({
       <div
         className={clsx(
           'border-t-8 sticky top-0 flex flex-col px-4.5 2xl:px-6 pt-6 lg:px-4.5 min-h-[250px] lg:min-h-[230px] z-20 xs:px-2 sm:pt-5',
-          title.toLowerCase() === 'team' ? 'bg-[#F9FAFF]' : 'bg-white',
+          title === 'team' ? 'bg-[#F9FAFF]' : 'bg-white',
         )}
         style={{ borderTopColor: planColor }}
       >
@@ -71,11 +71,11 @@ const PlanCard = ({
           )}
         />
       </div>
-      <FeatureList features={changeManagement} currentRow={currentRow} />
-      <FeatureList features={sql} currentRow={currentRow} />
-      <FeatureList features={collaboration} currentRow={currentRow} />
-      <FeatureList features={security} currentRow={currentRow} withLongTitle />
-      <FeatureList features={bespoke} currentRow={currentRow} isLastSection />
+      <FeatureList title={title} features={changeManagement} currentRow={currentRow} />
+      <FeatureList title={title} features={sql} currentRow={currentRow} />
+      <FeatureList title={title} features={collaboration} currentRow={currentRow} />
+      <FeatureList title={title} features={security} currentRow={currentRow} withLongTitle />
+      <FeatureList title={title} features={bespoke} currentRow={currentRow} isLastSection />
     </div>
   );
 };
