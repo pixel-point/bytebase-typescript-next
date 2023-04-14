@@ -22,7 +22,7 @@ const Hero = () => {
   const cards: TCard[] = [
     {
       image: '/images/pricing/free.jpg',
-      planTitle: 'Free',
+      planTitle: 'free',
       price: 0,
       description: 'Up to 10 seats and&nbsp;10&nbsp;instances',
       buttonText: 'Free Deploy',
@@ -39,7 +39,7 @@ const Hero = () => {
     },
     {
       image: '/images/pricing/team.jpg',
-      planTitle: 'Team',
+      planTitle: 'team',
       price: 19,
       priceDescription: '/ starts at month',
       description: 'Up to 10 seats and 10 instances (first 3 FREE)',
@@ -59,7 +59,7 @@ const Hero = () => {
     },
     {
       image: '/images/pricing/enterprise.jpg',
-      planTitle: 'Enterprise',
+      planTitle: 'enterprise',
       price: 'Custom',
       description: 'Customized, billed&nbsp;annually',
       buttonText: 'Contact us',

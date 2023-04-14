@@ -2,10 +2,11 @@ import Image from 'next/image';
 
 import clsx from 'clsx';
 
+import { COLORS } from '@/components/pages/pricing/table/data/pricing-plans';
 import Button from '@/components/shared/button';
 
 type CardProps = {
-  planTitle: keyof typeof colors;
+  planTitle: keyof typeof COLORS;
   image: string;
   price: string | number;
   description: string;
@@ -16,8 +17,6 @@ type CardProps = {
   priceDescription?: string;
   additionalDescription?: string;
 };
-
-const colors = { team: '#5647EB', free: '#3DB8F5', enterprise: '#172136' };
 
 const Card = ({
   planTitle,
@@ -31,7 +30,7 @@ const Card = ({
   buttonTheme,
   planConditions,
 }: CardProps) => {
-  const planColor = colors[planTitle];
+  const planColor = COLORS[planTitle];
   return (
     <article
       className="relative bg-white h-full border border-gray-70 shadow-pricing flex flex-col items-center border-t-8 pt-3.5 md:pt-2.5 pb-10 px-6 lg:px-5 md:px-4.5 md:pb-9 sm:pt-4 sm:px-6"

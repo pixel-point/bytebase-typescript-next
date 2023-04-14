@@ -1,9 +1,11 @@
 // TODO: add tooltip values
 import { Plan } from '@/types/pricing';
 
+const COLORS = { team: '#5647EB', free: '#3DB8F5', enterprise: '#172136' };
+
 const PLANS: { free: Plan; team: Plan; enterprise: Plan } = {
   free: {
-    title: 'Free',
+    title: 'free',
     description: `Personal project or small team, no&nbsp;DBA`,
     buttonText: 'Free Deploy',
     buttonTheme: 'primary-outline',
@@ -58,7 +60,7 @@ const PLANS: { free: Plan; team: Plan; enterprise: Plan } = {
     },
   },
   team: {
-    title: 'Team',
+    title: 'team',
     description: 'Medium size team, has dedicated DBA or TL for engineering velocity',
     buttonText: 'Try Free now',
     buttonTheme: 'primary-filled',
@@ -118,7 +120,7 @@ const PLANS: { free: Plan; team: Plan; enterprise: Plan } = {
     },
   },
   enterprise: {
-    title: 'Enterprise',
+    title: 'enterprise',
     description: 'Large organization, has dedicated DBA group to manage database fleet',
     buttonText: 'Contact us',
     buttonTheme: 'primary-outline',
@@ -249,4 +251,4 @@ const LABELS = [
   },
 ];
 
-export { PLANS, LABELS };
+export { PLANS, LABELS, COLORS };

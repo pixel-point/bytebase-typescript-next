@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 
+import { COLORS } from '@/components/pages/pricing/table/data/pricing-plans';
 import Button from '@/components/shared/button';
 
 import { Plan } from '@/types/pricing';
 
 import FeatureList from './feature-list';
-
-const colors = { team: '#5647EB', free: '#3DB8F5', enterprise: '#172136' };
 
 const PlanCard = ({
   title,
@@ -26,14 +25,14 @@ const PlanCard = ({
   className: string;
   currentRow: string;
 }) => {
-  const planColor = colors[title.toLowerCase() as keyof typeof colors];
+  const planColor = COLORS[title];
 
   return (
     <div
       className={clsx(
         'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px] xs:min-w-0 xs:max-w-[156px]',
         className,
-        { 'bg-[#F9FAFF] border-l-0 border-r-0': title.toLowerCase() === 'team' },
+        { 'bg-[#F9FAFF] border-l-0 border-r-0': title === 'team' },
       )}
     >
       <div
@@ -43,7 +42,9 @@ const PlanCard = ({
         )}
         style={{ borderTopColor: planColor }}
       >
-        <h3 className="font-title text-56 leading-none lg:text-44 md:text-34">{title}</h3>
+        <h3 className="font-title capitalize text-56 leading-none lg:text-44 md:text-34">
+          {title}
+        </h3>
         <p
           className="mt-3 text-14 leading-tight tracking-tight text-gray-40 max-w-[244px] mx-auto lg:mt-2 2xl:min-h-[54px] sm:min-h-[72px]"
           dangerouslySetInnerHTML={{ __html: description }}

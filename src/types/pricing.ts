@@ -1,5 +1,7 @@
+import { COLORS } from '@/components/pages/pricing/table/data/pricing-plans';
+
 export type Plan = {
-  title: string;
+  title: keyof typeof COLORS;
   description: string;
   additionalDescription?: string;
   buttonText: string;
