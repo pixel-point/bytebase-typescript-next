@@ -65,7 +65,7 @@ const Accordion = ({
               <p
                 className={clsx(
                   isOpen
-                    ? 'mt-[7px] font-bold leading-extra-tight -tracking-tighter md:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
+                    ? 'mt-[7px] font-bold leading-extra-tight tracking-tighter md:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
                     : 'ml-7 text-30',
                 )}
               >
@@ -90,8 +90,8 @@ const Accordion = ({
             <div
               className={clsx(
                 isOpen
-                  ? 'font-bold leading-extra-tight sm:leading-tight -tracking-tighter 2xl:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
-                  : 'font-bold leading-extra-tight sm:leading-tight -tracking-tighter 2xl:tracking-normal ml-7 lg:ml-6 md:ml-4 sm:ml-3 text-30 lg:text-24 md:text-20 sm:text-18',
+                  ? 'font-bold leading-extra-tight sm:leading-tight tracking-tighter 2xl:tracking-normal ml-0 text-44 lg:text-36 md:text-30 sm:text-24'
+                  : 'font-bold leading-extra-tight sm:leading-tight tracking-tighter 2xl:tracking-normal ml-7 lg:ml-6 md:ml-4 sm:ml-3 text-30 lg:text-24 md:text-20 sm:text-18',
               )}
             >
               {title}

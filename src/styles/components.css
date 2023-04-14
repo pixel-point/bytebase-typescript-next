@@ -47,5 +47,15 @@
         #cceeff 71.99%,
         #1fd68a 98.18%
       );
+
+    @screen lg {
+      @apply bg-1024;
+    }
+    @screen md {
+      @apply bg-768;
+    }
+    @screen sm {
+      @apply bg-360;
+    }
   }
 }

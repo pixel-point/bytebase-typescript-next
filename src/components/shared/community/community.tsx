@@ -4,7 +4,7 @@ import Cards from './components';
 
 const Community = () => {
   return (
-    <section className="mt-[160px] 2xl:mt-36 lg:mt-32 md:mt-24 sm:mt-20 pb-[80px] container">
+    <section className="mt-[160px] 2xl:mt-36 lg:mt-32 md:mt-24 sm:mt-[76px] pb-[80px] container">
       <header className="flex 2xl:justify-between sm:flex-col">
         <div className="mt-[104px] 2xl:mt-[98px] lg:mt-[60px] md:mt-12 sm:mt-0 flex flex-col max-w-[630px] 2xl:max-w-[575px] md:max-w-[456px] ">
           <div className="font-title font-semibold leading-none lg:leading-95 text-112 lg:text-90 md:text-80 sm:text-56">

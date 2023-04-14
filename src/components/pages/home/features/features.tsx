@@ -33,12 +33,12 @@ const cards: TCard[] = [
 
 const Features = () => {
   return (
-    <section className="mt-[238px] 2xl:mt-36 lg:mt-[126px] md:mt-[90px] container sm:mt-20">
+    <section className="mt-[232px] 2xl:mt-[138px] lg:mt-[124px] md:mt-[90px] container sm:mt-[76px]">
       <header className="text-center flex flex-col items-center sm:items-start sm:text-start">
         <h2 className="font-title font-semibold leading-none lg:leading-104 text-88 lg:text-68 md:text-54 sm:text-48">
           Stay confident
         </h2>
-        <p className="mt-5 lg:mt-5 md:mt-3 sm:mt-2 text-20 lg:text-18 md:text-14 leading-normal lg:leading-snug max-w-[716px] md:max-w-[468px]">
+        <p className="mt-5 2xl:mt-[22px] lg:mt-5 md:mt-3 sm:mt-2 text-20 lg:text-18 md:text-14 leading-normal lg:leading-snug max-w-[716px] md:max-w-[468px]">
           Bytebase streamlines database deployment from non-prod to prod by integrating with version
           control systems for a GitOps workflow.
         </p>
