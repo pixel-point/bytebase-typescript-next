@@ -42,13 +42,12 @@ const FeatureList = ({
 }: FeatureListProps) => (
   <div
     className={clsx(
-      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] sm:pt-[78.5px]',
+      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] sm:pt-[78.5px] divide-y border-b',
+      title === 'team'
+        ? 'border-transparent divide-transparent'
+        : 'border-black divide-y divide-black border-b  border-opacity-10  divide-opacity-10',
       { 'md:pt-[110px] sm:pt-[101px]': withLongTitle },
       { 'last:border-b-0': isLastSection },
-      {
-        'divide-y divide-black border-b border-black border-opacity-10  divide-opacity-10':
-          title !== 'team',
-      },
     )}
   >
     {Object.keys(features).map((item, index) => {
