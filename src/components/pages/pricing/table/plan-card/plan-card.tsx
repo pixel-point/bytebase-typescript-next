@@ -5,8 +5,6 @@ import Button from '@/components/shared/button';
 
 import { Plan } from '@/types/pricing';
 
-import FeatureList from './feature-list';
-
 const PlanCard = ({
   title,
   description,
@@ -30,14 +28,14 @@ const PlanCard = ({
   return (
     <div
       className={clsx(
-        'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px] xs:min-w-0 xs:max-w-[156px]',
+        'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px] border-b-0',
         className,
         { 'bg-[#F9FAFF] border-l-0 border-r-0': title === 'team' },
       )}
     >
       <div
         className={clsx(
-          'border-t-8 sticky top-0 flex flex-col px-4.5 2xl:px-6 pt-6 lg:px-4.5 min-h-[250px] lg:min-h-[230px] z-20 xs:px-2 sm:pt-5',
+          'border-t-8 flex flex-col px-4.5 2xl:px-6 pt-6 lg:px-4.5 min-h-[250px] lg:min-h-[230px] z-20 xs:px-2 sm:pt-5',
           title === 'team' ? 'bg-[#F9FAFF]' : 'bg-white',
         )}
         style={{ borderTopColor: planColor }}
@@ -71,11 +69,6 @@ const PlanCard = ({
           )}
         />
       </div>
-      <FeatureList title={title} features={changeManagement} currentRow={currentRow} />
-      <FeatureList title={title} features={sql} currentRow={currentRow} />
-      <FeatureList title={title} features={collaboration} currentRow={currentRow} />
-      <FeatureList title={title} features={security} currentRow={currentRow} withLongTitle />
-      <FeatureList title={title} features={bespoke} currentRow={currentRow} isLastSection />
     </div>
   );
 };

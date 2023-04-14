@@ -42,8 +42,8 @@ const FeatureList = ({
 }: FeatureListProps) => (
   <div
     className={clsx(
-      '[&:nth-child(2)]:mt-4 mt-[84px] flex flex-col text-center md:[&:nth-child(2)]:mt-[23px] 2xl:[&:nth-child(2)]:mt-[19px] lg:mt-[85px] sm:[&:nth-child(2)]:mt-[37px] sm:mt-[78.5px]',
-      { 'md:mt-[110px] sm:mt-[101px]': withLongTitle },
+      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] sm:pt-[78.5px]',
+      { 'md:pt-[110px] sm:pt-[101px]': withLongTitle },
       { 'last:border-b-0': isLastSection },
       {
         'divide-y divide-black border-b border-black border-opacity-10  divide-opacity-10':

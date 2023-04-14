@@ -10,6 +10,8 @@ import { isLabelLong, isLabelMedium } from '@/components/pages/pricing/table/dat
 import { LABELS, PLANS } from '@/components/pages/pricing/table/data/pricing-plans';
 import PlanCard from '@/components/pages/pricing/table/plan-card';
 
+import FeatureList from './plan-card/feature-list';
+
 const Table = () => {
   const [currentRow, setCurrentRow] = useState('');
 
@@ -43,54 +45,96 @@ const Table = () => {
           alt=""
           className="absolute -top-[140px] -left-10 2xl:left-24 z-50 lg:w-[280px] lg:h-auto md:w-[225px] lg:-top-[100px] lg:left-11 md:-top-3 md:left-7 sm:w-[204px] sm:-left-14 sm:top-0"
         />
-        <div className="md:scrollbar-hidden max-w-[1220px] 2xl:max-w-full md:max-w-none mx-auto md:overflow-x-auto md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
-          <div className="flex items-start relative">
-            <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col md:sticky md:top-0 md:left-0 md:z-40 sm:min-w-[156px]">
-              <div className="z-40 sticky top-0 left-0 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
-              <div className="bg-white z-40">
-                {LABELS.map(({ title, items }, index) => (
-                  <div
-                    className="relative mt-7 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
-                    key={index}
-                  >
-                    <p className="py-4 bg-white text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18 sm:pb-3">
-                      {title}
-                    </p>
-                    <ul className="flex flex-col divide-y divide-black divide-opacity-10">
-                      {Object.keys(items).map((item, idx) => {
-                        const isActive = `${item}-${idx}` === currentRow;
-                        return (
-                          <li
-                            className={clsx(
-                              'flex h-12 items-center text-16 font-medium leading-normal text-gray-15 sm:text-15 sm:pr-4.5',
-                              {
-                                'bg-[#FCFBFF]': isActive,
-                              },
-                              { 'lg:h-[72px] sm:h-[94px]': isLabelLong(item) },
-                              { 'sm:h-[72px]': isLabelMedium(item) },
-                            )}
-                            data-row-id={`${item}-${index}`}
-                            key={index}
-                          >
-                            {items[item as keyof typeof items]}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex">
-              {Object.keys(PLANS).map((plan, index) => (
-                <PlanCard
-                  className="basis-1/3 grow"
-                  currentRow={currentRow}
+        <div className="flex items-start relative">
+          <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px]">
+            <div className="z-40 sticky top-0 left-0 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
+            <div className="bg-white z-40">
+              {LABELS.map(({ title, items }, index) => (
+                <div
+                  className="relative mt-7 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
                   key={index}
-                  {...PLANS[plan as keyof typeof PLANS]}
-                />
+                >
+                  <p className="py-4 bg-white text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18 sm:pb-3">
+                    {title}
+                  </p>
+                  <ul className="flex flex-col divide-y divide-black divide-opacity-10">
+                    {Object.keys(items).map((item, idx) => {
+                      const isActive = `${item}-${idx}` === currentRow;
+                      return (
+                        <li
+                          className={clsx(
+                            'flex h-12 items-center text-16 font-medium leading-normal text-gray-15 sm:text-15 sm:pr-4.5',
+                            {
+                              'bg-[#FCFBFF]': isActive,
+                            },
+                            { 'lg:h-[72px] sm:h-[94px]': isLabelLong(item) },
+                            { 'sm:h-[72px]': isLabelMedium(item) },
+                          )}
+                          data-row-id={`${item}-${index}`}
+                          key={index}
+                        >
+                          {items[item as keyof typeof items]}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               ))}
             </div>
+          </div>
+          <div className="flex md:overflow-x-auto relative md:scrollbar-hidden max-w-[1220px] 2xl:max-w-full md:max-w-none mx-auto md:h-full md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
+            {Object.keys(PLANS).map((plan, index) => {
+              const currentPlan = PLANS[plan as keyof typeof PLANS];
+              return (
+                <div className="flex flex-col" key={index}>
+                  <div className="sticky top-0 z-20">
+                    <div className="md:overflow-x-hidden">
+                      <PlanCard
+                        className="basis-1/3 grow"
+                        currentRow={currentRow}
+                        key={index}
+                        {...currentPlan}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex md:overflow-x-auto">
+                    <div
+                      className={clsx(
+                        'basis-1/3 grow border border-t-0 border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px]',
+                        { 'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team' },
+                      )}
+                      key={index}
+                    >
+                      <FeatureList
+                        title={currentPlan.title}
+                        features={currentPlan.changeManagement}
+                        currentRow={currentRow}
+                      />
+                      <FeatureList
+                        title={currentPlan.title}
+                        features={currentPlan.sql}
+                        currentRow={currentRow}
+                      />
+                      <FeatureList
+                        title={currentPlan.title}
+                        features={currentPlan.collaboration}
+                        currentRow={currentRow}
+                      />
+                      <FeatureList
+                        title={currentPlan.title}
+                        features={currentPlan.security}
+                        currentRow={currentRow}
+                      />
+                      <FeatureList
+                        title={currentPlan.title}
+                        features={currentPlan.bespoke}
+                        currentRow={currentRow}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
