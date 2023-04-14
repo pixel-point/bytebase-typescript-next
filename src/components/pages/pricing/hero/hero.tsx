@@ -84,7 +84,7 @@ const Hero = () => {
         <header className="text-center">
           <h1 className="sr-only">Bytebase pricing page</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/pricing/quote.svg" alt="" className="mx-auto md:w-10 md:h-auto" />
+          <img src="/images/quote.svg" alt="" className="mx-auto md:w-10 md:h-auto" />
           <p className="mt-5 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:text-24 md:tracking-tight md:max-w-[670px] xs:text-20 xs:tracking-normal xs:leading-tight sm:mt-4">
             Bytebase is not a better tool to manage database changes. It&apos;s a better way to
             manage database changes.
