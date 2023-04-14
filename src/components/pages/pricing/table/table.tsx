@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -14,6 +14,31 @@ import FeatureList from './plan-card/feature-list';
 
 const Table = () => {
   const [currentRow, setCurrentRow] = useState('');
+  const [translateY, setTranslateY] = useState(0);
+  const parentRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (stickyRef.current) {
+        const parentRect = parentRef.current?.getBoundingClientRect();
+        const childRect = stickyRef.current?.getBoundingClientRect();
+        const parentTop = parentRect?.top || 0;
+        const childHeight = childRect?.height || 0;
+        const parentHeight = parentRect?.height || 0;
+
+        if (parentTop <= 0) {
+          setTranslateY(Math.min(translateY - parentTop, parentHeight - childHeight));
+        } else {
+          setTranslateY(0);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [parentRef, stickyRef]);
 
   useEffect(() => {
     const cells = document.querySelectorAll(`[data-row-id]`);
@@ -84,12 +109,19 @@ const Table = () => {
               ))}
             </div>
           </div>
-          <div className="flex md:overflow-x-auto relative md:scrollbar-hidden max-w-[1220px] 2xl:max-w-full md:max-w-none mx-auto md:h-full md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
+          <div
+            className="relative flex md:overflow-x-auto md:scrollbar-hidden max-w-[1220px] 2xl:max-w-full md:max-w-none mx-auto md:h-full md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4"
+            ref={parentRef}
+          >
             {Object.keys(PLANS).map((plan, index) => {
               const currentPlan = PLANS[plan as keyof typeof PLANS];
               return (
-                <div className="flex flex-col" key={index}>
-                  <div className="z-20">
+                <div className="relative flex flex-col" key={index}>
+                  <div
+                    className="z-20 flex relative top-0 w-full sticky-section"
+                    ref={stickyRef}
+                    style={{ transform: `translateY(${translateY}px)` }}
+                  >
                     <PlanCard
                       className="basis-1/3 grow"
                       currentRow={currentRow}
