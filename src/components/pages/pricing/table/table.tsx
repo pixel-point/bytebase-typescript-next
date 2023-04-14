@@ -46,8 +46,8 @@ const Table = () => {
           className="absolute -top-[140px] -left-10 2xl:left-24 z-50 lg:w-[280px] lg:h-auto md:w-[225px] lg:-top-[100px] lg:left-11 md:-top-3 md:left-7 sm:w-[204px] sm:-left-14 sm:top-0"
         />
         <div className="flex items-start relative">
-          <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px]">
-            <div className="z-40 sticky top-0 left-0 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
+          <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px] shadow-labels">
+            <div className="z-40 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
             <div className="bg-white z-40">
               {LABELS.map(({ title, items }, index) => (
                 <div
@@ -87,50 +87,48 @@ const Table = () => {
               const currentPlan = PLANS[plan as keyof typeof PLANS];
               return (
                 <div className="flex flex-col" key={index}>
-                  <div className="sticky top-0 z-20">
-                    <div className="md:overflow-x-hidden">
-                      <PlanCard
-                        className="basis-1/3 grow"
-                        currentRow={currentRow}
-                        key={index}
-                        {...currentPlan}
-                      />
-                    </div>
-                  </div>
-                  <div className="flex md:overflow-x-auto">
-                    <div
-                      className={clsx(
-                        'basis-1/3 grow border border-t-0 border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px]',
-                        { 'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team' },
-                      )}
+                  <div className="z-20">
+                    <PlanCard
+                      className="basis-1/3 grow"
+                      currentRow={currentRow}
                       key={index}
-                    >
-                      <FeatureList
-                        title={currentPlan.title}
-                        features={currentPlan.changeManagement}
-                        currentRow={currentRow}
-                      />
-                      <FeatureList
-                        title={currentPlan.title}
-                        features={currentPlan.sql}
-                        currentRow={currentRow}
-                      />
-                      <FeatureList
-                        title={currentPlan.title}
-                        features={currentPlan.collaboration}
-                        currentRow={currentRow}
-                      />
-                      <FeatureList
-                        title={currentPlan.title}
-                        features={currentPlan.security}
-                        currentRow={currentRow}
-                      />
-                      <FeatureList
-                        title={currentPlan.title}
-                        features={currentPlan.bespoke}
-                        currentRow={currentRow}
-                      />
-                    </div>
+                      {...currentPlan}
+                    />
+                  </div>
+                  <div
+                    className={clsx(
+                      'basis-1/3 grow border border-t-0 border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px]',
+                      { 'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team' },
+                    )}
+                    key={index}
+                  >
+                    <FeatureList
+                      title={currentPlan.title}
+                      features={currentPlan.changeManagement}
+                      currentRow={currentRow}
+                    />
+                    <FeatureList
+                      title={currentPlan.title}
+                      features={currentPlan.sql}
+                      currentRow={currentRow}
+                    />
+                    <FeatureList
+                      title={currentPlan.title}
+                      features={currentPlan.collaboration}
+                      currentRow={currentRow}
+                    />
+                    <FeatureList
+                      title={currentPlan.title}
+                      features={currentPlan.security}
+                      currentRow={currentRow}
+                      withLongTitle
+                    />
+                    <FeatureList
+                      title={currentPlan.title}
+                      features={currentPlan.bespoke}
+                      currentRow={currentRow}
+                      isLastSection
+                    />
                   </div>
                 </div>
               );

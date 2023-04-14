@@ -123,6 +123,7 @@ module.exports = {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
         pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
         tooltip: '0px 5px 10px rgba(167, 175, 190, 0.2), 0px 5px 35px rgba(167, 175, 190, 0.2)',
+        labels: '1px 0px rgba(172, 178, 210, 1)',
       },
     },
   },
