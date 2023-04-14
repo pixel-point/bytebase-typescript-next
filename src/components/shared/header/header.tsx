@@ -2,11 +2,6 @@
 
 import { useState } from 'react';
 
-import APIIcon from '@/svgs/api.inline.svg';
-import CLIIcon from '@/svgs/cli.inline.svg';
-import DiagonalArrowIcon from '@/svgs/diagonal-arrow.inline.svg';
-import HowToIcon from '@/svgs/how-to.inline.svg';
-import RocketIcon from '@/svgs/rocket.inline.svg';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -15,6 +10,12 @@ import Link from '@/components/shared/link';
 import MobileMenu from '@/components/shared/mobile-menu';
 
 import { MENUS } from '@/lib/menus';
+
+import APIIcon from '@/svgs/api.inline.svg';
+import CLIIcon from '@/svgs/cli.inline.svg';
+import DiagonalArrowIcon from '@/svgs/diagonal-arrow.inline.svg';
+import HowToIcon from '@/svgs/how-to.inline.svg';
+import RocketIcon from '@/svgs/rocket.inline.svg';
 
 import Burger from './burger';
 
