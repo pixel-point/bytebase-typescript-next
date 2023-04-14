@@ -89,13 +89,8 @@ const Table = () => {
               const currentPlan = PLANS[plan as keyof typeof PLANS];
               return (
                 <div className="flex flex-col" key={index}>
-                  <div className="z-20">
-                    <PlanCard
-                      className="basis-1/3 grow"
-                      currentRow={currentRow}
-                      key={index}
-                      {...currentPlan}
-                    />
+                  <div className="z-20 sticky top-0">
+                    <PlanCard className="basis-1/3 grow" key={index} {...currentPlan} />
                   </div>
                   <div
                     className={clsx(

@@ -12,16 +12,9 @@ const PlanCard = ({
   buttonText,
   buttonUrl,
   buttonTheme,
-  changeManagement,
-  sql,
-  security,
-  bespoke,
-  collaboration,
   className,
-  currentRow,
 }: Plan & {
   className: string;
-  currentRow: string;
 }) => {
   const planColor = COLORS[title];
 
