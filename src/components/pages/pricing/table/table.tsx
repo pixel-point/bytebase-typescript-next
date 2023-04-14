@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react';
 
 import clsx from 'clsx';
 
-import { isLabelLong, isLabelMedium } from '@/components/pages/pricing/table/data/long-labels';
 import { LABELS, PLANS } from '@/components/pages/pricing/table/data/pricing-plans';
 import PlanCard from '@/components/pages/pricing/table/plan-card';
 
+import { calculateCellHeight } from './data/calculate-cell-height';
 import FeatureList from './plan-card/feature-list';
 
 const Table = () => {
@@ -46,18 +46,18 @@ const Table = () => {
           className="absolute -top-[140px] -left-10 2xl:left-24 z-50 lg:w-[280px] lg:h-auto md:w-[225px] lg:-top-[100px] lg:left-11 md:-top-3 md:left-7 sm:w-[204px] sm:-left-14 sm:top-0"
         />
         <div className="flex items-start relative">
-          <div className="min-w-[378px] 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px] shadow-labels">
+          <div className="min-w-[378px] grow 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px] shadow-labels">
             <div className="z-40 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
             <div className="bg-white z-40">
               {LABELS.map(({ title, items }, index) => (
                 <div
-                  className="relative mt-7 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
+                  className="relative mt-11 border-b border-black border-opacity-10 first:mt-4 md:first:mt-5 sm:first:mt-4 last:border-b-0"
                   key={index}
                 >
-                  <p className="py-4 bg-white text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18 sm:pb-3">
+                  <p className="text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18">
                     {title}
                   </p>
-                  <ul className="flex flex-col divide-y divide-black divide-opacity-10">
+                  <ul className="mt-4 flex flex-col divide-y divide-black divide-opacity-10">
                     {Object.keys(items).map((item, idx) => {
                       const isActive = `${item}-${idx}` === currentRow;
                       return (
@@ -67,13 +67,15 @@ const Table = () => {
                             {
                               'bg-[#FCFBFF]': isActive,
                             },
-                            { 'lg:h-[72px] sm:h-[94px]': isLabelLong(item) },
-                            { 'sm:h-[72px]': isLabelMedium(item) },
+
+                            calculateCellHeight(item),
                           )}
                           data-row-id={`${item}-${index}`}
                           key={index}
                         >
-                          {items[item as keyof typeof items]}
+                          <span className="lg:max-w-[300px] md:max-w-[220px]">
+                            {items[item as keyof typeof items]}
+                          </span>
                         </li>
                       );
                     })}

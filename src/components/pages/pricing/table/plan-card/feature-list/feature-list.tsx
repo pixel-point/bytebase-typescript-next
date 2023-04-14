@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 
-import { isLabelLong, isLabelMedium } from '@/components/pages/pricing/table/data/long-labels';
 import Tooltip from '@/components/shared/tooltip';
 
 import { PricingTableItem } from '@/types/pricing';
 
+import { calculateCellHeight } from '../../data/calculate-cell-height';
 import { COLORS } from '../../data/pricing-plans';
 
 const presentFeature = <img src="/images/check.svg" alt="Present Feature" className="h-6 w-6" />;
@@ -42,11 +42,11 @@ const FeatureList = ({
 }: FeatureListProps) => (
   <div
     className={clsx(
-      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] sm:pt-[78.5px] divide-y border-b',
+      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] divide-y border-b',
+      withLongTitle ? 'md:pt-[110px] sm:pt-[105px]' : 'sm:pt-[82.5px]',
       title === 'team'
         ? 'border-transparent divide-transparent'
         : 'border-black divide-y divide-black border-b  border-opacity-10  divide-opacity-10',
-      { 'md:pt-[110px] sm:pt-[101px]': withLongTitle },
       { 'last:border-b-0': isLastSection },
     )}
   >
@@ -56,11 +56,10 @@ const FeatureList = ({
         <span
           className={clsx(
             'flex h-12 w-full justify-center items-center text-16 leading-normal text-gray-15',
+            calculateCellHeight(item),
             {
               'bg-[#FCFBFF]': isActive,
             },
-            { 'lg:h-[72px] sm:h-[94px]': isLabelLong(item) },
-            { 'sm:h-[72px]': isLabelMedium(item) },
           )}
           data-row-id={`${item}-${index}`}
           key={index}

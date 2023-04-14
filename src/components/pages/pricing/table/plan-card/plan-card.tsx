@@ -51,7 +51,7 @@ const PlanCard = ({
           theme={buttonTheme}
           size="md"
           to={buttonUrl}
-          additionalClassName="mt-5 w-[232px] xl:w-full mx-auto lg:mt-4"
+          additionalClassName="mt-5 w-[232px] xl:w-full mx-auto lg:mt-4 md:mt-5"
         >
           {buttonText}
         </Button>
