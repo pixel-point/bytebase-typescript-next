@@ -26,7 +26,7 @@ const Community = () => {
             have a number of communities that you can join to connect with other like-minded.
           </p>
         </div>
-        <div className="ml-[126px] 2xl:ml-0 lg:ml-16 md:ml-5 sm:ml-0 shrink-0 sm:self-center sm:mt-3">
+        <div className="ml-[126px] 2xl:ml-0 lg:ml-16 md:ml-5 sm:ml-0 shrink-0 sm:self-center sm:mt-2.5">
           <Image
             src="/images/welcome.png"
             width={591}
