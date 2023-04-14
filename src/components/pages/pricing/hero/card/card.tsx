@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Button from '@/components/shared/button';
 
 type CardProps = {
-  planTitle: string;
+  planTitle: keyof typeof colors;
   image: string;
   price: string | number;
   description: string;
@@ -31,7 +31,7 @@ const Card = ({
   buttonTheme,
   planConditions,
 }: CardProps) => {
-  const planColor = colors[planTitle.toLowerCase() as keyof typeof colors];
+  const planColor = colors[planTitle];
   return (
     <article
       className="relative bg-white h-full border border-gray-70 shadow-pricing flex flex-col items-center border-t-8 pt-3.5 md:pt-2.5 pb-10 px-6 lg:px-5 md:px-4.5 md:pb-9 sm:pt-4 sm:px-6"
@@ -40,7 +40,7 @@ const Card = ({
       <div
         className={clsx(
           'flex flex-col items-center min-h-[548px] lg:min-h-[525px] w-full md:min-h-[462px] sm:items-start sm:min-h-0',
-          additionalDescription ? ' sm:pb-4' : ' sm:pb-6',
+          additionalDescription ? 'sm:pb-4' : 'sm:pb-6',
         )}
       >
         <h2

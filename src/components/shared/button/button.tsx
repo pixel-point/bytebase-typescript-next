@@ -8,7 +8,7 @@ const styles = {
   size: {
     sm: 'h-9 text-13 font-bold py-3 px-4.5 uppercase',
     md: 'h-12 text-13 font-bold py-4.5 px-6 2xs:w-full uppercase',
-    lg: 'h-16 text-16 font-bold py-[21px] px-9 2xs:w-full uppercase  md:py-4.5 md:text-13 md:h-12',
+    lg: 'h-16 text-16 font-bold py-[21px] px-9 2xs:w-full uppercase md:py-4.5 md:text-13 md:h-12',
   },
   theme: {
     'primary-filled':

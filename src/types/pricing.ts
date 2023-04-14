@@ -5,11 +5,14 @@ export type Plan = {
   buttonText: string;
   buttonUrl: string;
   buttonTheme: 'primary-filled' | 'primary-outline';
-  changeManagement: Item;
-  sql: Item;
-  security: Item;
-  bespoke: Item;
-  collaboration: Item;
+  changeManagement: PricingTableItem;
+  sql: PricingTableItem;
+  security: PricingTableItem;
+  bespoke: PricingTableItem;
+  collaboration: PricingTableItem;
 };
 
-export type Item = Record<string, string | boolean | { value: string; tooltip: string }>;
+export type PricingTableItem = Record<
+  string,
+  string | boolean | { value: string; tooltip: string }
+>;

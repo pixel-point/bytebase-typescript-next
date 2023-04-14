@@ -40,6 +40,7 @@ type Header = {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
   return (
     <>
       <header className="safe-paddings absolute top-0 left-0 right-0 z-[999] h-[72px] w-full">

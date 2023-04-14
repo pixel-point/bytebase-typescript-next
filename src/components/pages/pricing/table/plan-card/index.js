@@ -1,1 +1,3 @@
-export { default } from './plan-card';
+import PlanCard from './plan-card';
+
+export default PlanCard;

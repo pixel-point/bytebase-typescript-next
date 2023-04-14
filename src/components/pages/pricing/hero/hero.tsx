@@ -84,11 +84,11 @@ const Hero = () => {
           <h1 className="sr-only">Bytebase pricing page</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/pricing/quote.svg" alt="" className="mx-auto md:w-10 md:h-auto" />
-          <p className="mt-4 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:text-24 md:tracking-tight md:max-w-[670px] xs:text-20 xs:tracking-normal xs:leading-tight sm:mt-4">
+          <p className="mt-5 font-semibold leading-tight text-40 tracking-tighter max-w-[1048px] mx-auto lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:text-24 md:tracking-tight md:max-w-[670px] xs:text-20 xs:tracking-normal xs:leading-tight sm:mt-4">
             Bytebase is not a better tool to manage database changes. It&apos;s a better way to
             manage database changes.
           </p>
-          <p className="text-gray-40 mt-3.5 text-18 leading-extra-tight lg:text-16 lg:leading-snug md:mt-4.5 md:text-14 xs:mt-3.5">
+          <p className="text-gray-40 mt-2.5 text-18 leading-extra-tight lg:text-16 lg:leading-snug md:mt-4.5 md:text-14 xs:mt-3.5">
             Built by engineers knowing database development flow
           </p>
           <ul className="flex items-center gap-x-16 mt-11 lg:gap-x-[52px] justify-center md:mt-10 md:gap-x-10 sm:flex-wrap sm:gap-y-4 sm:gap-x-14 sm:mt-6">

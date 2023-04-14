@@ -3,15 +3,14 @@ import clsx from 'clsx';
 import { isLabelLong, isLabelMedium } from '@/components/pages/pricing/table/data/long-labels';
 import Tooltip from '@/components/shared/tooltip';
 
-import { Item } from '@/types/pricing';
+import { PricingTableItem } from '@/types/pricing';
 
 const presentFeature = <img src="/images/check.svg" alt="Present Feature" className="h-6 w-6" />;
 const missingFeature = <img src="/images/cross.svg" className="h-6 w-6" alt="Missing Feature" />;
 
 const renderFeature = (feature: boolean | { value: string; tooltip: string } | string) => {
   if (typeof feature === 'boolean') {
-    if (feature) return presentFeature;
-    if (!feature) return missingFeature;
+    return feature ? presentFeature : missingFeature;
   }
   if (typeof feature === 'object') {
     return (
@@ -25,7 +24,7 @@ const renderFeature = (feature: boolean | { value: string; tooltip: string } | s
 };
 
 type FeatureListProps = {
-  features: Item;
+  features: PricingTableItem;
   currentRow: string;
   isLastSection?: boolean;
   withLongTitle?: boolean;

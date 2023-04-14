@@ -32,6 +32,7 @@ const Table = () => {
       });
     };
   }, []);
+
   return (
     <section className="pt-20 xl:pt-16 md:pt-14 sm:pt-10">
       <div className="mx-auto max-w-[1220px] 2xl:px-12 xl:px-11 md:px-7 sm:px-4 2xl:max-w-full relative">
