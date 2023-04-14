@@ -55,10 +55,11 @@ const PromoOptions = () => {
   return (
     <section>
       <h2 className="sr-only">Promo options</h2>
-      <ul>
+      <ul className="grid grid-cols-4">
         {options.map((option, index) => (
-          <li key={index}>
+          <li key={index} className="col-span-4">
             <Accordion
+              className=""
               title={option.title}
               description={option.description}
               image={option.image}

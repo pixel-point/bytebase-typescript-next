@@ -37,8 +37,8 @@ const Accordion = ({
     <div
       className={clsx(
         isOpen
-          ? 'bg-opacity-50 bg-tones-purple-light'
-          : 'bg-cite bg-tones-purple-light border-t-[1px] border-b-[1px] border-white',
+          ? 'bg-opacity-50 bg-tones-purple-light border-b-2 border-white'
+          : 'bg-cite bg-tones-purple-light border-t-2 border-white sm:min-h-[89px] sm:flex sm:items-center',
         className,
       )}
     >
