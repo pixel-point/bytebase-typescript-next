@@ -33,17 +33,17 @@ const Card = ({
   const planColor = COLORS[planTitle];
   return (
     <article
-      className="relative bg-white h-full border border-gray-70 shadow-pricing flex flex-col items-center border-t-8 pt-3.5 md:pt-2.5 pb-10 px-6 lg:px-5 md:px-4.5 md:pb-9 sm:pt-4 sm:px-6"
+      className="relative flex h-full flex-col items-center border border-t-8 border-gray-70 bg-white px-6 pt-3.5 pb-10 shadow-pricing lg:px-5 md:px-4.5 md:pt-2.5 md:pb-9 sm:px-6 sm:pt-4"
       style={{ borderTopColor: planColor }}
     >
       <div
         className={clsx(
-          'flex flex-col items-center min-h-[548px] lg:min-h-[525px] w-full md:min-h-[462px] sm:items-start sm:min-h-0',
+          'flex min-h-[548px] w-full flex-col items-center lg:min-h-[525px] md:min-h-[462px] sm:min-h-0 sm:items-start',
           additionalDescription ? 'sm:pb-4' : 'sm:pb-6',
         )}
       >
         <h2
-          className="self-start tracking-wide font-bold uppercase text-16 leading-none"
+          className="self-start text-16 font-bold uppercase leading-none tracking-wide"
           style={{ color: planColor }}
         >
           {planTitle}
@@ -53,24 +53,24 @@ const Card = ({
           width={240}
           height={240}
           alt={planTitle}
-          className="mt-3 lg:w-[220px] md:w-[180px] sm:absolute xs:w-[140px] sm:top-0 sm:right-4"
+          className="mt-3 lg:w-[220px] md:w-[180px] sm:absolute sm:top-0 sm:right-4 xs:w-[140px]"
           priority
         />
         <span
           className={clsx(
-            'mt-4 relative font-title font-semibold text-104 leading-none text-gray-15 tracking-tighter lg:text-72 lg:tracking-normal md:text-56 md:mt-3',
+            'relative mt-4 font-title text-104 font-semibold leading-none tracking-tighter text-gray-15 lg:text-72 lg:tracking-normal md:mt-3 md:text-56',
             { 'text-primary-1': planTitle.toLowerCase() === 'team' },
           )}
         >
           {typeof price === 'number' ? `$${price}` : price}
           {priceDescription && (
-            <span className="tracking-normal text-gray-15 font-sans text-15 leading-none font-normal absolute -right-[76px] top-4 max-w-[64px] lg:-right-[72px] md:text-14 md:top-2">
+            <span className="absolute -right-[76px] top-4 max-w-[64px] font-sans text-15 font-normal leading-none tracking-normal text-gray-15 lg:-right-[72px] md:top-2 md:text-14">
               {priceDescription}
             </span>
           )}
         </span>
         <p
-          className="mt-2 lg:mt-3.5 text-gray-30 text-16 leading-normal lg:leading-snug text-center lg:max-w-[180px] md:mt-1.5 md:text-14 sm:text-left sm:leading-normal sm:max-w-full 2xs:max-w-[180px] sm:mt-4"
+          className="mt-2 text-center text-16 leading-normal text-gray-30 lg:mt-3.5 lg:max-w-[180px] lg:leading-snug md:mt-1.5 md:text-14 sm:mt-4 sm:max-w-full sm:text-left sm:leading-normal 2xs:max-w-[180px]"
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <Button
@@ -83,18 +83,18 @@ const Card = ({
         </Button>
         {additionalDescription && (
           <p
-            className="mt-3 with-medium-text text-14 leading-tight tracking-tight text-gray-40 md:leading-snug text-center md:mt-4 md:max-w-[150px] sm:max-w-full sm:mt-3 mx-auto sm:leading-tight"
+            className="with-medium-text mx-auto mt-3 text-center text-14 leading-tight tracking-tight text-gray-40 md:mt-4 md:max-w-[150px] md:leading-snug sm:mt-3 sm:max-w-full sm:leading-tight"
             dangerouslySetInnerHTML={{ __html: additionalDescription }}
           />
         )}
       </div>
-      <footer className="border-t border-gray-70 pt-6 w-full md:pt-5 sm:pt-7">
+      <footer className="w-full border-t border-gray-70 pt-6 md:pt-5 sm:pt-7">
         <ul className="flex flex-col gap-y-4">
           {planConditions.map((condition, index) => (
-            <li className="flex items-center lg:items-start gap-x-2" key={index}>
+            <li className="flex items-center gap-x-2 lg:items-start" key={index}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="w-5 h-5 shrink-0" src="/images/check.svg" alt="" />
-              <span className="text-15 lg:leading-normal leading-none text-gray-15 md:text-14 md:leading-snug 2xs:max-w-[220px]">
+              <img className="h-5 w-5 shrink-0" src="/images/check.svg" alt="" />
+              <span className="text-15 leading-none text-gray-15 lg:leading-normal md:text-14 md:leading-snug 2xs:max-w-[220px]">
                 {condition}
               </span>
             </li>

@@ -41,7 +41,7 @@ const Tooltip = ({ className, text }: TooltipProps) => {
       {isTooltipVisible && (
         <ReactTooltip
           id={text}
-          className="shadow-tooltip z-10 max-w-[270px] rounded-xl p-4 pt-3 text-15 leading-normal text-gray-30 bg-white opacity-1 text-center"
+          className="opacity-1 z-10 max-w-[270px] rounded-xl bg-white p-4 pt-3 text-center text-15 leading-normal text-gray-30 shadow-tooltip"
           noArrow
         />
       )}
