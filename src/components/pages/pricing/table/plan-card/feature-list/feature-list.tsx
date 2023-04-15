@@ -50,19 +50,18 @@ const FeatureList = ({
       { 'last:border-b-0': isLastSection },
     )}
   >
-    {Object.keys(features).map((item, index) => {
-      const isActive = `${item}-${index}` === currentRow;
+    {Object.keys(features).map((item, idx) => {
+      const isActive = `${item}-${idx}` === currentRow;
+
       return (
         <span
           className={clsx(
             'flex h-12 w-full justify-center items-center text-16 leading-normal text-gray-15',
             calculateCellHeight(item),
-            {
-              'bg-[#FCFBFF]': isActive,
-            },
+            isActive ? (title === 'team' ? 'bg-[#F9FAFF]' : 'bg-[#FCFBFF]') : '',
           )}
-          data-row-id={`${item}-${index}`}
-          key={index}
+          data-row-id={`${item}-${idx}`}
+          key={`${title}_${item}_${idx}`}
         >
           {renderFeature(features[item])}
         </span>

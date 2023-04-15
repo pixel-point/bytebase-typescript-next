@@ -49,17 +49,17 @@ const Table = () => {
           <div className="min-w-[378px] grow 2xl:min-w-[460px] lg:min-w-[321px] md:min-w-[244px] relative flex flex-col z-40 sm:min-w-[156px] shadow-labels">
             <div className="z-40 bg-white h-[219px] 2xl:h-[241px] w-full lg:h-[216px] md:h-[210px]" />
             <div className="bg-white z-40">
-              {LABELS.map(({ title, items }, index) => (
+              {LABELS.map(({ title, items }, idx) => (
                 <div
                   className="relative mt-11 border-b border-black border-opacity-10 first:mt-4 md:first:mt-5 sm:first:mt-4 last:border-b-0"
-                  key={index}
+                  key={`${title}_${idx}`}
                 >
                   <p className="text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18">
                     {title}
                   </p>
                   <ul className="mt-4 flex flex-col divide-y divide-black divide-opacity-10">
-                    {Object.keys(items).map((item, idx) => {
-                      const isActive = `${item}-${idx}` === currentRow;
+                    {Object.keys(items).map((item, rowIdx) => {
+                      const isActive = `${item}-${rowIdx}` === currentRow;
                       return (
                         <li
                           className={clsx(
@@ -70,8 +70,8 @@ const Table = () => {
 
                             calculateCellHeight(item),
                           )}
-                          data-row-id={`${item}-${index}`}
-                          key={index}
+                          data-row-id={`${item}-${rowIdx}`}
+                          key={`${item}_${rowIdx}`}
                         >
                           <span className="lg:max-w-[300px] md:max-w-[220px]">
                             {items[item as keyof typeof items]}
@@ -85,19 +85,19 @@ const Table = () => {
             </div>
           </div>
           <div className="flex md:overflow-x-auto relative md:scrollbar-hidden max-w-[1220px] 2xl:max-w-full md:max-w-none mx-auto md:h-full md:-mr-7 md:pr-7 sm:-mr-4 sm:pr-4">
-            {Object.keys(PLANS).map((plan, index) => {
+            {Object.keys(PLANS).map((plan, idx) => {
               const currentPlan = PLANS[plan as keyof typeof PLANS];
+
               return (
-                <div className="flex flex-col" key={index}>
+                <div className="flex flex-col" key={`${currentPlan.title}_${idx}`}>
                   <div className="z-20 sticky top-0">
-                    <PlanCard className="basis-1/3 grow" key={index} {...currentPlan} />
+                    <PlanCard className="basis-1/3 grow" {...currentPlan} />
                   </div>
                   <div
                     className={clsx(
                       'basis-1/3 grow border border-t-0 border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px]',
                       { 'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team' },
                     )}
-                    key={index}
                   >
                     <FeatureList
                       title={currentPlan.title}
