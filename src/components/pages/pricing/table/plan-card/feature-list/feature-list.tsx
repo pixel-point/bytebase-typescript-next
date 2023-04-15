@@ -42,11 +42,11 @@ const FeatureList = ({
 }: FeatureListProps) => (
   <div
     className={clsx(
-      'first:pt-4 pt-[84px] flex flex-col text-center md:first:pt-[23px] 2xl:first:pt-[19px] lg:pt-[85px] sm:first:pt-[37px] divide-y border-b',
-      withLongTitle ? 'md:pt-[110px] sm:pt-[105px]' : 'sm:pt-[82.5px]',
+      'divide-y border-b pt-[84px] text-center first:pt-4 3xl:first:pt-[19px] xl:pt-[85px] md:first:pt-[23px] sm:first:pt-[37px]',
       title === 'team'
-        ? 'border-transparent divide-transparent'
-        : 'border-black divide-y divide-black border-b  border-opacity-10  divide-opacity-10',
+        ? 'divide-transparent border-transparent'
+        : 'divide-y divide-black divide-opacity-10 border-b  border-black  border-opacity-10',
+      withLongTitle ? 'md:pt-[110px] sm:pt-[105px]' : 'sm:pt-[82.5px]',
       { 'last:border-b-0': isLastSection },
     )}
   >
@@ -56,7 +56,7 @@ const FeatureList = ({
       return (
         <span
           className={clsx(
-            'flex h-12 w-full justify-center items-center text-16 leading-normal text-gray-15',
+            'flex h-12 w-full items-center justify-center text-16 leading-normal text-gray-15',
             calculateCellHeight(item),
             isActive ? (title === 'team' ? 'bg-[#F9FAFF]' : 'bg-[#FCFBFF]') : '',
           )}

@@ -17,10 +17,10 @@ const mediumLabels = [
 
 export const calculateCellHeight = (label: string) => {
   if (extraLongLabels.includes(label)) {
-    return 'lg:h-[72px] sm:h-[129px]';
+    return 'xl:h-[72px] sm:h-[129px]';
   }
   if (longerLabels.includes(label)) {
-    return 'lg:h-[72px] sm:h-[94px]';
+    return 'xl:h-[72px] sm:h-[94px]';
   }
   if (longLabels.includes(label)) {
     return 'md:h-[72px]';
