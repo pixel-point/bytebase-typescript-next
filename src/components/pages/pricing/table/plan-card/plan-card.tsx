@@ -21,7 +21,7 @@ const PlanCard = ({
   return (
     <div
       className={clsx(
-        'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px] border-b-0',
+        'relative flex flex-col text-center border border-tones-purple-dark md:min-w-[284px] 2xs:min-w-fit 2xs:w-[156px]',
         className,
         { 'bg-[#F9FAFF] border-l-0 border-r-0': title === 'team' },
       )}
@@ -55,7 +55,7 @@ const PlanCard = ({
         )}
         <div
           className={clsx(
-            'w-full h-px bg-gray-80',
+            'w-full',
             additionalDescription
               ? 'mt-5 lg:mt-4 sm:mt-2.5'
               : 'mt-[54px] lg:mt-[50px] sm:mt-[38px]',
