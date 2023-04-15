@@ -8,6 +8,7 @@ import clsx from 'clsx';
 
 import { LABELS, PLANS } from '@/components/pages/pricing/table/data/pricing-plans';
 import PlanCard from '@/components/pages/pricing/table/plan-card';
+import Link from '@/components/shared/link';
 
 import { calculateCellHeight } from './data/calculate-cell-height';
 import FeatureList from './plan-card/feature-list';
@@ -53,7 +54,7 @@ const Table = () => {
                 className="relative mt-11 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
                 key={`${title}_${idx}`}
               >
-                <p className="text-24 font-bold leading-none lg:text-20 lg:leading-tight sm:text-18">
+                <p className="text-24 font-bold leading-none xl:text-20 xl:leading-tight sm:text-18">
                   {title}
                 </p>
                 <ul className="mt-4 flex flex-col divide-y divide-black divide-opacity-10">
@@ -72,9 +73,7 @@ const Table = () => {
                         data-row-id={`${item}-${rowIdx}`}
                         key={`${item}_${rowIdx}`}
                       >
-                        <span className="lg:max-w-[300px] md:max-w-[220px]">
-                          {items[item as keyof typeof items]}
-                        </span>
+                        {items[item as keyof typeof items]}
                       </li>
                     );
                   })}
@@ -88,7 +87,6 @@ const Table = () => {
             <div className="flex flex-row items-stretch justify-start md:w-[852px] sm:w-[468px]">
               {Object.keys(PLANS).map((plan, idx) => {
                 const currentPlan = PLANS[plan as keyof typeof PLANS];
-                const isMiddleRow = currentPlan.title === 'team';
 
                 return (
                   <div className="shrink grow sm:w-1/3" key={`${currentPlan.title}_${idx}`}>
@@ -97,7 +95,7 @@ const Table = () => {
                     </div>
                     <div
                       className={clsx('border border-t-0 border-tones-purple-dark', {
-                        'border-l-0 border-r-0 bg-[#F9FAFF]': isMiddleRow,
+                        'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team',
                       })}
                     >
                       <FeatureList
@@ -133,6 +131,20 @@ const Table = () => {
               })}
             </div>
           </div>
+        </div>
+        <div className="col-span-7 col-start-5 pt-7 3xl:col-span-8 3xl:col-start-5 xl:pt-6 md:pt-4 sm:col-span-12 sm:col-start-1 sm:pt-3">
+          <p className="text-center text-15 leading-snug text-gray-40 xl:text-14 xl:leading-tight">
+            You can upgrade, downgrade, or{' '}
+            <Link
+              size="sm"
+              to="/refund"
+              theme="primary-1"
+              additionalClassName="xl:text-14 sm:inline"
+            >
+              cancel your subscription
+            </Link>{' '}
+            anytime. No hidden charges.
+          </p>
         </div>
       </section>
     </>
