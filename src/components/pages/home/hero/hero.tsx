@@ -3,6 +3,8 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 import Route from '@/lib/route';
 
+import SmallArrowIcon from '@/svgs/small-arrow.inline.svg';
+
 import Card from './card';
 
 const cards = [
@@ -36,9 +38,9 @@ const Hero = () => {
       <div className="col-span-12 row-start-1 sm:col-span-4">
         <span className="inline-flex items-center gap-1 rounded-full bg-tones-purple-light p-1 text-12 font-semibold leading-none text-primary-1">
           <span className="rounded-full bg-primary-1 px-2 py-1 text-white">What’s new?</span>
-          <span className="flex items-center px-2">
+          <span className="flex items-center gap-1.5 px-2">
             1.10.0 Released
-            <img src="/images/arrow-hero.svg" alt="" className="ml-1.5 h-1.5" />
+            <SmallArrowIcon width={7} height={6} />
           </span>
         </span>
       </div>
