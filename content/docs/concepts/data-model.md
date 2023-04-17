@@ -2,7 +2,7 @@
 title: Data Model
 ---
 
-![Bytebase data model](/static/docs/data-model-v2.webp)
+![Bytebase data model](/docs/data-model-v2.webp)
 
 ## Workspace
 

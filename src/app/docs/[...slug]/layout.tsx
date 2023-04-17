@@ -9,13 +9,12 @@ export default function DocLayout({
   children: React.ReactNode;
   params: { slug: string[] };
 }) {
-  const sidebar = getSidebar();
-
-  // console.log(sidebar);
+  const { sidebar, expandedList } = getSidebar();
+  const currentUrl = `/${slug.join('/')}`;
 
   return (
     <div className="pt-36 container grid grid-cols-12 gap-x-10">
-      <Sidebar data={sidebar} />
+      <Sidebar data={sidebar} expandedList={expandedList} currentUrl={currentUrl} />
       {children}
     </div>
   );

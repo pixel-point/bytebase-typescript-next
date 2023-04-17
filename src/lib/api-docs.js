@@ -48,7 +48,8 @@ function getSidebar() {
   const sidebar = [];
 
   const md = fs.readFileSync(layoutFile[0], 'utf-8');
-  const { content } = matter(md);
+  const { data, content } = matter(md);
+
   const lines = content.trim().split('\n');
 
   let currentSection = null;
@@ -62,7 +63,7 @@ function getSidebar() {
     }
   });
 
-  return getNestedSidebar(sidebar);
+  return { sidebar: getNestedSidebar(sidebar), expandedList: data.expand_section_list };
 }
 
 function getNestedSidebar(data) {

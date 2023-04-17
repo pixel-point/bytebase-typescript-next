@@ -17,7 +17,7 @@ Before starting, make sure you have either of
 2. Log in to Bytebase hub via a Google or GitHub account.
 3. You'll be redirected to the hub workspace page, click **Create workspace**. Note that only one workspace is allowed per account.
 
-![hub-workspace](/static/docs/get-started/saas/hub-workspace.webp)
+![hub-workspace](/docs/get-started/saas/hub-workspace.webp)
 
 4. Wait several minutes for the workspace to be provisioned, and then check your email for the login link, email, and password.
 
@@ -25,7 +25,7 @@ Before starting, make sure you have either of
 
 1. Click the **Login to your workspace** link in the email, you'll be redirected to the Bytebase console login page.
 
-![bb-login](/static/docs/get-started/saas/bb-login.webp)
+![bb-login](/docs/get-started/saas/bb-login.webp)
 
 2. Fill in the **Email** and **Password**, and click **Sign in**.
 3. A sample PostgreSQL instance is already available.

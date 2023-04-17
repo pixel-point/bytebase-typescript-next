@@ -20,7 +20,7 @@ Let's take the hospital example to follow the steps below.
 
 A label is a key-value pair that helps you identify the tenant for a database. The supported label keys are location and tenant currently. Workspace owner needs to predefine label values (tenant names) in the Workspace Label tab.
 
-![Tenant Labels](/static/docs/batch-change/tntdbmngmt-tenant-labels.webp)
+![Tenant Labels](/docs/batch-change/tntdbmngmt-tenant-labels.webp)
 
 ## **Projects in Tenant Mode**
 
@@ -29,7 +29,7 @@ Project can be created in Tenant Mode which supports tenant database management.
 1. Roll out schema changes and data updates to mutiple tenant databases by their environments, tenant labels or geolocations, or any combination of them.
 1. Progressively roll out through different stages, and only proceed to the next stage when all of rollouts in the current stage are successful.
 
-![Create Project in Tenant Mode](/static/docs/batch-change/tntdbmngmt-create-project-in-tenant-mode.webp)
+![Create Project in Tenant Mode](/docs/batch-change/tntdbmngmt-create-project-in-tenant-mode.webp)
 
 ## **Deployment Configuration**
 
@@ -43,31 +43,31 @@ You need to define deployment configuration for a project in Tenant Mode before 
 
 This provides a reliable sequence of updating schema for all tenants.
 
-![Deployment Config](/static/docs/batch-change/tntdbmngmt-deployment-config.webp)
+![Deployment Config](/docs/batch-change/tntdbmngmt-deployment-config.webp)
 
 ## **Databases with tenant labels**
 
 You can create databases with labels in tenant mode projects. The labels come from predefined label keys and values in the Workspace. You can also transfer an existing database from another project if its database name and schema follows the existing tenant pattern.
 
-![Create Database with Tenant Label](/static/docs/batch-change/tntdbmngmt-create-database-with-tenant-label.webp)
+![Create Database with Tenant Label](/docs/batch-change/tntdbmngmt-create-database-with-tenant-label.webp)
 
 The project overview tab shows all tenant databases for databases named lab_test. Staging environment has a database for hospital1. There are three databases in the Prod environment for hospital1, hospital2, and hospital3.
 
-![Tenant Databases](/static/docs/batch-change/tntdbmngmt-tenant-databases.webp)
+![Tenant Databases](/docs/batch-change/tntdbmngmt-tenant-databases.webp)
 
 ## **Schema Update for tenant databases**
 
 There is a preview dialog showing the plan of deployment before the schema is altered.
 
-![Alter Schema](/static/docs/batch-change/tntdbmngmt-alter-schema.webp)
+![Alter Schema](/docs/batch-change/tntdbmngmt-alter-schema.webp)
 
 Issue can be created to update schema for all tenants by following the deployment configuration. The database names should be the same or follow the same database name template described in the section below. For example, the first two stages have been completed, and the issue is pending approval for the last stage.
 
-![Issue Alter Schema](/static/docs/batch-change/tntdbmngmt-issue-alter-schema.webp)
+![Issue Alter Schema](/docs/batch-change/tntdbmngmt-issue-alter-schema.webp)
 
 Once the issue is completed, all tenant databases will have the same updated version of schema.
 
-![After Issue Complete](/static/docs/batch-change/tntdbmngmt-after-issue-complete.webp)
+![After Issue Complete](/docs/batch-change/tntdbmngmt-after-issue-complete.webp)
 
 ## Database Name Template
 
@@ -75,15 +75,15 @@ Typically, all tenant databases should have the same database name and will be p
 
 A project in Tenant Mode can be created with a database name template.
 
-![Create Project with Template](/static/docs/batch-change/tntdbmngmt-create-project-with-template.webp)
+![Create Project with Template](/docs/batch-change/tntdbmngmt-create-project-with-template.webp)
 
 The name of the database being created will be generated based on a base \{{DB_NAME\}} and the name of a tenant.
 
-![Create Database](/static/docs/batch-change/tntdbmngmt-create-database-with-template.webp)
+![Create Database](/docs/batch-change/tntdbmngmt-create-database-with-template.webp)
 
 The project database overview page will look like in the following.
 
-![Project Overview](/static/docs/batch-change/tntdbmngmt-project-overview.webp)
+![Project Overview](/docs/batch-change/tntdbmngmt-project-overview.webp)
 
 ## GitOps
 

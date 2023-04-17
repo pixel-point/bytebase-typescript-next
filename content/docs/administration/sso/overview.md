@@ -15,15 +15,15 @@ As a **Workspace Owner**, you can create a SSO provider with the following steps
 
 1. Go to the **Settings** page.
 
-   ![settings-sso](/static/docs/administration/sso/settings-sso.webp)
+   ![settings-sso](/docs/administration/sso/settings-sso.webp)
 
 2. Click **Create** to start creating SSO.
 3. Fill in all the required fields.
 
-   ![create-sso-dialog](/static/docs/administration/sso/create-sso-dialog.webp)
+   ![create-sso-dialog](/docs/administration/sso/create-sso-dialog.webp)
 
 ## Sign in with SSO
 
 Once a valid SSO has been created, the user can choose the configured SSO provider to sign in.
 
-![sign-in-with-github](/static/docs/administration/sso/sign-in-with-github.webp)
+![sign-in-with-github](/docs/administration/sso/sign-in-with-github.webp)

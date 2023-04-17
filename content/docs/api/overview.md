@@ -8,4 +8,4 @@ Bytebase supports the following OpenAPIs:
 
 We provide Swagger OpenAPI docs. Once you have started your Bytebase service, you can access it on `http://localhost:8080/swagger/index.html`.
 
-![openapi-swagger](/static/docs/openapi-swagger.webp)
+![openapi-swagger](/docs/openapi-swagger.webp)

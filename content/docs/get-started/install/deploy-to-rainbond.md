@@ -12,7 +12,7 @@ To install Rainbond, please refer to [Rainbond Quick Install](https://rainbond.c
 
 After logging in Rainbond, click `Market` in the left menu, switch to open source app store, and search `Bytebase` in the search box, and click the `Install` button.
 
-![](/static/docs/get-started/install/rainbond-install.webp)
+![](/docs/get-started/install/rainbond-install.webp)
 
 Fill in the following information, and click `Confirm` button to install.
 
@@ -31,4 +31,4 @@ Rainbond uses [--external-url](/docs/get-started/install/external-url) to provid
 
 </hint-block>
 
-![](/static/docs/get-started/install/rainbond-topology.webp)
+![](/docs/get-started/install/rainbond-topology.webp)

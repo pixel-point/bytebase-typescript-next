@@ -1,48 +1,67 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import { useState } from 'react';
 
 import clsx from 'clsx';
 
-import Link from '@/components/shared/link';
-
 import Route from '@/lib/route';
 
+import ChevronIcon from '../images/chevron.inline.svg';
 import { SidebarItem } from '../sidebar';
 
-const Item = ({ title, url, children, depth }: SidebarItem) => {
-  const [isOpen, setIsOpen] = useState(false);
+const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): boolean => {
+  if (!children) return false;
 
-  const toggle = () => setIsOpen(!isOpen);
+  return children.some(
+    (item) => item.url === currentUrl || isActiveItem(item.children, currentUrl),
+  );
+};
+
+const Item = ({ title, url, children, depth, currentUrl, expandedList }: SidebarItem) => {
+  const [isOpen, setIsOpen] = useState(
+    isActiveItem(children, currentUrl) || expandedList?.includes(title),
+  );
+
+  if (!isOpen && isActiveItem(children, currentUrl)) {
+    setIsOpen(true);
+  }
+
+  const router = useRouter();
+
+  const toggle = () => {
+    if (url) {
+      router.push(Route.DOCS + url);
+    }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <li className={clsx('flex flex-col items-start', { 'pl-5': depth === 2, 'pl-4': depth === 3 })}>
-      {url ? (
-        <Link
-          additionalClassName={clsx(
-            'text-gray-30 text-15 py-2',
-            depth === 1 ? 'font-semibold' : 'font-medium',
-          )}
-          to={Route.DOCS + url}
-          onClick={children ? toggle : undefined}
-        >
-          {title}
-        </Link>
-      ) : (
-        <button
-          className={clsx(
-            'text-gray-30 text-15 py-2',
-            depth === 1 ? 'font-semibold' : 'font-medium',
-          )}
-          type="button"
-          onClick={children ? toggle : undefined}
-        >
-          {title}
-        </button>
-      )}
+      <button
+        className={clsx(
+          'text-gray-30 text-15 py-2 flex items-center',
+          depth === 1 ? 'font-semibold' : 'font-medium',
+          url === currentUrl && 'text-primary-1',
+        )}
+        type="button"
+        onClick={toggle}
+      >
+        {children && (
+          <ChevronIcon
+            className={clsx('w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0', {
+              'rotate-90': isOpen,
+            })}
+          />
+        )}
+        <span>{title}</span>
+      </button>
+
       {children && (
         <ul
           className={clsx(
+            'before:absolute before:left-0.5 before:h-full before:w-px before:bg-gray-90 relative',
             isOpen ? 'h-auto opacity-100 pointer-events-auto' : 'h-0 opacity-0 pointer-events-none',
           )}
         >

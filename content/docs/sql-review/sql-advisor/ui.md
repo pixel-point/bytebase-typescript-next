@@ -4,7 +4,7 @@ title: SQL Advisor UI
 
 Bytebase provides automatic SQL lint to check common issues in schema change process.
 
-![sql-advisor](/static/docs/schema-review-engine-mysql-use-innodb.webp)
+![sql-advisor](/docs/schema-review-engine-mysql-use-innodb.webp)
 
 It currently supports following checks:
 

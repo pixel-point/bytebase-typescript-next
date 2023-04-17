@@ -20,21 +20,21 @@ Create a Custom App at [Feishu Open Platform](https://open.feishu.cn/app).
 
 Fill in App Name and Description such as Bytebase Approval.
 
-![feishu app creation page](/static/docs/external-approval-feishu-create.webp)
+![feishu app creation page](/docs/external-approval-feishu-create.webp)
 
 ### Step 2 - Upload icon
 
-![Bytebase logo icon](/static/docs/logo-icon.svg)
+![Bytebase logo icon](/docs/logo-icon.svg)
 
 In the General info section of Credentials & Basic Info page, add the above Bytebase icon.
 
-![feishu app upload icon](/static/docs/external-approval-feishu-icon.webp)
+![feishu app upload icon](/docs/external-approval-feishu-icon.webp)
 
 ### Step 3 - Enable bot
 
 In the Bot page of Features, click "Enable bot".
 
-![feishu app features bot page, with "Enable bot" highlighted](/static/docs/external-approval-feishu-bot.webp)
+![feishu app features bot page, with "Enable bot" highlighted](/docs/external-approval-feishu-bot.webp)
 
 ### Step 4 - Grant permissions
 
@@ -44,7 +44,7 @@ In the Manage scopes section of Permissions & Scopes page, add the following sco
 - approval:approval:readonly (Access Approval).
 - contact:user.id:readonly (Obtain user ID via email or mobile number).
 
-![feishu app permission page](/static/docs/external-approval-feishu-permission.webp)
+![feishu app permission page](/docs/external-approval-feishu-permission.webp)
 
 <hint-block type="warn">
 
@@ -56,32 +56,32 @@ Make sure that you have added all three scopes before moving on. In particular, 
 
 In the Version Management & Release page of App Release, create a Version.
 
-![feishu app release page](/static/docs/external-approval-feishu-enable-1.webp)
+![feishu app release page](/docs/external-approval-feishu-enable-1.webp)
 
 You can use 1.0.0 for App version and set availability to members who use Bytebase.
 
-![feishu app release page version details](/static/docs/external-approval-feishu-enable-2.webp)
+![feishu app release page version details](/docs/external-approval-feishu-enable-2.webp)
 
 Set the availability and select those who use Bytebase.
 
-![set availability on feishu app release page ](/static/docs/external-approval-feishu-availability.webp)
+![set availability on feishu app release page ](/docs/external-approval-feishu-availability.webp)
 
 Submit for release.
 
-![feishu app release submission page](/static/docs/external-approval-feishu-enable-3.webp)
+![feishu app release submission page](/docs/external-approval-feishu-enable-3.webp)
 
 ### Step 6 - Wait for approval
 
 Ask your **organization administrator** to approve the custom application in [Workspace / App review](https://feishu.cn/admin/appCenter/audit).
 
 Move to the next step when you see the app status is **"Enabled"**.
-![In feishu app page, you can see that the app is activated](/static/docs/external-approval-feishu-enable-4.webp)
+![In feishu app page, you can see that the app is activated](/docs/external-approval-feishu-enable-4.webp)
 
 ### Step 7 - Obtain credentials
 
 Get the **App ID** and **App Secret** in the General info section of Credentials & Basic Info page.
 
-![feishu app credential page](/static/docs/external-approval-feishu-credential.webp)
+![feishu app credential page](/docs/external-approval-feishu-credential.webp)
 
 ## Setup Bytebase
 
@@ -93,7 +93,7 @@ Specifically, the issue assignee must have an **identical** email at Feishu to r
 
 </hint-block>
 
-![external approval bytebase setting page](/static/docs/external-approval-bytebase-setting.webp)
+![external approval bytebase setting page](/docs/external-approval-bytebase-setting.webp)
 
 1. Go to Bytebase Settings, click on IM Integration.
 1. Fill in Application ID and Secret from the previous section. Click on Enable and Create button.
@@ -104,7 +104,7 @@ Specifically, the issue assignee must have an **identical** email at Feishu to r
 
 The issue creator needs to click on the [bell button](/docs/change-database/change-workflow/issue-need-attention) near the assignee to send the Feishu approval request.
 
-![issue detail page with the bell icon near the assignee highlighted](/static/docs/external-approval-feishu-bell.webp)
+![issue detail page with the bell icon near the assignee highlighted](/docs/external-approval-feishu-bell.webp)
 
 ### GitOps workflow
 

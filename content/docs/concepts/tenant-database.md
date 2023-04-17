@@ -8,4 +8,4 @@ Bytebase offers streamlined experience for tenant databases through [Tenant Data
 
 Below is an example showing how a schema change rollout to all tenant databases from **Dev** environment all the way to the **Prod** look like in Bytebase.
 
-![tenant-matrix](/static/docs/tenant-matrix.png)
+![tenant-matrix](/docs/tenant-matrix.png)
