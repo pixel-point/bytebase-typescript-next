@@ -1,5 +1,7 @@
 import Link from '@/components/shared/link';
 
+import QuoteIcon from '@/svgs/quote.inline.svg';
+
 import { COLORS } from '../table/data/pricing-plans';
 import Card from './card';
 
@@ -79,8 +81,7 @@ const Hero = () => (
     <div className="container max-w-[1396px] 2xl:max-w-full">
       <header className="text-center">
         <h1 className="sr-only">Bytebase pricing page</h1>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/quote.svg" alt="" className="mx-auto md:h-auto md:w-10" />
+        <QuoteIcon width={50} height={40} className="mx-auto w-auto lg:h-8 md:h-7 sm:h-6" />
         <p className="mx-auto mt-5 max-w-[1048px] text-40 font-semibold leading-tight tracking-tighter lg:max-w-[800px] lg:text-30 lg:leading-extra-tight md:mt-6 md:max-w-[670px] md:text-24 md:tracking-tight sm:mt-4 xs:text-20 xs:leading-tight xs:tracking-normal">
           Bytebase is not a better tool to manage database changes. It&apos;s a better way to manage
           database changes.
