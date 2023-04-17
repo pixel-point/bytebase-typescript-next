@@ -103,10 +103,15 @@ module.exports = {
       112: '112px',
     },
     letterSpacing: {
-      tighter: '-0.025em',
+      tighter: '-0.04em',
       tight: '-0.02em',
       normal: '0',
-      wide: '0.02em',
+      wide: '0.01em',
+      wider: '0.02em',
+    },
+    backgroundImage: {
+      'pricing-hero':
+        'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
     },
     extend: {
       lineHeight: {
@@ -119,8 +124,21 @@ module.exports = {
       },
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
-        image: '0px 5px 15px rgba(15, 22, 36, 0.2);',
+        pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
+        tooltip: '0px 5px 10px rgba(167, 175, 190, 0.2), 0px 5px 35px rgba(167, 175, 190, 0.2)',
+        labels: '1px 0px rgba(172, 178, 210, 1)',
+        icon: '0px 5px 15px rgba(172, 178, 210, 0.8)',
+        'icon-green': '0px 5px 10px rgba(156, 201, 182, 0.8)',
       },
+      backgroundImage: {
+        cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
+        pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
+      },
+    },
+    backgroundSize: {
+      1024: '1100px',
+      768: '990px',
+      360: '800px',
     },
   },
 
