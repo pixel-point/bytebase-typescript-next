@@ -134,11 +134,6 @@ module.exports = {
         pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
       },
     },
-    backgroundSize: {
-      1024: '1100px',
-      768: '990px',
-      360: '800px',
-    },
   },
 
   corePlugins: {
