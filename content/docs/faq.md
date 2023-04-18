@@ -39,11 +39,11 @@ You can use [Caddy](https://caddyserver.com/docs/quick-starts/reverse-proxy) or 
 
 Debug mode emits more detailed logs on the backend as well as returning more verbose logs to the frontend.
 
-<hint-block type="warn">
+<HintBlock type="warn">
 
 Debug mode is a global setting and is only supposed to be used for troubleshooting.
 
-</hint-block>
+</HintBlock>
 
 ### Enable --debug on startup
 

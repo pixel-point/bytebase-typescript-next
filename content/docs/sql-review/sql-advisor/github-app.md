@@ -6,11 +6,11 @@ Bytebase also provides the [GitHub App](https://github.com/marketplace/bytebase)
 
 The App allows you to create the SQL review policy for your repositories and trigger the SQL check in the pull request.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 The GitHub App is free to use, you don't need any subscription plan.
 
-</hint-block>
+</HintBlock>
 
 ## Install App and grant permissions
 

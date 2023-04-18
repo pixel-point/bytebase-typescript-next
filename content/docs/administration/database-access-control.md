@@ -2,11 +2,11 @@
 title: Database Access Control
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is only available in the Enterprise plan.
 
-</hint-block>
+</HintBlock>
 
 By default, instances and databases in a [production environment](/docs/administration/environment-policy/tier) will be inaccessible to users with Workspace Developer role from the [SQL Editor](/docs/sql-editor/overview).
 

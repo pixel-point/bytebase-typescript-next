@@ -2,17 +2,17 @@
 title: Restore from Backup
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Bytebase only allows to restore backup to a new database under the same project and environment.
 
-</hint-block>
+</HintBlock>
 
-<hint-block type="info">
+<HintBlock type="info">
 
 User who is the member of the project owning the database, as well as the Workspace Owner and DBA can restore backup.
 
-</hint-block>
+</HintBlock>
 
 ## Step 1 - Choose the backup to be restored
 

@@ -27,14 +27,14 @@ This document describes how to add an instance in order to synchronize databases
 
 ![create-an-instance](/docs/get-started/configure-workspace/add-an-instance/add-an-instance.webp)
 
-<hint-block type="info">
+<HintBlock type="info">
 
 1. Environment cannot be changed once the instance has been created.
 1. The screenshot assumes you run Bytebase inside Docker and try to connect to a database instance on the same host. Thus it uses `host.docker.internal`. If Bytebase is not running inside Docker, you should supply the normal `127.0.0.1` to connect the instance on the same host [(detailed explanation)](https://stackoverflow.com/a/24326540/235983).
 1. The SSL connection configuration only supports PostgreSQL, MySQL, TiDB and ClickHouse for now. You can also configure the SSL connection on the instance details page.
 1. On how to connect to Spanner databases, see [How to Find Project ID and Instance ID](/docs/how-to/spanner/how-to-find-project-id-and-instance-id) and [How to Create a Service Account for Bytebase](/docs/how-to/spanner/how-to-create-a-service-account-for-bytebase)
 
-</hint-block>
+</HintBlock>
 
 After adding an instance, click **Databases** on the navigation bar. You can find the table is still empty. It’s because you haven’t created any project yet. In Bytebase, only databases belong to a user project will show up on the Databases page.
 

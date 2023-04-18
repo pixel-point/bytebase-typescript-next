@@ -2,6 +2,8 @@ import fs from 'fs';
 import * as glob from 'glob';
 import matter from 'gray-matter';
 
+import { SidebarItem } from '@/types/sidebar';
+
 const DOCS_DIR_PATH = 'content/docs';
 
 interface PostData {
@@ -52,14 +54,7 @@ const getAllPosts = (): PostData[] => {
     ) as PostData[];
 };
 
-interface SidebarItem {
-  title: string | null;
-  url: string | null;
-  depth: number;
-  children?: SidebarItem[];
-}
-
-function getSidebar(): { sidebar: SidebarItem[]; expandedList: boolean } {
+function getSidebar(): { sidebar: SidebarItem[]; expandedList: string[] } {
   const layoutFile = glob.sync(`${DOCS_DIR_PATH}/_layout.md`);
 
   const sidebar: SidebarItem[] = [];

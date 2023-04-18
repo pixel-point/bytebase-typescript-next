@@ -10,11 +10,11 @@ Bytebase allows user to customize the file path of the schema file. This file pa
 
 The default file path template is `{{ENV_ID}}/{{DB_NAME}}##{{VERSION}}##{{TYPE}}##{{DESCRIPTION}}.sql`.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 The default separator is double pound signs `##`.
 
-</hint-block>
+</HintBlock>
 
 Let's say the base directory is `bytebase` :
 

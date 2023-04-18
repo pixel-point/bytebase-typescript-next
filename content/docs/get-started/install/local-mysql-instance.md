@@ -21,11 +21,11 @@ docker run --name mysqld \
   mysql/mysql-server:8.0
 ```
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 The setup below is for testing purpose and should NOT be used in production setup. Also the MySQL data will be wiped out after the container stops.
 
-</hint-block>
+</HintBlock>
 
 ## Step 2 - Add the MySQL Server as an Instance
 

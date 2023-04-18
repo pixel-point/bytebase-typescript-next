@@ -2,11 +2,11 @@
 title: Admin Mode
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Please note that you should be really careful when using Admin Mode, since you are taking full control of your database.
 
-</hint-block>
+</HintBlock>
 
 ## Run query in Admin Mode
 

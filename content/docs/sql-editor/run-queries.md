@@ -2,7 +2,7 @@
 title: Run and EXPLAIN Query
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 SQL Editor default mode is read-only, which only supports running SELECT queries. If you attempt
 to run DDL or DML change queries, SQL Editor will prompt you to create a new issue to start the
@@ -13,7 +13,7 @@ Workspace Owners and DBAs are allowed to execute any SQL statements in
 
 The read-only mode is not available for MongoDB, but you also can execute the statements in [Admin Mode](/docs/sql-editor/admin-mode).
 
-</hint-block>
+</HintBlock>
 
 ## Run query
 

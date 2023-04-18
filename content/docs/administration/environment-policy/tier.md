@@ -2,11 +2,11 @@
 title: Environment Tier
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is only available in the Enterprise plan.
 
-</hint-block>
+</HintBlock>
 
 For production environments, extra care should be taken. Bytebase allows marking such an environment as a production environment. Workspace OWNER or DBA can configure this under the Environment Tier section from the environment detail page.
 

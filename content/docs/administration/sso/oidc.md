@@ -6,7 +6,7 @@ OpenID Connect (OIDC) is a simple identity layer on top of the OAuth 2.0 protoco
 
 ## Configuration
 
-<hint-block type="info">
+<HintBlock type="info">
 
 1. Please make sure the [`--external-url`](/docs/get-started/install/external-url) is configured correctly for the Bytebase instance.
 
@@ -14,7 +14,7 @@ OpenID Connect (OIDC) is a simple identity layer on top of the OAuth 2.0 protoco
 
 2. If you're unsure about the **Issuer** of your IdP, you can always use the [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) endpoint to find the correct value, e.g. `https://acme.okta.com/.well-known/openid-configuration`.
 
-</hint-block>
+</HintBlock>
 
 Basic information:
 
@@ -65,11 +65,11 @@ User information field mapping:
    - **Display name**: `name`
    - **Email**: `email`
 
-<hint-block type="info">
+<HintBlock type="info">
 
 In some GitLab self-hosted setups, the **Issuer** is `http://gitlab.acme.com` (HTTP) instead of `https://gitlab.acme.com` (HTTPS) despite the latter being the URL used to access the instance.
 
-</hint-block>
+</HintBlock>
 
 ### Okta
 

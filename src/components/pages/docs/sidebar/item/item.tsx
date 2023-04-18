@@ -6,10 +6,11 @@ import { useState } from 'react';
 
 import clsx from 'clsx';
 
+import { SidebarItem } from '@/types/sidebar';
+
 import Route from '@/lib/route';
 
 import ChevronIcon from '../images/chevron.inline.svg';
-import { SidebarItem } from '../sidebar';
 
 const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): boolean => {
   if (!children) return false;
@@ -19,9 +20,14 @@ const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): 
   );
 };
 
-const Item = ({ title, url, children, depth, currentUrl, expandedList }: SidebarItem) => {
+interface ItemProps extends SidebarItem {
+  currentUrl: string;
+  expandedList: string[];
+}
+
+const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemProps) => {
   const [isOpen, setIsOpen] = useState(
-    isActiveItem(children, currentUrl) || expandedList?.includes(title),
+    isActiveItem(children, currentUrl) || expandedList?.includes(title as string),
   );
 
   if (!isOpen && isActiveItem(children, currentUrl)) {
@@ -66,7 +72,7 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList }: Sidebar
           )}
         >
           {children.map((item, index) => (
-            <Item {...item} key={index} />
+            <Item {...item} currentUrl={currentUrl} expandedList={expandedList} key={index} />
           ))}
         </ul>
       )}

@@ -2,11 +2,11 @@
 title: Anonymize Data
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is only available in the Enterprise plan.
 
-</hint-block>
+</HintBlock>
 
 For MySQL instances, Workspace Owners and DBAs can mark table columns as `Sensitive` to anonymize the data.
 

@@ -2,11 +2,11 @@
 title: State-based Migration
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This feature is in beta and only available for projects that have enabled [GitOps workflow](/docs/vcs-integration/enable-gitops-workflow).
 
-</hint-block>
+</HintBlock>
 
 State-based migration is a declarative way to describe the desired state of the schema, it allows the schema management engine to generate migration scripts automatically for any discrepancy found between the desired state and the actual schema.
 

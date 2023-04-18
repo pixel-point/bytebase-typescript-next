@@ -52,11 +52,11 @@ With this setup,
 
 - When you merge the `dev` branch to the `main` branch with one or more SQL migration file commits, Bytebase will create **a separate issue for each SQL migration file** in `Prod Project` and apply the corresponding migration change to `db_prod`.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Bytebase only creates the issue with the migration change. Depending on the [environment approval policy](/docs/get-started/configure-workspace/set-up-environments), Bytebase will either apply the change immediately to the database or wait for approval.
 
-</hint-block>
+</HintBlock>
 
 ## Learn more
 

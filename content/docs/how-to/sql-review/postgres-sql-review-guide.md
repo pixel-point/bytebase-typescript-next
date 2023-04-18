@@ -5,11 +5,11 @@ description: The SQL Review and Style Guide for PostgreSQL
 
 ## Background
 
-<hint-block type="info">
+<HintBlock type="info">
 
 The guide is based on [pigsty](https://pigsty.cc/zh/blog/2018/06/20/postgresql%E5%BC%80%E5%8F%91%E8%A7%84%E7%BA%A6/) by [@Vonng](http://vonng.com/en/). You can configure many of the listed [SQL Review rules in Bytebase](https://bytebase.com/docs/sql-review/review-policy/overview).
 
-</hint-block>
+</HintBlock>
 
 PostgreSQL is a very powerful database, but to use PostgreSQL well, it needs the collaboration of backend engineers, Ops/SREs, and DBAs.
 
@@ -626,11 +626,11 @@ $function$;
 
 ## Deployment Process
 
-<hint-block type="info">
+<HintBlock type="info">
 
 You can use [Bytebase Change Workflow](/docs/change-database/change-workflow/overview) to streamline and bookkeep the deployment process.
 
-</hint-block>
+</HintBlock>
 
 ### Communication
 

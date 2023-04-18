@@ -46,13 +46,13 @@ The most important user field mapping is the identifier which is used to identif
 
 ## Built-in OAuth Provider
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 OAuth 2.0 usually requires an authorization callback url in the configuration. Please make sure the [--external-url](/docs/get-started/install/external-url) is set correctly.
 
 If you start Bytebase with `--external-url https://bytebase.example.com`, then the **authorization callback URL** will be `https://bytebase.example.com/oauth/callback`.
 
-</hint-block>
+</HintBlock>
 
 Bytebase provides templates for configuring built-in OAuth providers.
 

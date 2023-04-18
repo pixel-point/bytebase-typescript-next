@@ -2,11 +2,11 @@
 title: SQL Advise API
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This OpenAPI is in **Alpha** stage, we may change it in the future.
 
-</hint-block>
+</HintBlock>
 
 The SQL Advise API provides SQL checks based on your schema review policy.
 

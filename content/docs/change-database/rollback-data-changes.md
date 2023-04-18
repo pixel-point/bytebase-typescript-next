@@ -2,11 +2,11 @@
 title: Rollback Data Changes
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This feature is currently in beta.
 
-</hint-block>
+</HintBlock>
 
 After a data change completes, Bytebase can parse MySQL binary logs and build rollback SQL statements from the logs. This allows you to revert that data change if needed.
 
@@ -47,17 +47,17 @@ The following commands returns the binary log expiration period in seconds.
 SHOW VARIABLES LIKE 'binlog_expire_logs_seconds';
 ```
 
-<hint-block type="info">
+<HintBlock type="info">
 
 If you are using a managed MySQL, please refer to your provider's documentation on querying binlog retention time.
 
-</hint-block>
+</HintBlock>
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Bytebase cannot build rollback statements for a task from the distant past because the corresponding binlog may have already been purged.
 
-</hint-block>
+</HintBlock>
 
 ### Step 3 - Enable rollback SQL generation
 
@@ -67,11 +67,11 @@ Click "SQL Rollback" switch to request Bytebase to generate rollback SQL after d
 
 Click "Preview rollback issue".
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 The tables to perform rollbacks should have a `PRIMARY KEY` or `UNIQUE` constraint.
 
-</hint-block>
+</HintBlock>
 
 ## FAQ
 

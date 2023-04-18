@@ -23,12 +23,12 @@ Fill in the following information, and click `Confirm` button to install.
 
 After installation, Bytebase can be accessed via the `Access` button.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Rainbond uses [--pg](/docs/get-started/install/external-postgres) to store the Bytebase metadata in the external PostgreSQL. To form --pg, you can go to the Bytebase component -> Environment configuration, and modify POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD environment variables.
 
 Rainbond uses [--external-url](/docs/get-started/install/external-url) to provide external access to Bytebase. To customize the external URL, you can go to the Bytebase component -> Environment configuration, and modify EXTERNAL_URL environment variable.
 
-</hint-block>
+</HintBlock>
 
 ![](/docs/get-started/install/rainbond-topology.webp)

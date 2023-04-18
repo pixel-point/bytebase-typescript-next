@@ -25,11 +25,11 @@ Alternatively, you can supply [--pg](/docs/reference/command-line#--pg-string) o
 
 ## --pg connection string
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Alternatively, you can also pass PG_URL environment variable.
 
-</hint-block>
+</HintBlock>
 
 Supported format:
 

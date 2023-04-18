@@ -10,11 +10,11 @@ Before starting, make sure you have installed [Docker](https://www.docker.com/ge
 
 ### Special notes for running on Linux
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 If you run Bytebase inside Docker on Linux and want to connect the database intance on the same host, then you need to supply the additional `--add-host host.docker.internal:host-gateway --network host` flags.
 
-</hint-block>
+</HintBlock>
 
 ## Run locally (e.g. localhost:5678)
 
@@ -45,11 +45,11 @@ Check [Server Startup Options](/docs/reference/command-line) for other startup o
 
 ## Allow external access via URL
 
-<hint-block type="info">
+<HintBlock type="info">
 
 For your setup, you need to replace https://bytebase.example.com with the actual URL your users would visit Bytebase from. See [Configure External URL](/docs/get-started/install/external-url).
 
-</hint-block>
+</HintBlock>
 
 Run the following command to start Bytebase on port 80 and visit Bytebase from https://bytebase.example.com
 

@@ -2,11 +2,11 @@
 title: GitOps SQL Review CI
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This feature requires Enterprise Plan.
 
-</hint-block>
+</HintBlock>
 
 ## Set up SQL Review CI
 

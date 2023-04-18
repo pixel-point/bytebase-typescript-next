@@ -25,11 +25,11 @@ sudo su bytebase
 
 Download [source code](https://github.com/bytebase/bytebase) from GitHub, then go to the source root directory
 
-<hint-block type="info">
+<HintBlock type="info">
 
 If you want to build from a specific release `x.y.z`, then switch to that tag.
 
-</hint-block>
+</HintBlock>
 
 ```bash
 git checkout tags/x.y.z

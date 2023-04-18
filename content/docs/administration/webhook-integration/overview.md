@@ -2,11 +2,11 @@
 title: Webhook Integration
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Please make sure the [--external-url](/docs/get-started/install/external-url) is set correctly.
 
-</hint-block>
+</HintBlock>
 
 ## Project webhook
 

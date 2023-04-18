@@ -2,11 +2,11 @@
 title: Watermark
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is only available in the Enterprise plan.
 
-</hint-block>
+</HintBlock>
 
 Workspace Owners can turn on / off watermark setting in **"Settings/ Workspace / General"**
 

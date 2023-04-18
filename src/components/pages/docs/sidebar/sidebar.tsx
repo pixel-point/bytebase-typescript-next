@@ -1,18 +1,11 @@
-import Item from './item';
+import { SidebarItem } from '@/types/sidebar';
 
-export interface SidebarItem {
-  title: string;
-  url?: string;
-  depth?: number;
-  children?: SidebarItem[];
-  currentUrl: string;
-  expandedList?: string[];
-}
+import Item from './item';
 
 interface SidebarProps {
   data: SidebarItem[];
   currentUrl: string;
-  expandedList?: string[];
+  expandedList: string[];
 }
 
 const Sidebar = ({ data, currentUrl, expandedList }: SidebarProps) => (

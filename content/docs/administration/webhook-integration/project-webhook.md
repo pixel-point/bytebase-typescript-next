@@ -31,21 +31,21 @@ title: Project Webhook
 
 [Official guide](https://developers.dingtalk.com/document/robots/custom-robot-access)
 
-<hint-block type="info">
+<HintBlock type="info">
 
 DingTalk allows to specify a list of keywords in the [security setting](https://developers.dingtalk.com/document/robots/customize-robot-security-settings) to protect webhook endpoint. You can add "Bytebase" to that keyword list.
 
-</hint-block>
+</HintBlock>
 
 ### Feishu (Lark)
 
 [Official guide](https://www.feishu.cn/hc/zh-CN/articles/360024984973)
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Feishu (Lark) allows to specify a list of keywords in the [security setting](https://www.feishu.cn/hc/zh-CN/articles/360024984973#lineguid-RahdJr) to protect webhook endpoint. You can add "Bytebase" to that keyword list.
 
-</hint-block>
+</HintBlock>
 
 ### WeCom
 
@@ -55,11 +55,11 @@ WeCom does not provide its own official guide. Please follow this similar [setup
 
 Custom is used to integrate with your own services via webhook.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 You need to implement the webhook server yourself, it doesn't work out of the box.
 
-</hint-block>
+</HintBlock>
 
 **API Definition as follow:**
 

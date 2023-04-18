@@ -7,11 +7,11 @@ title: Enable GitOps Workflow in Project
 Estimate setup time: 15 minutes.
 This guide will walk you through how to enable the GitOps workflow for a project in Bytebase. This is a [reference setup](https://demo.bytebase.com/project/blog-git-3003#version-control) showing what it will look like after the setup.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 One project has to choose between the **UI workflow** and the **GitOps workflow**. If GitOps workflow is chosen, then all schema changes for the databases belonging to this project can only be triggered from code change from the linked repository.
 
-</hint-block>
+</HintBlock>
 
 ## Prerequisites
 
@@ -25,19 +25,19 @@ Go to the project you wish to enable GitOps workflow for. Choose **GitOps** and 
 
 ## Step 1 - Choose Git provider
 
-<hint-block type="info">
+<HintBlock type="info">
 
 You can only link Git repository from one of the existing Git providers in Bytebase. If your desired Git provider is not there, you need to contact **Workspace Owner** to follow [Add Git Provider](/docs/vcs-integration/add-git-provider) to add it.
 
-</hint-block>
+</HintBlock>
 
 Click the Git provider hosting your repository, and Bytebase will start the OAuth process with your chosen Git provider. If you are not currently logged into that provider, you will be prompted to login first in order to complete the OAuth.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 If you encounter errors during this process, it's likely the Git provider is not setup properly and you need to contact **Workspace Owner** to double check the setup following [Add Git Provider](/docs/vcs-integration/add-git-provider).
 
-</hint-block>
+</HintBlock>
 
 ![project-vcs-step](/docs/vcs-integration/enable-gitops-workflow/project-vcs-step2.webp)
 
@@ -45,11 +45,11 @@ If you encounter errors during this process, it's likely the Git provider is not
 
 If the OAuth process is successful, you will be prompted to **STEP 2: Select repository**.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 For GitLab, Bytebase only lists repositories where you have at least the **Maintainer** role. This is because to configure the VCS integration, Bytebase needs to create the webhook, which requires **Maintainer** role.
 
-</hint-block>
+</HintBlock>
 
 ![project-vcs-step](/docs/vcs-integration/enable-gitops-workflow/project-vcs-step3.webp)
 
@@ -65,11 +65,11 @@ The final step allows you to configure the following settings:
 
 This is the branch where Bytebase observes the migration SQL file changes.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 For GitLab, you can specify wildcards, such as "**feature/\***" to match branches starting with "feature/".
 
-</hint-block>
+</HintBlock>
 
 #### Base directory - Optional
 
@@ -120,11 +120,11 @@ When specified, after each migration, Bytebase will write the latest schema to t
 
 💡 **This is useful to let repository always keep a complete schema of the corresponding database.**
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Make sure the changed branch is not protected or allow repository maintainer to push to that protected branch. See [protected branch](https://docs.gitlab.com/ee/user/project/protected_branches.html).
 
-</hint-block>
+</HintBlock>
 
 Required placeholders (must present in the template if specified):
 

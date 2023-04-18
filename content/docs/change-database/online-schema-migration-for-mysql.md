@@ -3,11 +3,11 @@ title: Online Schema Migration for MySQL
 description: This guide shows you how to use gh-ost to migrate your MySQL databases in Bytebase.
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This is currently a preview feature.
 
-</hint-block>
+</HintBlock>
 
 [gh-ost](https://github.com/github/gh-ost) is a triggerless online schema migration tool for MySQL. Bytebase leverages gh-ost to migrate MySQL table schemas with little downtime.
 
@@ -96,11 +96,11 @@ In this example, my socket file name is `/tmp/gh-ost.109.103.db.sbtest2.sock`
 
 ### Show gh-ost status
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Replace taskID, databaseID, databaseName and tableName accordingly.
 
-</hint-block>
+</HintBlock>
 
 If Bytebase is running on docker, show gh-ost status with the command below:
 
@@ -120,11 +120,11 @@ echo "status" | nc -U /tmp/gh-ost.taskID.databaseID.databaseName.tableName.sock
 
 ### Kill gh-ost manually
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Replace taskID, databaseID, databaseName and tableName accordingly.
 
-</hint-block>
+</HintBlock>
 
 Sometimes you want to kill gh-ost. Maybe it’s because gh-ost is so slow, or you find a typo in your sql statement.
 To kill gh-ost, you issue "panic" to the UNIX socket file on which gh-ost listens.

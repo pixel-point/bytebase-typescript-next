@@ -141,11 +141,11 @@ Kubernetes will rolling restart the pods of the deployment. Because we set `imag
 
 ### Production Setup External URL
 
-<hint-block type="info">
+<HintBlock type="info">
 
 For production setup, you should [configure a proper --external-url](/docs/get-started/install/external-url).
 
-</hint-block>
+</HintBlock>
 
 ### Installing the Chart
 

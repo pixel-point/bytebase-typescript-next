@@ -4,11 +4,11 @@ title: External Approval
 
 Users can configure Bytebase issues to be approved by external systems. Feishu (Lark) is the only supported external systems at the moment, but stay tuned for more.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Bytebase will approve the **whole stage of tasks** instead of a single task if it is approved on the IM side.
 
-</hint-block>
+</HintBlock>
 
 ## Setup Feishu Custom App
 
@@ -46,11 +46,11 @@ In the Manage scopes section of Permissions & Scopes page, add the following sco
 
 ![feishu app permission page](/docs/external-approval-feishu-permission.webp)
 
-<hint-block type="warn">
+<HintBlock type="warn">
 
 Make sure that you have added all three scopes before moving on. In particular, you must add both "approval:approval" and "approval:approval:readonly".
 
-</hint-block>
+</HintBlock>
 
 ### Step 5 - Enable app
 
@@ -85,13 +85,13 @@ Get the **App ID** and **App Secret** in the General info section of Credentials
 
 ## Setup Bytebase
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Bytebase uses account emails to find users at Feishu.
 
 Specifically, the issue assignee must have an **identical** email at Feishu to receive Approval requests. In Feishu Approvals, Bytebase bot will represent the issue creator if she can't be found at Feishu.
 
-</hint-block>
+</HintBlock>
 
 ![external approval bytebase setting page](/docs/external-approval-bytebase-setting.webp)
 

@@ -19,11 +19,11 @@ Both the instance URL and Display name are pre-populated for you.
 
 ## Step 2 - OAuth application info
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 In this step, you need to register "Bytebase" as a [GitHub organization-wide OAuth application](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app). This can only be done by an **organization admin on GitHub.com.** If you are not, you will need to ask the admin to follow [**Step 2.1** ](#step-21---register-github-organization-wide-oauth-application-performed-by-organization-admin) to register the application and provide the Client ID and Client secret. Then you may continue onwards from [**Step 2.2**](#step-22---verify-setup).
 
-</hint-block>
+</HintBlock>
 
 ### Step 2.1 - Register GitHub organization-wide OAuth application (performed by organization admin)
 
@@ -57,14 +57,14 @@ Fill in the **Application ID** and **Secret** onto the corresponding fields on t
 
 After you click "**Next**", Bytebase will kick off an OAuth flow to verify the setup. If you are not currently logged on GitHub.com. You will be prompted to login to complete the OAuth.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 If you get an error in the OAuth popup window. Please double-check the following info:
 
 1. The "Authorization callback URL" of the registered GitHub OAuth application matches exactly to the "Authorization callback URL" shown on the Bytebase wizard.
 2. The "Client ID" and "Client secret" of the registered GitHub OAuth application matches exactly to the filled "Application ID" and "Secret" on the Bytebase wizard.
 
-</hint-block>
+</HintBlock>
 
 ## Step 3 - Confirm and add
 

@@ -9,9 +9,9 @@ Bytebase provides the [Terraform Provider](https://registry.terraform.io/provide
 - Instance Role
 - More to come
 
-<hint-block type="info">
+<HintBlock type="info">
 The Bytebase Provider itself is free to use. Some advanced resource operations require TEAM or ENTERPRISE plan.
-</hint-block>
+</HintBlock>
 
 ## Create service account
 
@@ -25,11 +25,11 @@ Name your service account, and grant the **Owner** or **DBA** role to it.
 
 After creation, you can copy the service key as `service_key` and the email as `service_account` to initialize the Bytbase provider in next step.
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 You can only copy the key right after creating the service account. The key will disappear if you refresh the page.
 
-</hint-block>
+</HintBlock>
 
 ![service-account](/docs/get-started/work-with-terraform/service-account.webp)
 

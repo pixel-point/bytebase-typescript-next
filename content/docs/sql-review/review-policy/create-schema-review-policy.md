@@ -18,11 +18,11 @@ Creating the `Schema Review Policy` is a 3-step process.
 
 Specify the basic information, including display name for schema review policy, selected environment and schema review policy template.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Note that only **ONE** policy can be attached per `Environment`.
 
-</hint-block>
+</HintBlock>
 
 ## Step 2
 

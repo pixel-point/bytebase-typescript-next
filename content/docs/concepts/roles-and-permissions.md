@@ -2,11 +2,11 @@
 title: Roles and Permissions (RBAC)
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 RBAC is only available in Team and Enterprise plan. In Free plan, Bytebase does not enforce RBAC and every user has full permissions.
 
-</hint-block>
+</HintBlock>
 
 ## Overview
 
@@ -75,17 +75,17 @@ By default, the first registered user is granted the `Owner` role, all following
 
 Any user can create project. By default, the project creator is granted the `Project Owner` role.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Project Developer` grants a project membership and does not grant any additional project level permissions. If the user is a project member, that project and the project's databases will be listed on the user's left sidebar.
 
-</hint-block>
+</HintBlock>
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Workspace DBA` and `Workspace Owner` assume the `Project Owner` role for all projects.
 
-</hint-block>
+</HintBlock>
 
 |           Project Permission | Project Developer | Project Owner | Workspace DBA | Workspace Owner |
 | ---------------------------: | :---------------: | :-----------: | :-----------: | :-------------: |

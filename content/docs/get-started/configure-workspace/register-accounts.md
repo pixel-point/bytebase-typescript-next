@@ -18,11 +18,11 @@ After the admin account is created, you can register a regular account and will 
 
 ## Login with GitLab / GitHub
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is only available in the **Team** or **Enterprise** plan.
 
-</hint-block>
+</HintBlock>
 
 User can login Bytebase directly with her GitLab / GitHub, below shows the GitLab login process,
 GitHub works in a similar way:

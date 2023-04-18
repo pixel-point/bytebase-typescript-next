@@ -4,10 +4,10 @@ title: Explore the Schema
 
 SQL Editor displays the database connections in a tree view. This allows users to navigate between different databases to explore the schema.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This is not available in MongoDB because MongoDB is schemaless.
 
-</hint-block>
+</HintBlock>
 
 ![Schema](/docs/sql-editor/schema.webp)

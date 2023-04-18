@@ -19,11 +19,11 @@ Both the instance URL and Display name are pre-populated for you.
 
 ## Step 2 - OAuth consumer info
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 In this step, you need to register "Bytebase" as a [Bitbucket workspace-wide OAuth consumer](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). This can only be done by an **workspace admin on Bitbucket.org.** If you are not, you will need to ask the admin to follow [**Step 2.1** ](#step-21---register-bitbucket-workspace-wide-oauth-consumer-performed-by-workspace-admin) to register the consumer and provide the Key and Secret. Then you may continue onwards from [**Step 2.2**](#step-22---verify-setup).
 
-</hint-block>
+</HintBlock>
 
 ### Step 2.1 - Register Bitbucket workspace-wide OAuth consumer (performed by workspace admin)
 
@@ -51,14 +51,14 @@ Fill in the **Application ID** and **Secret** onto the corresponding fields on t
 
 After you click "**Next**", Bytebase will kick off an OAuth flow to verify the setup. If you are not currently logged on Bitbucket.org. You will be prompted to login to complete the OAuth.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 If you get an error in the OAuth popup window. Please double-check the following info:
 
 1. The **Callback URL** of the registered Bitbucket OAuth consumer matches exactly to the **Callback URL** shown on the Bytebase wizard.
 2. The **Key** and **Secret** of the registered Bitbucket OAuth consumer matches exactly to the filled **Application ID** and **Secret** on the Bytebase wizard.
 
-</hint-block>
+</HintBlock>
 
 ## Step 3 - Confirm and add
 

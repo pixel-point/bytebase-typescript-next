@@ -93,11 +93,11 @@ default: **""**
 
 Optional external PostgreSQL instance connection url. If specified, Bytebase will store its own metadata there. Check [setup guide](/docs/get-started/install/external-postgres) for details.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Alternatively, you can also pass PG_URL environment variable.
 
-</hint-block>
+</HintBlock>
 
 ## --port <\<number>>
 
@@ -113,8 +113,8 @@ If specified, Bytebase will run in **read-only** mode. This mode is mostly usefu
 
 You can also enable --demo and --readonly together to have a long running demo instance without worrying about the data being changed accidentally (this is how [https://demo.bytebase.com](https://demo.bytebase.com) is configured).
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Whenever you download a new Bytebase version, first time you should always start it **without** --readonly so that Bytebase can apply its own schema upgrade if needed.
 
-</hint-block>
+</HintBlock>

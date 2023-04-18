@@ -50,30 +50,30 @@ echo hello world
 
 Show a hint text with a styled block.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 I am an info block with [link](#hint).
 
 Extra description.
 
-</hint-block>
+</HintBlock>
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 I am an warning block with [link](#hint).
 
 Extra description.
 
-</hint-block>
+</HintBlock>
 
 #### Usage
 
 ```markdown
-<hint-block type="info">
+<HintBlock type="info">
 
 Bytebase has already prepared some sample data. In particular, it has created a Test environment and a Prod environment, each containing a mysql instance. To establish the connection to those instances, one quick way is to [start a MySQL docker instance](#start-a-mysql-docker-instance-for-testing).
 
-</hint-block>
+</HintBlock>
 ```
 
 #### Props

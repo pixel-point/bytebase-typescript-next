@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Inter', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
+      mono: ['IBM Plex Mono', 'IBM Plex Mono Fallback', ...defaultTheme.fontFamily.mono],
       title: ['Sharp Grotesk', 'Sharp Grotesk Fallback', ...defaultTheme.fontFamily.sans],
     },
     colors: ({ colors }) => ({

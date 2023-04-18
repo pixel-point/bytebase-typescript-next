@@ -2,11 +2,11 @@
 title: Schema Diagram
 ---
 
-<hint-block type="info">
+<HintBlock type="info">
 
 This feature is in beta.
 
-</hint-block>
+</HintBlock>
 
 Bytebase's Schema Diagram provides a database [Entity-Relation Diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model).
 

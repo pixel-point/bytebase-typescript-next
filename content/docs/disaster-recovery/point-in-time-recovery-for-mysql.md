@@ -48,11 +48,11 @@ And it should succeed like this.
 
 The second task is called Swap. It will swap the restored temporary database with your current database. After the Swap task, your current database will be at the state of the point in time you chose to restore, and the original database will be renamed by appending a timestamp (the issue created time) and an \_old suffix. You could check the old database and use the data or just delete it to save storage space.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 Note that you should stop ongoing queries on the current database before approving the Swap task.
 
-</hint-block>
+</HintBlock>
 
 Click the Approve button to approve the second Swap task.
 

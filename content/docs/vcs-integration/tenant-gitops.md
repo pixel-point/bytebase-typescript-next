@@ -26,13 +26,13 @@ Where `bytebase/` is the **Base directory**, depending on [your configuration](/
 
 ### Use YAML manifest
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 1. This feature is currently experimental, behaviors are subject to change, please only use with guidance from our technical support.
 1. The **File path template** must use `.sql` as the file extension for migration scripts, both SQL files and YAML manifest share the same setting of the **File path template**.
 1. Only data change (DML) is supported.
 
-</hint-block>
+</HintBlock>
 
 Using SQL files as migration scripts has the limitation of only being able to target a single database, to make a data change across an arbitrary set of databases.
 

@@ -2,11 +2,11 @@
 title: Review Rules
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 Review rules only supports SQL checks in **Issue** now. Support for **SQL Editor** is coming soon.
 
-</hint-block>
+</HintBlock>
 
 Bytebase provides customizable SQL lint rules to check common issues in schema change process.
 
@@ -222,12 +222,12 @@ It also limits the naming max length. The default maximum length is 64 character
 
 Bytebase checks that all index names in DDL conform to the naming conventions.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Index Naming Convention` rule is only valid for index, which means it does **NOT** work for unique key, foreign key and primary key.
 Also see primary key naming, unique key naming convention and foreign key naming convention.
 
-</hint-block>
+</HintBlock>
 
 Specifically, Bytebase checks:
 
@@ -259,12 +259,12 @@ For example, `^pk_{{table}}_{{column_list}}$` is a `template` where `{{table}}` 
 
 Bytebase checks that all index names in DDL conform to the naming conventions.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Primary Key Naming Convention` rule is only valid for primary key, which means it does **NOT** work for unique key, foreign key and normal index.
 Also see index naming convention, unique key naming convention and foreign key naming convention.
 
-</hint-block>
+</HintBlock>
 
 Specifically, Bytebase checks:
 
@@ -294,12 +294,12 @@ It also limits the naming max length. The default maximum length is 64 character
 
 Bytebase checks that all unique key names in DDL conform to the naming conventions.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Unique Key Naming Convention` rule is only valid for unique key, which means it does **NOT** work for index, foreign key and primary key.
 Also see index naming convention, primary key naming convention and foreign key naming convention.
 
-</hint-block>
+</HintBlock>
 
 Specifically, Bytebase checks:
 
@@ -332,12 +332,12 @@ It also limits the naming max length. The default maximum length is 64 character
 
 Bytebase checks that all foreign key names in DDL conform to the naming conventions.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 `Foreign Key Naming Convention` rule is only valid for foreign key, which means it does **NOT** work for index, unique key and primary key.
 Also see index naming convention, primary key naming convention and unique key naming convention.
 
-</hint-block>
+</HintBlock>
 
 Specifically, Bytebase checks:
 

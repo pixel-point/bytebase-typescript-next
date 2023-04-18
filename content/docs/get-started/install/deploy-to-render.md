@@ -12,11 +12,11 @@ You need a [render](https://render.com) account (free signup).
 
 The Bytebase render deployment contains a web service and a PosgreSQL database. The [blueprint](https://github.com/bytebase/render/blob/main/render.yaml) uses render's free plan, you can fork the repository if you want to change the plan or the deploy region.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 The free plan can only create at most one free PostgreSQL database. Because the Bytebase deployment requires a PostgreSQL database to store its own metadata, thus it will use up the quota.
 
-</hint-block>
+</HintBlock>
 
 ## Steps
 

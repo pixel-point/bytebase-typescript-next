@@ -7,13 +7,13 @@ Bytebase manages its own data under the [--data](/docs/reference/command-line#--
 - Metadata when [--pg](/docs/reference/command-line#--pg-string) is not specified.
 - Database backups when [cloud backup flags](/docs/reference/command-line#--backup-bucket-bucket) is not specified.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 You should periodically back up the entire [--data](/docs/reference/command-line#--data-directory) directory if any data is stored there.
 
 If Bytebase is running and not in the [readonly](/docs/reference/command-line#--readonly) mode, and you want to take the backup, then the underlying data volume must support snapshot feature where the entire directory can take a snapshot at the same time, otherwise it may produce a corrupted backup bundle.
 
-</hint-block>
+</HintBlock>
 
 ## Embedded PostgreSQL Metadata
 
@@ -47,13 +47,13 @@ psql -h <<host>> -p <<port>> -U <<user>> metadb_new < metadb.sql
 
 #### Step 2 - Swap the existing metadata db with the temporary db
 
-<hint-block type="info">
+<HintBlock type="info">
 
 You need to first stop Bytebase otherwise its connection to the metadata db will prevent renaming the database.
 
 Also, you can not rename the connecting database so you need to connect to the PostgreSQL instance using a different database like `postgres`.
 
-</hint-block>
+</HintBlock>
 
 Rename existing `metadb` to `metadb_old`:
 

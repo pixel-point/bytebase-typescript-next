@@ -2,7 +2,7 @@
 title: Synchronize Schema
 ---
 
-<hint-block type="warning">
+<HintBlock type="warning">
 
 This feature is in beta and only available for MySQL and PostgreSQL.
 
@@ -10,7 +10,7 @@ Synchronize Schema for MySQL currently supports synchronizing `Table`, `Index`, 
 
 Synchronize Schema for PostgreSQL currently supports synchronizing `Schema`, `Table`, `Index`, `Constraint`, `Sequence`, `Extension`, `Function`, `Trigger`, and `Enum Type` objects.
 
-</hint-block>
+</HintBlock>
 
 Bytebase supports synchronizing a specified schema version of one database to another. To provide a better user experience, Bytebase displays the schema differences between the two selected databases and generates the suggested DDL statements (e.g. ALTER TABLE).
 
@@ -26,11 +26,11 @@ The entry of `Sync Schema` is in the quick action button group on the home page 
 
 The schema version is selected from the database's migration history.
 
-<hint-block type="info">
+<HintBlock type="info">
 
 In the Enterprise Plan, you can select an arbitrary schema version from the migration history. In other plans, you can only select the latest schema version.
 
-</hint-block>
+</HintBlock>
 
 ### Step 3 - Apply to database
 
