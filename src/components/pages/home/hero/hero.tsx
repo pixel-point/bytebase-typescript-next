@@ -103,11 +103,8 @@ const Hero = () => {
         </footer>
       </section>
       <div className="col-span-full col-start-1 row-start-2 h-20 md:h-[60px]" />
-      <div
-        className="col-start-1 col-end-5 row-start-3 row-end-4 min-h-[1000px] 3xl:min-h-[900px] xl:min-h-[750px] md:min-h-[600px]"
-        ref={anchorRef}
-      >
-        <Card className={clsx('sticky', CARD_STICKY_POSITION)} {...cards[0]} />
+      <div className="col-start-1 col-end-5 row-start-3 row-end-4" ref={anchorRef}>
+        <Card {...cards[0]} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] xl:row-start-2 xl:pt-[30px]">
         <Card className={clsx('sticky', CARD_STICKY_POSITION)} {...cards[1]} />
