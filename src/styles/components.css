@@ -9,28 +9,6 @@
     @apply gap-x-10 3xl:gap-x-9 xl:gap-x-6 md:gap-x-5 sm:gap-x-4;
   }
 
-  .flip {
-    perspective: 1000px;
-  }
-
-  .flip-inner {
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-
-    .flip:hover & {
-      transform: rotateY(180deg);
-    }
-  }
-
-  .flip-front,
-  .flip-back {
-    backface-visibility: hidden;
-  }
-
-  .flip-back {
-    transform: rotateY(180deg);
-  }
-
   .logos {
     @apply bg-[length:1472px_auto] bg-center bg-repeat-x lg:bg-[length:1100px_auto] md:bg-[length:990px_auto] sm:bg-[length:800px_auto];
 
