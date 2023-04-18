@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Databases = () => {
+const DBScheme = () => {
   return (
     <section className="container gap-x-grid mt-[244px] grid grid-cols-12 2xl:mt-[140px] lg:mt-32 md:mt-[90px] xs:mt-[74px]">
       <h2 className="col-span-12 col-start-1 max-w-[1219px] place-self-center text-center font-title text-88 font-semibold leading-none lg:text-68 md:col-start-1 md:col-end-13 md:text-54 sm:text-48 xs:leading-95">
@@ -24,4 +24,4 @@ const Databases = () => {
   );
 };
 
-export default Databases;
+export default DBScheme;

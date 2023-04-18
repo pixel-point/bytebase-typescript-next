@@ -1,4 +1,4 @@
-import Databases from '@/components/pages/home/databases';
+import DBScheme from '@/components/pages/home/db-scheme';
 import Features from '@/components/pages/home/features/features';
 import Hero from '@/components/pages/home/hero';
 import Logos from '@/components/pages/home/logos';
@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <Databases />
+      <DBScheme />
       <PromoChangeDatabase />
       <PromoOptions />
       <PromoQuery />
