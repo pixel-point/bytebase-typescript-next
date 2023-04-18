@@ -116,10 +116,10 @@ const Hero = () => {
         <Card className="sticky top-[80px]" {...cards[0]} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] xl:row-start-2 xl:pt-[30px]">
-        <Card className="sticky top-[80px] delay-75" {...cards[1]} />
+        <Card className="sticky top-[80px] delay-150" {...cards[1]} />
       </div>
       <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] xl:row-start-2 xl:-mt-[40px] xl:pt-0 md:-mt-[29px]">
-        <Card className="sticky top-[80px] delay-150" {...cards[2]} />
+        <Card className="sticky top-[80px] delay-300" {...cards[2]} />
       </div>
     </div>
   );
