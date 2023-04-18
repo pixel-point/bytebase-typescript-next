@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 
 import useScrollPosition from '@react-hook/window-scroll';
-import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
@@ -50,9 +49,6 @@ const cards: CardProps[] = [
   },
 ];
 
-const DONE_STATE_MARGIN_PX = 160;
-const CARD_STICKY_POSITION = 'top-[160px]';
-
 const Hero = () => {
   const containerRef = useRef<null | HTMLDivElement>(null);
   const anchorRef = useRef<null | HTMLDivElement>(null);
@@ -66,7 +62,7 @@ const Hero = () => {
   // TODO: update on resize
   useEffect(() => {
     if (containerRef.current) {
-      const topPosition = topPositionRef.current - DONE_STATE_MARGIN_PX;
+      const topPosition = topPositionRef.current;
       const isDone = containerRef.current.classList.contains('done');
 
       if (scrollY >= topPosition && !isDone) {
@@ -112,14 +108,17 @@ const Hero = () => {
         </footer>
       </section>
       <div className="col-span-full col-start-1 row-start-2 h-20 md:h-[60px]" />
-      <div className="col-start-1 col-end-5 row-start-3 row-end-4" ref={anchorRef}>
-        <Card {...cards[0]} />
+      <div
+        className="col-start-1 col-end-5 row-start-3 row-end-4 min-h-[1200px] xl:min-h-[900px] md:min-h-[700px]"
+        ref={anchorRef}
+      >
+        <Card className="sticky top-[80px]" {...cards[0]} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] xl:row-start-2 xl:pt-[30px]">
-        <Card className={clsx('sticky', CARD_STICKY_POSITION)} {...cards[1]} />
+        <Card className="sticky top-[80px] delay-75" {...cards[1]} />
       </div>
       <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] xl:row-start-2 xl:-mt-[40px] xl:pt-0 md:-mt-[29px]">
-        <Card className={clsx('sticky', CARD_STICKY_POSITION)} {...cards[2]} />
+        <Card className="sticky top-[80px] delay-150" {...cards[2]} />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export type CardProps = {
 const Card = ({ color, className, cover, video, title, href, description }: CardProps) => {
   return (
     <article className={clsx('perspective-1000', className)}>
-      <div className="group-[.done]:rotate-y-180 transform-3d gr grid transition-transform duration-1000">
+      <div className="group-[.done]:rotate-y-180 transform-3d gr grid transition-transform delay-[inherit] duration-1000">
         {/* TODO: make pic borders with CSS */}
         <div className="backface-hidden col-span-full row-span-full">
           <video
@@ -49,7 +49,7 @@ const Card = ({ color, className, cover, video, title, href, description }: Card
           />
         </div>
       </div>
-      <div className="invisible translate-y-20 opacity-0 transition-all duration-1000 group-[.done]:visible group-[.done]:translate-y-0 group-[.done]:opacity-100">
+      <div className="invisible translate-y-24 opacity-0 transition-all duration-700 group-[.done]:visible group-[.done]:translate-y-0 group-[.done]:opacity-100">
         <h3 className="mt-8 overflow-hidden text-ellipsis whitespace-nowrap text-36 font-bold leading-extra-tight tracking-tighter xl:mt-6 xl:text-32 md:mt-5 md:text-30">
           {title}
         </h3>
