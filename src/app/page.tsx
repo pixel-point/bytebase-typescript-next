@@ -16,10 +16,10 @@ export default function Page() {
       <Hero />
       <DBScheme />
       <PromoAutomationChanges />
+      {/* TODO: rename PromoOptions */}
       <PromoOptions />
-      {/* TODO: rename */}
+      {/* TODO: rename PromoQuery */}
       <PromoQuery />
-      {/* TODO: rename */}
       <PromoSecurity />
       <Features />
       <Logos />
