@@ -50,8 +50,8 @@ const cards: CardProps[] = [
   },
 ];
 
-const DONE_STATE_MARGIN_PX = 80;
-const CARD_STICKY_POSITION = `top-[${DONE_STATE_MARGIN_PX}px]`;
+const DONE_STATE_MARGIN_PX = 160;
+const CARD_STICKY_POSITION = 'top-[160px]';
 
 const Hero = () => {
   const containerRef = useRef<null | HTMLDivElement>(null);
