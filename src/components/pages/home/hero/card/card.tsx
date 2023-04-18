@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 export type CardProps = {
+  video: Record<string, string>;
   color: 'blue' | 'green' | 'red';
   cover: string;
   href: string;
@@ -13,20 +14,26 @@ export type CardProps = {
   className?: string;
 };
 
-const Card = ({ color, className, cover, title, href, description }: CardProps) => {
+const Card = ({ color, className, cover, video, title, href, description }: CardProps) => {
   return (
     <article className={clsx('perspective-1000', className)}>
       <div className="group-[.done]:rotate-y-180 transform-3d gr grid transition-transform duration-1000">
         {/* TODO: make pic borders with CSS */}
-        {/* TODO: replace images to video */}
         <div className="backface-hidden col-span-full row-span-full">
-          <Image
+          <video
             className="h-auto w-full"
-            src="/images/page/main/hero/video.png"
+            controls={false}
             width={464}
-            height={600}
-            alt=""
-          />
+            height={604}
+            loop
+            playsInline
+            autoPlay
+            muted
+          >
+            {Object.entries(video).map(([type, src]) => (
+              <source key={type} src={src} type={type} />
+            ))}
+          </video>
         </div>
         <div className="rotate-y-180 backface-hidden col-span-full row-span-full">
           <Image
@@ -37,7 +44,7 @@ const Card = ({ color, className, cover, title, href, description }: CardProps) 
             })}
             src={cover}
             width={464}
-            height={600}
+            height={604}
             alt=""
           />
         </div>
