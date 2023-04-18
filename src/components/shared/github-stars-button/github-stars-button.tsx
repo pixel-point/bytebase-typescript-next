@@ -1,22 +1,22 @@
-import GitHubIcon from '@/svgs/github.inline.svg';
-
 import Button from '@/components/shared/button';
+
+import GitHubIcon from '@/svgs/github.inline.svg';
 
 //TODO: add github stars fetching
 
 const GithubStarsButton = () => (
   <Button
-    additionalClassName="group max-w-[120px] lg:max-w-full lg:bg-gray-30 lg:text-white lg:py-2 lg:uppercase font-bold text-14 leading-none lg:text-13 lg:rounded-full"
+    additionalClassName="group max-w-[120px] md:max-w-full md:bg-gray-30 md:text-white md:py-2 md:uppercase font-bold text-14 leading-none md:text-13 md:rounded-full"
     to="https://github.com/bytebase/bytebase"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <div className="bg-gray-97 flex items-center justify-center px-3 py-1.5 border border-gray-90 lg:border-0 rounded-l group-hover:bg-gray-90 lg:p-0 group-hover:border-gray-80 transition-colors duration-200 lg:bg-transparent">
-      <GitHubIcon className="fill-black mr-1.5 h-4.5 w-4.5 lg:w-8 lg:h-8 lg:mr-3 lg:fill-white" />
-      <span className="tracking-wide lg:tracking-tighter">Star</span>
+    <div className="flex items-center justify-center rounded-l border border-gray-90 bg-gray-97 px-3 py-1.5 transition-colors duration-200 group-hover:border-gray-80 group-hover:bg-gray-90 md:border-0 md:bg-transparent md:p-0 md:group-hover:bg-transparent">
+      <GitHubIcon className="mr-1.5 h-4.5 w-4.5 fill-black md:mr-3 md:h-8 md:w-8 md:fill-white" />
+      <span className="tracking-wider md:tracking-wide">Star</span>
     </div>
     <span
-      className="inline-flex lg:items-center lg:before:block lg:before:mx-1.5 lg:before:h-[9px] lg:before:w-[1.5px] lg:before:bg-white px-3 py-2 border border-gray-90 lg:border-0 border-l-0 group-hover:border-gray-80 transition-colors duration-200 lg:bg-transparent rounded-r lg:p-0"
+      className="inline-flex rounded-r border border-l-0 border-gray-90 px-3 py-2 transition-colors duration-200 group-hover:border-gray-80 md:items-center md:border-0 md:bg-transparent md:p-0 md:before:mx-1.5 md:before:block md:before:h-[9px] md:before:w-[1.5px] md:before:bg-white"
       aria-label="5200 stars on Github"
     >
       5,221

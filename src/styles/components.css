@@ -2,18 +2,26 @@
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[1568px] px-12;
+    @apply mx-auto w-full max-w-[1568px] px-12 xl:px-11 md:px-7 sm:px-4;
+  }
 
-    @screen 2xl {
-      @apply px-11;
-    }
+  .gap-x-grid {
+    @apply gap-x-10 3xl:gap-x-9 xl:gap-x-6 md:gap-x-5 sm:gap-x-4;
+  }
 
-    @screen lg {
-      @apply px-7;
-    }
+  .logos {
+    @apply bg-[length:1472px_auto] bg-center bg-repeat-x lg:bg-[length:1100px_auto] md:bg-[length:990px_auto] sm:bg-[length:800px_auto];
 
-    @screen md {
-      @apply px-4;
-    }
+    height: 96px;
+    background-image: url(/images/page/main/logos.svg),
+      linear-gradient(
+        272.14deg,
+        #1fd68a 1.82%,
+        #c4ff99 19.31%,
+        #1fd68a 48.1%,
+        #1fd68a 56.4%,
+        #cceeff 71.99%,
+        #1fd68a 98.18%
+      );
   }
 }

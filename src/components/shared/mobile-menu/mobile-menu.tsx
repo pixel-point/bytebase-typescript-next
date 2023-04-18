@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import APIIcon from '@/svgs/api.inline.svg';
-import ChevronIcon from '@/svgs/chevron.inline.svg';
-import CLIIcon from '@/svgs/cli.inline.svg';
-import HowToIcon from '@/svgs/how-to.inline.svg';
-import RocketIcon from '@/svgs/rocket.inline.svg';
 import clsx from 'clsx';
 import { LazyMotion, domAnimation, m, useAnimation } from 'framer-motion';
 
@@ -13,6 +8,12 @@ import GithubStarsButton from '@/components/shared/github-stars-button';
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus.js';
+
+import APIIcon from '@/svgs/api.inline.svg';
+import ChevronIcon from '@/svgs/chevron.inline.svg';
+import CLIIcon from '@/svgs/cli.inline.svg';
+import HowToIcon from '@/svgs/how-to.inline.svg';
+import RocketIcon from '@/svgs/rocket.inline.svg';
 
 interface Icons {
   [key: string]: any;
@@ -103,18 +104,18 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        className="fixed bg-black bg-opacity-80 w-full -z-10 hidden lg:flex safe-paddings inset-0 h-full text-gray-15 justify-end"
+        className="safe-paddings fixed inset-0 -z-10 hidden h-full w-full justify-end bg-black bg-opacity-80 text-gray-15 md:flex"
         initial="from"
         animate={controls}
         variants={variants}
       >
-        <div className="pt-[72px] md:pt-20 flex flex-col justify-between bg-white md:w-full w-[53%] h-full px-7 pb-8 sm:px-4 sm:pb-5">
+        <div className="flex h-full w-[53%] flex-col justify-between bg-white px-7 pt-[72px] pb-8 sm:w-full sm:pt-20 xs:px-4 xs:pb-5">
           <ul className="flex flex-col items-stretch divide-y divide-gray-90">
             {MENUS.mobile.map(({ title, href = '', items }: MobileLinksProps, index: number) => (
-              <li key={index} className="first:-mt-4 relative last:border-b last:border-gray-90">
+              <li key={index} className="relative first:-mt-4 last:border-b last:border-gray-90">
                 {items ? (
                   <button
-                    className="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                    className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                     tabIndex={0}
                     onClick={() => handleDropdownOpen(index)}
                   >
@@ -133,7 +134,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 ) : (
                   <Link
                     to={href}
-                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-16 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-4"
+                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-5"
                   >
                     <span>{title}</span>
                   </Link>
@@ -150,16 +151,16 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                       {items.map(({ name, description, iconName, linkUrl }: MobileMenuItem) => {
                         const Icon = icons[iconName];
                         return (
-                          <li className="w-full last:pb-4 first:-mt-4" key={name}>
+                          <li className="w-full first:-mt-4 last:pb-4" key={name}>
                             <Link
                               additionalClassName="group block pt-4"
-                              size="md"
+                              size="lg"
                               theme="gray"
                               to={linkUrl}
                             >
                               <div className="flex flex-col gap-y-1">
-                                <div className="flex gap-x-2 items-center group-hover:text-primary-1">
-                                  <Icon className="w-5 h-5 shrink-0" />
+                                <div className="flex items-center gap-x-2 group-hover:text-primary-1">
+                                  <Icon className="h-5 w-5 shrink-0" />
                                   <span className="font-medium tracking-tight">{name}</span>
                                 </div>
                                 <span className="text-16 leading-normal text-gray-40">
@@ -178,7 +179,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
           </ul>
           <div className="mt-10 flex flex-col gap-4">
             <GithubStarsButton />
-            <Button additionalClassName="py-4.5" to="/" theme="gray-filled" size="sm">
+            <Button to="/" theme="gray-filled" size="md">
               Sign up for Cloud
             </Button>
           </div>

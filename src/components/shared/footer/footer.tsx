@@ -1,54 +1,58 @@
-import ExternalIcon from '@/svgs/external.inline.svg';
-import GithubIcon from '@/svgs/github.inline.svg';
-
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus.js';
-import ROUTE from '@/lib/route';
+import Route from '@/lib/route';
+
+import DiscordIcon from '@/svgs/discord.inline.svg';
+import ExternalIcon from '@/svgs/external.inline.svg';
+import GithubIcon from '@/svgs/github.inline.svg';
+import TwitterIcon from '@/svgs/twitter.inline.svg';
 
 const socialLinks = [
   {
     name: 'Discord',
-    href: ROUTE.DISCORD,
-    icon: 'images/discord.svg',
+    href: Route.DISCORD,
+    icon: DiscordIcon,
   },
   {
     name: 'Twitter',
-    href: ROUTE.TWITTER,
-    icon: 'images/twitter.svg',
+    href: Route.TWITTER,
+    icon: TwitterIcon,
   },
 
   {
     name: 'Github',
-    href: ROUTE.GITHUB,
-    icon: 'images/github.svg',
+    href: Route.GITHUB,
+    icon: GithubIcon,
   },
 ];
 
 const Footer = () => (
-  <footer className="pt-20 xl:pt-14 md:pt-12 sm:pt-10 safe-paddings z-50 shrink-0 container">
-    <div className="grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 md:grid-cols-4 md:gap-x-4 md:gap-y-10">
+  <footer className="safe-paddings container z-50 shrink-0 pt-20 lg:pt-14 md:pt-12 xs:pt-10">
+    <div className="grid grid-cols-12 gap-x-10 xl:gap-x-9 lg:gap-x-6 md:gap-x-5 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-10">
       {MENUS.footer.map(({ name, items }, idx) => (
         <div
-          className="col-span-3 lg:last:col-start-11 lg:last:col-span-2 lg:last:justify-self-center lg:[&:nth-child(3)]:justify-self-center md:col-span-2 md:!justify-self-start md:last:col-start-3"
+          className="col-span-3 md:last:col-span-2 md:last:col-start-11 md:last:justify-self-center sm:col-span-2 sm:!justify-self-start sm:last:col-start-3 md:[&:nth-child(3)]:justify-self-center"
           key={idx}
         >
-          <h3 className="text-14 font-bold leading-none tracking-wide text-gray-60">{name}</h3>
+          <h3 className="text-14 font-bold leading-none tracking-wider text-gray-60">{name}</h3>
           <ul className="mt-7 flex flex-col gap-6">
             {items.map(({ name: childName, linkUrl, isExternal, withGithubIcon }, childIdx) => (
               <li className="leading-none" key={childIdx}>
                 <Link
-                  additionalClassName="group font-medium tracking-tight flex items-center"
+                  additionalClassName="group font-medium tracking-tight flex items-center md:-mt-1 sm:mt-0"
                   size="md"
                   theme="gray"
                   to={linkUrl}
                 >
                   <span>{childName}</span>
                   {withGithubIcon && (
-                    <GithubIcon className="ml-1.5 shrink-0 fill-gray-15 group-hover:fill-primary-1 h-5 w-5" />
+                    <div className="relative ml-3 w-[20px]">
+                      <GithubIcon className="absolute top-0 h-5 w-5 shrink-0 -translate-x-1/4 -translate-y-1/2 fill-gray-15 group-hover:fill-primary-1" />
+                    </div>
                   )}
                   {isExternal && (
-                    <ExternalIcon className="ml-3 shrink-0 stroke-gray-15 group-hover:stroke-primary-1 h-4 w-4" />
+                    <ExternalIcon className="ml-3 h-4 w-4 shrink-0 stroke-gray-15 group-hover:stroke-primary-1" />
                   )}
                 </Link>
               </li>
@@ -57,13 +61,13 @@ const Footer = () => (
         </div>
       ))}
     </div>
-    <div className="mt-20 xl:mt-16 grid grid-cols-12 gap-x-10 2xl:gap-x-9 xl:gap-x-6 lg:gap-x-5 sm:gap-x-0 py-6 border-t-4 border-tones-purple-light lg:grid-rows-2 lg:gap-y-6 lg:py-5 sm:grid-rows-4 lg:mt-[50px] sm:mt-[42px]">
-      <div className="col-span-4 2xl:col-span-5 xl:col-span-6 flex items-center gap-x-9 lg:flex-col lg:gap-x-0 lg:gap-y-6 lg:items-start lg:justify-center lg:row-span-2 sm:row-span-1 sm:col-span-full">
+    <div className="mt-[76px] grid grid-cols-12 gap-x-10 border-t-4 border-tones-purple-light py-6 xl:gap-x-9 lg:mt-[58px] lg:gap-x-6 md:mt-11 md:grid-rows-2 md:gap-x-5 md:gap-y-6 md:py-5 xs:mt-[34px] xs:grid-rows-4  xs:gap-x-0">
+      <div className="col-span-4 flex items-center gap-x-9 xl:col-span-5 lg:col-span-6 md:row-span-2 md:flex-col md:items-start md:justify-center md:gap-x-0 md:gap-y-6 xs:col-span-full xs:row-span-1">
         <Link additionalClassName="shrink-0" to="/">
           <span className="sr-only">Bytebase Logo</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-8 w-[150px] 2xl:w-[132px] 2xl:h-7"
+            className="h-8 w-[150px] xl:h-7 xl:w-[132px]"
             src="/images/logo.svg"
             alt="Bytebase logo"
             width={150}
@@ -71,45 +75,43 @@ const Footer = () => (
             loading="eager"
           />
         </Link>
-        <p className="whitespace-nowrap text-16 font-medium leading-none tracking-tight text-gray-60 sm:hidden">
+        <p className="whitespace-nowrap text-16 font-medium leading-none tracking-tight text-gray-60 xs:hidden">
           © {new Date().getFullYear()} Bytebase. All Rights Reserved.
         </p>
       </div>
-      <div className="col-start-7 col-span-2 xl:col-span-3 xl:justify-self-end flex items-center gap-x-5 lg:col-start-10 lg:row-start-1 lg:row-span-1 lg:col-span-3 sm:col-span-full sm:row-start-2 sm:col-start-1 sm:justify-self-start">
-        {socialLinks.map(({ name, href, icon }, idx) => (
+      <div className="col-span-2 col-start-7 flex items-center gap-x-5 lg:col-span-3 lg:justify-self-end md:col-span-3 md:col-start-10 md:row-span-1 md:row-start-1 xs:col-span-full xs:col-start-1 xs:row-start-2 xs:-mt-1 xs:justify-self-start">
+        {socialLinks.map(({ name, href, icon: Icon }, idx) => (
           <Link
             key={idx}
             to={href}
             additionalClassName="flex items-center justify-center rounded-full"
           >
             <span className="sr-only">{name}</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={icon}
-              className="w-6 h-6 shrink-0 transition-opacity duration-200 hover:opacity-80"
-              alt={name}
+            <Icon
+              width={24}
+              height={24}
+              className="shrink-0 transition-opacity duration-200 hover:opacity-80"
             />
           </Link>
         ))}
       </div>
-
-      <div className="col-start-10 xl:col-start-11 flex items-center gap-x-8 xl:gap-x-6 lg:col-start-10 lg:row-start-2 lg:col-span-3 lg:justify-self-end sm:row-start-3 sm:justify-self-start sm:col-start-1">
+      <div className="col-start-10 flex items-center gap-x-8 lg:col-start-11 lg:mt-1 lg:gap-x-6 md:col-span-3 md:col-start-10 md:row-start-2 md:justify-self-end xs:col-start-1 xs:row-start-3 xs:justify-self-start">
         <Link
-          additionalClassName="text-16 sm:text-14 font-medium leading-none tracking-tight"
+          additionalClassName="text-16 xs:text-14 font-medium leading-none tracking-tight"
           theme="gray"
-          to={ROUTE.TERMS}
+          to={Route.TERMS}
         >
           Terms
         </Link>
         <Link
-          additionalClassName="text-16 sm:text-14 font-medium leading-none tracking-tight"
+          additionalClassName="text-16 xs:text-14 font-medium leading-none tracking-tight"
           theme="gray"
-          to={ROUTE.PRIVACY}
+          to={Route.PRIVACY}
         >
           Policy
         </Link>
       </div>
-      <p className="whitespace-nowrap text-14 font-medium leading-none tracking-tight text-gray-60 hidden sm:block sm:row-start-4 sm:row-span-1 sm:col-span-full">
+      <p className="hidden whitespace-nowrap text-14 font-medium leading-none tracking-tight text-gray-60 xs:col-span-full xs:row-span-1 xs:row-start-4 xs:block">
         © {new Date().getFullYear()} Bytebase. All Rights Reserved.
       </p>
     </div>

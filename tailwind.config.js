@@ -59,11 +59,13 @@ module.exports = {
     screens: {
       '3xl': { max: '1919px' },
       '2xl': { max: '1599px' },
-      xl: { max: '1279px' },
-      lg: { max: '1023px' },
-      md: { max: '767px' },
-      sm: { max: '639px' },
-      xs: { max: '413px' },
+      xl: { max: '1439px' },
+      lg: { max: '1279px' },
+      md: { max: '1023px' },
+      sm: { max: '767px' },
+      xs: { max: '639px' },
+      '2xs': { max: '413px' },
+      '3xs': { max: '359px' },
     },
     fontSize: {
       12: '12px',
@@ -100,17 +102,34 @@ module.exports = {
       112: '112px',
     },
     letterSpacing: {
-      tighter: '-0.025em',
+      tighter: '-0.04em',
       tight: '-0.02em',
       normal: '0',
-      wide: '0.02em',
+      wide: '0.01em',
+      wider: '0.02em',
+    },
+    backgroundImage: {
+      'pricing-hero':
+        'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
+      cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
+      pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
     },
     extend: {
+      lineHeight: {
+        95: '95%',
+        104: '104%',
+        'extra-tight': '1.125',
+      },
       spacing: {
         4.5: '1.125rem',
       },
       boxShadow: {
         menu: '0px 5px 15px 0px rgba(172, 178, 210, 0.5)',
+        pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
+        tooltip: '0px 5px 10px rgba(167, 175, 190, 0.2), 0px 5px 35px rgba(167, 175, 190, 0.2)',
+        labels: '1px 0px rgba(172, 178, 210, 1)',
+        icon: '0px 5px 15px rgba(172, 178, 210, 0.8)',
+        'icon-green': '0px 5px 10px rgba(156, 201, 182, 0.8)',
       },
     },
   },

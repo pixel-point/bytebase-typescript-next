@@ -2,7 +2,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -18,5 +17,10 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.rulers": [100]
+  "editor.rulers": [100],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#99c9e4",
+    "titleBar.activeBackground": "#2596ed",
+    "titleBar.activeForeground": "#f9fdfe"
+  }
 }
