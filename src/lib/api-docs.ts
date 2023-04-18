@@ -4,14 +4,22 @@ import matter from 'gray-matter';
 
 const DOCS_DIR_PATH = 'content/docs';
 
-const getPostSlugs = () => {
+interface PostData {
+  slug: string;
+  title: string;
+  description: string;
+  isDraft: boolean;
+  content: string;
+}
+
+const getPostSlugs = (): string[] => {
   const files = glob.sync(`${DOCS_DIR_PATH}/**/*.md`, {
     ignore: ['**/_layout.md'],
   });
   return files.map((file) => file.replace(DOCS_DIR_PATH, '').replace('.md', ''));
 };
 
-const getPostBySlug = (slug) => {
+const getPostBySlug = (slug: string): { data: Record<string, any>; content: string } | null => {
   try {
     const source = fs.readFileSync(`${DOCS_DIR_PATH}/${slug}.md`);
     const { data, content } = matter(source);
@@ -22,7 +30,7 @@ const getPostBySlug = (slug) => {
   }
 };
 
-const getAllPosts = () => {
+const getAllPosts = (): PostData[] => {
   const slugs = getPostSlugs();
 
   return slugs
@@ -39,20 +47,29 @@ const getAllPosts = () => {
         content,
       };
     })
-    .filter((item) => process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production' || !item?.isDraft);
+    .filter(
+      (item) => process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production' || !item?.isDraft,
+    ) as PostData[];
 };
 
-function getSidebar() {
+interface SidebarItem {
+  title: string | null;
+  url: string | null;
+  depth: number;
+  children?: SidebarItem[];
+}
+
+function getSidebar(): { sidebar: SidebarItem[]; expandedList: boolean } {
   const layoutFile = glob.sync(`${DOCS_DIR_PATH}/_layout.md`);
 
-  const sidebar = [];
+  const sidebar: SidebarItem[] = [];
 
   const md = fs.readFileSync(layoutFile[0], 'utf-8');
   const { data, content } = matter(md);
 
   const lines = content.trim().split('\n');
 
-  let currentSection = null;
+  let currentSection: SidebarItem | null = null;
 
   lines.forEach((line) => {
     const [depth, title, url] = parseLine(line);
@@ -60,13 +77,16 @@ function getSidebar() {
     if (depth !== null) {
       currentSection = { title, url, depth };
       sidebar.push(currentSection);
+    } else if (currentSection && title) {
+      currentSection.children = currentSection.children || [];
+      currentSection.children.push({ title, url, depth: currentSection.depth + 1 });
     }
   });
 
   return { sidebar: getNestedSidebar(sidebar), expandedList: data.expand_section_list };
 }
 
-function getNestedSidebar(data) {
+function getNestedSidebar(data: SidebarItem[]): SidebarItem[] {
   for (let i = 0; i < data.length; i++) {
     const section = data[i];
     const nextSection = data[i + 1];
@@ -83,18 +103,20 @@ function getNestedSidebar(data) {
   return data;
 }
 
-function parseLine(line) {
+function parseLine(line: string): [number | null, string | null, string | null] {
   const match = line.match(/^#+\s*\[(.*?)\]\((.*?)\)$/);
   const matchWithoutLink = line.match(/^#+\s*(.*?)$/);
 
   if (match) {
-    const depth = match[0].match(/^#+/)[0].length - 1;
+    const len = match[0]?.match(/^#+/)?.[0]?.length;
+    const depth = len ? len - 1 : null;
     const title = match[1];
     const url = match[2];
 
     return [depth, title, url];
   } else if (matchWithoutLink) {
-    const depth = matchWithoutLink[0].match(/^#+/)[0].length - 1;
+    const len = matchWithoutLink[0]?.match(/^#+/)?.[0]?.length;
+    const depth = len ? len - 1 : null;
     const title = matchWithoutLink[1];
 
     return [depth, title, null];
