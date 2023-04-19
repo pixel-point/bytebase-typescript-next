@@ -20,8 +20,8 @@ const Hero = () => {
       <Image
         src="/images/page/about/why-we-build.png"
         alt={imgAlt}
-        width="1292"
-        height="631"
+        width={1292}
+        height={631}
         className="mx-auto mt-[52px]"
       />
     </section>

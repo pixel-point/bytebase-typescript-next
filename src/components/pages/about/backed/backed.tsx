@@ -13,17 +13,17 @@ const Backed = () => (
         <Image
           src="/images/page/about/matrix-logo.svg"
           alt="Matrix Partners"
-          width="353"
-          height="142"
+          width={353}
+          height={142}
         />
       </div>
       <div className="relative flex items-center overflow-hidden border border-gray-90">
         <Image
           src="/images/page/about/cto.png"
           alt=""
-          width="334"
-          height="334"
-          className="absolute left-[-14px] top-[-28px]"
+          width={334}
+          height={334}
+          className="absolute -left-[14px] -top-[28px]"
         />
         <div className="translate-x-[308px]">
           <p className="text-18 font-semibold leading-normal text-primary-1">

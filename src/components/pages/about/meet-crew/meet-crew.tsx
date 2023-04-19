@@ -12,8 +12,8 @@ const MeetCrew = () => (
       <Image
         src="/images/page/about/crew-ellipse.png"
         alt=""
-        width="750"
-        height="541"
+        width={750}
+        height={541}
         className="relative translate-x-[49px] translate-y-8"
       />
     </div>
@@ -31,8 +31,8 @@ const MeetCrew = () => (
           <Image
             src="/images/page/about/danny.png"
             alt=""
-            width="244"
-            height="244"
+            width={244}
+            height={244}
             className="shrink-0"
           />
         </div>
@@ -50,8 +50,8 @@ const MeetCrew = () => (
           <Image
             src="/images/page/about/tianzhou.png"
             alt=""
-            width="244"
-            height="244"
+            width={244}
+            height={244}
             className="shrink-0"
           />
           <div>
