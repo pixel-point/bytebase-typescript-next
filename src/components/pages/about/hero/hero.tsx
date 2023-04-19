@@ -1,20 +1,29 @@
+import Image from 'next/image';
+
 const Hero = () => {
-  const supTitle = 'About us';
-  const title = 'Why we build';
-  const description =
-    'While we have a plethora of commercial and open-source database engines serving billions of users, our tooling around making reliable, consistent, auditable application database schema changes is embarrassing. And today many teams are still connecting to the production DB and applying changes directly. Quick and dirty, until BOMB!';
+  const title = 'About us page';
+  const supTitle = 'Why we build';
+  const imgAlt =
+    'Bytebase supports every major database systems, Bytebase offers the most comprehensive SQL Lint rules, All Bytebase source code is available on GitHub';
 
   return (
-    <section className="container pt-[136px]">
-      <p className=" w-fit rounded-[50px] bg-tones-purple-dark px-[12px] py-[5px] text-14 text-tags-purple">
+    <section className="container pt-[136px] text-center">
+      <h1 className="sr-only">{title}</h1>
+      <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-[10px] text-12 font-bold uppercase leading-none tracking-wider">
         {supTitle}
-      </p>
-      <div className="grid grid-cols-12">
-        <div className="col-start-1 col-end-6">
-          <h1 className=" mt-5 font-title text-112 font-semibold leading-[112px]">{title}</h1>
-        </div>
-        <div className=" col-start-7 col-end-13 mt-4 text-20 leading-7">{description}</div>
-      </div>
+      </span>
+      <h1 className="mt-5 font-title text-88 font-semibold leading-none">
+        Simplify database changes
+        <br className="xs:hidden" />
+        with <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules
+      </h1>
+      <Image
+        src="/images/page/about/why-we-build.png"
+        alt={imgAlt}
+        width="1292"
+        height="631"
+        className="mx-auto mt-[52px]"
+      />
     </section>
   );
 };
