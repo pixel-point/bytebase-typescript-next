@@ -6,17 +6,17 @@ const Hero = () => {
 
   return (
     <section className="container pt-[136px]">
-      <p className=" text-tags-purple text-14 bg-tones-purple-dark w-fit px-[12px] py-[5px] rounded-[50px]">
+      <p className=" w-fit rounded-[50px] bg-tones-purple-dark px-[12px] py-[5px] text-14 text-tags-purple">
         {supTitle}
       </p>
       <div className="grid grid-cols-12">
         <div className="col-start-1 col-end-6">
-          <h1 className=" mt-5 text-112 leading-[112px] font-semibold font-title">{title}</h1>
+          <h1 className=" mt-5 font-title text-112 font-semibold leading-[112px]">{title}</h1>
         </div>
-        <div className=" text-20 leading-7 mt-4 col-start-7 col-end-13">{description}</div>
+        <div className=" col-start-7 col-end-13 mt-4 text-20 leading-7">{description}</div>
       </div>
     </section>
   );
 };
 
-export { Hero };
+export default Hero;

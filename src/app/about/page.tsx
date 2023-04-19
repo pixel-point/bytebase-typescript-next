@@ -1,10 +1,10 @@
-import { Hero } from '@/components/pages/about-us/hero';
+import Hero from '@/components/pages/about/hero';
 
 const AboutUsPage = () => {
   return (
-    <div>
+    <>
       <Hero />
-    </div>
+    </>
   );
 };
 
