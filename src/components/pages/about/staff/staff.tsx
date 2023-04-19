@@ -81,7 +81,7 @@ const Staff = () => (
         height="244"
         className="mx-auto"
       />
-      <p className="mt-[18px] border-b-[3px] border-secondary-2 pb-[5px] text-16 font-bold uppercase leading-none tracking-wide text-black">
+      <p className="mt-[18px] w-fit border-b-[3px] border-secondary-2 pb-1 text-16 font-bold uppercase leading-none tracking-[1%]">
         Join us
       </p>
     </div>
