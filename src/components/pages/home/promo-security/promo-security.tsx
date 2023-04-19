@@ -10,7 +10,7 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 const PromoSecurity = () => {
   const ref = useRef(null);
 
-  const { isIntersecting } = useIntersectionObserver(ref, { rootMargin: '-150px', threshold: 0 });
+  const { isIntersecting } = useIntersectionObserver(ref, { rootMargin: '-150px' });
 
   const { rive, RiveComponent } = useRive({
     src: '/rive/security.riv',
