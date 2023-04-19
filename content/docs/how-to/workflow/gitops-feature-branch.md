@@ -60,4 +60,4 @@ Bytebase only creates the issue with the migration change. Depending on the [env
 
 ## Learn more
 
-<doc-link-block url="/docs/vcs-integration/overview" title="VCS Integration Setup"></doc-link-block>
+<DocLinkBlock url="/docs/vcs-integration/overview" title="VCS Integration Setup"></DocLinkBlock>

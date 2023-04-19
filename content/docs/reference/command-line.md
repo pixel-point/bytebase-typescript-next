@@ -36,7 +36,7 @@ Flags:
       --readonly                   whether to run in read-only mode
 ```
 
-## --backup-bucket <\<bucket>>
+## --backup-bucket &lt;&lt;bucket&gt;&gt;
 
 default: **""**
 
@@ -44,23 +44,23 @@ If specified, Bytebase will store all of the backup data in the cloud bucket. Fo
 
 For detailed instructions to setup the cloud bucket, please follow [this doc](/docs/disaster-recovery/backup-restore-database/cloud-backup).
 
-## --backup-credential <\<string>>
+## --backup-credential &lt;&lt;string&gt;&gt;
 
 default: **""**
 
 Must be specified if `--backup-bucket` is provided. Bytebase will use this file as the credentials to access the cloud bucket.
 
-## --backup-region <\<string>>
+## --backup-region &lt;&lt;string&gt;&gt;
 
 default: **""**
 
 Must be specified if `--backup-bucket` is provided and the cloud vendor is AWS S3.
 
-## --data <\<directory>>
+## --data &lt;&lt;directory&gt;&gt;
 
 default: **.**
 
-The directory where Bytebase stores its own data. The directory must exist beforehand, otherwise Bytebase will fail to start. If <\<directory>> is a relative path, then it's relative to the directory where the bytebase binary runs.
+The directory where Bytebase stores its own data. The directory must exist beforehand, otherwise Bytebase will fail to start. If &lt;&lt;directory&gt;&gt; is a relative path, then it's relative to the directory where the bytebase binary runs.
 
 ## --debug
 
@@ -68,7 +68,7 @@ default: **false**
 
 If specified, Bytebase will emit more logs, this is only used when troubleshooting Bytebase issues.
 
-## --demo <\<string>>
+## --demo &lt;&lt;string&gt;&gt;
 
 default: **""**
 
@@ -79,15 +79,15 @@ The current available demo names are:
 - default
 - schema-migration-history
 
-## --external-url <\<string>>
+## --external-url &lt;&lt;string&gt;&gt;
 
-default: **https://www.bytebase.com/docs/get-started/install/external-url**
+default: **[https://www.bytebase.com/docs/get-started/install/external-url](https://www.bytebase.com/docs/get-started/install/external-url)**
 
-The external URL where user visits Bytebase, must start with http:// or https://.
+The external URL where user visits Bytebase, must start with [http://](http://) or [https://](https://).
 
 See [Configure External URL](/docs/get-started/install/external-url).
 
-## --pg <\<string>>
+## --pg &lt;&lt;string&gt;&gt;
 
 default: **""**
 
@@ -99,7 +99,7 @@ Alternatively, you can also pass PG_URL environment variable.
 
 </HintBlock>
 
-## --port <\<number>>
+## --port &lt;&lt;number&gt;&gt;
 
 default: **80**
 

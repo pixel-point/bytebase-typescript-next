@@ -9,7 +9,9 @@ import remarkToc from 'remark-toc';
 
 import CodeBlock from '@/components/shared/code-block';
 
+import DocLinkBlock from '../doc-link-block';
 import HintBlock from '../hint-block';
+import IncludeBlock from '../include-block';
 
 interface ContentProps {
   className?: string;
@@ -24,7 +26,6 @@ const components = {
     }
     return <code {...props} />;
   },
-  HintBlock: (props: any) => <HintBlock {...props} />,
   img: (props: any) => (
     <Image
       {...props}
@@ -35,6 +36,9 @@ const components = {
       alt={props.alt}
     />
   ),
+  HintBlock,
+  DocLinkBlock,
+  IncludeBlock,
 };
 
 const Content = ({ className, content }: ContentProps) => {

@@ -46,7 +46,7 @@ In the Manage scopes section of Permissions & Scopes page, add the following sco
 
 ![feishu app permission page](/docs/external-approval-feishu-permission.webp)
 
-<HintBlock type="warn">
+<HintBlock type="warning">
 
 Make sure that you have added all three scopes before moving on. In particular, you must add both "approval:approval" and "approval:approval:readonly".
 

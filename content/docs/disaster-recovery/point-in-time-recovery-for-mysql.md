@@ -18,11 +18,11 @@ Follow this section if you want to perform an in-place database restore to a poi
 
 The in-place restoration process involves the following steps.
 
-### Step 1 - Click the **Restore to point in time** button on the database page.
+### Step 1 - Click the **Restore to point in time** button on the database page
 
 ![pitr-restore-step-1](/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-step-1.webp)
 
-### Step 2 - Choose a target time to restore.
+### Step 2 - Choose a target time to restore
 
 PITR restores the database to the state right before the target time. For example, if you give the restore time 10:00:00, Bytebase would recover the database to the state just after 9:59:59 passed but before 10:00:00.
 
@@ -32,7 +32,7 @@ Note that the time is at the local timezone of your browser.
 
 Once you click the Confirm button, a new PITR issue will be created.
 
-### Step 3 - Approve the Restore task.
+### Step 3 - Approve the Restore task
 
 The PITR issue consists of two tasks. The first task is to perform a recovery to the point in time you chose in the last step in a temporary database. It does not affect your current database.
 
@@ -44,7 +44,7 @@ And it should succeed like this.
 
 ![pitr-restore-step-4](/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-step-4.webp)
 
-### Step 4 - Approve the Swap task.
+### Step 4 - Approve the Swap task
 
 The second task is called Swap. It will swap the restored temporary database with your current database. After the Swap task, your current database will be at the state of the point in time you chose to restore, and the original database will be renamed by appending a timestamp (the issue created time) and an \_old suffix. You could check the old database and use the data or just delete it to save storage space.
 
@@ -68,7 +68,7 @@ Follow this section if you want to create a new database at a specific point in 
 
 The restoration process involves the following steps.
 
-### Step 1 - Click the **Restore to point in time** button on the database page.
+### Step 1 - Click the **Restore to point in time** button on the database page
 
 ![pitr-restore-step-1](/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-step-1.webp)
 
@@ -80,15 +80,15 @@ Choose the instance of the new database, and fill in the name of the new databas
 
 Click the "Confirm" button to create the PITR issue.
 
-<img alt="pitr-restore-new-db-step-2" src="/static/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-to-new-db-step-2.webp" style="max-width: 540px;">
+<img alt="pitr-restore-new-db-step-2" src="/static/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-to-new-db-step-2.webp" style="max-width: 540px;"/>
 
-### Step 3 - Approve the Create database task.
+### Step 3 - Approve the Create database task
 
 The first task is to create a new database using the information you just provided.
 
 ![pitr-restore-to-new-db-step-3](/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-to-new-db-step-3.webp)
 
-### Step 4 - Approve the Restore to new database task.
+### Step 4 - Approve the Restore to new database task
 
 ![pitr-restore-to-new-db-step-4](/docs/disaster-recovery/point-in-time-recovery-for-mysql/pitr-restore-to-new-db-step-4.webp)
 

@@ -86,12 +86,12 @@ Bytebase has already prepared some sample data. In particular, it has created a 
 
 A pretty link block to another page.
 
-<doc-link-block url="/docs/faq" title="FAQ"></doc-link-block>
+<DocLinkBlock url="/docs/faq" title="FAQ"></DocLinkBlock>
 
 #### Usage
 
 ```markdown
-<doc-link-block url="/docs/faq" title="FAQ"></doc-link-block>
+<DocLinkBlock url="/docs/faq" title="FAQ"></DocLinkBlock>
 ```
 
 #### Props
@@ -108,7 +108,7 @@ Include another markdown and render inline.
 #### Usage
 
 ```markdown
-<include-block url="/docs/document-write-guide"></include-block>
+<IncludeBlock url="/docs/document-write-guide"></IncludeBlock>
 ```
 
 #### Props

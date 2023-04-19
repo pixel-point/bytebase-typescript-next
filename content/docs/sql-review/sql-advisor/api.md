@@ -2,4 +2,4 @@
 title: SQL Advisor API
 ---
 
-<include-block url="/docs/api/sql-advise"  :show-title="false"></include-block>
+<IncludeBlock url="/docs/api/sql-advise"  ></IncludeBlock>

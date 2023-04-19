@@ -79,7 +79,7 @@ docker logs bytebase
 
 Normally you should see this:
 
-<include-block url="/docs/get-started/install/terminal-output"  :show-title="false"></include-block>
+<IncludeBlock url="/docs/get-started/install/terminal-output"  ></IncludeBlock>
 
 ### Unable to start Bytebase with Docker
 

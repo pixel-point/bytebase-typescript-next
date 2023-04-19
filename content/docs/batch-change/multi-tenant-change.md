@@ -89,4 +89,4 @@ The project database overview page will look like in the following.
 
 You can further adopt GitOps to batch change tenant databases.
 
-<doc-link-block url="/docs/vcs-integration/tenant-gitops" title="Batch Change Tenant Databases"></doc-link-block>
+<DocLinkBlock url="/docs/vcs-integration/tenant-gitops" title="Batch Change Tenant Databases"></DocLinkBlock>
