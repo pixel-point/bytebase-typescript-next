@@ -67,12 +67,24 @@ const staffList: staffMember[] = [
 const Staff = () => (
   <section className="container mt-20 grid grid-cols-4 gap-x-10 gap-y-20 border-t border-gray-90 pt-[52px]">
     {staffList.map((member) => (
-      <div className="flex flex-col justify-center text-center" key={member.name}>
+      <div className="flex flex-col items-center justify-center" key={member.name}>
         <Image src={member.image} alt="" width="244" height="244" className="mx-auto" />
         <p className="text-24 font-bold leading-none">{member.name}</p>
         <p className="text-20 leading-7">{member.position}</p>
       </div>
     ))}
+    <div className="flex flex-col items-center justify-center">
+      <Image
+        src="/images/page/about/join.png"
+        alt=""
+        width="244"
+        height="244"
+        className="mx-auto"
+      />
+      <p className="mt-[18px] border-b-[3px] border-secondary-2 pb-[5px] text-16 font-bold uppercase leading-none tracking-wide text-black">
+        Join us
+      </p>
+    </div>
   </section>
 );
 
