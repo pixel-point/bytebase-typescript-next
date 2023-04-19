@@ -30,6 +30,7 @@ const PromoSecurity = () => {
       rive.play();
     }
   }, [rive, isIntersecting]);
+
   return (
     <section
       className="mt-[192px] bg-black text-white 3xl:mt-[144px] xl:mt-[126px] md:mt-[96px] sm:mt-[80px]"

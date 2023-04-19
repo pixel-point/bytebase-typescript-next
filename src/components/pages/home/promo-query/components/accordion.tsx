@@ -25,6 +25,7 @@ const Accordion = ({
   }, []);
   const handleClick = onChange || handleToggleLocalIsOpen;
 
+  // TODO: fix pixelperfect
   return (
     <div className="w-full bg-tones-green-light">
       <div
