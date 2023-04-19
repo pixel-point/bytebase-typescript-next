@@ -12,11 +12,11 @@ const Hero = () => {
       <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-[10px] text-12 font-bold uppercase leading-none tracking-wider">
         {supTitle}
       </span>
-      <h1 className="mt-5 font-title text-88 font-semibold leading-none">
+      <h2 className="mt-5 font-title text-88 font-semibold leading-none">
         Simplify database changes
         <br className="xs:hidden" />
         with <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules
-      </h1>
+      </h2>
       <Image
         src="/images/page/about/why-we-build.png"
         alt={imgAlt}
