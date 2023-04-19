@@ -1,6 +1,6 @@
 import Backed from '@/components/pages/about/backed';
+import Crew from '@/components/pages/about/crew';
 import Hero from '@/components/pages/about/hero';
-import Staff from '@/components/pages/about/staff';
 import Community from '@/components/shared/community';
 import SubscriptionForm from '@/components/shared/subscription-form';
 
@@ -8,7 +8,7 @@ const AboutUsPage = () => {
   return (
     <>
       <Hero />
-      <Staff />
+      <Crew />
       <Backed />
       <Community />
       <SubscriptionForm />
