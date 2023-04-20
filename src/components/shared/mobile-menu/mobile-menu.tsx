@@ -134,7 +134,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 ) : (
                   <Link
                     to={href}
-                    additionalClassName="flex w-full flex-col items-start justify-center whitespace-nowrap text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer py-5"
+                    className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                   >
                     <span>{title}</span>
                   </Link>
@@ -152,12 +152,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                         const Icon = icons[iconName];
                         return (
                           <li className="w-full first:-mt-4 last:pb-4" key={name}>
-                            <Link
-                              additionalClassName="group block pt-4"
-                              size="lg"
-                              theme="gray"
-                              to={linkUrl}
-                            >
+                            <Link className="group block pt-4" size="lg" theme="gray" to={linkUrl}>
                               <div className="flex flex-col gap-y-1">
                                 <div className="flex items-center gap-x-2 group-hover:text-primary-1">
                                   <Icon className="h-5 w-5 shrink-0" />

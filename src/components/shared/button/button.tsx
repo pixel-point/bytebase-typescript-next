@@ -24,7 +24,7 @@ const styles = {
 };
 
 type ButtonProps = {
-  additionalClassName?: string;
+  className?: string;
   to: string;
   size?: keyof typeof styles.size;
   theme?: keyof typeof styles.theme;
@@ -35,7 +35,7 @@ type ButtonProps = {
 };
 
 const Button = ({
-  additionalClassName,
+  className: additionalClassName,
   size,
   theme,
   to,

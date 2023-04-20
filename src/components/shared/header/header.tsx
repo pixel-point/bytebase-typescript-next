@@ -65,12 +65,7 @@ const Header = () => {
               return (
                 <li key={title} className="group relative inline-block">
                   {href ? (
-                    <Link
-                      additionalClassName="font-medium px-3 py-[9px]"
-                      to={href}
-                      size="md"
-                      theme="gray"
-                    >
+                    <Link className="px-3 py-[9px] font-medium" to={href} size="md" theme="gray">
                       {title}
                     </Link>
                   ) : (
@@ -94,7 +89,7 @@ const Header = () => {
                             return (
                               <li key={index} className="pt-6 first:pt-0">
                                 <Link
-                                  additionalClassName="whitespace-nowrap group/link block"
+                                  className="group/link block whitespace-nowrap"
                                   size="md"
                                   theme="gray"
                                   to={linkUrl}
@@ -114,7 +109,7 @@ const Header = () => {
                           })}
                         </ul>
                         <Link
-                          additionalClassName="bg-gray-97 group/box rounded-md p-6 pt-4.5 h-full grow hover:bg-gray-94 flex flex-col justify-between min-h-[324px] w-[244px] text-gray-40"
+                          className="group/box flex h-full min-h-[324px] w-[244px] grow flex-col justify-between rounded-md bg-gray-97 p-6 pt-4.5 text-gray-40 hover:bg-gray-94"
                           to="/"
                         >
                           <div className="flex items-center justify-between group-hover/box:text-gray-15">

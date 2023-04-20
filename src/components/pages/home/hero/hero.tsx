@@ -81,10 +81,10 @@ const Hero = () => {
       </ul>
       <footer className="col-span-4 row-start-3 mt-14 flex items-center gap-9 lg:col-span-6 lg:mt-[46px] md:mt-[30px] sm:col-span-4 sm:mt-6">
         <Button
+          className="w-full max-w-[218px] tracking-wide md:max-w-[167px] md:py-[18px] md:px-[36px] md:text-13 sm:text-13"
           to={Route.INDEX}
           theme="primary-filled"
           size="lg"
-          additionalClassName="sm:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] md:text-13 tracking-wide w-full max-w-[218px]"
         >
           Request a Demo
         </Button>

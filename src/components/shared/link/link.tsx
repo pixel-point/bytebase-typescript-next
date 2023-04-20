@@ -21,7 +21,7 @@ const styles = {
 };
 
 type LinkProps = {
-  additionalClassName?: string;
+  className?: string;
   to: string;
   size?: keyof typeof styles.size;
   theme?: keyof typeof styles.theme;
@@ -32,7 +32,7 @@ type LinkProps = {
 };
 
 const Link = ({
-  additionalClassName,
+  className: additionalClassName,
   size,
   theme,
   to,
