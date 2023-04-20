@@ -3,11 +3,11 @@
     @apply leading-normal prose-a:font-semibold prose-a:text-primary-1 prose-a:no-underline;
 
     .table-wrapper {
-      @apply md:overflow-x-auto;
+      @apply overflow-x-auto;
     }
 
     table {
-      @apply w-full border border-gray-90 text-14 md:min-w-[500px];
+      @apply w-full min-w-[716px] border border-gray-90 text-14 md:min-w-[500px];
 
       th {
         @apply border border-gray-90 bg-gray-97 p-3.5 md:px-2;

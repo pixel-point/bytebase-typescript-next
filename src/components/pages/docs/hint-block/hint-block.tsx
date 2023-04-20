@@ -45,9 +45,9 @@ const HintBlock = ({ type = 'info', children }: HintBlockProps) => {
 
           <div>
             <div className="not-prose">
-              <h3 className="text-24 font-bold leading-extra-tight tracking-tight text-gray-15 first-letter:capitalize">
+              <h4 className="text-24 font-bold leading-extra-tight tracking-tight text-gray-15 first-letter:capitalize">
                 {type}
-              </h3>
+              </h4>
             </div>
             <div
               className={clsx(

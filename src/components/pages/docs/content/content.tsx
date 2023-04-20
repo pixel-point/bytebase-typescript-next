@@ -19,6 +19,11 @@ interface ContentProps {
 }
 
 const components = {
+  table: (props: any) => (
+    <figure className="table-wrapper">
+      <table {...props} />
+    </figure>
+  ),
   pre: (props: any) => <>{props.children}</>,
   code: (props: any) => {
     if (props?.className?.startsWith('language-')) {
@@ -43,7 +48,7 @@ const components = {
 
 const Content = ({ className, content }: ContentProps) => {
   return (
-    <div className={clsx(className, 'content prose prose-lg')}>
+    <div className={clsx(className, 'content prose prose-lg max-w-none')}>
       {/* @ts-expect-error Server Component */}
       <MDXRemote
         source={content}

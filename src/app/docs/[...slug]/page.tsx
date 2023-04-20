@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import Content from '@/components/pages/docs/content';
+import PostLayout from '@/components/pages/docs/post-layout';
 
 import { getAllPosts, getPostBySlug } from '@/lib/api-docs';
 
@@ -31,11 +32,8 @@ export default function DocPage({ params: { slug } }: { params: { slug: string[]
   } = post;
 
   return (
-    <article className="col-start-4 col-span-6">
-      <h1 className="text-44 leading-extra-tight tracking-tighter font-bold mt-7 text-gray-15">
-        {title}
-      </h1>
-      <Content className="mt-5" content={content} />
-    </article>
+    <PostLayout title={title} currentSlug={currentSlug}>
+      <Content content={content} />
+    </PostLayout>
   );
 }
