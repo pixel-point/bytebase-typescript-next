@@ -33,7 +33,7 @@ const PromoAutomationChanges = () => {
 
   return (
     <section
-      className="mt-[160px] overflow-hidden bg-black text-white 3xl:mt-[144px] xl:mt-[126px] md:mt-[96px] sm:mt-[80px]"
+      className="mt-[146px] overflow-hidden bg-black text-white 3xl:mt-[117px] xl:mt-[100px] md:mt-[80px]"
       ref={ref}
     >
       <div className="container gap-x-grid grid grid-cols-12">
