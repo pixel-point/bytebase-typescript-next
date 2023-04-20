@@ -82,13 +82,13 @@ const Hero = () => {
       <footer className="col-span-4 row-start-3 mt-14 flex items-center gap-9 lg:col-span-6 lg:mt-[46px] md:mt-[30px] sm:col-span-4 sm:mt-6">
         <Button
           className="w-full max-w-[218px] tracking-wide md:max-w-[167px] md:py-[18px] md:px-[36px] md:text-13 sm:text-13"
-          to={Route.INDEX}
+          href={Route.INDEX}
           theme="primary-filled"
           size="lg"
         >
           Request a Demo
         </Button>
-        <LinkUnderlined className="min-w-fit md:-ml-4" to={Route.INDEX}>
+        <LinkUnderlined className="min-w-fit md:-ml-4" href={Route.INDEX}>
           See Live Demo
         </LinkUnderlined>
       </footer>

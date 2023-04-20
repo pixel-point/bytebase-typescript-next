@@ -77,7 +77,7 @@ const Card = ({
           className="mt-5 w-full sm:z-10 sm:mt-7 sm:w-auto 2xs:w-full"
           size="lg"
           theme={buttonTheme}
-          to={buttonLink}
+          href={buttonLink}
         >
           {buttonText}
         </Button>
