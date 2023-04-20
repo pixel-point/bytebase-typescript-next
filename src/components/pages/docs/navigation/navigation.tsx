@@ -15,7 +15,7 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
   const previousLinkUrl = previousLink?.url;
   const nextLinkUrl = nextLink?.url;
   return (
-    <nav className="navigation gap-x-10 flex mt-8 pt-8 border-t border-gray-90">
+    <nav className="navigation gap-x-10 flex sm:flex-col mt-8 pt-8 border-t border-gray-90">
       {previousLinkUrl && (
         <Link
           className="mr-auto w-[47%] gap-x-4 rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"

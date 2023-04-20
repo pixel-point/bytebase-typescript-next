@@ -46,7 +46,7 @@ An optional description string can be included in the file name. If provided, By
 
 #### Supported Placeholders
 
-- All placeholder can contain one or more UTF-8 characters in UTF-8 **except** character in \[/?%\*:|"<>\\] (whitespace allowed).
+- All placeholder can contain one or more UTF-8 characters in UTF-8 **except** character in `\[/?%\*:|"<>\\]` (whitespace allowed).
 - To improve readability, we recommend to use separator between different placeholders and one common separator is `## (two pound signs).`
 
 #### Supported wildcard
@@ -85,7 +85,7 @@ Environment identifier should exactly match the destined environment identifier 
 
 ### Approach 1 - Directory per environment (recommended)
 
-This is a [reference directory structure ](https://gitlab.bytebase.com/bytebase-demo/blog/-/tree/master/bytebase) using this approach, and the corresponding [commit](https://gitlab.bytebase.com/bytebase-demo/blog/-/commit/d7f3b88b93c4d7f57b710980cdf92f72dcc4cd1e) and [generated issue](https://demo.bytebase.com/issue/create-user-post-comment-table-for-dev-environment-13004) observing the commit.
+This is a [reference directory structure](https://gitlab.bytebase.com/bytebase-demo/blog/-/tree/master/bytebase) using this approach, and the corresponding [commit](https://gitlab.bytebase.com/bytebase-demo/blog/-/commit/d7f3b88b93c4d7f57b710980cdf92f72dcc4cd1e) and [generated issue](https://demo.bytebase.com/issue/create-user-post-comment-table-for-dev-environment-13004) observing the commit.
 
 In Bytebase, database always belongs to an instance, and an instance always belongs to an environment. Thus a database also belongs to an environment. One way to organize files is to create a directory for each environment by using the environment identifier as the directory name and put migration files under the corresponding environment directory. For example:
 
@@ -93,12 +93,12 @@ In Bytebase, database always belongs to an instance, and an instance always belo
 
 ![organize-schema-files-step](/docs/vcs-integration/name-and-organize-schema-files/organize-schema-files-step2.webp)
 
-#### Pros:
+#### Pros
 
 1. The divergence period when the schema the migration files represents and the actual schema of the live database is minimized. The drift only occurs between the time the migration is committed and the time Bytebase finishes migration.
 2. This allows the same database can coexist as long as they belong to different environments. Because Bytebase will use the name of the enclosing directory to infer the environment to disambiguate the targeting database.
 
-#### Cons:
+#### Cons
 
 1. More files to manage, it will be `database * number of environments`.
 

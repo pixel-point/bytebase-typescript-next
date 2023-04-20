@@ -101,14 +101,14 @@ The file path template allows user to customize the file path format of the migr
 
 Required placeholders (must present in the template):
 
-- {{DB_NAME}} - Specify the database name.
-- {{VERSION}} - Specify the migration version.
-- {{TYPE}} - Specify the migration type. Can be either "ddl" for [schema migration](/docs/concepts/migration-types#schema-migration) or "dml" for [data migration](/docs/concepts/migration-types#data-migration). Alternatively, you can use the alias names "migrate" and "data" for "ddl" and "dml" respectively.
+- `{{DB_NAME}}` - Specify the database name.
+- `{{VERSION}}` - Specify the migration version.
+- `{{TYPE}}` - Specify the migration type. Can be either "ddl" for [schema migration](/docs/concepts/migration-types#schema-migration) or "dml" for [data migration](/docs/concepts/migration-types#data-migration). Alternatively, you can use the alias names "migrate" and "data" for "ddl" and "dml" respectively.
 
 Optional placeholders
 
-- {{ENV_ID}} - Specify the lower-case environment identifier. This is useful to disambiguate the specified database if databases share the same name across different environments.
-- {{DESCRIPTION}} - Specify a description for the migration.
+- `{{ENV_ID}}` - Specify the lower-case environment identifier. This is useful to disambiguate the specified database if databases share the same name across different environments.
+- `{{DESCRIPTION}}` - Specify a description for the migration.
 
 Check [name and organize schema files](/docs/vcs-integration/name-and-organize-schema-files) for the recommended file path template.
 
@@ -128,11 +128,11 @@ Make sure the changed branch is not protected or allow repository maintainer to 
 
 Required placeholders (must present in the template if specified):
 
-- {{DB_NAME}} - Specify the database name.
+- `{{DB_NAME}}` - Specify the database name.
 
 Optional placeholders
 
-- {{ENV_ID}} - Specify the lower-case environment identifier. This is useful to disambiguate the specified database if databases share the same name across different environments.
+- `{{ENV_ID}}` - Specify the lower-case environment identifier. This is useful to disambiguate the specified database if databases share the same name across different environments.
 
 #### Enable SQL Review CI - Optional
 

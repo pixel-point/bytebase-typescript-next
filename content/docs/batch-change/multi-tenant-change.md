@@ -71,13 +71,13 @@ Once the issue is completed, all tenant databases will have the same updated ver
 
 ## Database Name Template
 
-Typically, all tenant databases should have the same database name and will be placed on different database instances. For some use cases, tenant databases need to have different database names and may be on the same or a fixed number of database instances. Users can define a database name template where the database name should include the tenant name. For example, a database name template can be \{{DB_NAME\}}\_\{{TENANT\}}. The database name for all tenants can be db1_hospital1, db1_hospital2, db1_hospital3 with the same schema. If all tenants need a different collection of databases for other purposes of usage, databases can be created with names of db2_hospital1, db2_hospital2, db2_hospital3.
+Typically, all tenant databases should have the same database name and will be placed on different database instances. For some use cases, tenant databases need to have different database names and may be on the same or a fixed number of database instances. Users can define a database name template where the database name should include the tenant name. For example, a database name template can be `{{DB_NAME}}\_{{TENANT}}`. The database name for all tenants can be db1_hospital1, db1_hospital2, db1_hospital3 with the same schema. If all tenants need a different collection of databases for other purposes of usage, databases can be created with names of db2_hospital1, db2_hospital2, db2_hospital3.
 
 A project in Tenant Mode can be created with a database name template.
 
 ![Create Project with Template](/docs/batch-change/tntdbmngmt-create-project-with-template.webp)
 
-The name of the database being created will be generated based on a base \{{DB_NAME\}} and the name of a tenant.
+The name of the database being created will be generated based on a base `{{DB_NAME}}` and the name of a tenant.
 
 ![Create Database](/docs/batch-change/tntdbmngmt-create-database-with-template.webp)
 

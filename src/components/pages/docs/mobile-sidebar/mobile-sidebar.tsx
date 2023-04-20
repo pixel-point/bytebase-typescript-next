@@ -44,7 +44,7 @@ const variants = {
 
 const MobileSidebar = ({ className, data, currentUrl }: MobileSidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [containerHeight, setContainerHeight] = useState<string | null>(null);
+  const [containerHeight, setContainerHeight] = useState<string | undefined>(undefined);
   const { height } = useWindowSize();
   const wrapperRef = useRef(null);
   const controls = useAnimation();

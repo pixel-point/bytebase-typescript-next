@@ -30,17 +30,19 @@ const components = {
     }
     return <code {...props} />;
   },
-  img: (props: any) => (
-    <Image
-      className="my-11"
-      {...props}
-      src={props.src.replace('/static', '')}
-      width={716}
-      height={344}
-      style={{ width: '100%', height: '100%' }}
-      alt={props.alt}
-    />
-  ),
+  img: (props: any) => {
+    const { src, alt } = props;
+    return (
+      <Image
+        className="my-11"
+        src={src}
+        width={716}
+        height={344}
+        style={{ width: '100%', height: '100%' }}
+        alt={alt}
+      />
+    );
+  },
   HintBlock,
   DocLinkBlock,
   IncludeBlock,
