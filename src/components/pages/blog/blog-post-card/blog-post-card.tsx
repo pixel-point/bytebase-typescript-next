@@ -43,7 +43,12 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
   const categorySlug = slugifyText(post.tags);
 
   return (
-    <article className={clsx('flex flex-col', theme === 'large' ? 'gap-y-5' : 'gap-y-4')}>
+    <article
+      className={clsx(
+        'flex flex-col md:gap-y-3',
+        theme === 'large' ? 'gap-y-5 lg:gap-y-4' : 'gap-y-4',
+      )}
+    >
       {hasImage && post?.feature_image && (
         <Link
           to={`${ROUTE.BLOG}/${post.slug}`}
@@ -70,7 +75,7 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
         <Link to={`${ROUTE.BLOG}/${post.slug}`}>
           <h3
             className={clsx(
-              'font-medium md:leading-tight',
+              'font-medium line-clamp-3 md:leading-tight',
               theme === 'small'
                 ? 'text-18'
                 : 'text-24 leading-snug xl:text-20 lg:leading-snug md:text-18',
@@ -79,7 +84,7 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
             {post.title}
           </h3>
         </Link>
-        <footer className="flex items-center gap-x-3 md:gap-x-2">
+        <div className="flex items-center gap-x-3 md:gap-x-2">
           <Image
             className={clsx(
               theme === 'small' && 'hidden md:block',
@@ -94,7 +99,7 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
             <span className="">{post.author}</span>
             <time className="uppercase">{new Date(post.published_at).toDateString()}</time>
           </div>
-        </footer>
+        </div>
       </div>
     </article>
   );
