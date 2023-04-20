@@ -27,9 +27,7 @@ interface ItemProps extends SidebarItem {
 }
 
 const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpen }: ItemProps) => {
-  const [isOpen, setIsOpen] = useState(
-    isActiveItem(children, currentUrl) || expandedList?.includes(title as string) || isItemOpen,
-  );
+  const [isOpen, setIsOpen] = useState(isItemOpen);
 
   if (!isOpen && isActiveItem(children, currentUrl)) {
     setIsOpen(true);
@@ -42,14 +40,13 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpe
   return (
     <li
       className={clsx('flex flex-col items-start', {
-        'pl-5': depth === 2,
-        'pl-4': depth >= 3,
+        'pl-4': depth >= 2,
       })}
     >
       {url ? (
         <Link
           className={clsx(
-            'text-gray-30 text-15 py-2 flex items-center truncate',
+            'text-gray-30 text-15 py-2 flex items-center w-full',
             depth === 1 ? 'font-semibold' : 'font-medium',
             url === currentUrl && 'text-primary-1',
           )}
@@ -68,7 +65,7 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpe
       ) : (
         <button
           className={clsx(
-            'text-gray-30 text-15 py-2 flex items-center truncate',
+            'text-gray-30 text-15 py-2 flex items-center w-full',
             depth === 1 ? 'font-semibold' : 'font-medium',
             url === currentUrl && 'text-primary-1',
           )}
@@ -88,7 +85,7 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpe
       {children && (
         <ul
           className={clsx(
-            'before:absolute before:left-0.5 before:h-full before:w-px before:bg-gray-90 relative',
+            'before:absolute before:left-0.5 before:h-full before:w-px before:bg-gray-90 relative flex flex-col',
             isOpen ? 'h-auto opacity-100 pointer-events-auto' : 'h-0 opacity-0 pointer-events-none',
           )}
         >

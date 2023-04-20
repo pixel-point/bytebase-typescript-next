@@ -16,18 +16,23 @@ export default function DocLayout({
 
   return (
     <>
-      <div className="pt-36 container grid grid-cols-12 gap-x-10">
+      <MobileSidebar
+        className="col-span-full hidden md:flex md:pt-[72px]"
+        data={sidebar}
+        currentUrl={currentUrl}
+      />
+      <div className="pt-36 md:pt-0 container md:mt-4 grid grid-cols-12 gap-x-10">
         <Sidebar
           className="md:hidden col-span-3"
           data={sidebar}
           expandedList={expandedList}
           currentUrl={currentUrl}
         />
+
         {children}
       </div>
-      <SubscriptionForm />
 
-      <MobileSidebar data={sidebar} currentUrl={currentUrl} />
+      <SubscriptionForm />
     </>
   );
 }
