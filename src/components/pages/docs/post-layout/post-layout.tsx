@@ -4,11 +4,12 @@ import { useRef } from 'react';
 
 import Link from '@/components/shared/link';
 
-import { Breadcrumb } from '@/types/docs';
+import { Breadcrumb, SidebarItem } from '@/types/docs';
 
 import ExternalLinkIcon from '@/svgs/external.inline.svg';
 
 import Breadcrumbs from '../breadcrumbs';
+import Navigation from '../navigation';
 import TableOfContents from '../table-of-contents';
 
 interface PostLayoutProps {
@@ -16,11 +17,18 @@ interface PostLayoutProps {
   currentSlug: string;
   children: React.ReactNode;
   breadcrumbs: Breadcrumb[];
+  navigationLinks: { previousLink: SidebarItem | undefined; nextLink: SidebarItem | undefined };
 }
 
 const FILE_ORIGIN_PATH = 'https://github.com/bytebase/bytebase.com/tree/main/content/docs';
 
-const PostLayout = ({ title, children, currentSlug, breadcrumbs }: PostLayoutProps) => {
+const PostLayout = ({
+  title,
+  children,
+  currentSlug,
+  breadcrumbs,
+  navigationLinks: { previousLink, nextLink },
+}: PostLayoutProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -42,6 +50,7 @@ const PostLayout = ({ title, children, currentSlug, breadcrumbs }: PostLayoutPro
           <span>Edit this page on GitHub</span>
           <ExternalLinkIcon className="w-3 h-3 ml-2" />
         </Link>
+        <Navigation previousLink={previousLink} nextLink={nextLink} />
       </article>
       <div className="sticky bottom-0 top-10 ml-auto max-h-[calc(100vh-40px)] overflow-y-auto col-end-13 col-span-3 w-full max-w-[314px]">
         <TableOfContents contentRef={contentRef} />

@@ -6,6 +6,7 @@ import PostLayout from '@/components/pages/docs/post-layout';
 import {
   getAllPosts,
   getBreadcrumbs,
+  getDocPreviousAndNextLinks,
   getFlatSidebar,
   getPostBySlug,
   getSidebar,
@@ -38,6 +39,7 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   const flatSidebar = getFlatSidebar(sidebar);
 
   const breadcrumbs = getBreadcrumbs(currentPath, flatSidebar);
+  const navigationLinks = getDocPreviousAndNextLinks(currentPath, flatSidebar);
 
   const {
     data: { title, description },
@@ -45,7 +47,12 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   } = post;
 
   return (
-    <PostLayout title={title} currentSlug={currentSlug} breadcrumbs={breadcrumbs}>
+    <PostLayout
+      title={title}
+      currentSlug={currentSlug}
+      breadcrumbs={breadcrumbs}
+      navigationLinks={navigationLinks}
+    >
       <Content content={content} />
     </PostLayout>
   );

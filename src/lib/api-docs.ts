@@ -105,7 +105,8 @@ function getDocPreviousAndNextLinks(
   slug: string,
   flatSidebar: SidebarItem[],
 ): PreviousAndNextLinks {
-  const items = flatSidebar.filter((item) => item.url !== undefined);
+  const items = flatSidebar.filter((item) => item.url);
+
   const currentItemIndex = items.findIndex((item) => item.url === slug);
   const previousItem = items[currentItemIndex - 1];
   const nextItem = items[currentItemIndex + 1];
