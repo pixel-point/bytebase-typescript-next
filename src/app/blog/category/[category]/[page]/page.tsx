@@ -32,6 +32,10 @@ export default function BlogCategoryPage({
   );
 }
 
+interface CategoriesMap {
+  [slug: string]: number;
+}
+
 export async function generateStaticParams() {
   const { posts } = getAllBlogPosts();
 
@@ -41,18 +45,16 @@ export async function generateStaticParams() {
       ...acc,
       [slug]: acc[slug] ? acc[slug] + 1 : 1,
     };
-  }, {});
+  }, {} as CategoriesMap);
 
-  const result = [];
-  for (const key in categoriesMap) {
-    const countPagesInCategory = Math.ceil(categoriesMap[key] / POSTS_PER_PAGE);
-    result.push({ category: [key] });
-    for (let i = 2; i <= countPagesInCategory; i++) {
-      result.push({ category: [key, i.toString()] });
-    }
-  }
-
-  return result;
+  return Object.entries(categoriesMap).flatMap(([categoryName, postCount]) => {
+    const countPagesInCategory = Math.ceil(postCount / POSTS_PER_PAGE);
+    return Array.from({ length: countPagesInCategory }, (_, i) => {
+      return i === 0
+        ? { category: categoryName }
+        : { category: categoryName, page: (i + 1).toString() };
+    });
+  });
 }
 
 export const revalidate = 60;

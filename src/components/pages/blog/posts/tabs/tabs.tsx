@@ -41,7 +41,7 @@ const tabThemes = {
   },
 };
 
-const getTabStyles = (slug, currentSlug) => {
+const getTabStyles = (slug: keyof typeof tabThemes | '', currentSlug: string) => {
   if (!slug) {
     if (!currentSlug) return 'bg-black border-black hover:bg-black';
     return 'text-black border-gray-90 hover:bg-gray-90';
@@ -58,7 +58,7 @@ const Tabs = ({ items, currentSlug = '' }: TabsProps) => {
           <li key={index}>
             <Link
               className={clsx(
-                getTabStyles(slug, currentSlug),
+                getTabStyles(slug as keyof typeof tabThemes | '', currentSlug),
                 slug === currentSlug && 'text-white',
                 'block rounded-full border-2 px-[18px] py-[7px] text-16 font-medium leading-none md:text-14 xs:text-12',
               )}

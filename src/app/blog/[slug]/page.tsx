@@ -12,20 +12,22 @@ import {
   getBlogPostsPerPage,
 } from '@/lib/api-blog';
 
-export default function Blog({ params }) {
+export default function Blog({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  if (slug >= 1) {
-    const { posts, tags, pageCount } = getBlogPostsPerPage({ page: slug });
+  if (+slug >= 1) {
+    const data = getBlogPostsPerPage({ page: +slug });
 
-    if (!posts) return notFound();
+    if (!data) return notFound();
+
+    const { posts, tags, pageCount } = data;
 
     return (
       <>
         <BlogPostHero post={posts[0]} isBlogPost={true} />
         <RelatedPosts posts={posts.slice(1, 5)} />
         <SubscribeCta />
-        <Posts posts={posts} tabs={tags} page={slug} pageCount={pageCount} />
+        <Posts posts={posts} tabs={tags} page={+slug} pageCount={pageCount} />
       </>
     );
   }
@@ -46,7 +48,6 @@ export async function generateStaticParams() {
 
   const pages = posts.map(({ slug }) => ({ slug }));
 
-  pages.push({ slug: '' });
   for (let i = 1; i <= pageCount; i += 1) pages.push({ slug: i.toString() });
 
   return pages;

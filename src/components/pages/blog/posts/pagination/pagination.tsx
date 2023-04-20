@@ -27,7 +27,6 @@ const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: Paginati
         breakLabel="..."
         pageRangeDisplayed={2}
         pageCount={pageCount}
-        currentPageIndex={currentPageIndex}
         forcePage={currentPageIndex - 1}
         containerClassName="flex justify-center items-center gap-x-5 sm:gap-x-2.5"
         pageLinkClassName="flex w-10 h-10 pt-0.5 justify-center items-center rounded-full bg-gray-97 font-medium text-18 leading-none transition-colors duration-200 hover:bg-gray-90"

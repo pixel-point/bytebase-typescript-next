@@ -1,6 +1,7 @@
 import slugifyText from '@/utils/slugify-text';
 import fs from 'fs';
 import matter from 'gray-matter';
+import path from 'path';
 
 import { BlogPost } from '@/types/blog-post';
 
@@ -23,7 +24,7 @@ const getAllBlogPosts = (): BlogPostsWithTags => {
       const slug = file.replace('.md', '');
       const post = getBlogPostBySlug(slug);
 
-      if (!post || post.tags === 'Tutorial' || post.tags.indexOf('Hidden') > -1) return null;
+      if (!post || post.tags === 'Tutorial' || post.tags.includes('Hidden')) return null;
 
       post.tags.split(',').forEach((el) => {
         tagsSet.add(el.trim());
@@ -33,23 +34,28 @@ const getAllBlogPosts = (): BlogPostsWithTags => {
         ...post,
       };
     })
-    .filter((post) => Boolean(post))
+    .filter((post): post is BlogPost => Boolean(post))
     .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
 
   return { posts, tags: Array.from(tagsSet) as string[] };
 };
 
 const getBlogPostBySlug = (slug: string): BlogPost | null => {
-  const markdownWithMeta = fs.readFileSync(CONTENT_FOLDER.blog + slug + '.md', 'utf-8');
-  const { content, data } = matter(markdownWithMeta);
+  try {
+    const filePath = path.join(CONTENT_FOLDER.blog, `${slug}.md`);
+    const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
+    const { content, data } = matter(markdownWithMeta);
 
-  if (!data || !content) return null;
+    if (!data || !content) return null;
 
-  return {
-    ...data,
-    content,
-    slug,
-  } as BlogPost;
+    return {
+      ...data,
+      content,
+      slug,
+    } as BlogPost;
+  } catch (e) {
+    return null;
+  }
 };
 
 interface PostPerPageProps {

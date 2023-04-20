@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 
+import slugifyText from '@/utils/slugify-text';
+
 import Posts from '@/components/pages/blog/posts';
 import RelatedPosts from '@/components/pages/blog/related-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
@@ -28,7 +30,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
 export async function generateStaticParams() {
   const { tags } = getAllBlogPosts();
 
-  return tags.map((tag) => ({ category: tag }));
+  return tags.map((tag) => ({ category: slugifyText(tag) }));
 }
 
 export const revalidate = 60;
