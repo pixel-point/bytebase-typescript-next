@@ -4,6 +4,8 @@ import Link from '@/components/shared/link';
 
 import { Breadcrumb } from '@/types/docs';
 
+import Route from '@/lib/route';
+
 interface BreadcrumbsProps {
   breadcrumbs: Breadcrumb[];
 }
@@ -16,7 +18,7 @@ const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => (
         {url ? (
           <Link
             additionalClassName="text-15 font-medium leading-none text-gray-15 hover:text-primary-1"
-            to={url}
+            to={Route.DOCS + url}
           >
             {breadcrumbTitle}
           </Link>
