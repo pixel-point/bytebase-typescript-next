@@ -41,10 +41,10 @@ const PromoAutomationChanges = () => {
           <span className="inline-flex rounded-3xl bg-primary-1 px-2.5 py-2 text-12 font-bold uppercase leading-none tracking-wider xs:leading-95">
             Change
           </span>
-          <h2 className="mt-5 font-title text-112 font-semibold leading-none 3xl:mt-5 xl:mt-4 xl:text-90 xl:leading-95 md:mt-3 md:text-80 sm:text-48">
+          <h2 className="mt-3 font-title text-112 font-semibold leading-none 3xl:mt-5 xl:mt-4 xl:text-90 xl:leading-95 md:mt-3 md:text-80 sm:text-48">
             <span className="bg-transparent text-secondary-1">Automate</span> database changes
           </h2>
-          <p className="mt-6 text-20 leading-normal xl:mt-4 xl:text-18 xl:leading-snug md:mt-2 md:text-16">
+          <p className="-mr-10 mt-8 text-20 leading-normal xl:mt-4 xl:text-18 xl:leading-snug md:mt-2 md:text-16">
             Bytebase streamlines database deployment from non-prod to prod by integrating with
             version control systems for a GitOps workflow.
           </p>
@@ -52,8 +52,8 @@ const PromoAutomationChanges = () => {
             Learn more
           </LinkUnderlined>
         </div>
-        <div className="relative col-start-5 col-end-13 flex items-center self-stretch before:absolute before:bottom-0 before:top-0 before:right-[100px] before:w-[252px] before:bg-automation-changes xl:col-start-6 xl:before:right-[20px] xl:before:w-[216px]">
-          <div className="relative ml-auto aspect-[1.0597014925] w-full max-w-[710px] xl:-mr-[46px]">
+        <div className="relative col-start-5 col-end-13 self-stretch pt-[100px] before:absolute before:bottom-0 before:top-0 before:right-[166px] before:w-[252px] before:bg-automation-changes xl:col-start-6 xl:before:right-[20px] xl:before:w-[216px]">
+          <div className="relative ml-auto mr-[64px] aspect-[1.0597014925] w-full max-w-[710px] xl:-mr-[46px]">
             <RiveComponent />
           </div>
         </div>

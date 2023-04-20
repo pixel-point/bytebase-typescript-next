@@ -112,7 +112,8 @@ module.exports = {
       backgroundImage: {
         'pricing-hero':
           'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
-        cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
+        'radial-blue':
+          'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
         pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
         'automation-changes':
           'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 22.48%, #F7CCFF 46.12%, #F7CCFF 58.72%, #FFF2B3 81.58%, #FFE666 93.79%);',

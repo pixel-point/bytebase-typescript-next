@@ -52,7 +52,7 @@ const Accordion = ({ onChange }: { onChange: () => void }) => {
               />
             ) : (
               <img
-                src="/images/page/main/accordion-closed.svg"
+                src="/images/page/main/accordion-closed-secondary-2.svg"
                 alt=""
                 className="h-8 w-8 md:h-7 md:w-7"
               />

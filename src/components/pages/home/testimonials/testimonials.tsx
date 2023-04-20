@@ -2,7 +2,7 @@ import QuoteIcon from '@/svgs/quote.inline.svg';
 
 const Testimonials = () => {
   return (
-    <section className="bg-cite pt-[176px] pb-[234px] 2xl:pt-36 2xl:pb-[202px] lg:pt-28 lg:pb-[218px] md:pt-20 md:pb-[154px] sm:pb-[130px]">
+    <section className="bg-radial-blue pt-[176px] pb-[234px] 2xl:pt-36 2xl:pb-[202px] lg:pt-28 lg:pb-[218px] md:pt-20 md:pb-[154px] sm:pb-[130px]">
       <div className="container">
         <figure className="mx-auto flex max-w-[1048px] flex-col items-center text-center lg:max-w-[776px] md:max-w-[590px]">
           <QuoteIcon width={50} height={40} className="w-auto lg:h-8 md:h-7 sm:h-6" />
