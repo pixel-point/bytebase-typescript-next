@@ -51,8 +51,8 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
     >
       {hasImage && post?.feature_image && (
         <Link
-          to={`${ROUTE.BLOG}/${post.slug}`}
-          additionalClassName="relative overflow-hidden aspect-[2.07] lg:aspect-[2.084] rounded-[4px] sm:aspect-[2.1]"
+          href={`${ROUTE.BLOG}/${post.slug}`}
+          className="relative aspect-[2.07] overflow-hidden rounded-[4px] lg:aspect-[2.084] sm:aspect-[2.1]"
         >
           <Image
             className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
@@ -64,15 +64,15 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
       )}
       <div className="flex flex-col gap-y-3 md:gap-y-2">
         <Link
-          to={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
-          additionalClassName={clsx(
+          href={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
+          className={clsx(
             getBlogTagTheme(categorySlug),
-            'px-3 py-[5px] text-14 rounded-full inline-flex max-w-fit font-medium leading-none',
+            'inline-flex max-w-fit rounded-full px-3 py-[5px] text-14 font-medium leading-none',
           )}
         >
           {post.tags}
         </Link>
-        <Link to={`${ROUTE.BLOG}/${post.slug}`}>
+        <Link href={`${ROUTE.BLOG}/${post.slug}`}>
           <h3
             className={clsx(
               'font-medium line-clamp-3 md:leading-tight',
@@ -96,7 +96,7 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
             height={36}
           />
           <div className="relative flex gap-x-4 text-14 leading-none text-gray-40">
-            <span className="">{post.author}</span>
+            <span>{post.author}</span>
             <time className="uppercase">{new Date(post.published_at).toDateString()}</time>
           </div>
         </div>

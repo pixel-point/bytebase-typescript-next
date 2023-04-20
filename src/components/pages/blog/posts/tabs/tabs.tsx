@@ -57,12 +57,12 @@ const Tabs = ({ items, currentSlug = '' }: TabsProps) => {
         {items.map(({ label, slug = '' }, index) => (
           <li key={index}>
             <Link
-              additionalClassName={clsx(
+              className={clsx(
                 getTabStyles(slug, currentSlug),
                 slug === currentSlug && 'text-white',
-                'block leading-none px-[18px] py-[7px] border-2 text-16 font-medium rounded-full border md:text-14 xs:text-12',
+                'block rounded-full border-2 px-[18px] py-[7px] text-16 font-medium leading-none md:text-14 xs:text-12',
               )}
-              to={!slug ? ROUTE.BLOG : `${ROUTE.BLOG_CATEGORY}/${slug}`}
+              href={!slug ? ROUTE.BLOG : `${ROUTE.BLOG_CATEGORY}/${slug}`}
             >
               {label}
             </Link>

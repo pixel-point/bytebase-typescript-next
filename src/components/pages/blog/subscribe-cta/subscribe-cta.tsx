@@ -7,7 +7,7 @@ import ROUTE from '@/lib/route';
 const SubscribeCta = () => {
   return (
     <section className="mt-[90px] bg-primary-1 xl:mt-[53px] md:mt-11 sm:mt-[50px]">
-      <div className="container grid-gap relative grid grid-cols-12 items-center py-[37px] xl:pt-9 xl:pb-[30px] md:py-8 sm:grid-cols-4 sm:pt-7">
+      <div className="container gap-x-grid relative grid grid-cols-12 items-center py-[37px] xl:pt-9 xl:pb-[30px] md:py-8 sm:grid-cols-4 sm:pt-7">
         <Image
           className="absolute left-12 bottom-0 max-w-[16.5%] 2xl:left-12 xl:left-3 lg:-top-1 lg:bottom-auto lg:w-[17.7%] lg:max-w-[200px] md:left-1.5 md:w-auto md:max-w-[189px] sm:hidden"
           src="/images/form-image-lg.png"
@@ -46,15 +46,15 @@ const SubscribeCta = () => {
           <p className="mt-3 pl-7 text-14 leading-snug xl:mt-3 xl:max-w-[290px] xl:pl-5 md:mt-2 sm:max-w-full sm:pl-0">
             By subscribing, you agree with Revue&apos;s{' '}
             <Link
-              to={ROUTE.TERMS}
-              additionalClassName="whitespace-nowrap underline decoration-2 font-semibold decoration-[#ffffff40] underline-offset-[5px]"
+              className="whitespace-nowrap font-semibold underline decoration-[#ffffff40] decoration-2 underline-offset-[5px]"
+              href={ROUTE.TERMS}
             >
               Terms of Service
             </Link>{' '}
             and{' '}
             <Link
-              to={ROUTE.PRIVACY}
-              additionalClassName="whitespace-nowrap underline decoration-2 font-semibold decoration-[#ffffff40] underline-offset-[5px]"
+              className="whitespace-nowrap font-semibold underline decoration-[#ffffff40] decoration-2 underline-offset-[5px]"
+              href={ROUTE.PRIVACY}
             >
               Privacy Policy
             </Link>

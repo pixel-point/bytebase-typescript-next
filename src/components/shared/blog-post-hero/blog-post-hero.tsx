@@ -23,13 +23,13 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
 
   return (
     <section className="container pt- pt-[136px] 2xl:pt-32 lg:pt-[120px] md:pt-[104px] sm:pt-24">
-      <WrapperTag className="grid-gap grid grid-cols-12 items-center border-b border-gray-90 pb-14 lg:gap-y-6 lg:pb-12 md:gap-y-[18px] md:pb-10 sm:pb-8">
+      <WrapperTag className="gap-x-grid grid grid-cols-12 items-center border-b border-gray-90 pb-14 lg:gap-y-6 lg:pb-12 md:gap-y-[18px] md:pb-10 sm:pb-8">
         <div className="col-span-6 flex flex-col gap-y-6 2xl:gap-y-5 xl:gap-y-3 md:col-span-full">
           <Link
-            to={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
-            additionalClassName={clsx(
+            href={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
+            className={clsx(
               getBlogTagTheme(categorySlug),
-              'px-3 py-[5px] text-14 rounded-full inline-flex max-w-fit font-medium leading-none',
+              'inline-flex max-w-fit rounded-full px-3 py-[5px] text-14 font-medium leading-none',
             )}
           >
             {tags}
@@ -39,7 +39,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
               {title}
             </h1>
           ) : (
-            <Link to={`${ROUTE.BLOG}/${slug}`}>
+            <Link href={`${ROUTE.BLOG}/${slug}`}>
               <h3 className="font-title text-72 font-semibold leading-none 2xl:text-68 xl:text-50 md:text-46 sm:text-34">
                 {title}
               </h3>
@@ -54,7 +54,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
               height={36}
             />
             <div className="flex gap-x-4 text-14 leading-none text-gray-40">
-              <span className="">{author}</span>
+              <span>{author}</span>
               <time className="uppercase">{new Date(published_at).toDateString()}</time>
             </div>
           </div>
@@ -66,15 +66,17 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
             alt={title}
             width="967"
             height="484"
+            priority
           />
         ) : (
-          <Link to={`${ROUTE.BLOG}/${slug}`} additionalClassName="col-span-6 md:col-span-full">
+          <Link href={`${ROUTE.BLOG}/${slug}`} className="col-span-6 md:col-span-full">
             <Image
               className="relative aspect-[2] overflow-hidden rounded-lg border border-gray-15 border-opacity-20 shadow-pricing lg:aspect-[1.6] md:aspect-auto"
               src={feature_image}
               alt={title}
               width="967"
               height="484"
+              priority
             />
           </Link>
         )}
