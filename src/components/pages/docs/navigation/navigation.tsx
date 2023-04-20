@@ -36,7 +36,7 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
           href={Route.DOCS + nextLinkUrl}
         >
           <div className="flex-col flex">
-            <span className="text-14 font-medium leading-none text-gray-50">Previous article</span>
+            <span className="text-14 font-medium leading-none text-gray-50">Next article</span>
             <span className="text-18 font-medium leading-none text-gray-15 mt-2">
               {nextLink.title}
             </span>
