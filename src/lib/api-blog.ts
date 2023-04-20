@@ -65,14 +65,15 @@ const getBlogPostsPerPage = ({
 
   const { posts, tags } = getAllBlogPosts();
 
-  const result = posts
-    .filter((el) => category === '' || category === slugifyText(el.tags))
-    .slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const postsInCategory = posts.filter(
+    (el) => category === '' || category === slugifyText(el.tags),
+  );
+  const result = postsInCategory.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   if (result.length === 0) return null;
 
   return {
-    pageCount: Math.ceil(result.length / POSTS_PER_PAGE),
+    pageCount: Math.ceil(postsInCategory.length / POSTS_PER_PAGE),
     posts: result,
     tags,
   };
