@@ -1,10 +1,10 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 import { useState } from 'react';
 
 import clsx from 'clsx';
+
+import Link from '@/components/shared/link';
 
 import { SidebarItem } from '@/types/docs';
 
@@ -23,23 +23,19 @@ const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): 
 interface ItemProps extends SidebarItem {
   currentUrl: string;
   expandedList?: string[];
+  isItemOpen?: boolean;
 }
 
-const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemProps) => {
+const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpen }: ItemProps) => {
   const [isOpen, setIsOpen] = useState(
-    isActiveItem(children, currentUrl) || expandedList?.includes(title as string),
+    isActiveItem(children, currentUrl) || expandedList?.includes(title as string) || isItemOpen,
   );
 
   if (!isOpen && isActiveItem(children, currentUrl)) {
     setIsOpen(true);
   }
 
-  const router = useRouter();
-
   const toggle = () => {
-    if (url) {
-      router.push(Route.DOCS + url);
-    }
     setIsOpen(!isOpen);
   };
 
@@ -50,24 +46,44 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemPro
         'pl-4': depth >= 3,
       })}
     >
-      <button
-        className={clsx(
-          'text-gray-30 text-15 py-2 flex items-center truncate',
-          depth === 1 ? 'font-semibold' : 'font-medium',
-          url === currentUrl && 'text-primary-1',
-        )}
-        type="button"
-        onClick={toggle}
-      >
-        {children && (
-          <ChevronIcon
-            className={clsx('w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0', {
-              'rotate-90': isOpen,
-            })}
-          />
-        )}
-        <span>{title}</span>
-      </button>
+      {url ? (
+        <Link
+          className={clsx(
+            'text-gray-30 text-15 py-2 flex items-center truncate',
+            depth === 1 ? 'font-semibold' : 'font-medium',
+            url === currentUrl && 'text-primary-1',
+          )}
+          href={Route.DOCS + url}
+          onClick={toggle}
+        >
+          {children && (
+            <ChevronIcon
+              className={clsx('w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0', {
+                'rotate-90': isOpen,
+              })}
+            />
+          )}
+          <span>{title}</span>
+        </Link>
+      ) : (
+        <button
+          className={clsx(
+            'text-gray-30 text-15 py-2 flex items-center truncate',
+            depth === 1 ? 'font-semibold' : 'font-medium',
+            url === currentUrl && 'text-primary-1',
+          )}
+          onClick={toggle}
+        >
+          {children && (
+            <ChevronIcon
+              className={clsx('w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0', {
+                'rotate-90': isOpen,
+              })}
+            />
+          )}
+          <span>{title}</span>
+        </button>
+      )}
 
       {children && (
         <ul
@@ -77,7 +93,13 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemPro
           )}
         >
           {children.map((item, index) => (
-            <Item {...item} currentUrl={currentUrl} expandedList={expandedList} key={index} />
+            <Item
+              {...item}
+              currentUrl={currentUrl}
+              expandedList={expandedList}
+              isItemOpen={isOpen}
+              key={index}
+            />
           ))}
         </ul>
       )}
