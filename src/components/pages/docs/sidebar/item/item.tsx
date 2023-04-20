@@ -27,7 +27,7 @@ interface ItemProps extends SidebarItem {
 }
 
 const Item = ({ title, url, children, depth, currentUrl, expandedList, isItemOpen }: ItemProps) => {
-  const [isOpen, setIsOpen] = useState(isItemOpen);
+  const [isOpen, setIsOpen] = useState(isItemOpen || isActiveItem(children, currentUrl));
 
   if (!isOpen && isActiveItem(children, currentUrl)) {
     setIsOpen(true);
