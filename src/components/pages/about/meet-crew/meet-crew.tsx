@@ -21,7 +21,9 @@ const MeetCrew = () => (
       <div className="relative -translate-y-[133px] bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]">
         <div className="flex items-start gap-1 pt-8 pb-6 pl-8 pr-2 shadow-[inset_0_0_0_1px_rgba(156,186,201,0.5)]">
           <div>
-            <span className="text-18 font-semibold text-[#176782]">Co-Founder & CTO</span>
+            <span className="text-18 font-semibold text-tones-deep-blue-dark">
+              Co-Founder & CTO
+            </span>
             <p className="mt-2 font-title text-56 font-semibold leading-none">Danny</p>
             <p className="font-regular mt-5 text-18">
               Danny was the Staff Engineer at Google Cloud and TL overseeing Cloud SQL and API &
@@ -29,7 +31,7 @@ const MeetCrew = () => (
             </p>
           </div>
           <Image
-            src="/images/page/about/danny.png"
+            src="/images/page/about/danny.webp"
             alt=""
             width={244}
             height={244}
@@ -48,14 +50,16 @@ const MeetCrew = () => (
       <div className="bg-tones-green-light shadow-[inset_6px_6px_0_#fff,0_5px_20px_rgba(143,188,169,0.4)]">
         <div className="flex items-start gap-1 pt-8 pb-6 pl-2 pr-8 shadow-[inset_0_0_0_1px_rgba(143,188,169,0.4)]">
           <Image
-            src="/images/page/about/tianzhou.png"
+            src="/images/page/about/tianzhou.webp"
             alt=""
             width={244}
             height={244}
             className="shrink-0"
           />
           <div>
-            <span className="text-18 font-semibold text-[#056049]">Co-Founder & CEO</span>
+            <span className="text-18 font-semibold text-tones-deep-green-dark">
+              Co-Founder & CEO
+            </span>
             <p className="mt-2 font-title text-56 font-semibold leading-none">Tianzhou</p>
             <p className="mt-5 text-18">
               Tianzhou was the TL of Google Cloud SQL, the maintainer of Google&apos;s internal

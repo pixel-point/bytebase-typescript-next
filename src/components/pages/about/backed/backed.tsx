@@ -8,7 +8,7 @@ const Backed = () => (
     <h2 className="mt-5 text-center font-title text-88 font-semibold leading-none">
       Backed by the best
     </h2>
-    <div className="mt-[59px] grid grid-cols-2 gap-x-10">
+    <div className="mt-14 grid grid-cols-2 gap-x-10">
       <div className="grid place-items-center border border-gray-90 bg-gray-97 py-[91px]">
         <Image
           src="/images/page/about/matrix-logo.svg"
@@ -17,15 +17,15 @@ const Backed = () => (
           height={142}
         />
       </div>
-      <div className="relative flex items-center overflow-hidden border border-gray-90">
+      <div className="flex items-center border border-gray-90">
         <Image
-          src="/images/page/about/cto.png"
+          src="/images/page/about/cto.webp"
           alt=""
-          width={334}
-          height={334}
-          className="absolute -left-[14px] -top-[28px]"
+          width={308}
+          height={306}
+          className="self-start"
         />
-        <div className="translate-x-[308px]">
+        <div>
           <p className="text-18 font-semibold leading-normal text-primary-1">
             Co-Founder & CTO - PingCAP
           </p>

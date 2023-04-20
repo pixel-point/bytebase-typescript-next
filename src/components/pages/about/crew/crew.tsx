@@ -11,12 +11,12 @@ const Crew = () => (
         <li className="flex flex-col items-center justify-center" key={member.name}>
           <Image src={member.image} alt="" width={244} height={244} />
           <p className="text-24 font-bold leading-none">{member.name}</p>
-          <p className="text-20 leading-7">{member.position}</p>
+          <p className="mt-1 text-20 leading-7">{member.position}</p>
         </li>
       ))}
       <li className="flex flex-col items-center justify-center">
         <Image src="/images/page/about/join.png" alt="" width={244} height={244} />
-        <LinkUnderlined to="/">Join us</LinkUnderlined>
+        <LinkUnderlined to="/jobs">Join us</LinkUnderlined>
       </li>
     </ul>
   </section>
