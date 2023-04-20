@@ -3,7 +3,13 @@ import { notFound } from 'next/navigation';
 import Content from '@/components/pages/docs/content';
 import PostLayout from '@/components/pages/docs/post-layout';
 
-import { getAllPosts, getPostBySlug } from '@/lib/api-docs';
+import {
+  getAllPosts,
+  getBreadcrumbs,
+  getFlatSidebar,
+  getPostBySlug,
+  getSidebar,
+} from '@/lib/api-docs';
 
 interface StaticParams {
   slug: string[];
@@ -21,10 +27,17 @@ export function generateStaticParams(): StaticParams[] {
   });
 }
 
-export default function DocPage({ params: { slug } }: { params: { slug: string[] } }) {
+export default function DocPage({ params }: { params: { slug: string[] } }) {
+  const { slug } = params;
   const currentSlug = slug.join('/');
+  const currentPath = `/${currentSlug}`;
+
   const post = getPostBySlug(currentSlug);
   if (!post) return notFound();
+  const { sidebar } = getSidebar();
+  const flatSidebar = getFlatSidebar(sidebar);
+
+  const breadcrumbs = getBreadcrumbs(currentPath, flatSidebar);
 
   const {
     data: { title, description },
@@ -32,7 +45,7 @@ export default function DocPage({ params: { slug } }: { params: { slug: string[]
   } = post;
 
   return (
-    <PostLayout title={title} currentSlug={currentSlug}>
+    <PostLayout title={title} currentSlug={currentSlug} breadcrumbs={breadcrumbs}>
       <Content content={content} />
     </PostLayout>
   );

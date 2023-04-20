@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import clsx from 'clsx';
 
-import { SidebarItem } from '@/types/sidebar';
+import { SidebarItem } from '@/types/docs';
 
 import Route from '@/lib/route';
 
@@ -44,10 +44,15 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemPro
   };
 
   return (
-    <li className={clsx('flex flex-col items-start', { 'pl-5': depth === 2, 'pl-4': depth === 3 })}>
+    <li
+      className={clsx('flex flex-col items-start', {
+        'pl-5': depth === 2,
+        'pl-4': depth >= 3,
+      })}
+    >
       <button
         className={clsx(
-          'text-gray-30 text-15 py-2 flex items-center',
+          'text-gray-30 text-15 py-2 flex items-center truncate',
           depth === 1 ? 'font-semibold' : 'font-medium',
           url === currentUrl && 'text-primary-1',
         )}

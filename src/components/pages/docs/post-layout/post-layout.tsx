@@ -4,24 +4,29 @@ import { useRef } from 'react';
 
 import Link from '@/components/shared/link';
 
+import { Breadcrumb } from '@/types/docs';
+
 import ExternalLinkIcon from '@/svgs/external.inline.svg';
 
+import Breadcrumbs from '../breadcrumbs';
 import TableOfContents from '../table-of-contents';
 
 interface PostLayoutProps {
   title: string;
   currentSlug: string;
   children: React.ReactNode;
+  breadcrumbs: Breadcrumb[];
 }
 
 const FILE_ORIGIN_PATH = 'https://github.com/bytebase/bytebase.com/tree/main/content/docs';
 
-const PostLayout = ({ title, children, currentSlug }: PostLayoutProps) => {
+const PostLayout = ({ title, children, currentSlug, breadcrumbs }: PostLayoutProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
       <article className="col-start-4 col-span-6">
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
         <h1 className="text-44 leading-extra-tight tracking-tighter font-bold mt-7 text-gray-15">
           {title}
         </h1>
