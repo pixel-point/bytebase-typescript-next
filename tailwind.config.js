@@ -116,9 +116,11 @@ module.exports = {
           'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
         pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
         'automation-changes':
-          'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 22.48%, #F7CCFF 46.12%, #F7CCFF 58.72%, #FFF2B3 81.58%, #FFE666 93.79%);',
+          'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 22.48%, #F7CCFF 46.12%, #F7CCFF 58.72%, #FFF2B3 81.58%, #FFE666 93.79%)',
+        'automation-changes-phone': 'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 78.05%)',
         security:
-          'linear-gradient(171.93deg, #3DB8F5 6.21%, #B3FFC6 32.27%, #FFF9B3 43.51%, #FFF9B3 58.72%, #B3FFC6 71.22%, #3DB8F5 93.79%);',
+          'linear-gradient(171.93deg, #3DB8F5 6.21%, #B3FFC6 32.27%, #FFF9B3 43.51%, #FFF9B3 58.72%, #B3FFC6 71.22%, #3DB8F5 93.79%)',
+        'security-phone': 'linear-gradient(171.93deg, #3DB8F5 6.21%, #B3FFC6 85.12%)',
       },
       lineHeight: {
         95: '95%',

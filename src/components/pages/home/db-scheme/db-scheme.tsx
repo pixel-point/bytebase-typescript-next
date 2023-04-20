@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useEffect, useRef } from 'react';
 
 import useIntersectionObserver from '@react-hook/intersection-observer';
@@ -42,11 +44,17 @@ const DBScheme = () => {
         </h2>
       </header>
       <div className="mt-14 3xl:mt-12 xl:mt-10 md:mt-9 sm:mt-5">
-        <div className="mx-auto aspect-[2.2676470588] h-auto w-auto max-w-[1542px]">
-          {/* 1542
-        680 */}
+        <div className="mx-auto aspect-[2.2676470588] h-auto w-auto max-w-[1542px] sm:hidden">
           <RiveComponent />
         </div>
+        <Image
+          className="mx-auto hidden sm:block"
+          src="/images/page/main/db-scheme.png"
+          alt=""
+          width={366}
+          height={498}
+          loading="lazy"
+        />
       </div>
     </section>
   );
