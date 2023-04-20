@@ -1,10 +1,4 @@
-type crewMember = {
-  image: string;
-  name: string;
-  position: string;
-};
-
-export const crewList: crewMember[] = [
+export const crewList = [
   {
     image: '/images/page/about/zhe.png',
     name: 'Zhe',

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Backed = () => (
   <section className="container mt-40">
-    <span className="mx-auto block w-fit rounded-[20px] bg-secondary-1 py-2 px-[10px] text-12 font-bold uppercase leading-none tracking-wider">
+    <span className="mx-auto block w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
       Our Partners
     </span>
     <h2 className="mt-5 text-center font-title text-88 font-semibold leading-none">

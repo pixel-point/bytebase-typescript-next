@@ -4,7 +4,7 @@ const MeetCrew = () => (
   <section className="container">
     <div className="flex items-center justify-between">
       <div>
-        <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-[10px] text-12 font-bold uppercase leading-none tracking-wider">
+        <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
           Team
         </span>
         <h2 className="mt-5 font-title text-88 font-semibold leading-none">Meet our crew</h2>
@@ -21,7 +21,7 @@ const MeetCrew = () => (
       <div className="relative -translate-y-[133px] bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]">
         <div className="flex items-start gap-1 pt-8 pb-6 pl-8 pr-2 shadow-[inset_0_0_0_1px_rgba(156,186,201,0.5)]">
           <div>
-            <p className="text-18 font-semibold text-[#176782]">Co-Founder & CTO</p>
+            <span className="text-18 font-semibold text-[#176782]">Co-Founder & CTO</span>
             <p className="mt-2 font-title text-56 font-semibold leading-none">Danny</p>
             <p className="font-regular mt-5 text-18">
               Danny was the Staff Engineer at Google Cloud and TL overseeing Cloud SQL and API &
@@ -55,7 +55,7 @@ const MeetCrew = () => (
             className="shrink-0"
           />
           <div>
-            <p className="text-18 font-semibold text-[#056049]">Co-Founder & CEO</p>
+            <span className="text-18 font-semibold text-[#056049]">Co-Founder & CEO</span>
             <p className="mt-2 font-title text-56 font-semibold leading-none">Tianzhou</p>
             <p className="mt-5 text-18">
               Tianzhou was the TL of Google Cloud SQL, the maintainer of Google&apos;s internal

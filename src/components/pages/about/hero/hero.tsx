@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="container pt-[136px] text-center">
       <h1 className="sr-only">{title}</h1>
-      <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-[10px] text-12 font-bold uppercase leading-none tracking-wider">
+      <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
         {supTitle}
       </span>
       <h2 className="mt-5 font-title text-88 font-semibold leading-none">
@@ -23,6 +23,7 @@ const Hero = () => {
         width={1292}
         height={631}
         className="mx-auto mt-[52px]"
+        priority
       />
     </section>
   );
