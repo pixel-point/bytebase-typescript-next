@@ -18,8 +18,7 @@ const Card = ({ color, className, cover, video, title, href, description }: Card
   return (
     <article className={clsx('perspective-1000', className)}>
       <div className="group-[.done]:rotate-y-180 transform-3d gr grid transition-transform delay-[inherit] duration-1000">
-        {/* TODO: make pic borders with CSS */}
-        <div className="backface-hidden col-span-full row-span-full">
+        <div className="backface-hidden col-span-full row-span-full border border-gray-40 shadow-[0_5px_15px_0_rgba(15,22,36,0.2)]">
           <video
             className="h-auto w-full"
             controls={false}
