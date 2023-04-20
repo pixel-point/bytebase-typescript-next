@@ -1,27 +1,29 @@
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus.js';
-import ROUTE from '@/lib/route';
+import Route from '@/lib/route';
 
+import DiscordIcon from '@/svgs/discord.inline.svg';
 import ExternalIcon from '@/svgs/external.inline.svg';
 import GithubIcon from '@/svgs/github.inline.svg';
+import TwitterIcon from '@/svgs/twitter.inline.svg';
 
 const socialLinks = [
   {
     name: 'Discord',
-    href: ROUTE.DISCORD,
-    icon: 'images/discord.svg',
+    href: Route.DISCORD,
+    icon: DiscordIcon,
   },
   {
     name: 'Twitter',
-    href: ROUTE.TWITTER,
-    icon: 'images/twitter.svg',
+    href: Route.TWITTER,
+    icon: TwitterIcon,
   },
 
   {
     name: 'Github',
-    href: ROUTE.GITHUB,
-    icon: 'images/github.svg',
+    href: Route.GITHUB,
+    icon: GithubIcon,
   },
 ];
 
@@ -38,10 +40,10 @@ const Footer = () => (
             {items.map(({ name: childName, linkUrl, isExternal, withGithubIcon }, childIdx) => (
               <li className="leading-none" key={childIdx}>
                 <Link
-                  additionalClassName="group font-medium tracking-tight flex items-center md:-mt-1 sm:mt-0"
+                  className="group flex items-center font-medium tracking-tight md:-mt-1 sm:mt-0"
                   size="md"
                   theme="gray"
-                  to={linkUrl}
+                  href={linkUrl}
                 >
                   <span>{childName}</span>
                   {withGithubIcon && (
@@ -61,7 +63,7 @@ const Footer = () => (
     </div>
     <div className="mt-[76px] grid grid-cols-12 gap-x-10 border-t-4 border-tones-purple-light py-6 xl:gap-x-9 lg:mt-[58px] lg:gap-x-6 md:mt-11 md:grid-rows-2 md:gap-x-5 md:gap-y-6 md:py-5 xs:mt-[34px] xs:grid-rows-4  xs:gap-x-0">
       <div className="col-span-4 flex items-center gap-x-9 xl:col-span-5 lg:col-span-6 md:row-span-2 md:flex-col md:items-start md:justify-center md:gap-x-0 md:gap-y-6 xs:col-span-full xs:row-span-1">
-        <Link additionalClassName="shrink-0" to="/">
+        <Link className="shrink-0" href="/">
           <span className="sr-only">Bytebase Logo</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -78,34 +80,29 @@ const Footer = () => (
         </p>
       </div>
       <div className="col-span-2 col-start-7 flex items-center gap-x-5 lg:col-span-3 lg:justify-self-end md:col-span-3 md:col-start-10 md:row-span-1 md:row-start-1 xs:col-span-full xs:col-start-1 xs:row-start-2 xs:-mt-1 xs:justify-self-start">
-        {socialLinks.map(({ name, href, icon }, idx) => (
-          <Link
-            key={idx}
-            to={href}
-            additionalClassName="flex items-center justify-center rounded-full"
-          >
+        {socialLinks.map(({ name, href, icon: Icon }, idx) => (
+          <Link key={idx} href={href} className="flex items-center justify-center rounded-full">
             <span className="sr-only">{name}</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={icon}
-              className="h-6 w-6 shrink-0 transition-opacity duration-200 hover:opacity-80"
-              alt={name}
+            <Icon
+              width={24}
+              height={24}
+              className="shrink-0 transition-opacity duration-200 hover:opacity-80"
             />
           </Link>
         ))}
       </div>
       <div className="col-start-10 flex items-center gap-x-8 lg:col-start-11 lg:mt-1 lg:gap-x-6 md:col-span-3 md:col-start-10 md:row-start-2 md:justify-self-end xs:col-start-1 xs:row-start-3 xs:justify-self-start">
         <Link
-          additionalClassName="text-16 xs:text-14 font-medium leading-none tracking-tight"
+          className="text-16 font-medium leading-none tracking-tight xs:text-14"
           theme="gray"
-          to={ROUTE.TERMS}
+          href={Route.TERMS}
         >
           Terms
         </Link>
         <Link
-          additionalClassName="text-16 xs:text-14 font-medium leading-none tracking-tight"
+          className="text-16 font-medium leading-none tracking-tight xs:text-14"
           theme="gray"
-          to={ROUTE.PRIVACY}
+          href={Route.PRIVACY}
         >
           Policy
         </Link>

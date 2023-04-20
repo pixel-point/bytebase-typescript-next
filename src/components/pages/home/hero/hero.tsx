@@ -3,6 +3,8 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 
 import Route from '@/lib/route';
 
+import SmallArrowIcon from '@/svgs/small-arrow.inline.svg';
+
 import Card from './card';
 
 const cards = [
@@ -32,13 +34,13 @@ const cards = [
 
 const Hero = () => {
   return (
-    <section className="container grid-gap mt-32 grid grid-cols-12 2xl:mt-[120px] lg:mt-[120px] md:mt-[104px] sm:mt-24 sm:grid-cols-4">
+    <section className="container gap-x-grid mt-32 grid grid-cols-12 2xl:mt-[120px] lg:mt-[120px] md:mt-[104px] sm:mt-24 sm:grid-cols-4">
       <div className="col-span-12 row-start-1 sm:col-span-4">
         <span className="inline-flex items-center gap-1 rounded-full bg-tones-purple-light p-1 text-12 font-semibold leading-none text-primary-1">
           <span className="rounded-full bg-primary-1 px-2 py-1 text-white">What’s new?</span>
-          <span className="flex items-center px-2">
+          <span className="flex items-center gap-1.5 px-2">
             1.10.0 Released
-            <img src="/images/arrow-hero.svg" alt="" className="ml-1.5 h-1.5" />
+            <SmallArrowIcon width={7} height={6} />
           </span>
         </span>
       </div>
@@ -70,7 +72,7 @@ const Hero = () => {
         </div>
       </header>
 
-      <ul className="grid-gap col-span-12 row-start-4 mt-20 grid grid-cols-12 sm:col-span-4 sm:mt-7 sm:grid-cols-4 sm:gap-y-8">
+      <ul className="gap-x-grid col-span-12 row-start-4 mt-20 grid grid-cols-12 sm:col-span-4 sm:mt-7 sm:grid-cols-4 sm:gap-y-8">
         {cards.map((card, idx) => (
           <li key={idx} className="col-span-4 sm:col-span-3 2xs:col-span-4">
             <Card {...card} />
@@ -79,14 +81,14 @@ const Hero = () => {
       </ul>
       <footer className="col-span-4 row-start-3 mt-14 flex items-center gap-9 lg:col-span-6 lg:mt-[46px] md:mt-[30px] sm:col-span-4 sm:mt-6">
         <Button
-          to={Route.INDEX}
+          className="w-full max-w-[218px] tracking-wide md:max-w-[167px] md:py-[18px] md:px-[36px] md:text-13 sm:text-13"
+          href={Route.INDEX}
           theme="primary-filled"
           size="lg"
-          additionalClassName="sm:text-13 md:py-[18px] md:px-[36px] md:max-w-[167px] md:text-13 tracking-wide w-full max-w-[218px]"
         >
           Request a Demo
         </Button>
-        <LinkUnderlined className="min-w-fit md:-ml-4" to={Route.INDEX}>
+        <LinkUnderlined className="min-w-fit md:-ml-4" href={Route.INDEX}>
           See Live Demo
         </LinkUnderlined>
       </footer>
