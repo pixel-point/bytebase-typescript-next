@@ -16,7 +16,6 @@ export default function Page() {
       <Hero />
       <DBScheme />
       <PromoAutomationChanges />
-      {/* TODO: rename PromoOptions */}
       <Benefits />
       <PromoSQLEditor />
       <PromoSecurity />

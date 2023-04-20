@@ -50,8 +50,8 @@ const Benefits = () => {
             onClick={() => setOpenedItemIdx(idx)}
           >
             {openedItemIdx === idx ? (
-              <article className="container gap-x-grid grid min-h-[418px] grid-cols-12">
-                <div className="col-span-7 pt-[165px] 3xl:pt-[124px] xl:col-span-6">
+              <article className="container gap-x-grid xl:min-h-[366px]: grid min-h-[418px] grid-cols-12">
+                <div className="col-span-7 pt-[165px] 3xl:pt-[124px] xl:col-span-6 xl:pt-[120px]">
                   <div className="flex items-center gap-[30px] xl:gap-6">
                     <img
                       src="/images/page/main/accordion-opened.svg"
@@ -62,7 +62,7 @@ const Benefits = () => {
                       {title}
                     </h3>
                   </div>
-                  <p className="ml-[86px] mt-4 text-18 leading-tight xl:ml-[68px] xl:text-16 md:text-14">
+                  <p className="ml-[86px] mt-4 text-18 leading-tight xl:mt-2 xl:ml-[68px] xl:text-16 xl:leading-snug md:text-14">
                     {description}
                   </p>
                 </div>

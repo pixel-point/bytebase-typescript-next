@@ -95,7 +95,7 @@ const Hero = () => {
               <mark className="bg-transparent text-primary-1">Database</mark> schema change and
               version control
             </h1>
-            <p className="absolute top-[244px] left-[338px] max-w-lg text-20 leading-140 xl:top-[177px] xl:left-[271px] xl:text-18 xl:leading-snug md:left-[231px] md:top-[158px] md:text-16">
+            <p className="absolute top-[244px] left-[338px] max-w-lg text-20 leading-140 3xl:left-[345px] 3xl:max-w-xl xl:top-[177px] xl:left-[271px] xl:text-18 xl:leading-snug md:left-[230px] md:top-[158px] md:max-w-sm md:text-16">
               Bytebase offers a web-based collaboration workspace to help DBAs and Developers manage
               the lifecycle of application database schemas.
             </p>
@@ -108,17 +108,17 @@ const Hero = () => {
           <LinkUnderlined to={Route.INDEX}>See Live Demo</LinkUnderlined>
         </footer>
       </section>
-      <div className="col-span-full col-start-1 row-start-2 h-20 md:h-[60px]" />
+      <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px]" />
       <div
         className="col-start-1 col-end-5 row-start-3 row-end-4 min-h-[1200px] xl:min-h-[900px] md:min-h-[700px]"
         ref={anchorRef}
       >
         <Card className="sticky top-[80px]" {...cards[0]} />
       </div>
-      <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] xl:row-start-2 xl:pt-[30px]">
+      <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:pt-[30px]">
         <Card className="sticky top-[80px] delay-150" {...cards[1]} />
       </div>
-      <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] xl:row-start-2 xl:-mt-[40px] xl:pt-0 md:-mt-[29px]">
+      <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] xl:row-start-2 xl:-mt-[40px] xl:pt-0 md:-mt-[29px]">
         <Card className="sticky top-[80px] delay-300" {...cards[2]} />
       </div>
     </div>
