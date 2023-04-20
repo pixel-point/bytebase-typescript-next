@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings/lib';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-import remarkToc from 'remark-toc';
 
 import CodeBlock from '@/components/shared/code-block';
 
@@ -33,6 +32,7 @@ const components = {
   },
   img: (props: any) => (
     <Image
+      className="my-11"
       {...props}
       src={props.src.replace('/static', '')}
       width={716}
@@ -58,8 +58,6 @@ const Content = ({ className, content }: ContentProps) => {
             remarkPlugins: [
               // Adds support for GitHub Flavored Markdown
               remarkGfm,
-              // generates a table of contents based on headings
-              remarkToc,
             ],
             // These work together to add IDs and linkify headings
             rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],

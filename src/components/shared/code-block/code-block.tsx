@@ -20,7 +20,7 @@ const CodeBlock = ({ className, children, ...otherProps }: CodeBlockProps) => {
   const language = match ? match[1] : DEFAULT_LANGUAGE;
   const code = children?.trim();
   return (
-    <div className="code-block group relative" {...otherProps}>
+    <figure className="code-block group relative" {...otherProps}>
       <SyntaxHighlighter className="no-scrollbars" language={language} useInlineStyles={false}>
         {code}
       </SyntaxHighlighter>
@@ -32,7 +32,7 @@ const CodeBlock = ({ className, children, ...otherProps }: CodeBlockProps) => {
       >
         {isCopied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="w-4 h-4" />}
       </button>
-    </div>
+    </figure>
   );
 };
 

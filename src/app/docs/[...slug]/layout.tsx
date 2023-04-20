@@ -1,3 +1,4 @@
+import MobileSidebar from '@/components/pages/docs/mobile-sidebar';
 import Sidebar from '@/components/pages/docs/sidebar';
 import SubscriptionForm from '@/components/shared/subscription-form';
 
@@ -16,10 +17,17 @@ export default function DocLayout({
   return (
     <>
       <div className="pt-36 container grid grid-cols-12 gap-x-10">
-        <Sidebar data={sidebar} expandedList={expandedList} currentUrl={currentUrl} />
+        <Sidebar
+          className="md:hidden col-span-3"
+          data={sidebar}
+          expandedList={expandedList}
+          currentUrl={currentUrl}
+        />
         {children}
       </div>
       <SubscriptionForm />
+
+      <MobileSidebar data={sidebar} currentUrl={currentUrl} />
     </>
   );
 }

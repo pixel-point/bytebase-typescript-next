@@ -18,8 +18,8 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
     <nav className="navigation gap-x-10 flex mt-8 pt-8 border-t border-gray-90">
       {previousLinkUrl && (
         <Link
-          additionalClassName="mr-auto w-[47%] gap-x-4 rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
-          to={Route.DOCS + previousLinkUrl}
+          className="mr-auto w-[47%] gap-x-4 rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
+          href={Route.DOCS + previousLinkUrl}
         >
           <ArrowIcon className="w-[18px] h-auto rotate-180" />
           <div className="flex flex-col">
@@ -32,8 +32,8 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
       )}
       {nextLinkUrl && (
         <Link
-          additionalClassName="ml-auto w-[47%] justify-between rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
-          to={Route.DOCS + nextLinkUrl}
+          className="ml-auto w-[47%] justify-between rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
+          href={Route.DOCS + nextLinkUrl}
         >
           <div className="flex-col flex">
             <span className="text-14 font-medium leading-none text-gray-50">Previous article</span>

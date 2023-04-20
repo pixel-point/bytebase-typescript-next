@@ -22,7 +22,7 @@ const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): 
 
 interface ItemProps extends SidebarItem {
   currentUrl: string;
-  expandedList: string[];
+  expandedList?: string[];
 }
 
 const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemProps) => {
