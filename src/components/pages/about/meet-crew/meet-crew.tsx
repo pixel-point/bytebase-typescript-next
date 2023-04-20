@@ -2,20 +2,22 @@ import Image from 'next/image';
 
 const MeetCrew = () => (
   <section className="container gap-x-grid grid grid-cols-12 sm:grid-cols-4">
-    <div className="col-span-6 row-start-1 mt-36">
-      <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
-        Team
-      </span>
-      <h2 className="mt-5 font-title text-88 font-semibold leading-none">Meet our crew</h2>
+    <div className="relative col-span-12">
+      <div className="mt-36">
+        <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
+          Team
+        </span>
+        <h2 className="mt-5 font-title text-88 font-semibold leading-none">Meet our crew</h2>
+      </div>
+      <Image
+        src="/images/page/about/crew-ellipse.svg"
+        alt=""
+        width={832}
+        height={600}
+        className="absolute -bottom-[260px] -right-[90px] mt-36"
+      />
     </div>
-    <Image
-      src="/images/page/about/crew-ellipse.png"
-      alt=""
-      width={750}
-      height={541}
-      className="relative col-span-6 row-start-1 mt-36 translate-x-[49px] translate-y-8"
-    />
-    <div className="relative col-span-6 row-start-2 mt-[92px] -translate-y-[133px] bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]">
+    <div className="relative col-span-6 row-start-2 mt-[220px] -translate-y-[133px] bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]">
       <div className="flex items-start gap-1 pt-8 pb-6 pl-8 pr-2 shadow-[inset_0_0_0_1px_rgba(156,186,201,0.5)]">
         <div>
           <span className="text-18 font-semibold text-tones-deep-blue-dark">Co-Founder & CTO</span>
@@ -42,7 +44,7 @@ const MeetCrew = () => (
       />
     </div>
 
-    <div className="col-span-6 row-start-2 mt-[92px] bg-tones-green-light shadow-[inset_6px_6px_0_#fff,0_5px_20px_rgba(143,188,169,0.4)]">
+    <div className="col-span-6 row-start-2 mt-[220px] bg-tones-green-light shadow-[inset_6px_6px_0_#fff,0_5px_20px_rgba(143,188,169,0.4)]">
       <div className="flex items-start gap-1 pt-8 pb-6 pl-2 pr-8 shadow-[inset_0_0_0_1px_rgba(143,188,169,0.4)]">
         <Image
           src="/images/page/about/tianzhou.webp"
