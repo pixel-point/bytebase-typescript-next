@@ -1,4 +1,5 @@
 import Sidebar from '@/components/pages/docs/sidebar';
+import SubscriptionForm from '@/components/shared/subscription-form';
 
 import { getSidebar } from '@/lib/api-docs';
 
@@ -13,9 +14,12 @@ export default function DocLayout({
   const currentUrl = `/${slug.join('/')}`;
 
   return (
-    <div className="pt-36 container grid grid-cols-12 gap-x-10">
-      <Sidebar data={sidebar} expandedList={expandedList} currentUrl={currentUrl} />
-      {children}
-    </div>
+    <>
+      <div className="pt-36 container grid grid-cols-12 gap-x-10">
+        <Sidebar data={sidebar} expandedList={expandedList} currentUrl={currentUrl} />
+        {children}
+      </div>
+      <SubscriptionForm />
+    </>
   );
 }

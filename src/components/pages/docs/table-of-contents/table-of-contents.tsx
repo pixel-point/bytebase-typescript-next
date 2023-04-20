@@ -119,7 +119,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
       </div>
 
       <button
-        className="flex gap-x-2 pl-5 text-15 text-gray-30 hover:text-gray-60 duration-200 transition-colors mt-8 items-center font-medium"
+        className="flex gap-x-2 pl-5 pb-5 text-15 text-gray-30 hover:text-gray-60 duration-200 transition-colors mt-8 items-center font-medium"
         type="button"
         onClick={backToTop}
       >
