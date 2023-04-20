@@ -31,6 +31,8 @@ const PostLayout = ({ title, children, currentSlug }: PostLayoutProps) => {
         <Link
           additionalClassName="inline-flex mt-20 text-18 hover:text-gray-60 font-medium leading-none text-gray-15 items-center"
           to={`${FILE_ORIGIN_PATH}/${currentSlug}.md`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <span>Edit this page on GitHub</span>
           <ExternalLinkIcon className="w-3 h-3 ml-2" />
