@@ -15,7 +15,7 @@ const Hero = () => {
         <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules
       </h2>
       <Image
-        src="/images/page/about/why-we-build.svg"
+        src="/images/page/about/why-we-build.webp"
         alt=""
         width={1292}
         height={631}
