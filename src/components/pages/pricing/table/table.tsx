@@ -46,9 +46,9 @@ const Table = () => {
             width={338}
             height={330}
             alt=""
-            className="absolute -top-[140px] -left-10 max-w-none 3xl:left-0 3xl:-top-[124px] 3xl:h-auto 3xl:w-[345px] xl:-top-[100px] xl:w-[280px] md:-top-[10px] md:w-[225px] sm:-top-px sm:-left-[68px] sm:w-[204px]"
+            className="absolute -top-[123px] -left-10 max-w-none 3xl:left-0 3xl:-top-[124px] 3xl:h-auto 3xl:w-[345px] xl:-top-[83px] xl:w-[280px] md:-top-[10px] md:w-[225px] sm:-top-px sm:-left-[68px] sm:w-[204px]"
           />
-          <div className="-mr-10 flex grow flex-col pt-[233px] shadow-labels 3xl:-mr-9 3xl:pt-[251px] xl:-mr-6 xl:pt-[232px] md:-mr-5 md:pt-[227px] sm:mr-0 sm:pt-[219px]">
+          <div className="-mr-10 flex grow flex-col pt-[252px] shadow-labels 3xl:-mr-9 3xl:pt-[251px] xl:-mr-6 xl:pt-[250px] md:-mr-5 md:pt-[227px] sm:mr-0 sm:pt-[236px]">
             {LABELS.map(({ title, items }, idx) => (
               <div
                 className="relative mt-11 border-b border-black border-opacity-10 first:mt-0 last:border-b-0"
@@ -95,7 +95,7 @@ const Table = () => {
                     </div>
                     <div
                       className={clsx('border border-t-0 border-tones-purple-dark', {
-                        'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'team',
+                        'border-l-0 border-r-0 bg-[#F9FAFF]': currentPlan.title === 'pro',
                       })}
                     >
                       <FeatureList
@@ -135,12 +135,7 @@ const Table = () => {
         <div className="col-span-7 col-start-5 pt-7 3xl:col-span-8 3xl:col-start-5 xl:pt-6 md:pt-4 sm:col-span-12 sm:col-start-1 sm:pt-3">
           <p className="text-center text-15 leading-snug text-gray-40 xl:text-14 xl:leading-tight">
             You can upgrade, downgrade, or{' '}
-            <Link
-              size="sm"
-              to="/refund"
-              theme="primary-1"
-              additionalClassName="xl:text-14 sm:inline"
-            >
+            <Link className="xl:text-14 sm:inline" size="sm" href="/refund" theme="primary-1">
               cancel your subscription
             </Link>{' '}
             anytime. No hidden charges.
