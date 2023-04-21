@@ -10,7 +10,7 @@ const MeetCrew = () => (
         height={600}
         className="absolute -bottom-[260px] -right-[90px] mt-36"
       />
-      <div className="mt-36">
+      <div className="mt-56">
         <span className="w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
           Team
         </span>
