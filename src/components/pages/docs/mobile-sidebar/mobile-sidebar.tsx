@@ -9,8 +9,6 @@ import { LazyMotion, domAnimation, m, useAnimation } from 'framer-motion';
 
 import { SidebarItem } from '@/types/docs';
 
-import ChevronIcon from '@/svgs/chevron.inline.svg';
-
 import Item from '../sidebar/item';
 
 interface MobileSidebarProps {
@@ -65,9 +63,9 @@ const MobileSidebar = ({ className, data, currentUrl, expandedList }: MobileSide
     }
   }, [isOpen]);
 
-  // 146px is the height of top banner + header + button Documentation menu
+  // 146px is the height of header + button Documentation menu
   useEffect(() => {
-    setContainerHeight(`${height - 116}px`);
+    setContainerHeight(`${height - 122}px`);
   }, [height]);
 
   useEffect(() => {
@@ -81,17 +79,31 @@ const MobileSidebar = ({ className, data, currentUrl, expandedList }: MobileSide
     <LazyMotion features={domAnimation}>
       <nav className={clsx('safe-paddings relative', className)} ref={wrapperRef}>
         <button
-          className="relative z-10 flex w-full cursor-pointer appearance-none justify-start text-ellipsis bg-gray-97 py-2.5 outline-none transition-colors duration-200 hover:bg-gray-90 active:bg-gray-8 px-7 sm:px-4"
+          className="relative z-10 flex w-full border-t border-b border-gray-94 cursor-pointer leading-none justify-between appearance-none items-center text-ellipsis bg-gray-97 py-4 outline-none transition-colors duration-200 hover:bg-gray-90 active:bg-gray-90 px-7 sm:px-4"
           type="button"
           onClick={toggleMenu}
         >
           <span>Documentation menu</span>
-          <ChevronIcon className="absolute right-[37px] top-1/2 -translate-y-1/2 md:right-5 w-4 h-4" />
+
+          <span className="relative">
+            <span
+              className={clsx(
+                'absolute top-1/2 -left-[17px] h-2 w-[1.5px] -translate-y-1/2 bg-current transition-transform duration-200',
+                isOpen ? 'rotate-45' : 'rotate-[135deg]',
+              )}
+            />
+            <span
+              className={clsx(
+                'absolute top-1/2 -left-3 h-2 w-[1.5px] -translate-y-1/2 bg-current transition-transform duration-200',
+                isOpen ? '-rotate-45' : '-rotate-[135deg]',
+              )}
+            />
+          </span>
         </button>
 
         <m.ul
           className={clsx(
-            'fixed inset-x-0 top-[116px] flex flex-col bottom-0 z-20 overflow-y-scroll bg-white pl-8 pr-[29px] pt-2 pb-4 md:pl-4 md:pr-[13px]',
+            'fixed inset-x-0 top-[122px] flex flex-col bottom-0 z-20 overflow-y-scroll bg-white px-7 py-4 sm:px-4',
           )}
           initial="from"
           animate={controls}

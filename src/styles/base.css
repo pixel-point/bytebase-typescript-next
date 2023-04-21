@@ -118,4 +118,8 @@
   html {
     @apply text-gray-15;
   }
+
+  body {
+    @apply antialiased;
+  }
 }

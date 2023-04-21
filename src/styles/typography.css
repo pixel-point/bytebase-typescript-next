@@ -15,6 +15,10 @@
     table {
       @apply w-full min-w-[716px] border border-gray-90 text-14 2xl:min-w-[654px] xl:min-w-[696px] md:min-w-[500px];
 
+      a {
+        @apply font-normal;
+      }
+
       th {
         @apply border border-gray-90 bg-gray-97 p-3.5 md:px-2;
       }

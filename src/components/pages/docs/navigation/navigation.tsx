@@ -24,7 +24,7 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
           <ArrowIcon className="w-[18px] h-auto rotate-180" />
           <div className="flex flex-col">
             <span className="text-14 font-medium leading-none text-gray-50">Previous article</span>
-            <span className="text-18 font-medium leading-none text-gray-15 mt-2">
+            <span className="text-18 font-medium leading-snug text-gray-15 mt-2">
               {previousLink.title}
             </span>
           </div>
@@ -37,7 +37,7 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
         >
           <div className="flex-col flex">
             <span className="text-14 font-medium leading-none text-gray-50">Next article</span>
-            <span className="text-18 font-medium leading-none text-gray-15 mt-2">
+            <span className="text-18 font-medium leading-snug text-gray-15 mt-2">
               {nextLink.title}
             </span>
           </div>
