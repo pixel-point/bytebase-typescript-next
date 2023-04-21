@@ -93,7 +93,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
           {items.map(({ id, text, level }) => (
             <li
               className={clsx(
-                'py-2 text-15 relative before:absolute before:w-0.5 before:h-4/5 before:-left-[19.5px] before:duration-200 before:transition-colors before:rounded-sm before:top-1/2 before:-translate-y-1/2 font-medium ',
+                'py-2 text-15 relative before:absolute before:w-0.5 before:h-4/5 before:-left-[19.5px] before:duration-200 before:transition-colors before:rounded-sm before:top-1/2 before:-translate-y-1/2 font-medium',
                 {
                   'before:bg-primary-1': debouncedActiveAnchor === `#${id}`,
                 },
@@ -102,7 +102,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
             >
               <a
                 className={clsx(
-                  'truncate hover:text-gray-60 transition-colors text-gray-30 duration-200',
+                  'flex hover:text-gray-60 transition-colors text-gray-30 duration-200',
                   {
                     'pl-2.5': level === 3,
                     'text-primary-1': debouncedActiveAnchor === `#${id}`,
