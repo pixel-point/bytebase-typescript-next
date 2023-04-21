@@ -36,9 +36,9 @@ export default function Blog({ params }: { params: { slug: string } }) {
   if (!post) return notFound();
 
   return (
-    <>
+    <article>
       <BlogPostHero post={post} isBlogPost={true} />
-    </>
+    </article>
   );
 }
 
