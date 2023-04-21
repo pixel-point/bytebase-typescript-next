@@ -91,7 +91,7 @@ const Hero = () => {
             </span>
           </span>
           <div className="relative mt-4 xl:mt-3.5 sm:mt-3">
-            <h1 className="font-title text-112 font-semibold leading-none xl:text-90 xl:leading-95 md:text-80 sm:text-48">
+            <h1 className="font-title text-112 font-semibold leading-none 3xl:max-w-4xl xl:max-w-2xl xl:text-90 xl:leading-95 md:max-w-lg md:text-80 sm:text-48">
               <mark className="bg-transparent text-primary-1">Database</mark> schema change and
               version control
             </h1>
