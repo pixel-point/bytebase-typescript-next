@@ -4,15 +4,15 @@ import Link from '@/components/shared/link';
 
 import ROUTE from '@/lib/route';
 
-export interface TabCategory {
+export type TabCategory = {
   label: string;
   slug?: string;
-}
+};
 
-interface TabsProps {
+type TabsProps = {
   items: TabCategory[];
   currentSlug?: string;
-}
+};
 
 const tabThemes = {
   explanation: {

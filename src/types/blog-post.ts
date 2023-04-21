@@ -1,4 +1,4 @@
-export interface BlogPost {
+export type BlogPost = {
   title: string;
   content: string;
   feature_image: string;
@@ -6,4 +6,4 @@ export interface BlogPost {
   author: string;
   tags: string;
   slug: string;
-}
+};

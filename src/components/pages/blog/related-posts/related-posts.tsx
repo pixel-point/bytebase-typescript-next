@@ -2,11 +2,13 @@ import { BlogPost } from '@/types/blog-post';
 
 import BlogPostCard from '../blog-post-card';
 
-interface RelatedPostsProps {
+type RelatedPostsProps = {
   posts: BlogPost[];
-}
+};
 
 const RelatedPosts = ({ posts }: RelatedPostsProps) => {
+  if (!posts) return null;
+
   return (
     <section className="container related-posts">
       <ul className="gap-x-grid mt-14 grid grid-cols-12 lg:mt-12 md:mt-10 md:gap-y-8 sm:mt-8 sm:gap-y-6">

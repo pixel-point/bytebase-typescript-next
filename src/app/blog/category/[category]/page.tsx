@@ -2,10 +2,10 @@ import { notFound } from 'next/navigation';
 
 import slugifyText from '@/utils/slugify-text';
 
+import BlogPostHero from '@/components/pages/blog/blog-post-hero';
 import Posts from '@/components/pages/blog/posts';
 import RelatedPosts from '@/components/pages/blog/related-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
-import BlogPostHero from '@/components/shared/blog-post-hero';
 
 import { getAllBlogPosts, getBlogPostsPerPage } from '@/lib/api-blog';
 

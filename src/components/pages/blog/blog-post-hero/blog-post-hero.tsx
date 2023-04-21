@@ -10,10 +10,10 @@ import { BlogPost } from '@/types/blog-post';
 
 import ROUTE from '@/lib/route';
 
-interface BlogPostHeroProps {
+type BlogPostHeroProps = {
   post: BlogPost;
   isBlogPost?: boolean;
-}
+};
 
 const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
   const { tags, author, title, feature_image, slug, published_at } = post;

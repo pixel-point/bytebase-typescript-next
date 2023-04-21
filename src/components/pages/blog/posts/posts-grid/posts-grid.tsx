@@ -25,11 +25,11 @@ const getPostSize = (index: number): { size: string; theme: BlogPostTCardThemes 
   };
 };
 
-interface BlogPostsProps {
+type PostsGridProps = {
   posts: BlogPost[];
-}
+};
 
-const PostsGrid = ({ posts }: BlogPostsProps) => {
+const PostsGrid = ({ posts }: PostsGridProps) => {
   return (
     <ul className="gap-x-grid mt-16 grid grid-cols-12 gap-y-14 lg:mt-12 lg:gap-y-12 md:mt-8 md:gap-y-8 xs:mt-6">
       {posts.map((post, index) => {

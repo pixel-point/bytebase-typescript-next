@@ -7,13 +7,13 @@ import PostsGrid from './posts-grid';
 import Tabs from './tabs';
 import { TabCategory } from './tabs/tabs';
 
-interface PostsProps {
+type PostsProps = {
   posts: BlogPost[];
   tabs: string[];
   page: number;
   category?: string;
   pageCount: number;
-}
+};
 
 const Posts = ({ posts, tabs, page = 1, category = '', pageCount }: PostsProps) => {
   const tabsWithSlug = tabs.map((tab) => ({ label: tab, slug: slugifyText(tab) } as TabCategory));

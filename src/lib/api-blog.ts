@@ -9,10 +9,10 @@ import CONTENT_FOLDER from './content-folder';
 
 const POSTS_PER_PAGE = 21;
 
-interface BlogPostsWithTags {
+type BlogPostsWithTags = {
   posts: BlogPost[];
   tags: string[];
-}
+};
 
 const getAllBlogPosts = (): BlogPostsWithTags => {
   const files = fs.readdirSync(CONTENT_FOLDER.blog).filter((file) => file.endsWith('.md'));
@@ -58,10 +58,10 @@ const getBlogPostBySlug = (slug: string): BlogPost | null => {
   }
 };
 
-interface PostPerPageProps {
+type PostPerPageProps = {
   page: number;
   category?: string;
-}
+};
 
 const getBlogPostsPerPage = ({
   page,
