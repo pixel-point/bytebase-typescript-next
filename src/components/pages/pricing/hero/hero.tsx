@@ -91,14 +91,14 @@ const Hero = () => (
         </p>
         <ul className="mt-11 flex items-center justify-center gap-x-16 lg:gap-x-[52px] md:mt-10 md:gap-x-10 sm:mt-6 sm:flex-wrap sm:gap-y-4 sm:gap-x-14">
           {[
-            '/images/page/pricing/microsoft.svg',
-            '/images/page/pricing/google.svg',
-            '/images/page/pricing/ant-group.svg',
-            '/images/page/pricing/pingcap.svg',
-          ].map((src) => (
-            <li key={src}>
+            { src: '/images/page/pricing/microsoft.svg', width: 152, height: 40 },
+            { src: '/images/page/pricing/google.svg', width: 118, height: 40 },
+            { src: '/images/page/pricing/ant-group.svg', width: 94, height: 40 },
+            { src: '/images/page/pricing/pingcap.svg', width: 152, height: 40 },
+          ].map((image) => (
+            <li key={image.src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" height={40} className="w-auto lg:h-9 md:h-[30px]" />
+              <img {...image} className="xl:h-9 xl:w-auto md:h-[30px]" />
             </li>
           ))}
         </ul>
