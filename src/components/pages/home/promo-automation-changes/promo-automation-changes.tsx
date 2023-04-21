@@ -50,7 +50,7 @@ const PromoAutomationChanges = () => {
             Bytebase streamlines database deployment from non-prod to prod by integrating with
             version control systems for a GitOps workflow.
           </p>
-          <LinkUnderlined className="mt-8 xl:mt-7 lg:mt-4 md:mt-3" to="#">
+          <LinkUnderlined className="mt-8 xl:mt-7 lg:mt-4 md:mt-3" href="#">
             Learn more
           </LinkUnderlined>
         </div>

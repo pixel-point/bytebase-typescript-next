@@ -103,10 +103,10 @@ const Hero = () => {
         </header>
         <footer className="mt-14 flex items-center gap-9 xl:mt-11 md:mt-7 sm:mt-6 sm:gap-3.5">
           <Button
-            to={Route.INDEX}
+            href={Route.INDEX}
             theme="primary-filled"
             size="lg"
-            additionalClassName="sm:!w-fit sm:!px-6"
+            className="sm:!w-fit sm:!px-6"
           >
             Request a Demo
           </Button>
