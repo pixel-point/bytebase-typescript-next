@@ -16,7 +16,7 @@ const Crew = () => (
       ))}
       <li className="flex flex-col items-center justify-center">
         <Image src="/images/page/about/join.png" alt="" width={244} height={244} />
-        <LinkUnderlined to="/jobs">Join us</LinkUnderlined>
+        <LinkUnderlined href="/jobs">Join us</LinkUnderlined>
       </li>
     </ul>
   </section>
