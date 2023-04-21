@@ -24,7 +24,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
     return (
       <>
-        <BlogPostHero post={posts[0]} isBlogPost={true} />
+        <BlogPostHero post={posts[0]} isBlogPost={false} />
         <RelatedPosts posts={posts.slice(1, 5)} />
         <SubscribeCta />
         <Posts posts={posts} tabs={tags} page={+slug} pageCount={pageCount} />

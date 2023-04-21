@@ -14,7 +14,6 @@ const SubscribeCta = () => {
           alt=""
           width={252}
           height={212}
-          aria-hidden
         />
         <Image
           className="absolute right-0 -top-5 hidden sm:block 2xs:-top-1.5"
@@ -22,7 +21,6 @@ const SubscribeCta = () => {
           alt=""
           width={127}
           height={132}
-          aria-hidden
         />
         <h2 className="col-span-4 col-start-3 ml-4 font-title text-52 leading-none text-white 2xl:ml-[22px] 2xl:w-[calc(100%+22px)] xl:col-span-5 xl:col-start-3 xl:w-full xl:text-44 lg:ml-0 md:pl-11 md:text-38 sm:col-span-3 sm:col-start-1 sm:pl-0 sm:text-34">
           Learn product updates and database&nbsp;insight.
@@ -37,9 +35,11 @@ const SubscribeCta = () => {
             <button className="flex-shrink-0 rounded-r-full bg-black py-6 px-11 text-16 font-bold uppercase leading-none xl:py-4 xl:px-[22px] md:py-3 md:px-5">
               <span className="leading-none md:hidden">Subscribe</span>{' '}
               <img
+                className="hidden h-6 w-6 md:block"
                 src="/images/arrow-form.svg"
                 alt="Subscribe"
-                className="hidden h-6 w-6 md:block"
+                width={24}
+                height={24}
               />
             </button>
           </div>

@@ -6,11 +6,11 @@ import ReactPaginate from 'react-paginate';
 
 import ROUTE from '@/lib/route';
 
-interface PaginationProps {
+type PaginationProps = {
   currentPageIndex: number;
   pageCount: number;
   categoryPath?: string;
-}
+};
 
 const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: PaginationProps) => {
   const router = useRouter();

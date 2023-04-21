@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
-import getBlogTagTheme from '@/utils/get-blog-tag-theme';
+import getBlogCardColors from '@/utils/get-blog-card-colors';
 import slugifyText from '@/utils/slugify-text';
 import clsx from 'clsx';
+import { format } from 'date-fns';
 
 import Link from '@/components/shared/link';
 
@@ -18,6 +19,9 @@ type BlogPostHeroProps = {
 const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
   const { tags, author, title, feature_image, slug, published_at } = post;
   const categorySlug = slugifyText(tags);
+  const { tagColors, titleHover } = getBlogCardColors(categorySlug);
+  const date = new Date(post.published_at);
+  const formattedDate = format(date, 'MMM dd, yyyy');
 
   const WrapperTag = isBlogPost ? 'div' : 'article';
 
@@ -28,7 +32,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
           <Link
             href={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
             className={clsx(
-              getBlogTagTheme(categorySlug),
+              tagColors,
               'inline-flex max-w-fit rounded-full px-3 py-[5px] text-14 font-medium leading-none',
             )}
           >
@@ -39,7 +43,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
               {title}
             </h1>
           ) : (
-            <Link href={`${ROUTE.BLOG}/${slug}`}>
+            <Link href={`${ROUTE.BLOG}/${slug}`} className={titleHover}>
               <h3 className="font-title text-72 font-semibold leading-none 2xl:text-68 xl:text-50 md:text-46 sm:text-34">
                 {title}
               </h3>
@@ -57,9 +61,9 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
               <span>{author}</span>
               <time
                 className="relative pl-2 uppercase before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40"
-                dateTime={new Date(published_at).toString()}
+                dateTime={date.toString()}
               >
-                {new Date(published_at).toDateString()}
+                {formattedDate}
               </time>
             </div>
           </div>

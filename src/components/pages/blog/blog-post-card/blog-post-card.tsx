@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
-import getBlogTagTheme from '@/utils/get-blog-tag-theme';
+import getBlogTagTheme from '@/utils/get-blog-card-colors';
 import slugifyText from '@/utils/slugify-text';
 import clsx from 'clsx';
+import { format } from 'date-fns';
 
 import Link from '@/components/shared/link';
 
@@ -41,6 +42,9 @@ const themes = {
 
 const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCardProps) => {
   const categorySlug = slugifyText(post.tags);
+  const { tagColors, titleHover } = getBlogTagTheme(categorySlug);
+  const date = new Date(post.published_at);
+  const formattedDate = format(date, 'MMM dd, yyyy');
 
   return (
     <article
@@ -51,8 +55,8 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
     >
       {hasImage && post?.feature_image && (
         <Link
-          href={`${ROUTE.BLOG}/${post.slug}`}
           className="relative aspect-[2.07] overflow-hidden rounded-[4px] lg:aspect-[2.084] sm:aspect-[2.1]"
+          href={`${ROUTE.BLOG}/${post.slug}`}
         >
           <Image
             className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
@@ -64,17 +68,18 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
       )}
       <div className="flex flex-col gap-y-3 md:gap-y-2">
         <Link
-          href={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
           className={clsx(
-            getBlogTagTheme(categorySlug),
+            tagColors,
             'inline-flex max-w-fit rounded-full px-3 py-[5px] text-14 font-medium leading-none',
           )}
+          href={`${ROUTE.BLOG_CATEGORY}/${categorySlug}`}
         >
           {post.tags}
         </Link>
         <Link href={`${ROUTE.BLOG}/${post.slug}`}>
           <h3
             className={clsx(
+              titleHover,
               'font-medium line-clamp-3 md:leading-tight',
               theme === 'small'
                 ? 'text-18'
@@ -98,10 +103,11 @@ const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCard
           <div className="relative flex gap-x-2 text-14 leading-none text-gray-40">
             <span>{post.author}</span>
             <time
-              className="relative pl-2 uppercase before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40"
-              dateTime={new Date(post.published_at).toString()}
+              className="upppercase relative pl-2 uppercase
+              before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40"
+              dateTime={date.toString()}
             >
-              {new Date(post.published_at).toDateString()}
+              {formattedDate}
             </time>
           </div>
         </div>
