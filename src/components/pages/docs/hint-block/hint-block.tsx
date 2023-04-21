@@ -31,32 +31,35 @@ const icons = {
 const HintBlock = ({ type = 'info', children }: HintBlockProps) => {
   const Icon = icons[type];
   return (
-    <figure className={clsx('hint-block border', typeClassNames[type].wrapper)}>
-      <div className="pt-1.5 pl-1.5">
-        <div className={clsx('flex gap-x-4 px-3 pt-4 pb-8 md:gap-x-3', typeClassNames[type].inner)}>
-          <span
+    <figure
+      className={clsx(
+        'hint-block border shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]',
+        typeClassNames[type].wrapper,
+      )}
+    >
+      <div className={clsx('flex gap-x-4 px-3 pt-4 pb-8 md:gap-x-3', typeClassNames[type].inner)}>
+        <span
+          className={clsx(
+            'flex h-8 w-8 items-center justify-center rounded-full shrink-0 md:w-7 md:h-7 sm:h-6 sm:w-6',
+            typeClassNames[type].icon,
+          )}
+        >
+          <Icon className="h-4 w-4" />
+        </span>
+
+        <div>
+          <div className="not-prose">
+            <h4 className="text-24 font-bold leading-extra-tight tracking-tight text-gray-15 first-letter:capitalize">
+              {type}
+            </h4>
+          </div>
+          <div
             className={clsx(
-              'flex h-8 w-8 items-center justify-center rounded-full shrink-0 md:w-7 md:h-7 sm:h-6 sm:w-6',
-              typeClassNames[type].icon,
+              'prose mt-4 !text-15 !leading-snug prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0',
+              typeClassNames[type].text,
             )}
           >
-            <Icon className="h-4 w-4" />
-          </span>
-
-          <div>
-            <div className="not-prose">
-              <h4 className="text-24 font-bold leading-extra-tight tracking-tight text-gray-15 first-letter:capitalize">
-                {type}
-              </h4>
-            </div>
-            <div
-              className={clsx(
-                'prose mt-4 !text-15 !leading-snug prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0',
-                typeClassNames[type].text,
-              )}
-            >
-              {children}
-            </div>
+            {children}
           </div>
         </div>
       </div>

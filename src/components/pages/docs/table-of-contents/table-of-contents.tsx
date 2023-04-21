@@ -22,10 +22,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
   const [debouncedActiveAnchor, setDebouncedActiveAnchor] = useState<string | null>(null);
 
   const handleScroll = useCallback(() => {
-    const anchors = items.map(({ id }) => {
-      const anchor = document.getElementById(id);
-      return anchor;
-    });
+    const anchors = items.map(({ id }) => document.getElementById(id));
     const currentActiveAnchor = anchors.find((anchor) => {
       const top = anchor?.getBoundingClientRect()?.top;
       return top && top >= 0 && top <= window.innerHeight;
@@ -84,7 +81,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
   };
 
   return (
-    <nav className={clsx('table-of-contents')}>
+    <nav className="table-of-contents">
       <div className="pl-5 relative before:absolute before:w-px before:h-full before:bg-gray-90 before:top-0 before:left-px">
         <h3 className="uppercase font-bold text-14 leading-none tracking-tight">
           Table of contents

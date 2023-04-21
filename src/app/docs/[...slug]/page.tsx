@@ -34,7 +34,9 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   const currentPath = `/${currentSlug}`;
 
   const post = getPostBySlug(currentSlug);
+
   if (!post) return notFound();
+
   const { sidebar } = getSidebar();
   const flatSidebar = getFlatSidebar(sidebar);
 

@@ -47,7 +47,24 @@ const getAllPosts = (): PostData[] => {
     ) as PostData[];
 };
 
-function getSidebar(): { sidebar: SidebarItem[]; expandedList: string[] } {
+const getNestedSidebar = (data: SidebarItem[]): SidebarItem[] => {
+  for (let i = 0; i < data.length; i++) {
+    const section = data[i];
+    const nextSection = data[i + 1];
+
+    if (nextSection && nextSection?.depth > section?.depth) {
+      data.splice(i + 1, 1);
+      section.children = section.children || [];
+      section.children.push(nextSection);
+      getNestedSidebar(section.children);
+      i--;
+    }
+  }
+
+  return data;
+};
+
+const getSidebar = (): { sidebar: SidebarItem[]; expandedList: string[] } => {
   const layoutFile = glob.sync(`${DOCS_DIR_PATH}/_layout.md`);
 
   const sidebar: SidebarItem[] = [];
@@ -72,26 +89,9 @@ function getSidebar(): { sidebar: SidebarItem[]; expandedList: string[] } {
   });
 
   return { sidebar: getNestedSidebar(sidebar), expandedList: data.expand_section_list };
-}
+};
 
-function getNestedSidebar(data: SidebarItem[]): SidebarItem[] {
-  for (let i = 0; i < data.length; i++) {
-    const section = data[i];
-    const nextSection = data[i + 1];
-
-    if (nextSection && nextSection?.depth > section?.depth) {
-      data.splice(i + 1, 1);
-      section.children = section.children || [];
-      section.children.push(nextSection);
-      getNestedSidebar(section.children);
-      i--;
-    }
-  }
-
-  return data;
-}
-
-function getFlatSidebar(sidebar: SidebarItem[], path: number[] = []): SidebarItem[] {
+const getFlatSidebar = (sidebar: SidebarItem[], path: number[] = []): SidebarItem[] => {
   return sidebar.reduce((acc, item, index) => {
     const current = { title: item.title, url: item.url, depth: item.depth, path: [...path, index] };
     if (item.children) {
@@ -99,12 +99,12 @@ function getFlatSidebar(sidebar: SidebarItem[], path: number[] = []): SidebarIte
     }
     return [...acc, { ...item, path: [...path, index] }];
   }, [] as SidebarItem[]);
-}
+};
 
-function getDocPreviousAndNextLinks(
+const getDocPreviousAndNextLinks = (
   slug: string,
   flatSidebar: SidebarItem[],
-): PreviousAndNextLinks {
+): PreviousAndNextLinks => {
   const items = flatSidebar.filter((item) => item.url);
 
   const currentItemIndex = items.findIndex((item) => item.url === slug);
@@ -112,7 +112,7 @@ function getDocPreviousAndNextLinks(
   const nextItem = items[currentItemIndex + 1];
 
   return { previousLink: previousItem, nextLink: nextItem };
-}
+};
 
 const getBreadcrumbs = (slug: string, flatSidebar: SidebarItem[]): Breadcrumb[] => {
   const path = flatSidebar.find((item) => item.url === slug)?.path;

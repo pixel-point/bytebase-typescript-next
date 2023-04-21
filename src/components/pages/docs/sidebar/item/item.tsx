@@ -39,62 +39,38 @@ const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemPro
     setIsOpen((prev) => !prev);
   };
 
+  const Tag = url ? Link : 'button';
+
   return (
     <li
       className={clsx('flex flex-col items-start', {
         'pl-4': depth >= 2,
       })}
     >
-      {url ? (
-        <Link
-          className={clsx(
-            'text-gray-30 text-15 py-2 flex items-center w-full hover:text-gray-60 duration-200 transition-colors relative before:absolute before:transition-colors before:duration-200 before:w-0.5 before:h-4/5 before:rounded-sm before:top-1/2 before:-translate-y-1/2 before:-left-[14.5px]',
-            depth === 1 ? 'font-semibold' : 'font-medium',
-            url === currentUrl && 'text-primary-1',
-            depth === 1 && hasActiveChild && 'text-black',
-            depth >= 2 && url === currentUrl && 'before:bg-primary-1',
-          )}
-          href={Route.DOCS + url}
-          onClick={toggle}
-        >
-          {children && (
-            <ChevronIcon
-              className={clsx(
-                'w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0',
-                depth === 1 && hasActiveChild && 'text-primary-1',
-                {
-                  'rotate-90': isOpen,
-                },
-              )}
-            />
-          )}
-          <span>{title}</span>
-        </Link>
-      ) : (
-        <button
-          className={clsx(
-            'text-gray-30 text-15 flex py-2 items-center w-full hover:text-gray-60 duration-200 transition-colors relative before:absolute before:transition-colors before:duration-200 before:w-0.5 before:h-4/5 before:rounded-sm before:top-1/2 before:-translate-y-1/2 before:-left-[14.5px]',
-            depth === 1 ? 'font-semibold' : 'font-medium',
-            url === currentUrl && 'text-primary-1 before:bg-primary-1',
-            depth === 1 && hasActiveChild && 'text-black',
-            depth >= 2 && url === currentUrl && 'before:bg-primary-1',
-          )}
-          onClick={toggle}
-        >
-          {children && (
-            <ChevronIcon
-              className={clsx(
-                'w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0',
-                depth === 1 && hasActiveChild && 'text-primary-1',
-                {
-                  'rotate-90': isOpen,
-                },
-              )}
-            />
-          )}
-          <span>{title}</span>
-        </button>
-      )}
+      <Tag
+        className={clsx(
+          'text-gray-30 text-15 py-2 flex items-center w-full hover:text-gray-60 duration-200 transition-colors relative before:absolute before:transition-colors before:duration-200 before:w-0.5 before:h-4/5 before:rounded-sm before:top-1/2 before:-translate-y-1/2 before:-left-[14.5px]',
+          depth === 1 ? 'font-semibold' : 'font-medium',
+          url === currentUrl && 'text-primary-1',
+          depth === 1 && hasActiveChild && 'text-black',
+          depth >= 2 && url === currentUrl && 'before:bg-primary-1',
+        )}
+        href={Route.DOCS + url}
+        onClick={toggle}
+      >
+        {children && (
+          <ChevronIcon
+            className={clsx(
+              'w-[5px] h-1.5 mr-2 transition-transform duration-200 shrink-0',
+              depth === 1 && hasActiveChild && 'text-primary-1',
+              {
+                'rotate-90': isOpen,
+              },
+            )}
+          />
+        )}
+        <span>{title}</span>
+      </Tag>
 
       {children && (
         <ul

@@ -6,6 +6,8 @@ type RefObject<T> = {
 
 type ClickOutsideHandler = (event?: MouseEvent | TouchEvent) => void;
 
+const events = [`mousedown`, `touchstart`] as const;
+
 export default function useClickOutside<T extends HTMLElement>(
   refs: RefObject<T>[],
   onClickOutside: ClickOutsideHandler,
@@ -26,6 +28,4 @@ export default function useClickOutside<T extends HTMLElement>(
       events.forEach((event) => document.removeEventListener(event, onClick));
     };
   });
-
-  const events = [`mousedown`, `touchstart`] as const;
 }

@@ -56,24 +56,16 @@ const MobileSidebar = ({ className, data, currentUrl, expandedList }: MobileSide
   useClickOutside([wrapperRef], onOutsideClick);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
 
-  // 146px is the height of header + button Documentation menu
+  // 122px is the height of header + button Documentation menu
   useEffect(() => {
     setContainerHeight(`${height - 122}px`);
   }, [height]);
 
   useEffect(() => {
-    if (isOpen) {
-      controls.start('to');
-    } else {
-      controls.start('from');
-    }
+    controls.start(isOpen ? 'to' : 'from');
   }, [controls, isOpen]);
   return (
     <LazyMotion features={domAnimation}>
