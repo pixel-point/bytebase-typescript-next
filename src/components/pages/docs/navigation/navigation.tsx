@@ -15,10 +15,10 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
   const previousLinkUrl = previousLink?.url;
   const nextLinkUrl = nextLink?.url;
   return (
-    <nav className="navigation gap-x-10 flex sm:flex-col mt-8 pt-8 border-t border-gray-90">
+    <nav className="navigation gap-x-10 flex mt-8 pt-8 border-t border-gray-90 sm:flex-col sm:gap-y-3">
       {previousLinkUrl && (
         <Link
-          className="mr-auto w-[47%] gap-x-4 rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
+          className="mr-auto w-[47%] gap-x-4 rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5 sm:w-full"
           href={Route.DOCS + previousLinkUrl}
         >
           <ArrowIcon className="w-[18px] h-auto rotate-180" />
@@ -32,7 +32,7 @@ const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
       )}
       {nextLinkUrl && (
         <Link
-          className="ml-auto w-[47%] justify-between rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5"
+          className="ml-auto w-[47%] justify-between rounded-lg hover:bg-gray-90 flex bg-gray-97 py-3.5 px-5 sm:w-full"
           href={Route.DOCS + nextLinkUrl}
         >
           <div className="flex-col flex">

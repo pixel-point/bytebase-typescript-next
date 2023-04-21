@@ -17,6 +17,7 @@ interface MobileSidebarProps {
   className?: string;
   data: SidebarItem[];
   currentUrl: string;
+  expandedList?: string[];
 }
 
 const ANIMATION_DURATION = 0.2;
@@ -42,7 +43,7 @@ const variants = {
   },
 };
 
-const MobileSidebar = ({ className, data, currentUrl }: MobileSidebarProps) => {
+const MobileSidebar = ({ className, data, currentUrl, expandedList }: MobileSidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [containerHeight, setContainerHeight] = useState<string | undefined>(undefined);
   const { height } = useWindowSize();
@@ -90,7 +91,7 @@ const MobileSidebar = ({ className, data, currentUrl }: MobileSidebarProps) => {
 
         <m.ul
           className={clsx(
-            'fixed inset-x-0 top-[116px] bottom-0 z-20 overflow-y-scroll bg-white pl-8 pr-[29px] pt-2 pb-4 md:pl-4 md:pr-[13px]',
+            'fixed inset-x-0 top-[116px] flex flex-col bottom-0 z-20 overflow-y-scroll bg-white pl-8 pr-[29px] pt-2 pb-4 md:pl-4 md:pr-[13px]',
           )}
           initial="from"
           animate={controls}
@@ -98,7 +99,7 @@ const MobileSidebar = ({ className, data, currentUrl }: MobileSidebarProps) => {
           style={{ maxHeight: containerHeight }}
         >
           {data.map((item, index) => (
-            <Item {...item} currentUrl={currentUrl} key={index} />
+            <Item {...item} currentUrl={currentUrl} expandedList={expandedList} key={index} />
           ))}
         </m.ul>
       </nav>

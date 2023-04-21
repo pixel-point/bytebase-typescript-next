@@ -33,10 +33,10 @@ const HintBlock = ({ type = 'info', children }: HintBlockProps) => {
   return (
     <figure className={clsx('hint-block border', typeClassNames[type].wrapper)}>
       <div className="pt-1.5 pl-1.5">
-        <div className={clsx('flex gap-x-4 px-3 pt-4 pb-8', typeClassNames[type].inner)}>
+        <div className={clsx('flex gap-x-4 px-3 pt-4 pb-8 md:gap-x-3', typeClassNames[type].inner)}>
           <span
             className={clsx(
-              'flex h-8 w-8 items-center justify-center rounded-full',
+              'flex h-8 w-8 items-center justify-center rounded-full shrink-0 md:w-7 md:h-7 sm:h-6 sm:w-6',
               typeClassNames[type].icon,
             )}
           >
