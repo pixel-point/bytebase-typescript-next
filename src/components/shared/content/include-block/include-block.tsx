@@ -1,6 +1,6 @@
 import { getPostBySlug } from '@/lib/api-docs';
 
-import Content from '../content';
+import Content from '../../../shared/content';
 
 interface IncludeBlockProps {
   url: string;
