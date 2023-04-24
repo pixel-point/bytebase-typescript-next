@@ -54,6 +54,8 @@ const Benefits = () => {
                 <div className="col-span-7 pt-[165px] 3xl:pt-[124px] xl:col-span-6 xl:pt-[120px] md:col-auto md:pt-0">
                   <div className="flex items-center gap-[30px] xl:gap-6 md:gap-4 sm:gap-3">
                     <img
+                      width={44}
+                      height={44}
                       src="/images/page/main/accordion-opened.svg"
                       alt=""
                       className="h-14 w-14 rounded-full shadow-[0_5px_15px_0_rgba(172,178,210,0.8)] xl:h-11 xl:w-11 md:h-9 md:w-9 sm:h-7 sm:w-7"
@@ -67,7 +69,6 @@ const Benefits = () => {
                   </p>
                 </div>
                 <div className="col-span-5 flex items-center justify-end self-stretch xl:col-span-6 md:col-auto md:mt-6 md:-mb-5 md:justify-center sm:-mx-4 sm:mb-0">
-                  {/* TODO: prepare mobile images */}
                   <Image
                     {...image}
                     alt=""
@@ -80,6 +81,8 @@ const Benefits = () => {
                 <img
                   src="/images/page/main/accordion-closed-primary-1.svg"
                   alt=""
+                  width={44}
+                  height={44}
                   className="ml-1.5 h-11 w-11 xl:ml-0 xl:h-[38px] xl:w-[38px] md:h-8 md:w-8 sm:h-7 sm:w-7"
                 />
                 <p className="text-30 font-bold leading-extra-tight xl:text-24 md:text-20 sm:text-18">

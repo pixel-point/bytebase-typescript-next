@@ -48,12 +48,16 @@ const Accordion = ({ onChange }: { onChange: () => void }) => {
               <img
                 src="/images/page/main/accordion-opened.svg"
                 alt=""
+                width={32}
+                height={32}
                 className="h-8 w-8 rounded-full shadow-[0_5px_10px_0_rgba(156,201,182,0.8)] md:h-7 md:w-7"
               />
             ) : (
               <img
                 src="/images/page/main/accordion-closed-secondary-2.svg"
                 alt=""
+                width={32}
+                height={32}
                 className="h-8 w-8 md:h-7 md:w-7"
               />
             )}
