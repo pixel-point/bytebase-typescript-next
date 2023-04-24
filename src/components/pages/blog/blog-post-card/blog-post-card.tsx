@@ -3,7 +3,7 @@ import Image from 'next/image';
 import getBlogTagTheme from '@/utils/get-blog-card-colors';
 import slugifyText from '@/utils/slugify-text';
 import clsx from 'clsx';
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 
 import Link from '@/components/shared/link';
 
