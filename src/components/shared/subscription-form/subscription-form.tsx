@@ -38,7 +38,13 @@ const SubscriptionForm = () => {
               />
               <button className="flex-shrink-0 rounded-r-full bg-black py-6 px-11 text-16 font-bold uppercase leading-none lg:py-4 md:py-3 md:px-5 sm:px-5 sm:py-3">
                 <span className="md:hidden">Subscribe</span>{' '}
-                <img src="/images/arrow-form.svg" alt="" className="hidden h-6 w-6 md:!block" />
+                <img
+                  src="/images/arrow-form.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="hidden h-6 w-6 md:!block"
+                />
               </button>
             </p>
             <p className="mt-5 text-14 leading-snug lg:mt-3 lg:max-w-[290px] sm:mt-2 [&>a]:border-b-[2px]">
