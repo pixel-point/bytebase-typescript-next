@@ -1,15 +1,16 @@
 import Image from 'next/image';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
+import Pill from '@/components/shared/pill';
 
 const PromoChangeDatabase = () => {
   return (
     <section className="change mt-[160px] bg-black text-white 2xl:mt-36 lg:mt-32 md:mt-24 md:pt-16 sm:mt-20 xs:pt-[58px]">
       <div className="container gap-x-grid grid grid-cols-12">
         <div className="col-start-1 col-end-7 self-center lg:col-end-6 lg:mt-[140px] lg:self-auto md:col-end-13 md:mt-0">
-          <span className="inline-flex rounded-3xl bg-primary-1 px-2.5 py-2 text-12 font-bold uppercase leading-none tracking-wider xs:leading-95">
+          <Pill bg="primary-1" color="white">
             Change
-          </span>
+          </Pill>
           <h2 className="mt-3.5 font-title text-112 font-semibold leading-none lg:mt-2.5 lg:text-90 lg:leading-95 md:mt-1.5 md:text-80 sm:text-48 xs:mt-2">
             <span className="bg-transparent text-secondary-1">Automate</span> database changes
           </h2>

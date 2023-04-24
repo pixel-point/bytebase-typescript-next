@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import Pill from '@/components/shared/pill';
+
 const Hero = () => {
   const title = 'About us page';
   const supTitle = 'Why we build';
@@ -7,9 +9,7 @@ const Hero = () => {
   return (
     <section className="container gap-x-grid relative grid grid-cols-12 justify-items-center pt-[136px] sm:grid-cols-4">
       <h1 className="sr-only">{title}</h1>
-      <span className="col-span-12 w-fit rounded-[20px] bg-secondary-1 py-2 px-2.5 text-12 font-bold uppercase leading-none tracking-wider">
-        {supTitle}
-      </span>
+      <Pill className="col-span-full">{supTitle}</Pill>
       <h2 className="col-span-12 mt-5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none">
         Simplify database changes with{' '}
         <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules

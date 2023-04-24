@@ -1,15 +1,14 @@
 import Image from 'next/image';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
+import Pill from '@/components/shared/pill';
 
 const PromoSecureAccess = () => {
   return (
     <section className="mt-[192px] bg-black text-white 2xl:mt-36 lg:mt-32 md:mt-24 md:pt-16 sm:mt-20 sm:pt-[58px]">
       <div className="container gap-x-grid grid grid-cols-12">
         <div className="col-start-1 col-end-7 self-center lg:col-end-6 md:col-end-13">
-          <span className="inline-flex rounded-3xl bg-secondary-1 px-2.5 py-2 text-12 font-bold uppercase leading-none tracking-wider text-gray-15">
-            Secure
-          </span>
+          <Pill>Secure</Pill>
           <h2 className="mt-3.5 max-w-[400px] font-title text-112 font-semibold leading-none xl:leading-95 lg:mt-2 lg:text-90 md:mt-1.5 md:text-80 sm:mt-2 sm:text-48">
             <span className="bg-transparent text-secondary-3">Security</span> by design
           </h2>

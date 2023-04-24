@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import { useCallback, useState } from 'react';
 
+import Pill from '@/components/shared/pill';
+
 import Accordion from './components';
 
 const accordionData = [
@@ -51,9 +53,7 @@ const PromoQuery = () => {
           height={218}
           alt=""
         />
-        <span className="inline-flex rounded-3xl bg-secondary-1 px-2.5 py-2 text-12 font-bold uppercase leading-none tracking-wider text-gray-15">
-          Query
-        </span>
+        <Pill>Query</Pill>
         <h2 className="mt-3 max-w-3xl font-title text-88 font-semibold leading-none lg:max-w-2xl lg:text-68 lg:leading-104 md:mt-2 md:max-w-lg md:text-54 md:leading-none sm:max-w-[340px] sm:text-48 sm:leading-95">
           Explore data with <span className="whitespace-nowrap">all-in-one</span>{' '}
           <mark className="whitespace-nowrap bg-transparent text-center text-primary-1 sm:whitespace-normal">
