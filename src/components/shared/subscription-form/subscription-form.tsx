@@ -1,11 +1,18 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
 
+import clsx from 'clsx';
+
 import Route from '@/lib/route';
 
-const SubscriptionForm = () => {
+const SubscriptionForm = ({ className }: { className?: string }) => {
   return (
-    <section className="mt-[206px] bg-primary-1 text-white 2xl:mt-[186px] lg:mt-[134px] md:mt-[74px] sm:mt-9">
+    <section
+      className={clsx(
+        'mt-[206px] bg-primary-1 text-white 2xl:mt-[186px] lg:mt-[134px] md:mt-[74px] sm:mt-9',
+        className,
+      )}
+    >
       <div className="container gap-x-grid grid grid-cols-12 overflow-x-clip sm:flex sm:flex-col">
         <div className="col-span-5 col-start-2 -ml-10 lg:col-start-1 lg:ml-0 sm:relative">
           <Image

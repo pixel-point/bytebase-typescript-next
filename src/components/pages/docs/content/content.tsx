@@ -12,11 +12,8 @@ import CodeBlock from '@/components/shared/code-block';
 import DocLinkBlock from '../doc-link-block';
 import HintBlock from '../hint-block';
 import IncludeBlock from '../include-block';
-
-interface ContentProps {
-  className?: string;
-  content: string;
-}
+import TutorialTallCard from '../tutorial-tall-card';
+import TutorialWideCard from '../tutorial-wide-card';
 
 const flattenChildrenToString = (children: ReactNode): string => {
   return Children.toArray(children)
@@ -70,7 +67,7 @@ const components = {
     const { src, alt } = props;
     return (
       <Image
-        className="my-11"
+        className="my-11 xl:my-10 md:my-9 sm:my-8"
         src={src}
         width={716}
         height={344}
@@ -82,9 +79,16 @@ const components = {
   HintBlock,
   DocLinkBlock,
   IncludeBlock,
+  TutorialCardsWrapper: ({ children }: any) => (
+    <ul className="not-prose my-11 grid list-none auto-rows-[268px] grid-cols-3 gap-5 pl-0 xl:my-10 lg:gap-6 md:my-9 md:gap-5 sm:my-8 sm:auto-rows-[142px] sm:grid-cols-1 sm:gap-4">
+      {children}
+    </ul>
+  ),
+  TutorialTallCard,
+  TutorialWideCard,
 };
 
-const Content = ({ className, content }: ContentProps) => {
+const Content = ({ className, content }: { className?: string; content: string }) => {
   return (
     <div className={clsx(className, 'content prose prose-lg max-w-none')}>
       {/* @ts-expect-error Server Component */}
