@@ -13,12 +13,6 @@ import ROUTE from '@/lib/route';
 
 export type BlogPostTCardThemes = 'default' | 'small' | 'large';
 
-interface BlogPostCardProps {
-  post: BlogPost;
-  hasImage?: boolean;
-  theme: BlogPostTCardThemes;
-}
-
 const themes = {
   large: {
     image: {
@@ -40,7 +34,15 @@ const themes = {
   },
 };
 
-const BlogPostCard = ({ post, hasImage = true, theme = 'default' }: BlogPostCardProps) => {
+const BlogPostCard = ({
+  post,
+  hasImage = true,
+  theme = 'default',
+}: {
+  post: BlogPost;
+  hasImage?: boolean;
+  theme: BlogPostTCardThemes;
+}) => {
   const categorySlug = slugifyText(post.tags);
   const { tagColors, titleHover } = getBlogTagTheme(categorySlug);
   const date = new Date(post.published_at);

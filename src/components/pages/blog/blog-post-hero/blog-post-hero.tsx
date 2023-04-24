@@ -20,7 +20,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
   const { tags, author, title, feature_image, slug, published_at } = post;
   const categorySlug = slugifyText(tags);
   const { tagColors, titleHover } = getBlogCardColors(categorySlug);
-  const date = new Date(post.published_at);
+  const date = new Date(published_at);
   const formattedDate = format(date, 'MMM dd, yyyy');
 
   const WrapperTag = isBlogPost ? 'div' : 'article';
