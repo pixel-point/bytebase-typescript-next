@@ -16,9 +16,16 @@ import Card, { type CardProps } from './card';
 // TODO: prepare webm videos and optimize them
 const cards: CardProps[] = [
   {
-    video: {
-      'video/mp4': '/videos/page/main/hero/1.mp4',
-    },
+    videos: [
+      {
+        type: 'video/webm',
+        src: '/videos/page/main/hero/1.webm',
+      },
+      {
+        type: 'video/mp4',
+        src: '/videos/page/main/hero/1.mp4',
+      },
+    ],
     color: 'blue',
     href: '#',
     cover: '/images/page/main/hero/change-database.png',
@@ -27,9 +34,16 @@ const cards: CardProps[] = [
       'Simplify database changes with standardization, lint rules, and GitOps integration.',
   },
   {
-    video: {
-      'video/mp4': '/videos/page/main/hero/2.mp4',
-    },
+    videos: [
+      {
+        type: 'video/webm',
+        src: '/videos/page/main/hero/2.webm',
+      },
+      {
+        type: 'video/mp4',
+        src: '/videos/page/main/hero/2.mp4',
+      },
+    ],
     color: 'green',
     href: '#',
     cover: '/images/page/main/hero/query-data.png',
@@ -38,9 +52,16 @@ const cards: CardProps[] = [
       "Perform complex SQL tasks and protect data privacy with ByteBase's web-based IDE.",
   },
   {
-    video: {
-      'video/mp4': '/videos/page/main/hero/3.mp4',
-    },
+    videos: [
+      {
+        type: 'video/webm',
+        src: '/videos/page/main/hero/3.webm',
+      },
+      {
+        type: 'video/mp4',
+        src: '/videos/page/main/hero/3.mp4',
+      },
+    ],
     color: 'red',
     href: '#',
     cover: '/images/page/main/hero/secure-access.png',
