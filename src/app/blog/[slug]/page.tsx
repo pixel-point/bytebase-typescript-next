@@ -1,10 +1,12 @@
 import { notFound } from 'next/navigation';
 
 import BlogPostHero from '@/components/pages/blog/blog-post-hero';
+import PostLayout from '@/components/pages/blog/post-layout';
 import Posts from '@/components/pages/blog/posts';
 import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
 import RelatedPosts from '@/components/pages/blog/related-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
+import Content from '@/components/shared/content';
 
 import {
   POSTS_PER_PAGE,
@@ -36,11 +38,20 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   if (!post) return notFound();
 
+  const { posts } = getAllBlogPosts();
+
+  const relatedPosts = posts.filter((article) => article.slug !== slug).slice(0, 3);
+
   return (
-    <article>
-      <BlogPostHero post={post} isBlogPost={true} />
-      <RelatedPosts posts={[post, post, post]} />
-    </article>
+    <>
+      <article>
+        <BlogPostHero post={post} isBlogPost={true} />
+        <PostLayout post={post}>
+          <Content content={post.content} />
+        </PostLayout>
+      </article>
+      <RelatedPosts posts={relatedPosts} />
+    </>
   );
 }
 
