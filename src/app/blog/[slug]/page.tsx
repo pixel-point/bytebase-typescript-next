@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import BlogPostHero from '@/components/pages/blog/blog-post-hero';
 import Posts from '@/components/pages/blog/posts';
+import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
 import RelatedPosts from '@/components/pages/blog/related-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
 
@@ -25,7 +26,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
     return (
       <>
         <BlogPostHero post={posts[0]} isBlogPost={false} />
-        <RelatedPosts posts={posts.slice(1, 5)} />
+        <RecentPosts posts={posts.slice(1, 5)} />
         <SubscribeCta />
         <Posts posts={posts} tabs={tags} page={+slug} pageCount={pageCount} />
       </>
@@ -38,6 +39,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   return (
     <article>
       <BlogPostHero post={post} isBlogPost={true} />
+      <RelatedPosts posts={[post, post, post]} />
     </article>
   );
 }
