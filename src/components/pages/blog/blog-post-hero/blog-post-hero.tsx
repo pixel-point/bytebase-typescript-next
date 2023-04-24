@@ -66,7 +66,7 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
                 {formattedDate}
               </time>
               {isBlogPost && (
-                <span className="relative pl-2 before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40">
+                <span className="relative pl-2 before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40 3xs:hidden">
                   {timeToRead}
                 </span>
               )}
