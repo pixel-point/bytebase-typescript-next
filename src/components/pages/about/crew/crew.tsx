@@ -5,11 +5,11 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 import { crewList } from './data';
 
 const Crew = () => (
-  <section className="container mt-20 border-t border-gray-90 pt-[52px] 2xl:mt-16 2xl:pt-12 lg:mt-14 lg:pt-10 md:mt-12 md:pt-9 xs:mt-10 xs:pt-6">
-    <ul className="gap-x-grid grid grid-cols-12 gap-y-20 2xl:gap-y-16 lg:gap-y-14 md:gap-y-8 xs:grid-cols-4 xs:gap-y-6">
+  <section className="container mt-20 2xl:mt-16 lg:mt-14 md:mt-12 sm:mt-10">
+    <ul className="gap-x-grid grid grid-cols-12 gap-y-20 border-t border-gray-90 pt-[52px] 2xl:gap-y-16 2xl:pt-12 lg:gap-y-14 lg:pt-10 md:gap-y-8 md:pt-9 sm:grid-cols-4 sm:gap-y-6 sm:pt-6">
       {crewList.map((member, index) => (
         <li
-          className="col-span-3 flex flex-col items-center justify-center xs:col-span-2"
+          className="col-span-3 flex flex-col items-center justify-start sm:col-span-2"
           key={index}
         >
           <Image src={member.image} alt="" width={244} height={244} className="lg:w-full" />
@@ -19,7 +19,7 @@ const Crew = () => (
           </p>
         </li>
       ))}
-      <li className="col-span-3 flex flex-col items-center justify-center xs:col-span-2">
+      <li className="col-span-3 flex flex-col items-center justify-center sm:col-span-2">
         <Image src="/images/page/about/join.webp" alt="" width={244} height={244} />
         <LinkUnderlined href="/jobs">Join us</LinkUnderlined>
       </li>
