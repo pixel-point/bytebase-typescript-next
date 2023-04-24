@@ -63,7 +63,7 @@ const Hero = () => {
   // TODO: update on resize
   useEffect(() => {
     if (containerRef.current) {
-      const topPosition = topPositionRef.current;
+      const topPosition = topPositionRef.current - 200; // 200 is the same value as used for sticky top property value
       const isDone = containerRef.current.classList.contains('done');
 
       if (scrollY >= topPosition && !isDone) {
@@ -115,7 +115,7 @@ const Hero = () => {
       </section>
       <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px] sm:hidden" />
       <div
-        className="col-start-1 col-end-5 row-start-3 row-end-4 min-h-[1200px] xl:min-h-[900px] md:min-h-[700px] sm:col-auto sm:row-auto sm:mt-8 sm:min-h-0"
+        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8 sm:min-h-0"
         ref={anchorRef}
       >
         <Card className="sticky top-[200px]" {...cards[0]} />
