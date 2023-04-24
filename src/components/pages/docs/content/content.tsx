@@ -1,9 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 
+import { Children, ReactNode, isValidElement } from 'react';
+
+import slugifyText from '@/utils/slugify-text';
 import clsx from 'clsx';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings/lib';
-import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 import CodeBlock from '@/components/shared/code-block';
@@ -17,7 +18,42 @@ interface ContentProps {
   content: string;
 }
 
+const flattenChildrenToString = (children: ReactNode): string => {
+  return Children.toArray(children)
+    .map((child) => {
+      if (typeof child === 'string' || typeof child === 'number' || typeof child === 'boolean') {
+        return child.toString();
+      }
+      if (isValidElement(child)) {
+        return flattenChildrenToString(child.props.children);
+      }
+      return '';
+    })
+    .join('');
+};
+
+const getId = (children: ReactNode): string => {
+  const text = flattenChildrenToString(children);
+  return slugifyText(text);
+};
+
 const components = {
+  h2: ({ children, ...rest }: any) => {
+    const id = getId(children);
+    return (
+      <h2 id={id} {...rest}>
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...rest }: any) => {
+    const id = getId(children);
+    return (
+      <h3 id={id} {...rest}>
+        {children}
+      </h3>
+    );
+  },
   table: (props: any) => (
     <figure className="table-wrapper">
       <table {...props} />
@@ -61,8 +97,6 @@ const Content = ({ className, content }: ContentProps) => {
               // Adds support for GitHub Flavored Markdown
               remarkGfm,
             ],
-            // These work together to add IDs and linkify headings
-            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
           },
         }}
       />
