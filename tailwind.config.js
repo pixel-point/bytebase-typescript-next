@@ -9,65 +9,6 @@ module.exports = {
       mono: ['IBM Plex Mono', 'IBM Plex Mono Fallback', ...defaultTheme.fontFamily.mono],
       title: ['Sharp Grotesk', 'Sharp Grotesk Fallback', ...defaultTheme.fontFamily.sans],
     },
-    colors: ({ colors }) => ({
-      inherit: colors.inherit,
-      current: colors.current,
-      transparent: colors.transparent,
-      white: colors.white,
-      black: '#0F1624',
-      primary: {
-        1: '#5647EB',
-        2: '#32279B',
-      },
-      secondary: {
-        1: '#FFE666',
-        2: '#1FD68A',
-        3: '#3DB8F5',
-        4: '#EB477E',
-        5: '#EC93EC',
-      },
-      gray: {
-        15: '#172136',
-        30: '#364563',
-        40: '#4D5E80',
-        50: '#6A7895',
-        60: '#8893AA',
-        70: '#A7AFBE',
-        80: '#C4C9D4',
-        90: '#E2E4E9',
-        94: '#EDEFF2',
-        97: '#F6F7F8',
-      },
-      tones: {
-        'purple-light': '#F0F2FF',
-        'purple-dark': '#ACB2D2',
-        'blue-light': '#F0FAFE',
-        'blue-dark': '#9CBAC9',
-        'green-light': '#F2FCF8',
-        'green-dark': '#9CC9B6',
-        'yellow-light': '#FEFEE1',
-        'yellow-dark': '#E2E29C',
-        'pink-light': '#FDF2FD',
-        'pink-dark': '#D2ACD2',
-      },
-      code: {
-        blue: '#192AE6',
-      },
-      tags: {
-        purple: '#382E9E',
-      },
-    }),
-    screens: {
-      '3xl': { max: '1919px' },
-      '2xl': { max: '1599px' },
-      xl: { max: '1439px' },
-      lg: { max: '1279px' },
-      md: { max: '1023px' },
-      sm: { max: '767px' },
-      xs: { max: '639px' },
-      '2xs': { max: '413px' },
-      '3xs': { max: '359px' },
-    },
     fontSize: {
       12: '12px',
       13: '13px',
@@ -109,17 +50,87 @@ module.exports = {
       wide: '0.01em',
       wider: '0.02em',
     },
-    backgroundImage: {
-      'pricing-hero':
-        'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
-      cite: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
-      pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
+    colors: ({ colors }) => ({
+      inherit: colors.inherit,
+      current: colors.current,
+      transparent: colors.transparent,
+      white: colors.white,
+      black: '#0F1624',
+      primary: {
+        1: '#5647EB',
+        2: '#32279B',
+      },
+      secondary: {
+        1: '#FFE666',
+        2: '#1FD68A',
+        3: '#3DB8F5',
+        4: '#EB477E',
+        5: '#EC93EC',
+      },
+      gray: {
+        15: '#172136',
+        30: '#364563',
+        40: '#4D5E80',
+        50: '#6A7895',
+        60: '#8893AA',
+        70: '#A7AFBE',
+        80: '#C4C9D4',
+        90: '#E2E4E9',
+        94: '#EDEFF2',
+        97: '#F6F7F8',
+      },
+      tones: {
+        'purple-light': '#F0F2FF',
+        'purple-medium': '#E0E7FF',
+        'purple-dark': '#ACB2D2',
+        'blue-light': '#F0FAFE',
+        'blue-dark': '#9CBAC9',
+        'deep-blue-dark': '#176782',
+        'green-light': '#F2FCF8',
+        'green-dark': '#9CC9B6',
+        'deep-green-dark': '#056049',
+        'yellow-light': '#FEFEE1',
+        'yellow-dark': '#E2E29C',
+        'pink-light': '#FDF2FD',
+        'pink-dark': '#D2ACD2',
+      },
+      code: {
+        blue: '#192AE6',
+      },
+      tags: {
+        purple: '#382E9E',
+      },
+    }),
+    screens: {
+      '3xl': { max: '1919px' },
+      '2xl': { max: '1599px' },
+      xl: { max: '1439px' },
+      lg: { max: '1279px' },
+      md: { max: '1023px' },
+      sm: { max: '767px' },
+      xs: { max: '639px' },
+      '2xs': { max: '413px' },
+      '3xs': { max: '359px' },
     },
     extend: {
+      backgroundImage: {
+        'pricing-hero':
+          'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 67.27%, #FAFBFF 100%)',
+        'radial-blue':
+          'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 34.28%, rgba(240, 242, 255, 0.5) 100%)',
+        pricing: '0px 5px 15px 0px rgba(15, 22, 36, 0.2)',
+        'automation-changes':
+          'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 22.48%, #F7CCFF 46.12%, #F7CCFF 58.72%, #FFF2B3 81.58%, #FFE666 93.79%)',
+        'automation-changes-phone': 'linear-gradient(171.93deg, #FFE666 6.21%, #FFF2B3 78.05%)',
+        security:
+          'linear-gradient(171.93deg, #3DB8F5 6.21%, #B3FFC6 32.27%, #FFF9B3 43.51%, #FFF9B3 58.72%, #B3FFC6 71.22%, #3DB8F5 93.79%)',
+        'security-phone': 'linear-gradient(171.93deg, #3DB8F5 6.21%, #B3FFC6 85.12%)',
+      },
       lineHeight: {
         95: '95%',
         104: '104%',
         'extra-tight': '1.125',
+        140: '140%',
       },
       spacing: {
         4.5: '1.125rem',
@@ -131,16 +142,14 @@ module.exports = {
         labels: '1px 0px rgba(172, 178, 210, 1)',
         icon: '0px 5px 15px rgba(172, 178, 210, 0.8)',
         'icon-green': '0px 5px 10px rgba(156, 201, 182, 0.8)',
+        blue: '0px 5px 15px 0px rgba(156,186,201,0.5)',
+        green: '0px 5px 15px 0px rgba(143,188,169,0.4)',
+        red: '0px 5px 15px 0px rgba(210,172,210,0.4)',
       },
     },
   },
-
+  plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/typography')],
   corePlugins: {
     container: false,
   },
-
-  plugins: [
-    require('@tailwindcss/typography'),
-    // ...
-  ],
 };
