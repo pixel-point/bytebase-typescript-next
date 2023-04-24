@@ -17,10 +17,10 @@ type BlogPostHeroProps = {
 };
 
 const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
-  const { tags, author, title, feature_image, slug, published_at } = post;
+  const { tags, author, title, feature_image, slug, published_at, timeToRead } = post;
   const categorySlug = slugifyText(tags);
   const { tagColors, titleHover } = getBlogCardColors(categorySlug);
-  const date = new Date(post.published_at);
+  const date = new Date(published_at);
   const formattedDate = format(date, 'MMM dd, yyyy');
 
   const WrapperTag = isBlogPost ? 'div' : 'article';
@@ -52,8 +52,8 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
           <div className="flex items-center gap-x-3">
             <Image
               className="h-9 w-9 rounded-full border border-gray-90"
-              src={`/images/authors/${slugifyText(post.author)}.webp`}
-              alt={post.author}
+              src={`/images/authors/${slugifyText(author)}.webp`}
+              alt={author}
               width={36}
               height={36}
             />
@@ -65,6 +65,11 @@ const BlogPostHero = ({ post, isBlogPost = true }: BlogPostHeroProps) => {
               >
                 {formattedDate}
               </time>
+              {isBlogPost && (
+                <span className="relative pl-2 before:absolute before:left-0 before:top-1/2 before:block before:h-0.5 before:w-0.5 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray-40">
+                  {timeToRead}
+                </span>
+              )}
             </div>
           </div>
         </div>
