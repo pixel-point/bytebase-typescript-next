@@ -112,8 +112,8 @@ const PromoSQLEditor = () => {
           {data.map(({ image, title }, index) => (
             <Image
               className={clsx(
-                index != 0 ? 'absolute top-0 left-0 h-full' : 'h-auto',
-                activeIndex === index ? 'opacity-100' : 'opacity-0',
+                index != 0 ? 'absolute top-0 left-0 h-full' : 'relative h-auto',
+                activeIndex === index ? 'z-10 opacity-100' : 'opacity-0',
                 'w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)] transition-opacity duration-[400ms]',
               )}
               src={image}
