@@ -6,6 +6,8 @@ import ReactPaginate from 'react-paginate';
 
 import ROUTE from '@/lib/route';
 
+import Arrow from '@/svgs/arrow.inline.svg';
+
 type PaginationProps = {
   currentPageIndex: number;
   pageCount: number;
@@ -39,24 +41,14 @@ const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: Paginati
         disabledLinkClassName="pointer-events-none"
         previousLabel={
           <>
-            <img
-              className="block h-3 w-5 -rotate-180"
-              width="20"
-              height="12"
-              src="/images/arrow-navigation-blog.svg"
-            />
+            <Arrow className="w-5 -rotate-180" />
             <span className="pt-0.5 leading-none md:hidden">Previous</span>
           </>
         }
         nextLabel={
           <>
             <span className="pt-0.5 leading-none md:hidden">Next</span>
-            <img
-              className="block h-3 w-5"
-              width="20"
-              height="12"
-              src="/images/arrow-navigation-blog.svg"
-            />
+            <Arrow className="w-5" />
           </>
         }
         renderOnZeroPageCount={null}
