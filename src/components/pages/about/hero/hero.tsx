@@ -4,12 +4,12 @@ import Pill from '@/components/shared/pill';
 
 const Hero = () => {
   return (
-    <section className="container pt-[136px] 2xl:pt-[128px] lg:pt-[120px] md:pt-[104px] sm:pt-24">
+    <section className="container pt-[136px] 3xl:pt-[128px] xl:pt-[120px] md:pt-[104px] sm:pt-24">
       <div className="gap-x-grid relative grid grid-cols-12 justify-items-center sm:grid-cols-4">
         <Pill theme="secondary-1" className="col-span-full">
           Why we build
         </Pill>
-        <h2 className="col-span-full mt-3.5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none lg:max-w-[780px] lg:text-68 md:mt-3 md:max-w-[620px] md:text-54 sm:text-48 sm:leading-95">
+        <h2 className="col-span-full mt-3.5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none xl:max-w-[780px] xl:text-68 md:mt-3 md:max-w-[620px] md:text-54 sm:text-48 sm:leading-95">
           Simplify database changes with{' '}
           <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules
         </h2>
@@ -18,7 +18,7 @@ const Hero = () => {
           alt=""
           width={1292}
           height={631}
-          className="col-span-11 col-start-2 mt-14 justify-self-start 2xl:hidden"
+          className="col-span-11 col-start-2 mt-14 justify-self-start 3xl:hidden"
           priority
         />
         <Image
@@ -26,7 +26,7 @@ const Hero = () => {
           alt=""
           width={1229}
           height={631}
-          className="col-span-11 col-start-2 mt-[56px] hidden 2xl:block lg:hidden"
+          className="col-span-11 col-start-2 mt-[56px] hidden 3xl:block xl:hidden"
           priority
         />
         <Image
@@ -34,7 +34,7 @@ const Hero = () => {
           alt=""
           width={936}
           height={528}
-          className="col-span-full mt-[56px] hidden lg:block md:hidden"
+          className="col-span-full mt-[56px] hidden xl:block md:hidden"
           priority
         />
         <Image
@@ -67,27 +67,27 @@ const Hero = () => {
           height={78}
           className="absolute right-0 bottom-[38px] col-end-5 hidden sm:block"
         />
-        <div className="absolute bottom-[355px] left-0 col-span-3 col-start-2 w-[266px] 2xl:w-auto lg:bottom-[327px] lg:col-span-4 lg:col-start-1 lg:w-[240px] md:bottom-[212px] md:col-span-3 md:col-start-1 md:w-auto sm:static sm:col-span-2 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none lg:text-88 md:text-72 sm:text-48 sm:leading-95">
+        <div className="absolute bottom-[355px] left-0 col-span-3 col-start-2 w-[266px] 3xl:w-auto xl:bottom-[327px] xl:col-span-4 xl:col-start-1 xl:w-[240px] md:bottom-[212px] md:col-span-3 md:col-start-1 md:w-auto sm:static sm:col-span-2 sm:mt-7 sm:text-center">
+          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             10+
           </span>
-          <p className="leading-1.4 font-regular text-20 lg:text-16 lg:leading-snug md:text-14 md:leading-tight md:tracking-tight">
+          <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             Bytebase supports every major database systems
           </p>
         </div>
-        <div className="absolute bottom-[327px] left-0 col-span-3 col-start-10 w-[284px] 2xl:w-auto lg:bottom-[303px] lg:right-0 lg:left-auto lg:col-span-4 lg:col-start-9 lg:w-[240px] md:bottom-[180px] md:col-span-3 md:col-span-3 md:col-start-10 md:w-full sm:static sm:col-span-2 sm:col-start-3 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none lg:text-88 md:text-72 sm:text-48 sm:leading-95">
+        <div className="absolute bottom-[327px] left-0 col-span-3 col-start-10 w-[284px] 3xl:w-auto xl:bottom-[303px] xl:right-0 xl:left-auto xl:col-span-4 xl:col-start-9 xl:w-[240px] md:bottom-[180px] md:col-span-3 md:col-span-3 md:col-start-10 md:w-full sm:static sm:col-span-2 sm:col-start-3 sm:mt-7 sm:text-center">
+          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             100+
           </span>
-          <p className="leading-1.4 font-regular text-20 lg:text-16 lg:leading-snug md:text-14 md:leading-tight md:tracking-tight">
+          <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             Bytebase offers the most comprehensive SQL Lint rules
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 col-span-3 col-start-6 w-[252px] 2xl:w-auto lg:right-0 lg:left-auto lg:col-span-4 lg:col-start-5 lg:w-[240px] md:col-span-3 md:col-start-6 md:w-full sm:static sm:col-span-2 sm:col-start-2 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none lg:text-88 md:text-72 sm:text-48 sm:leading-95">
+        <div className="absolute bottom-0 left-0 col-span-3 col-start-6 w-[252px] 3xl:w-auto xl:right-0 xl:left-auto xl:col-span-4 xl:col-start-5 xl:w-[240px] md:col-span-3 md:col-start-6 md:w-full sm:static sm:col-span-2 sm:col-start-2 sm:mt-7 sm:text-center">
+          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             100%
           </span>
-          <p className="leading-1.4 font-regular text-20 lg:text-16 lg:leading-snug md:text-14 md:leading-tight md:tracking-tight">
+          <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             All Bytebase source code is available on GitHub
           </p>
         </div>
