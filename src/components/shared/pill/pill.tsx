@@ -1,19 +1,6 @@
 import clsx from 'clsx';
 
-type PillProps = {
-  children: React.ReactNode;
-  theme: string;
-  className?: string;
-};
-
-type ThemeType = {
-  [theme: string]: {
-    color: string;
-    bg: string;
-  };
-};
-
-const themes: ThemeType = {
+const themes = {
   'primary-1': {
     color: 'text-white',
     bg: 'bg-primary-1',
@@ -22,6 +9,12 @@ const themes: ThemeType = {
     color: 'text-gray-15',
     bg: 'bg-secondary-1',
   },
+};
+
+type PillProps = {
+  children: React.ReactNode;
+  theme: keyof typeof themes;
+  className?: string;
 };
 
 const Pill = ({ children, theme, className }: PillProps) => (
