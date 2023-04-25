@@ -46,7 +46,7 @@ const Card = (props: CardProps) => {
         )}
       >
         <div>
-          <div className="flex items-center justify-start gap-x-4">
+          <div className="items-center justify-start gap-x-4 sm:flex">
             <Image
               src={imageMd}
               alt=""
