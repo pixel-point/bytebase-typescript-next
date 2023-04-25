@@ -112,11 +112,11 @@ const Hero = () => {
             </span>
           </span>
           <div className="relative mt-4 xl:mt-3.5 sm:mt-3">
-            <h1 className="font-title text-112 font-semibold leading-none 3xl:max-w-4xl xl:max-w-2xl xl:text-90 xl:leading-95 md:max-w-lg md:text-80 sm:text-48">
+            <h1 className="font-title text-112 font-semibold leading-none 3xl:max-w-4xl xl:max-w-2xl xl:text-90 xl:leading-95 md:max-w-2xl md:text-80 sm:text-48">
               <mark className="bg-transparent text-primary-1">Database</mark> schema change and
               version control
             </h1>
-            <p className="absolute top-[244px] left-[338px] max-w-lg text-20 leading-140 3xl:left-[345px] 3xl:max-w-xl xl:top-[177px] xl:left-[271px] xl:text-18 xl:leading-snug md:left-[230px] md:top-[158px] md:max-w-sm md:text-16 sm:static sm:mt-3 sm:max-w-full">
+            <p className="absolute top-[244px] left-[338px] max-w-lg text-20 leading-140 xl:top-[177px] xl:left-[271px] xl:max-w-md xl:text-18 xl:leading-snug md:left-[230px] md:top-[158px] md:max-w-sm md:text-16 sm:static sm:mt-3 sm:max-w-full">
               Bytebase offers a web-based collaboration workspace to help DBAs and Developers manage
               the lifecycle of application database schemas.
             </p>
