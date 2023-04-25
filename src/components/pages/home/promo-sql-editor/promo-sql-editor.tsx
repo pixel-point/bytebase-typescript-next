@@ -140,32 +140,37 @@ const PromoSQLEditor = () => {
             <Accordion activeIndex={activeIndex} items={data} onChange={handleAccordionClick} />
           </div>
         </div>
-        <LazyMotion features={domAnimation}>
-          <AnimatePresence>
-            {data.map(
-              ({ image }, index) =>
-                index === activeIndex && (
-                  <m.div
-                    className="relative z-0 col-span-full row-span-full sm:row-auto sm:mt-6"
-                    key={index}
-                    initial={{
-                      opacity: 0,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      transition: { duration: 0.4 },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.4 },
-                    }}
-                  >
-                    {image}
-                  </m.div>
-                ),
-            )}
-          </AnimatePresence>
-        </LazyMotion>
+        <div className="relative z-0 col-span-full row-span-full sm:row-auto sm:mt-6">
+          <LazyMotion features={domAnimation}>
+            <AnimatePresence>
+              {data.map(
+                ({ image }, index) =>
+                  index === activeIndex && (
+                    <m.div
+                      className="left-0 top-0"
+                      key={index}
+                      initial={{
+                        opacity: 0,
+                        position: 'absolute',
+                      }}
+                      animate={{
+                        opacity: 1,
+                        position: 'relative',
+                        transition: { duration: 0.4 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        position: 'absolute',
+                        transition: { duration: 0.4 },
+                      }}
+                    >
+                      {image}
+                    </m.div>
+                  ),
+              )}
+            </AnimatePresence>
+          </LazyMotion>
+        </div>
       </div>
     </section>
   );
