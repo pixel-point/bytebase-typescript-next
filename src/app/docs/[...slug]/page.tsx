@@ -10,13 +10,10 @@ import {
   getFlatSidebar,
   getPostBySlug,
   getSidebar,
+  getTableOfContents,
 } from '@/lib/api-docs';
 
-interface StaticParams {
-  slug: string[];
-}
-
-export function generateStaticParams(): StaticParams[] {
+export function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map(({ slug }) => {
@@ -44,9 +41,11 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   const navigationLinks = getDocPreviousAndNextLinks(currentPath, flatSidebar);
 
   const {
-    data: { title, description },
+    data: { title },
     content,
   } = post;
+
+  const tableOfContents = getTableOfContents(content);
 
   return (
     <PostLayout
@@ -54,6 +53,7 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
       currentSlug={currentSlug}
       breadcrumbs={breadcrumbs}
       navigationLinks={navigationLinks}
+      tableOfContents={tableOfContents}
     >
       <Content content={content} />
     </PostLayout>
