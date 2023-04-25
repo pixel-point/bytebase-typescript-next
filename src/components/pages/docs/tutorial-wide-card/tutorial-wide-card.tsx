@@ -41,7 +41,7 @@ const TutorialWideCard = ({
   const formattedDate = format(new Date(date), 'MMM dd, yyyy');
 
   return (
-    <div className="tutorial-card not-prose my-4">
+    <div className="tutorial-card not-prose my-5 xl:my-4">
       <Link className="flex flex-col bg-gray-97 py-4 px-5 hover:bg-gray-94 sm:px-4" href={url}>
         <h4 className="max-w-xs text-20 font-semibold leading-tight lg:text-18 sm:text-16">
           {title}

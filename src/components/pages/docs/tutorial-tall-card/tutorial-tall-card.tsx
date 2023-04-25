@@ -40,7 +40,7 @@ const TutorialTallCard = ({
   const formattedDate = format(new Date(date), 'MMM dd, yyyy');
 
   return (
-    <li className="tutorial-tall-card">
+    <li className="tutorial-tall-card !my-0">
       <Link
         className="flex h-full flex-col border border-gray-90 p-4 hover:border-gray-60"
         href={url}
