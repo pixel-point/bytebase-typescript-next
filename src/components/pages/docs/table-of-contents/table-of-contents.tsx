@@ -10,7 +10,7 @@ import { TableOfContents as TOCProps } from '@/types/docs';
 
 import BackToTopIcon from '@/svgs/back-to-top.inline.svg';
 
-export type TableOfContentsProps = {
+type TableOfContentsProps = {
   items: TOCProps[];
   hasBackToTop?: boolean;
 };

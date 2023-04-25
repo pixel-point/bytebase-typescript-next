@@ -3,15 +3,17 @@
 import { ReactNode, useRef } from 'react';
 
 import { BlogPost } from '@/types/blog-post';
+import { TableOfContents } from '@/types/docs';
 
 import Aside from '../aside';
 
-interface PostLayoutProps {
+type PostLayoutProps = {
   post: BlogPost;
   children: ReactNode;
-}
+  tocItems: TableOfContents[];
+};
 
-const PostLayout = ({ post, children }: PostLayoutProps) => {
+const PostLayout = ({ post, tocItems, children }: PostLayoutProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -22,7 +24,7 @@ const PostLayout = ({ post, children }: PostLayoutProps) => {
       >
         {children}
       </div>
-      <Aside author={post.author} contentRef={contentRef} />
+      <Aside author={post.author} tocItems={tocItems} />
     </main>
   );
 };

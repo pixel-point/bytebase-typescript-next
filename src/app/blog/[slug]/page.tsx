@@ -14,6 +14,7 @@ import {
   getBlogPostBySlug,
   getBlogPostsPerPage,
 } from '@/lib/api-blog';
+import { getTableOfContents } from '@/lib/api-docs';
 
 export default function Blog({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -38,16 +39,19 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   if (!post) return notFound();
 
+  const { content } = post;
+
   const { posts } = getAllBlogPosts();
 
   const relatedPosts = posts.filter((article) => article.slug !== slug).slice(0, 3);
+  const tableOfContents = getTableOfContents(content);
 
   return (
     <>
       <article>
         <BlogPostHero post={post} isBlogPost={true} />
-        <PostLayout post={post}>
-          <Content content={post.content} />
+        <PostLayout post={post} tocItems={tableOfContents}>
+          <Content content={content} />
         </PostLayout>
       </article>
       <RelatedPosts posts={relatedPosts} />
