@@ -6,10 +6,10 @@ import Route from '@/lib/route';
 
 import ArrowIcon from '@/svgs/arrow.inline.svg';
 
-interface NavigationProps {
+export type NavigationProps = {
   previousLink?: SidebarItem;
   nextLink?: SidebarItem;
-}
+};
 
 const Navigation = ({ previousLink, nextLink }: NavigationProps) => {
   const previousLinkUrl = previousLink?.url;

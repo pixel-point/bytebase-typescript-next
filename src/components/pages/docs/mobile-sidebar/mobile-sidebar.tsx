@@ -11,13 +11,6 @@ import { SidebarItem } from '@/types/docs';
 
 import Item from '../sidebar/item';
 
-interface MobileSidebarProps {
-  className?: string;
-  data: SidebarItem[];
-  currentUrl: string;
-  expandedList?: string[];
-}
-
 const ANIMATION_DURATION = 0.2;
 
 const variants = {
@@ -41,7 +34,17 @@ const variants = {
   },
 };
 
-const MobileSidebar = ({ className, data, currentUrl, expandedList }: MobileSidebarProps) => {
+const MobileSidebar = ({
+  className,
+  data,
+  currentUrl,
+  expandedList,
+}: {
+  className?: string;
+  data: SidebarItem[];
+  currentUrl: string;
+  expandedList?: string[];
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [containerHeight, setContainerHeight] = useState<string | undefined>(undefined);
   const { height } = useWindowSize();

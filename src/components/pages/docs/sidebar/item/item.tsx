@@ -20,12 +20,17 @@ const isActiveItem = (children: SidebarItem[] | undefined, currentUrl: string): 
   );
 };
 
-interface ItemProps extends SidebarItem {
+const Item = ({
+  title,
+  url,
+  children,
+  depth,
+  currentUrl,
+  expandedList,
+}: {
   currentUrl: string;
   expandedList?: string[];
-}
-
-const Item = ({ title, url, children, depth, currentUrl, expandedList }: ItemProps) => {
+} & SidebarItem) => {
   const hasActiveChild = isActiveItem(children, currentUrl);
   const [isOpen, setIsOpen] = useState(() => {
     return (

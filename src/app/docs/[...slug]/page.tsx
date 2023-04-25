@@ -13,11 +13,7 @@ import {
   getTableOfContents,
 } from '@/lib/api-docs';
 
-interface StaticParams {
-  slug: string[];
-}
-
-export function generateStaticParams(): StaticParams[] {
+export function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map(({ slug }) => {
@@ -45,7 +41,7 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   const navigationLinks = getDocPreviousAndNextLinks(currentPath, flatSidebar);
 
   const {
-    data: { title, description },
+    data: { title },
     content,
   } = post;
 

@@ -1,21 +1,12 @@
 import Link from '@/components/shared/link';
 
-import { Breadcrumb, SidebarItem, TableOfContents as TOCProps } from '@/types/docs';
+import { Breadcrumb, TableOfContents as TOCProps } from '@/types/docs';
 
 import ExternalLinkIcon from '@/svgs/external.inline.svg';
 
 import Breadcrumbs from '../breadcrumbs';
-import Navigation from '../navigation';
+import Navigation, { type NavigationProps } from '../navigation';
 import TableOfContents from '../table-of-contents';
-
-interface PostLayoutProps {
-  title: string;
-  currentSlug: string;
-  children: React.ReactNode;
-  breadcrumbs: Breadcrumb[];
-  navigationLinks: { previousLink: SidebarItem | undefined; nextLink: SidebarItem | undefined };
-  tableOfContents: TOCProps[];
-}
 
 const FILE_ORIGIN_PATH = 'https://github.com/bytebase/bytebase.com/tree/main/content/docs';
 
@@ -26,7 +17,14 @@ const PostLayout = ({
   breadcrumbs,
   navigationLinks: { previousLink, nextLink },
   tableOfContents,
-}: PostLayoutProps) => {
+}: {
+  title: string;
+  currentSlug: string;
+  children: React.ReactNode;
+  breadcrumbs: Breadcrumb[];
+  navigationLinks: NavigationProps;
+  tableOfContents: TOCProps;
+}) => {
   return (
     <>
       <article className="col-span-6 col-start-4 flex flex-col lg:col-span-9 md:col-span-full">
