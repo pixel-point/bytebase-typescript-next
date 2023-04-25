@@ -23,7 +23,7 @@ const PostLayout = ({
   children: React.ReactNode;
   breadcrumbs: Breadcrumb[];
   navigationLinks: NavigationProps;
-  tableOfContents: TOCProps[];
+  tableOfContents?: TOCProps[];
 }) => {
   return (
     <>
@@ -44,9 +44,11 @@ const PostLayout = ({
         </Link>
         <Navigation previousLink={previousLink} nextLink={nextLink} />
       </article>
-      <div className="sticky bottom-0 top-10 col-span-3 col-end-13 ml-auto max-h-[calc(100vh-40px)] w-full max-w-[314px] overflow-y-auto pt-2.5 xl:max-w-none lg:hidden">
-        <TableOfContents items={tableOfContents} />
-      </div>
+      {tableOfContents && tableOfContents.length > 0 && (
+        <div className="sticky bottom-0 top-10 col-span-3 col-end-13 ml-auto max-h-[calc(100vh-40px)] w-full max-w-[314px] overflow-y-auto pt-2.5 xl:max-w-none lg:hidden">
+          <TableOfContents items={tableOfContents} />
+        </div>
+      )}
     </>
   );
 };
