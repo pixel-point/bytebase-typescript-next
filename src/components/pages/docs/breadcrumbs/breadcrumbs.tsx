@@ -10,7 +10,7 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => (
   <nav>
-    <ul className="text-15 font-medium mb-7 text-gray-30 flex items-center  gap-x-[11px]">
+    <ul className="mb-7 flex items-center gap-x-[11px] text-15 font-medium  text-gray-30">
       {breadcrumbs.map(({ title: breadcrumbTitle, url }, index) => (
         <li className="inline-flex items-center gap-x-[11px]" key={url}>
           {index !== 0 && <span>/</span>}
