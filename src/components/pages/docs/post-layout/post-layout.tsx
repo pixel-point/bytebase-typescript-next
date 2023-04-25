@@ -23,7 +23,7 @@ const PostLayout = ({
   children: React.ReactNode;
   breadcrumbs: Breadcrumb[];
   navigationLinks: NavigationProps;
-  tableOfContents: TOCProps;
+  tableOfContents: TOCProps[];
 }) => {
   return (
     <>
