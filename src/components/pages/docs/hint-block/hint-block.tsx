@@ -13,13 +13,13 @@ const typeClassNames = {
     wrapper: 'border-tones-purple-dark shadow-[0px_5px_15px_rgba(156,186,201,0.5)]',
     inner: 'bg-tones-purple-light',
     icon: 'bg-primary-1',
-    text: 'prose-a:no-underline prose-a:text-primary-1 prose-a:font-semibold prose-li:text-primary-1',
+    text: 'prose-a:no-underline prose-a:text-primary-1 prose-a:font-semibold prose-li:marker:!text-primary-1',
   },
   warning: {
     wrapper: 'border-[#D2ACB3] shadow-[0px_5px_15px_rgba(210,172,179,0.4)]',
     inner: 'bg-[#FDF2F3]',
     icon: 'bg-secondary-4',
-    text: 'prose-a:no-underline prose-a:text-secondary-4 prose-a:font-semibold prose-li:text-secondary-4',
+    text: 'prose-a:no-underline prose-a:text-secondary-4 prose-a:font-semibold prose-li:marker:!text-secondary-4',
   },
 };
 
@@ -32,7 +32,7 @@ const HintBlock = ({ type = 'info', children }: HintBlockProps) => {
   const Icon = icons[type];
 
   return (
-    <figure className={clsx('hint-block border ', typeClassNames[type].wrapper)}>
+    <figure className={clsx('hint-block border', typeClassNames[type].wrapper)}>
       <div
         className={clsx(
           'flex gap-x-4 px-5 pt-6 pb-8 shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)] md:gap-x-3 md:px-4 md:pt-5 md:pb-7 sm:px-3 sm:pt-4 sm:pb-5',

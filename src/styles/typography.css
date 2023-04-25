@@ -64,7 +64,15 @@
       }
     }
 
+    ul {
+      ul {
+        @apply my-2.5;
+      }
+    }
+
     li {
+      @apply my-2.5;
+
       &::marker {
         @apply text-primary-1;
       }
