@@ -35,7 +35,7 @@ const MeetCrew = () => (
           height={394}
           className="pointer-events-none absolute -bottom-[173px] -right-7 hidden md:block sm:hidden"
         />
-        <img
+        <Image
           src="/images/page/about/crew-ellipse-sm.png"
           alt="Built by engineers knowing database development flow"
           width={360}
