@@ -64,7 +64,7 @@ const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
     });
   };
   return (
-    <nav className="table-of-contents">
+    <nav className="table-of-contents lg:hidden">
       <div className="relative pl-5 before:absolute before:top-0 before:left-px before:h-full before:w-px before:bg-gray-90">
         <h3 className="text-14 font-bold uppercase leading-none tracking-tight">
           Table of contents
