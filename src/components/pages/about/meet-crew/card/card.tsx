@@ -3,39 +3,53 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 type CardProps = {
-  image: string;
-  imageLg?: string;
-  imageMd?: string;
-  imageSm?: string;
-  position: string;
-  name: string;
-  children: string | React.ReactNode;
+  info: {
+    image: string;
+    imageLg?: string;
+    imageMd?: string;
+    imageSm?: string;
+    position: string;
+    name: string;
+    about: string;
+  };
+  theme: string;
   imageStyle?: string;
-  positionColor: string;
   className?: string;
-  insideStyle?: string;
   showHat?: boolean;
 };
 
+type ThemeList = {
+  [theme: string]: {
+    positionColor: string;
+    insideStyle: string;
+    outsideStyle: string;
+  };
+};
+
+const themeList: ThemeList = {
+  blue: {
+    positionColor: 'text-tones-deep-blue-dark',
+    insideStyle: 'shadow-[inset_0_0_0_1px_rgba(156,186,201,0.5)] pr-2 pl-8',
+    outsideStyle:
+      'bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]',
+  },
+  green: {
+    positionColor: 'text-tones-deep-green-dark',
+    insideStyle: 'shadow-[inset_0_0_0_1px_rgba(143,188,169,0.4)] pl-2 pr-8',
+    outsideStyle:
+      'bg-tones-green-light shadow-[inset_6px_6px_0_#fff,0_5px_20px_rgba(143,188,169,0.4)]',
+  },
+};
+
 const Card = (props: CardProps) => {
-  const {
-    image,
-    imageLg = image,
-    imageMd = image,
-    imageSm = image,
-    imageStyle,
-    position,
-    name,
-    children,
-    positionColor,
-    className,
-    insideStyle,
-    showHat = false,
-  } = props;
+  const { imageStyle, className, theme, showHat = false, info } = props;
+  const { image, imageLg = image, imageMd = image, imageSm = image, position, name, about } = info;
+  const { insideStyle, outsideStyle, positionColor } = themeList[theme];
   return (
     <div
       className={clsx(
         'relative col-span-6 row-start-2 mt-[220px] 2xl:mt-[222px] lg:mt-[158px] md:mt-[131px] sm:col-span-full sm:col-span-full sm:row-start-auto sm:row-start-auto sm:mt-[17px]',
+        outsideStyle,
         className,
       )}
     >
@@ -65,7 +79,7 @@ const Card = (props: CardProps) => {
               <span
                 className={clsx(
                   'text-18 font-semibold lg:text-16 lg:leading-snug md:text-15 sm:text-14',
-                  `text-${positionColor}`,
+                  positionColor,
                 )}
               >
                 {position}
@@ -75,7 +89,10 @@ const Card = (props: CardProps) => {
               </p>
             </div>
           </div>
-          <p className="mt-5 text-18 lg:mt-2 lg:text-16 lg:leading-snug sm:mt-3">{children}</p>
+          <p
+            className="mt-5 text-18 lg:mt-2 lg:text-16 lg:leading-snug sm:mt-3"
+            dangerouslySetInnerHTML={{ __html: about }}
+          />
         </div>
         <Image
           src={image}
