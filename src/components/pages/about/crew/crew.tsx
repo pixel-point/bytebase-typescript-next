@@ -5,7 +5,7 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 import { crewList } from './data';
 
 const Crew = () => (
-  <section className="container mt-20 3xl:mt-16 xl:mt-14 md:mt-12 sm:mt-10">
+  <section className="container">
     <ul className="gap-x-grid grid grid-cols-12 gap-y-20 border-t border-gray-90 pt-[52px] 3xl:gap-y-16 3xl:pt-12 xl:gap-y-14 xl:pt-10 md:gap-y-8 md:pt-9 sm:grid-cols-4 sm:gap-y-6 sm:pt-6">
       {crewList.map((member, index) => (
         <li

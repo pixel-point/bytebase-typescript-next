@@ -2,35 +2,12 @@ import Image from 'next/image';
 
 import Pill from '@/components/shared/pill';
 
-import Card from './card';
-
-const founders = {
-  danny: {
-    name: 'Danny',
-    position: 'Co-Founder & CTO',
-    image: '/images/page/about/danny.webp',
-    imagexl: '/images/page/about/danny-lg.webp',
-    imageMd: '/images/page/about/danny-md.webp',
-    imageSm: '/images/page/about/danny-sm.webp',
-    about:
-      'Danny was the Staff Engineer at Google Cloud and TL overseeing Cloud SQL and API & Service Infrastructure. He has won Google&apos;s highest engineering award twice.',
-  },
-  tianzhou: {
-    name: 'Tianzhou',
-    position: 'Co-Founder & CEO',
-    image: '/images/page/about/tianzhou.webp',
-    imagexl: '/images/page/about/tianzhou-lg.webp',
-    imageMd: '/images/page/about/tianzhou-md.webp',
-    imageSm: '/images/page/about/tianzhou-sm.webp',
-    about:
-      'Tianzhou was the TL of Google Cloud SQL, the maintainer of Google&apos;s internal PostgreSQL and MySQL branch. He was the head of Database/<wbr />DevTools/<wbr />Collaboration group in Ant Group.',
-  },
-};
+import Founder from './founder';
 
 const MeetCrew = () => (
-  <section className="container overflow-x-hidden pt-56 3xl:pt-52 xl:pt-[175px] md:pt-[122px] sm:pt-20">
+  <section className="container pt-56 pb-20 3xl:pt-52 3xl:pb-16 xl:pt-[175px] xl:pb-14 md:pt-[122px] md:pb-12 sm:pt-20 sm:pb-10">
     <div className="gap-x-grid grid grid-cols-12 items-start sm:grid-cols-4">
-      <div className="relative col-span-full grid sm:text-center">
+      <div className="relative col-span-full mb-[225px] grid xl:mb-[164px] md:mb-[134px] sm:mb-0 sm:flex sm:flex-col sm:pb-[279px] sm:text-center">
         <Pill theme="secondary-1" className="sm:mx-auto">
           Team
         </Pill>
@@ -58,26 +35,21 @@ const MeetCrew = () => (
           height={394}
           className="absolute -bottom-[170px] -right-7 hidden md:block sm:hidden"
         />
-        <Image
-          src="/images/page/about/crew-ellipse-sm.webp"
+        <img
+          src="/images/page/about/crew-ellipse-sm.png"
           alt="Built by engineers knowing database development flow"
           width={360}
-          height={388}
-          className="absolute top-8 hidden h-auto w-screen max-w-[392px] justify-self-center sm:block"
+          height={260}
+          className="absolute bottom-1 left-1/2 hidden max-w-none -translate-x-1/2 justify-self-center sm:block"
         />
       </div>
-
-      <Card
-        info={founders.danny}
-        theme="blue"
-        className="-translate-y-[134px] xl:-translate-y-[89px] md:-translate-y-[62px] sm:mt-[275px] sm:translate-y-0"
-        showHat
+      <Founder
+        id="danny"
+        className="col-span-6 -translate-y-[133px] xl:-translate-y-[89px] md:min-h-[429px] md:-translate-y-[62px] sm:col-span-full sm:min-h-0 sm:translate-y-0"
       />
-
-      <Card
-        info={founders.tianzhou}
-        theme="green"
-        imageStyle="sm:h-[98px] xl:order-none -order-1"
+      <Founder
+        id="tianzhou"
+        className="col-span-6 md:min-h-[429px] sm:col-span-full sm:mt-4 sm:min-h-0"
       />
     </div>
   </section>
