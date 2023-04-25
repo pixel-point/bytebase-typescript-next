@@ -48,7 +48,7 @@ const Card = (props: CardProps) => {
   return (
     <div
       className={clsx(
-        'relative col-span-6 row-start-2 mt-[220px] 2xl:mt-[222px] lg:mt-[158px] md:mt-[131px] sm:col-span-full sm:col-span-full sm:row-start-auto sm:row-start-auto sm:mt-[17px]',
+        'relative col-span-6 row-start-2 mt-[228px] 2xl:mt-[222px] lg:mt-[158px] md:mt-[131px] sm:col-span-full sm:col-span-full sm:row-start-auto sm:row-start-auto sm:mt-[17px]',
         outsideStyle,
         className,
       )}

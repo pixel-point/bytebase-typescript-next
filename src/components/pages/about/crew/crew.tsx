@@ -14,14 +14,16 @@ const Crew = () => (
         >
           <Image src={member.image} alt="" width={244} height={244} className="lg:w-full" />
           <p className="text-24 font-bold leading-none lg:text-20 md:text-18">{member.name}</p>
-          <p className="mt-1 text-center text-20 leading-7 lg:text-18 lg:leading-tight md:mt-0.5 md:text-16 md:leading-snug">
+          <p className="mt-1 text-center text-20 leading-snug lg:text-18 lg:leading-tight md:mt-0.5 md:text-16 md:leading-snug">
             {member.position}
           </p>
         </li>
       ))}
-      <li className="col-span-3 flex flex-col items-center justify-center sm:col-span-2">
+      <li className="col-span-3 flex flex-col items-center justify-start sm:col-span-2">
         <Image src="/images/page/about/join.webp" alt="" width={244} height={244} />
-        <LinkUnderlined href="/jobs">Join us</LinkUnderlined>
+        <LinkUnderlined href="/jobs" className="mt-4.5">
+          Join us
+        </LinkUnderlined>
       </li>
     </ul>
   </section>

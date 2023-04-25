@@ -3,14 +3,10 @@ import Image from 'next/image';
 import Pill from '@/components/shared/pill';
 
 const Hero = () => {
-  const title = 'About us page';
-  const supTitle = 'Why we build';
-
   return (
     <section className="container pt-[136px] 2xl:pt-[128px] lg:pt-[120px] md:pt-[104px] sm:pt-24">
       <div className="gap-x-grid relative grid grid-cols-12 justify-items-center sm:grid-cols-4">
-        <h1 className="sr-only">{title}</h1>
-        <Pill className="col-span-full">{supTitle}</Pill>
+        <Pill className="col-span-full">Why we build</Pill>
         <h2 className="col-span-full mt-3.5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none lg:max-w-[780px] lg:text-68 md:mt-3 md:max-w-[620px] md:text-54 sm:text-48 sm:leading-95">
           Simplify database changes with{' '}
           <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules

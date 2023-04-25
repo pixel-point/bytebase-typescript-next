@@ -6,7 +6,7 @@ const Backed = () => (
   <section className="container mt-40 2xl:mt-[144px] lg:mt-32 md:mt-24 sm:mt-20">
     <div className="gap-x-grid grid grid-cols-12 sm:grid-cols-4">
       <Pill className="col-span-full justify-self-center">Our Partners</Pill>
-      <h2 className="col-span-full mt-5 justify-self-center text-center font-title text-88 font-semibold leading-none lg:mt-4 lg:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
+      <h2 className="col-span-full mt-3.5 justify-self-center text-center font-title text-88 font-semibold leading-none lg:mt-4 lg:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
         Backed by the best
       </h2>
       <div className="col-span-6 row-start-3 mt-14 grid place-items-center border border-gray-90 bg-gray-97 py-[91px] 2xl:py-[83px] lg:mt-12 lg:py-[58px] md:mt-10 md:py-[105px] sm:col-span-4 sm:mt-8 sm:py-16">
