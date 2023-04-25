@@ -31,7 +31,9 @@ const MeetCrew = () => (
   <section className="container overflow-x-hidden pt-56 2xl:pt-52 lg:pt-[175px] md:pt-[122px] sm:pt-20">
     <div className="gap-x-grid grid grid-cols-12 items-start sm:grid-cols-4">
       <div className="relative col-span-full grid sm:text-center">
-        <Pill className="sm:mx-auto">Team</Pill>
+        <Pill theme="secondary-1" className="sm:mx-auto">
+          Team
+        </Pill>
         <h2 className="mt-3.5 font-title text-88 font-semibold leading-none lg:mt-4 lg:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
           Meet our crew
         </h2>

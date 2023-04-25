@@ -41,9 +41,7 @@ const PromoAutomationChanges = () => {
     >
       <div className="container gap-x-grid grid grid-cols-12 md:grid-cols-none">
         <div className="col-start-1 col-end-5 py-[175px] 3xl:py-[160px] xl:col-end-6 xl:py-[140px] md:col-auto md:py-0 md:pt-16 sm:pt-[60px]">
-          <Pill bg="primary-1" color="white">
-            Change
-          </Pill>
+          <Pill theme="primary-1">Change</Pill>
           <h2 className="mt-3 font-title text-112 font-semibold leading-none 3xl:mt-3.5 xl:mt-2.5 xl:text-90 xl:leading-95 lg:mt-3 lg:text-80 md:mt-1.5 sm:mt-2 sm:text-48">
             <span className="bg-transparent text-secondary-1">Automate</span> database changes
           </h2>
