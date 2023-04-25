@@ -68,25 +68,25 @@ const Hero = () => {
           className="absolute right-0 bottom-[38px] col-end-5 hidden sm:block"
         />
         <div className="absolute bottom-[355px] left-0 col-span-3 col-start-2 w-[266px] 3xl:w-auto xl:bottom-[327px] xl:col-span-4 xl:col-start-1 xl:w-[240px] md:bottom-[212px] md:col-span-3 md:col-start-1 md:w-auto sm:static sm:col-span-2 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
+          <b className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             10+
-          </span>
+          </b>
           <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             Bytebase supports every major database systems
           </p>
         </div>
         <div className="absolute bottom-[327px] left-0 col-span-3 col-start-10 w-[284px] 3xl:w-auto xl:bottom-[303px] xl:right-0 xl:left-auto xl:col-span-4 xl:col-start-9 xl:w-[240px] md:bottom-[180px] md:col-span-3 md:col-span-3 md:col-start-10 md:w-full sm:static sm:col-span-2 sm:col-start-3 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
+          <b className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             100+
-          </span>
+          </b>
           <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             Bytebase offers the most comprehensive SQL Lint rules
           </p>
         </div>
         <div className="absolute bottom-0 left-0 col-span-3 col-start-6 w-[252px] 3xl:w-auto xl:right-0 xl:left-auto xl:col-span-4 xl:col-start-5 xl:w-[240px] md:col-span-3 md:col-start-6 md:w-full sm:static sm:col-span-2 sm:col-start-2 sm:mt-7 sm:text-center">
-          <span className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
+          <b className="font-title text-112 font-semibold leading-none xl:text-88 md:text-72 sm:text-48 sm:leading-95">
             100%
-          </span>
+          </b>
           <p className="leading-1.4 font-regular text-20 xl:text-16 xl:leading-snug md:text-14 md:leading-tight md:tracking-tight">
             All Bytebase source code is available on GitHub
           </p>
