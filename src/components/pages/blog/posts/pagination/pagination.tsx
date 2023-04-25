@@ -14,7 +14,7 @@ type PaginationProps = {
   categoryPath?: string;
 };
 
-// TODO: design
+// TODO: design disable state for prev/next links
 const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: PaginationProps) => {
   const router = useRouter();
 
