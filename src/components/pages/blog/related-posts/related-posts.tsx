@@ -22,8 +22,7 @@ const RelatedPosts = ({ posts }: RelatedPostsProps) => {
           Related posts
         </h2>
         <Link
-          className="flex items-center gap-x-2.5 rounded-full bg-gray-97 px-5 py-[11px] text-18 font-medium leading-none hover:bg-gray-90 
-                      md:text-16 sm:gap-x-2 sm:py-2 sm:px-4 sm:text-14"
+          className="flex items-center gap-x-2.5 rounded-full bg-gray-97 px-5 py-[11px] text-18 font-medium leading-none hover:bg-gray-90 md:text-16 sm:gap-x-2 sm:py-2 sm:px-4 sm:text-14"
           href={ROUTE.BLOG}
         >
           Back to blog

@@ -82,7 +82,7 @@ const components = {
     return (
       <blockquote {...props}>
         <QuoteIcon className="mb-6 h-10 lg:mb-5 lg:h-9 sm:mb-2 sm:h-7" />
-        <>{props.children}</>
+        {props.children}
       </blockquote>
     );
   },
