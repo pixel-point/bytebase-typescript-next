@@ -14,6 +14,7 @@ type PaginationProps = {
   categoryPath?: string;
 };
 
+// TODO: design
 const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: PaginationProps) => {
   const router = useRouter();
 
@@ -36,9 +37,9 @@ const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: Paginati
         activeLinkClassName="bg-primary-1 text-white pointer-events-none"
         previousClassName="mr-auto"
         nextClassName="ml-auto"
-        previousLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
-        nextLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
-        disabledLinkClassName="pointer-events-none"
+        previousLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
+        nextLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
+        disabledLinkClassName="pointer-events-none text-gray-60"
         previousLabel={
           <>
             <Arrow className="w-5 -rotate-180" />
