@@ -9,7 +9,7 @@ const MeetCrew = () => (
     <div className="gap-x-grid grid grid-cols-12 items-start sm:grid-cols-4">
       <div className="relative col-span-full sm:text-center">
         <Pill className="sm:mx-auto">Team</Pill>
-        <h2 className="mt-5 font-title text-88 font-semibold leading-none lg:mt-4 lg:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
+        <h2 className="mt-3.5 font-title text-88 font-semibold leading-none lg:mt-4 lg:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
           Meet our crew
         </h2>
         <Image

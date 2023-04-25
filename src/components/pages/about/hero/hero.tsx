@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="gap-x-grid relative grid grid-cols-12 justify-items-center sm:grid-cols-4">
         <h1 className="sr-only">{title}</h1>
         <Pill className="col-span-full">{supTitle}</Pill>
-        <h2 className="col-span-full mt-5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none lg:max-w-[780px] lg:text-68 md:mt-3 md:max-w-[620px] md:text-54 sm:text-48 sm:leading-95">
+        <h2 className="col-span-full mt-3.5 max-w-[1000px] text-center font-title text-88 font-semibold leading-none lg:max-w-[780px] lg:text-68 md:mt-3 md:max-w-[620px] md:text-54 sm:text-48 sm:leading-95">
           Simplify database changes with{' '}
           <mark className="bg-transparent text-primary-1">standardization</mark>, lint rules
         </h2>
@@ -20,7 +20,7 @@ const Hero = () => {
           alt=""
           width={1292}
           height={631}
-          className="col-span-11 col-start-2 mt-[48px] justify-self-start 2xl:hidden"
+          className="col-span-11 col-start-2 mt-14 justify-self-start 2xl:hidden"
           priority
         />
         <Image
