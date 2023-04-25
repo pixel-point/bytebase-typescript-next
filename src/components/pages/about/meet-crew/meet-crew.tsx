@@ -5,13 +5,13 @@ import Pill from '@/components/shared/pill';
 import Founder from './founder';
 
 const MeetCrew = () => (
-  <section className="container pt-56 pb-20 3xl:pt-52 3xl:pb-16 xl:pt-[175px] xl:pb-14 md:pt-[122px] md:pb-12 sm:pt-20 sm:pb-10">
+  <section className="container pt-56 pb-20 3xl:pt-52 3xl:pb-16 xl:pt-[158px] xl:pb-14 md:pt-[106px] md:pb-12 sm:pt-[83px] sm:pb-10">
     <div className="gap-x-grid grid grid-cols-12 items-start sm:grid-cols-4">
       <div className="relative col-span-full mb-[225px] grid xl:mb-[164px] md:mb-[134px] sm:mb-0 sm:flex sm:flex-col sm:pb-[279px] sm:text-center">
         <Pill theme="secondary-1" className="sm:mx-auto">
           Team
         </Pill>
-        <h2 className="mt-3.5 font-title text-88 font-semibold leading-none xl:mt-4 xl:text-68 md:mt-3 md:text-54 sm:text-48 sm:leading-95">
+        <h2 className="mt-3.5 font-title text-88 font-semibold leading-none xl:mt-3 xl:text-68 md:mt-2 md:text-54 sm:text-48 sm:leading-95">
           Meet our crew
         </h2>
         <Image
@@ -19,28 +19,28 @@ const MeetCrew = () => (
           alt="Built by engineers knowing database development flow"
           width={832}
           height={600}
-          className="absolute -bottom-[260px] -right-[80px] 3xl:-right-[76px] xl:hidden"
+          className="pointer-events-none absolute -bottom-[260px] -right-[80px] 3xl:-right-[76px] xl:hidden"
         />
         <Image
           src="/images/page/about/crew-ellipse-lg.webp"
           alt="Built by engineers knowing database development flow"
           width={628}
           height={517}
-          className="absolute -bottom-[230px] -right-11 hidden xl:block md:hidden"
+          className="pointer-events-none absolute -bottom-[231px] -right-11 hidden xl:block md:hidden"
         />
         <Image
           src="/images/page/about/crew-ellipse-md.webp"
           alt="Built by engineers knowing database development flow"
           width={474}
           height={394}
-          className="absolute -bottom-[170px] -right-7 hidden md:block sm:hidden"
+          className="pointer-events-none absolute -bottom-[173px] -right-7 hidden md:block sm:hidden"
         />
         <img
           src="/images/page/about/crew-ellipse-sm.png"
           alt="Built by engineers knowing database development flow"
           width={360}
           height={260}
-          className="absolute bottom-1 left-1/2 hidden max-w-none -translate-x-1/2 justify-self-center sm:block"
+          className="pointer-events-none absolute bottom-1 left-1/2 hidden max-w-none -translate-x-1/2 justify-self-center sm:block"
         />
       </div>
       <Founder

@@ -12,9 +12,17 @@ const Crew = () => (
           className="col-span-3 flex flex-col items-center justify-start sm:col-span-2"
           key={index}
         >
-          <Image src={member.image} alt="" width={244} height={244} className="xl:w-full" />
-          <p className="text-24 font-bold leading-none xl:text-20 md:text-18">{member.name}</p>
-          <p className="mt-1 text-center text-20 leading-snug xl:text-18 xl:leading-tight md:mt-0.5 md:text-16 md:leading-snug">
+          <Image
+            src={member.image}
+            alt=""
+            width={244}
+            height={244}
+            className="xl:w-full sm:-mt-2.5"
+          />
+          <p className="-mt-1 text-24 font-bold leading-none 3xl:mt-0 xl:text-20 md:text-18">
+            {member.name}
+          </p>
+          <p className="mt-1 text-center text-20 leading-snug xl:text-18 xl:leading-tight md:mt-0.5 md:text-16 md:leading-snug sm:mt-0">
             {member.position}
           </p>
         </li>
