@@ -2,18 +2,18 @@
 
 import Image from 'next/image';
 
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
-import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
+import clsx from 'clsx';
 
 import Accordion from './accordion';
 
 export type AccordionData = {
   title: string;
   description: string;
-  image: ReactNode;
+  image: string;
 };
 
 const data: AccordionData[] = [
@@ -21,57 +21,25 @@ const data: AccordionData[] = [
     title: 'Explore the schema',
     description:
       'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
-    image: (
-      <Image
-        src="/images/page/main/sql-editor/interface-explore.jpg"
-        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
-        width={1472}
-        height={845}
-        alt=""
-      />
-    ),
+    image: '/images/page/main/sql-editor/interface-explore.jpg',
   },
   {
     title: 'Run and explain query',
     description:
       'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
-    image: (
-      <Image
-        src="/images/page/main/sql-editor/interface-run.jpg"
-        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
-        width={1472}
-        height={845}
-        alt=""
-      />
-    ),
+    image: '/images/page/main/sql-editor/interface-run.jpg',
   },
   {
     title: 'Anonymize data',
     description:
       'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
-    image: (
-      <Image
-        src="/images/page/main/sql-editor/interface-anonymize.jpg"
-        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
-        width={1472}
-        height={845}
-        alt=""
-      />
-    ),
+    image: '/images/page/main/sql-editor/interface-anonymize.jpg',
   },
   {
     title: 'Database access control',
     description:
       'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
-    image: (
-      <Image
-        src="/images/page/main/sql-editor/interface-database.jpg"
-        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
-        width={1472}
-        height={845}
-        alt=""
-      />
-    ),
+    image: '/images/page/main/sql-editor/interface-database.jpg',
   },
 ];
 
@@ -141,35 +109,20 @@ const PromoSQLEditor = () => {
           </div>
         </div>
         <div className="relative z-0 col-span-full row-span-full sm:row-auto sm:mt-6">
-          <LazyMotion features={domAnimation}>
-            <AnimatePresence>
-              {data.map(
-                ({ image }, index) =>
-                  index === activeIndex && (
-                    <m.div
-                      className="left-0 top-0"
-                      key={index}
-                      initial={{
-                        opacity: 0,
-                        position: 'absolute',
-                      }}
-                      animate={{
-                        opacity: 1,
-                        position: 'relative',
-                        transition: { duration: 0.4 },
-                      }}
-                      exit={{
-                        opacity: 0,
-                        position: 'absolute',
-                        transition: { duration: 0.4 },
-                      }}
-                    >
-                      {image}
-                    </m.div>
-                  ),
+          {data.map(({ image, title }, index) => (
+            <Image
+              className={clsx(
+                index != 0 ? 'absolute top-0 left-0 h-full' : 'h-auto',
+                activeIndex === index ? 'opacity-100' : 'opacity-0',
+                'w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)] transition-opacity duration-[400ms]',
               )}
-            </AnimatePresence>
-          </LazyMotion>
+              src={image}
+              width={1472}
+              height={845}
+              alt={title}
+              key={index}
+            />
+          ))}
         </div>
       </div>
     </section>
