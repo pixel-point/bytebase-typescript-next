@@ -14,9 +14,13 @@ interface TOCItem {
 
 export type TableOfContentsProps = {
   contentRef: RefObject<HTMLDivElement>;
+  hasBackToTop?: boolean;
 };
 
-const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | null => {
+const TableOfContents = ({
+  contentRef,
+  hasBackToTop,
+}: TableOfContentsProps): JSX.Element | null => {
   const [items, setItems] = useState<TOCItem[]>([]);
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
   const [debouncedActiveAnchor, setDebouncedActiveAnchor] = useState<string | null>(null);
@@ -86,7 +90,7 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
         <h3 className="text-14 font-bold uppercase leading-none tracking-tight">
           Table of contents
         </h3>
-        <ul className="mt-3 flex flex-col border-b border-gray-90 pb-6">
+        <ul className={clsx(hasBackToTop && 'border-b border-gray-90 pb-6', 'mt-3 flex flex-col ')}>
           {items.map(({ id, text, level }) => (
             <li
               className={clsx(
@@ -114,15 +118,16 @@ const TableOfContents = ({ contentRef }: TableOfContentsProps): JSX.Element | nu
           ))}
         </ul>
       </div>
-
-      <button
-        className="mt-8 flex items-center gap-x-2 pl-5 pb-5 text-15 font-medium text-gray-30 transition-colors duration-200 hover:text-gray-60"
-        type="button"
-        onClick={backToTop}
-      >
-        <BackToTopIcon className="h-[18px] w-[18px]" />
-        <span>Back to top</span>
-      </button>
+      {hasBackToTop && (
+        <button
+          className="mt-8 flex items-center gap-x-2 pl-5 pb-5 text-15 font-medium text-gray-30 transition-colors duration-200 hover:text-gray-60"
+          type="button"
+          onClick={backToTop}
+        >
+          <BackToTopIcon className="h-[18px] w-[18px]" />
+          <span>Back to top</span>
+        </button>
+      )}
     </nav>
   );
 };
