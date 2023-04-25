@@ -63,7 +63,7 @@ const getTimeToRead = (content: string): string => {
   const wordsPerMinute = 200;
   const wordAmount = content.split(' ').length;
   if (wordAmount <= wordsPerMinute) {
-    return 'less than 1 min read';
+    return '< 1 min read';
   }
 
   const count = Math.ceil(wordAmount / wordsPerMinute);

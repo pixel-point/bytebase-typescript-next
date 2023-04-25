@@ -8,6 +8,7 @@ const icons = {
     Icon: TwitterIcon,
     className: 'text-secondary-3 hover:text-primary-1',
   },
+  // TODO: hover state for linkedin
   linkedIn: {
     Icon: LinkedinIcon,
     className: '',
