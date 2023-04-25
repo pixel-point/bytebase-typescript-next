@@ -26,7 +26,7 @@ const Hero = () => {
           alt=""
           width={1229}
           height={631}
-          className="col-span-11 col-start-2 mt-[56px] hidden 3xl:block xl:hidden"
+          className="col-span-11 col-start-2 mt-[62px] hidden 3xl:block xl:hidden"
           priority
         />
         <Image

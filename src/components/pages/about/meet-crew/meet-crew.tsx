@@ -74,7 +74,11 @@ const MeetCrew = () => (
         showHat
       />
 
-      <Card info={founders.tianzhou} theme="green" imageStyle="sm:h-[98px] -order-1 xl:order-0" />
+      <Card
+        info={founders.tianzhou}
+        theme="green"
+        imageStyle="sm:h-[98px] xl:order-none -order-1"
+      />
     </div>
   </section>
 );
