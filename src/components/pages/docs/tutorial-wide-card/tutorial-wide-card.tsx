@@ -49,7 +49,7 @@ const TutorialWideCard = ({
         <div className="mt-6 flex justify-between">
           <div className="flex items-center gap-x-4">
             {logos && (
-              <div className="relative flex items-center gap-x-2 after:absolute after:top-2 after:-right-2 after:h-0.5 after:w-0.5 after:bg-gray-60">
+              <div className="relative flex items-center gap-x-2 after:absolute after:top-2 after:-right-2 after:h-0.5 after:w-0.5 after:rounded-full after:bg-gray-60">
                 {logos.split(',').map((logo) => {
                   const Logo = allLogos[logo];
                   return <Logo className="h-5 w-5" key={logo} />;
