@@ -2,15 +2,82 @@
 
 import Image from 'next/image';
 
-import { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
+import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 import Accordion from './accordion';
 
+export type AccordionData = {
+  title: string;
+  description: string;
+  image: ReactNode;
+};
+
+const data: AccordionData[] = [
+  {
+    title: 'Explore the schema',
+    description:
+      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
+    image: (
+      <Image
+        src="/images/page/main/sql-editor/interface-explore.jpg"
+        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
+        width={1472}
+        height={845}
+        alt=""
+      />
+    ),
+  },
+  {
+    title: 'Run and explain query',
+    description:
+      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
+    image: (
+      <Image
+        src="/images/page/main/sql-editor/interface-run.jpg"
+        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
+        width={1472}
+        height={845}
+        alt=""
+      />
+    ),
+  },
+  {
+    title: 'Anonymize data',
+    description:
+      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
+    image: (
+      <Image
+        src="/images/page/main/sql-editor/interface-anonymize.jpg"
+        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
+        width={1472}
+        height={845}
+        alt=""
+      />
+    ),
+  },
+  {
+    title: 'Database access control',
+    description:
+      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
+    image: (
+      <Image
+        src="/images/page/main/sql-editor/interface-database.jpg"
+        className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
+        width={1472}
+        height={845}
+        alt=""
+      />
+    ),
+  },
+];
+
 const PromoSQLEditor = () => {
   const ref = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const { isIntersecting } = useIntersectionObserver(ref);
 
@@ -34,6 +101,11 @@ const PromoSQLEditor = () => {
       rive.play();
     }
   }, [rive, isIntersecting]);
+
+  const handleAccordionClick = (index: number) => {
+    input?.fire();
+    setActiveIndex(index);
+  };
 
   return (
     <section
@@ -65,18 +137,35 @@ const PromoSQLEditor = () => {
         />
         <div className="relative z-10 col-start-9 col-end-13 row-span-full 3xl:col-start-8 3xl:col-end-12 xl:col-end-13 md:col-start-7 sm:col-span-full sm:row-auto">
           <div className="mr-10 -mt-10 border border-tones-green-dark bg-tones-green-light px-6 py-10 shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(143,188,169,0.5)] 3xl:mr-0 xl:-mt-6 xl:-translate-x-6 xl:px-5 xl:py-8 md:mr-4.5 md:translate-x-0 md:px-4 md:py-7 sm:mt-0 sm:mr-0">
-            <Accordion onChange={() => input?.fire()} />
+            <Accordion activeIndex={activeIndex} items={data} onChange={handleAccordionClick} />
           </div>
         </div>
-        <div className="relative z-0 col-span-full row-span-full sm:row-auto sm:mt-6">
-          <Image
-            src="/images/interface.png"
-            className="h-auto w-full rounded shadow-[0_5px_15px_rgba(15,22,36,0.2)]"
-            width={1472}
-            height={845}
-            alt=""
-          />
-        </div>
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence>
+            {data.map(
+              ({ image }, index) =>
+                index === activeIndex && (
+                  <m.div
+                    className="relative z-0 col-span-full row-span-full sm:row-auto sm:mt-6"
+                    key={index}
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      transition: { duration: 0.4 },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.4 },
+                    }}
+                  >
+                    {image}
+                  </m.div>
+                ),
+            )}
+          </AnimatePresence>
+        </LazyMotion>
       </div>
     </section>
   );
