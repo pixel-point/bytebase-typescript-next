@@ -9,6 +9,11 @@ import { TableOfContents as TOCProps } from '@/types/docs';
 
 import BackToTopIcon from '@/svgs/back-to-top.inline.svg';
 
+type TableOfContentsProps = {
+  items: TOCProps[];
+  hasBackToTop?: boolean;
+};
+
 const backToTop = () => {
   window.scrollTo({
     top: 0,
@@ -35,7 +40,7 @@ const onClick = (evt: React.MouseEvent<HTMLAnchorElement>, id: string) => {
 
 const CURRENT_ANCHOR_GAP_PX = 16;
 
-const TableOfContents = ({ items }: { items: TOCProps[] }) => {
+const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
   const titles = useRef<HTMLElement[]>([]);
   const [currentAnchor, setCurrentAnchor] = useState<string | null>(null);
 
@@ -68,13 +73,17 @@ const TableOfContents = ({ items }: { items: TOCProps[] }) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  if (items.length === 0) {
+    return null;
+  }
+
   return (
     <nav className="table-of-contents lg:hidden">
       <div className="relative pl-5 before:absolute before:top-0 before:left-px before:h-full before:w-px before:bg-gray-90">
         <h3 className="text-14 font-bold uppercase leading-none tracking-tight">
           Table of contents
         </h3>
-        <ul className="mt-3 flex flex-col border-b border-gray-90 pb-6">
+        <ul className={clsx(hasBackToTop && 'border-b border-gray-90 pb-6', 'mt-3 flex flex-col')}>
           {items.map(({ id, title, level }, idx) => (
             <li
               className={clsx(
