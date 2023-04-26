@@ -18,16 +18,16 @@ export type AccordionData = {
 
 const data: AccordionData[] = [
   {
-    title: 'Explore the schema',
-    description:
-      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
-    image: '/images/page/main/sql-editor/interface-explore.jpg',
-  },
-  {
     title: 'Run and explain query',
     description:
       'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
     image: '/images/page/main/sql-editor/interface-run.jpg',
+  },
+  {
+    title: 'Explore the schema',
+    description:
+      'Perform complex SQL tasks and protect data privacy with ByteBase’s web-based IDE, anonymization engine, and access controls.',
+    image: '/images/page/main/sql-editor/interface-explore.jpg',
   },
   {
     title: 'Anonymize data',
