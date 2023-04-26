@@ -77,8 +77,10 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
     }
   }, [rive, isIntersecting]);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.currentTarget.value.trim());
+    setFormState(STATES.DEFAULT);
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
