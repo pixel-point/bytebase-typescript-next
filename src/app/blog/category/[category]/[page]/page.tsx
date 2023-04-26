@@ -66,7 +66,7 @@ export async function generateMetadata({
   params: { category: string; page: string };
 }): Promise<Metadata> {
   const { category } = params;
-  const categories = {
+  const categories: Record<string, string> = {
     announcement: 'Announcement',
     industry: 'Industry',
     explanation: 'Explanation',
@@ -75,8 +75,6 @@ export async function generateMetadata({
     'case-study': 'Case Study',
   };
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - ${categories[category]}`,
