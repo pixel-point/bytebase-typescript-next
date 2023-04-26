@@ -14,7 +14,7 @@ import SubscriptionForm from '@/components/shared/subscription-form';
 
 import SEO_DATA from '@/lib/seo-data';
 
-export const metadata = getMetadata({ ...SEO_DATA.INDEX });
+export const metadata = getMetadata(SEO_DATA.INDEX);
 
 export default function Page() {
   return (

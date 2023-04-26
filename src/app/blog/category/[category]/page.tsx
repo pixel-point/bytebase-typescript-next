@@ -9,7 +9,7 @@ import Posts from '@/components/pages/blog/posts';
 import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
 
-import { getAllBlogPosts, getBlogPostsPerPage } from '@/lib/api-blog';
+import { getAllBlogPosts, getBlogPostsPerPage, getTagNameBySlug } from '@/lib/api-blog';
 import Route from '@/lib/route';
 import SEO_DATA from '@/lib/seo-data';
 
@@ -43,17 +43,10 @@ export async function generateMetadata({
   params: { category: string };
 }): Promise<Metadata> {
   const { category } = params;
-  const categories: Record<string, string> = {
-    announcement: 'Announcement',
-    industry: 'Industry',
-    explanation: 'Explanation',
-    engineering: 'Engineering',
-    'how-to': 'How-To',
-    'case-study': 'Case Study',
-  };
+
   return getMetadata({
     ...SEO_DATA.BLOG,
-    title: `${SEO_DATA.BLOG.title} - ${categories[category]}`,
+    title: `${SEO_DATA.BLOG.title} - ${getTagNameBySlug(category)}`,
     pathname: `${Route.BLOG_CATEGORY}/${category}/`,
   });
 }
