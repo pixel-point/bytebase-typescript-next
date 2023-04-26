@@ -1,70 +1,72 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import throttle from '@/utils/throttle';
+import { useThrottleCallback } from '@react-hook/throttle';
 import clsx from 'clsx';
 
 import { TableOfContents as TOCProps } from '@/types/docs';
 
 import BackToTopIcon from '@/svgs/back-to-top.inline.svg';
 
+const backToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+const onClick = (evt: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  evt.preventDefault();
+
+  document.getElementById(id)?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+
+  // Changing hash without default jumps to anchor
+  if (history.pushState) {
+    history.pushState(false, '', `#${id}`);
+  } else {
+    // Old browser support
+    window.location.hash = `#${id}`;
+  }
+};
+
+const CURRENT_ANCHOR_GAP_PX = 16;
+
 const TableOfContents = ({ items }: { items: TOCProps[] }) => {
-  const [anchors, setAnchors] = useState<(HTMLElement | null)[]>([]);
-  const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
-
-  const handleResize = useCallback(() => {
-    const newAnchors = items.map(({ id }) => document.getElementById(id));
-    setAnchors(newAnchors);
-  }, [items]);
+  const titles = useRef<HTMLElement[]>([]);
+  const [currentAnchor, setCurrentAnchor] = useState<string | null>(null);
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [handleResize]);
+    titles.current = items
+      .map(({ id }) => document.getElementById(id))
+      .filter((anchor): anchor is HTMLElement => anchor !== null);
+  }, []);
 
-  const handleScroll = useCallback(() => {
-    const currentActiveAnchor = anchors.find((anchor) => {
-      const top = anchor?.getBoundingClientRect()?.top;
-      return top && top >= 0 && top <= window.innerHeight;
-    });
-    if (currentActiveAnchor) {
-      setActiveAnchor(`#${currentActiveAnchor.id}`);
-    }
-  }, [anchors]);
+  const getCurrentAnchor = useCallback(() => {
+    const currentTitleIdx = titles.current.findIndex(
+      (anchor) => anchor.getBoundingClientRect().top - CURRENT_ANCHOR_GAP_PX >= 0,
+    );
+
+    const idx =
+      currentTitleIdx === -1 ? titles.current.length - 1 : Math.max(currentTitleIdx - 1, 0);
+
+    const currentTitle = titles.current[idx];
+
+    setCurrentAnchor(currentTitle.id);
+  }, []);
+
+  const onScroll = useThrottleCallback(getCurrentAnchor, 5);
 
   useEffect(() => {
-    const handleScrollThrottled = throttle(handleScroll, 200);
-    window.addEventListener('scroll', handleScrollThrottled);
-    return () => window.removeEventListener('scroll', handleScrollThrottled);
-  }, [handleScroll]);
+    getCurrentAnchor();
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
-    e.preventDefault();
-    document.querySelector(anchor)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-    // changing hash without default jumps to anchor
-    // eslint-disable-next-line no-restricted-globals
-    if (history.pushState) {
-      // eslint-disable-next-line no-restricted-globals
-      history.pushState(false, '', anchor.toString());
-    } else {
-      // old browser support
-      window.location.hash = anchor;
-    }
-  };
+    window.addEventListener('scroll', onScroll);
 
-  if (items.length === 0) return null;
-
-  const backToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <nav className="table-of-contents">
@@ -73,26 +75,26 @@ const TableOfContents = ({ items }: { items: TOCProps[] }) => {
           Table of contents
         </h3>
         <ul className="mt-3 flex flex-col border-b border-gray-90 pb-6">
-          {items.map(({ id, title, level }, index) => (
+          {items.map(({ id, title, level }, idx) => (
             <li
               className={clsx(
                 'relative py-2 text-15 font-medium before:absolute before:-left-[19.5px] before:top-1/2 before:h-4/5 before:w-0.5 before:-translate-y-1/2 before:rounded-sm before:transition-colors before:duration-200',
                 {
-                  'before:bg-primary-1': activeAnchor === `#${id}`,
+                  'before:bg-primary-1': currentAnchor === id,
                 },
               )}
-              key={index}
+              key={idx}
             >
               <a
                 className={clsx(
                   'flex text-gray-30 transition-colors duration-200 hover:text-gray-60',
                   {
                     'pl-2.5': level === 3,
-                    'text-primary-1': activeAnchor === `#${id}`,
+                    'text-primary-1': currentAnchor === id,
                   },
                 )}
                 href={`#${id}`}
-                onClick={(e) => handleAnchorClick(e, `#${id}`)}
+                onClick={(e) => onClick(e, id)}
               >
                 {title}
               </a>
