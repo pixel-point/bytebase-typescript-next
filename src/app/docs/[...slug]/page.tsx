@@ -75,6 +75,8 @@ export async function generateMetadata({
 
   const post = getPostBySlug(currentSlug);
 
+  if (!post) return notFound();
+
   const {
     data: { title },
     content,
