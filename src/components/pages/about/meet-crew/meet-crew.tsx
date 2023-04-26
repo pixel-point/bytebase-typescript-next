@@ -19,7 +19,7 @@ const MeetCrew = () => (
           alt="Built by engineers knowing database development flow"
           width={832}
           height={600}
-          className="pointer-events-none absolute -bottom-[260px] -right-[80px] 3xl:-right-[76px] xl:hidden"
+          className="pointer-events-none absolute -bottom-[260px] -right-20 3xl:-right-[76px] xl:hidden"
         />
         <Image
           src="/images/page/about/crew-ellipse-lg.webp"

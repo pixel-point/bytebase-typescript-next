@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 
+import ROUTE from '@/lib/route';
+
 import { crewList } from './data';
 
 const Crew = () => (
@@ -29,7 +31,7 @@ const Crew = () => (
       ))}
       <li className="col-span-3 flex flex-col items-center justify-start sm:col-span-2">
         <Image src="/images/page/about/join.webp" alt="" width={244} height={244} />
-        <LinkUnderlined href="/jobs" className="mt-4.5">
+        <LinkUnderlined href={ROUTE.JOBS} className="mt-4.5">
           Join us
         </LinkUnderlined>
       </li>
