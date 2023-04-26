@@ -91,10 +91,10 @@ const Hero = () => (
         </p>
         <ul className="mt-11 flex items-center justify-center gap-x-16 lg:gap-x-[52px] md:mt-10 md:gap-x-10 sm:mt-6 sm:flex-wrap sm:gap-y-4 sm:gap-x-14">
           {[
-            { src: '/images/page/pricing/microsoft.svg', width: 152, height: 40 },
-            { src: '/images/page/pricing/google.svg', width: 118, height: 40 },
-            { src: '/images/page/pricing/ant-group.svg', width: 94, height: 40 },
-            { src: '/images/page/pricing/pingcap.svg', width: 152, height: 40 },
+            { src: '/images/page/pricing/microsoft.svg', width: 152, height: 40, alt: 'Microsoft' },
+            { src: '/images/page/pricing/google.svg', width: 118, height: 40, alt: 'Google' },
+            { src: '/images/page/pricing/ant-group.svg', width: 94, height: 40, alt: 'Ant Group' },
+            { src: '/images/page/pricing/pingcap.svg', width: 152, height: 40, alt: 'PingCap' },
           ].map((image) => (
             <li key={image.src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -110,7 +110,10 @@ const Hero = () => (
           </li>
         ))}
       </ul>
-      <p className="mt-9 text-center text-15 leading-snug text-gray-40 lg:mt-8 lg:text-14 lg:leading-tight md:mt-7 sm:mt-6">
+      <p
+        aria-label="You can upgrade, downgrade, or cancel your subscription anytime. No hidden charges"
+        className="mt-9 text-center text-15 leading-snug text-gray-40 lg:mt-8 lg:text-14 lg:leading-tight md:mt-7 sm:mt-6"
+      >
         You can upgrade, downgrade, or{' '}
         <Link className="lg:text-14 sm:inline" size="sm" href="/refund" theme="primary-1">
           cancel your subscription

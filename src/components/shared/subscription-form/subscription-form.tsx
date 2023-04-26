@@ -71,7 +71,10 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
                 placeholder="Your email address..."
                 onInput={() => input?.fire()}
               />
-              <button className="flex-shrink-0 rounded-r-full bg-black py-6 px-11 text-16 font-bold uppercase leading-none hover:bg-[#17225B] xl:py-4 md:py-3 md:px-5 sm:px-5 sm:py-3">
+              <button
+                aria-label="Subscribe"
+                className="flex-shrink-0 rounded-r-full bg-black py-6 px-11 text-16 font-bold uppercase leading-none hover:bg-[#17225B] xl:py-4 md:py-3 md:px-5 sm:px-5 sm:py-3"
+              >
                 <span className="md:hidden">Subscribe</span>{' '}
                 <img
                   src="/images/arrow-form.svg"
@@ -82,7 +85,10 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
                 />
               </button>
             </p>
-            <p className="mt-5 text-14 leading-snug xl:mt-3 xl:max-w-[290px] md:mt-2">
+            <p
+              aria-label="By subscribing, you agree with Revue's Terms of Service and Privacy Policy."
+              className="mt-5 text-14 leading-snug xl:mt-3 xl:max-w-[290px] md:mt-2"
+            >
               By subscribing, you agree with Revue&apos;s{' '}
               <NextLink href={Route.TERMS} className="border-b-2 border-white border-opacity-40">
                 Terms of Service
