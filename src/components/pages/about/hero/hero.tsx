@@ -22,7 +22,7 @@ const Hero = () => {
           priority
         />
         <Image
-          src="/images/page/about/why-we-build-2xl.webp"
+          src="/images/page/about/why-we-build-3xl.webp"
           alt=""
           width={1229}
           height={631}
@@ -30,7 +30,7 @@ const Hero = () => {
           priority
         />
         <Image
-          src="/images/page/about/why-we-build-lg.webp"
+          src="/images/page/about/why-we-build-xl.webp"
           alt=""
           width={936}
           height={528}
