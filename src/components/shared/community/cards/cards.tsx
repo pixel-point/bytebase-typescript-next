@@ -60,20 +60,21 @@ const Card = ({
   action: string;
 }) => {
   return (
-    <NextLink href={href}>
-      <article
-        className={clsx(
-          'group flex h-full flex-col items-center border border-solid p-9 pb-14 transition-shadow duration-300 3xl:p-8 xl:px-6 xl:py-7 md:px-5 sm:h-auto sm:items-start sm:px-6 sm:pb-5',
-          {
-            '-translate-y-[132px] border-tones-purple-dark bg-tones-purple-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(172,178,210,0.7)] 3xl:-translate-y-[128px] xl:-translate-y-[58px] md:-translate-y-12 sm:translate-y-0':
-              name === 'Discord',
-            'border-tones-blue-dark bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(156,186,201,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(156,186,201,0.7)]':
-              name === 'Twitter',
-            'translate-y-[80px] border-gray-70 bg-gray-97 shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(167,175,190,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(167,175,190,0.7)] 3xl:translate-y-[76px] xl:translate-y-[58px] md:translate-y-10 sm:translate-y-0':
-              name === 'GitHub',
-          },
-        )}
-      >
+    <NextLink
+      className={clsx(
+        'group flex h-full border border-solid p-9 pb-14 transition-shadow duration-300 3xl:p-8 xl:px-6 xl:py-7 md:px-5 sm:px-6 sm:pb-5',
+        {
+          '-translate-y-[132px] border-tones-purple-dark bg-tones-purple-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(172,178,210,0.7)] 3xl:-translate-y-[128px] xl:-translate-y-[58px] md:-translate-y-12 sm:translate-y-0':
+            name === 'Discord',
+          'border-tones-blue-dark bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(156,186,201,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(156,186,201,0.7)]':
+            name === 'Twitter',
+          'translate-y-[80px] border-gray-70 bg-gray-97 shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(167,175,190,0.5)] hover:shadow-[inset_6px_6px_0_#fff,0_8px_20px_rgba(167,175,190,0.7)] 3xl:translate-y-[76px] xl:translate-y-[58px] md:translate-y-10 sm:translate-y-0':
+            name === 'GitHub',
+        },
+      )}
+      href={href}
+    >
+      <article className="flex h-full flex-col items-center sm:h-auto sm:w-full sm:items-start">
         <header className="mb-4.5 flex flex-col items-center gap-6 xl:mb-4 xl:gap-3 md:gap-5 sm:mb-3 sm:flex-row sm:gap-4">
           <Icon name={name} />
           <h3 className="font-title text-56 font-semibold leading-none xl:text-44 md:text-34">
