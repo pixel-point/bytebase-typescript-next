@@ -81,20 +81,18 @@ const MobileMenu = () => {
     }
   }, [isOpen, controls]);
 
+  const openMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+
   return (
     <>
-      <Burger
-        className="hidden md:block"
-        isToggled={isOpen}
-        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-      />
+      <Burger className="hidden md:block" isToggled={isOpen} onClick={openMenu} />
       <LazyMotion features={domAnimation}>
         <m.nav
           className="safe-paddings fixed inset-0 z-40 hidden bg-black bg-opacity-80"
           initial="from"
           animate={controls}
           variants={menuVariants}
-          onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+          onClick={openMenu}
         >
           <div
             className="ml-auto h-full w-1/2 bg-white pt-[60px] sm:w-full"
@@ -106,8 +104,8 @@ const MobileMenu = () => {
                   const isDropdownOpened = openedDropdown === idx;
                   return (
                     <li
-                      key={idx}
                       className="relative first:-mt-4 last:border-b last:border-gray-90"
+                      key={idx}
                     >
                       {items ? (
                         <button
@@ -139,8 +137,8 @@ const MobileMenu = () => {
                         </button>
                       ) : (
                         <Link
-                          href={href}
                           className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
+                          href={href}
                         >
                           {title}
                         </Link>
