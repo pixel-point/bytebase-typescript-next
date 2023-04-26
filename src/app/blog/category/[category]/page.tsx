@@ -57,5 +57,3 @@ export async function generateMetadata({
     pathname: `${Route.BLOG_CATEGORY}/${category}/`,
   });
 }
-
-export const revalidate = 60;

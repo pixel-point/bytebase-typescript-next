@@ -16,6 +16,7 @@ import {
   getSidebar,
   getTableOfContents,
 } from '@/lib/api-docs';
+import Route from '@/lib/route';
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -87,6 +88,6 @@ export async function generateMetadata({
   return getMetadata({
     title,
     description,
-    pathname: currentPath,
+    pathname: `${Route.DOCS}${currentPath}/`,
   });
 }

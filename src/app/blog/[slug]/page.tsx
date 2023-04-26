@@ -85,7 +85,11 @@ export async function generateMetadata({
 
   const post = getBlogPostBySlug(slug);
 
-  if (!post) return getMetadata(SEO_DATA.BLOG);
+  if (!post)
+    return getMetadata({
+      ...SEO_DATA.BLOG,
+      pathname: `${Route.BLOG}/${slug}/`,
+    });
 
   const { content, title, feature_image } = post;
 
@@ -98,5 +102,3 @@ export async function generateMetadata({
     imagePath: feature_image,
   });
 }
-
-export const revalidate = 60;
