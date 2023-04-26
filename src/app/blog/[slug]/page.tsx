@@ -94,7 +94,7 @@ export async function generateMetadata({
   return getMetadata({
     title,
     description,
-    pathname: `${Route.BLOG}/${slug}`,
+    pathname: `${Route.BLOG}/${slug}/`,
     imagePath: feature_image,
   });
 }

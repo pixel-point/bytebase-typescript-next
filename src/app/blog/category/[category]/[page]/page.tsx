@@ -10,6 +10,7 @@ import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
 
 import { POSTS_PER_PAGE, getAllBlogPosts, getBlogPostsPerPage } from '@/lib/api-blog';
+import Route from '@/lib/route';
 import SEO_DATA from '@/lib/seo-data';
 
 export default function BlogCategoryPage({
@@ -65,7 +66,7 @@ export async function generateMetadata({
 }: {
   params: { category: string; page: string };
 }): Promise<Metadata> {
-  const { category } = params;
+  const { category, page } = params;
   const categories: Record<string, string> = {
     announcement: 'Announcement',
     industry: 'Industry',
@@ -78,6 +79,7 @@ export async function generateMetadata({
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - ${categories[category]}`,
+    pathname: `${Route.BLOG_CATEGORY}/${category}/${page}/`,
   });
 }
 

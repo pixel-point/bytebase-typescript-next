@@ -10,6 +10,7 @@ import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
 import SubscribeCta from '@/components/pages/blog/subscribe-cta';
 
 import { getAllBlogPosts, getBlogPostsPerPage } from '@/lib/api-blog';
+import Route from '@/lib/route';
 import SEO_DATA from '@/lib/seo-data';
 
 export default function BlogCategoryPage({ params }: { params: { category: string } }) {
@@ -53,6 +54,7 @@ export async function generateMetadata({
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - ${categories[category]}`,
+    pathname: `${Route.BLOG_CATEGORY}/${category}/`,
   });
 }
 
