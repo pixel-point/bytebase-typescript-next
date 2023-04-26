@@ -4,15 +4,18 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 
+import useTriggerOnce from '@/hooks/use-trigger-once';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 
+import ImagePlaceholder from '../image-placeholder';
 import Cards from './cards';
 
 const Community = () => {
   const ref = useRef(null);
 
   const { isIntersecting } = useIntersectionObserver(ref);
+  const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
   const { rive, RiveComponent } = useRive({
     src: '/rive/community.riv',
@@ -40,17 +43,21 @@ const Community = () => {
       className="container mt-[160px] pb-20 3xl:mt-[144px] xl:mt-[128px] xl:pb-[58px] md:mt-[96px] md:pb-10 sm:mt-7"
       ref={ref}
     >
-      <header className="gap-x-grid grid grid-cols-12 sm:grid-cols-none sm:gap-3">
+      <header
+        className="gap-x-grid grid grid-cols-12 sm:grid-cols-none sm:gap-3"
+        ref={containerRef}
+      >
         <div className="col-span-5 xl:col-span-6 sm:col-span-full">
           <h2 className="mt-[105px] font-title text-112 font-semibold leading-none 3xl:mt-[97px] xl:mt-[58px] xl:text-90 xl:leading-95 md:mt-12 md:text-80 sm:w-3/4 sm:text-56">
             <span className="inline-flex items-center">
               <mark className="whitespace-nowrap bg-transparent text-primary-1">Join</mark>
               <img
+                className="ml-1.5 mr-[6px] mt-3.5 h-20 w-20 lg:mt-1 lg:h-[62px] lg:w-[62px] md:mt-1 md:h-[55px] md:w-[55px] sm:mx-1 sm:mt-2 sm:h-[39px] sm:w-[39px]"
                 src="/images/plus-icon.svg"
                 alt=""
                 width={80}
                 height={80}
-                className="ml-1.5 mr-[6px] mt-3.5 h-20 w-20 lg:mt-1 lg:h-[62px] lg:w-[62px] md:mt-1 md:h-[55px] md:w-[55px] sm:mx-1 sm:mt-2 sm:h-[39px] sm:w-[39px]"
+                loading="lazy"
               />
               the
             </span>{' '}
@@ -63,15 +70,19 @@ const Community = () => {
         </div>
         <div className="col-span-5 col-start-7 3xl:col-span-6 3xl:col-start-7 sm:col-span-full">
           <Image
+            className="mx-auto hidden sm:block"
             src="/images/page/main/community.png"
             alt=""
             width={328}
             height={270}
-            className="mx-auto hidden sm:block"
           />
-          <div className="aspect-square w-full 3xl:ml-auto 3xl:max-w-[600px] xl:max-w-[400px] md:w-full sm:hidden">
-            <RiveComponent />
-          </div>
+          <ImagePlaceholder
+            className="aspect-square w-full 3xl:ml-auto 3xl:max-w-[600px] xl:max-w-[400px] md:w-full sm:hidden"
+            width={590}
+            height={590}
+          >
+            {containerIntersected && <RiveComponent />}
+          </ImagePlaceholder>
         </div>
       </header>
       <Cards />

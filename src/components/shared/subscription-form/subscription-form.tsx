@@ -5,16 +5,20 @@ import NextLink from 'next/link';
 
 import { useEffect, useRef } from 'react';
 
+import useTriggerOnce from '@/hooks/use-trigger-once';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 
 import Route from '@/lib/route';
 
+import ImagePlaceholder from '../image-placeholder';
+
 const SubscriptionForm = ({ className }: { className?: string }) => {
   const ref = useRef(null);
 
   const { isIntersecting } = useIntersectionObserver(ref);
+  const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
   const { rive, RiveComponent } = useRive({
     src: '/rive/rocket.riv',
@@ -44,12 +48,19 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
       )}
       ref={ref}
     >
-      <div className="container gap-x-grid grid grid-cols-12 overflow-x-clip sm:flex sm:flex-col">
+      <div
+        className="container gap-x-grid grid grid-cols-12 overflow-x-clip sm:flex sm:flex-col"
+        ref={containerRef}
+      >
         <div className="relative col-span-5 col-start-2 -ml-10 xl:col-span-6 xl:col-start-1 xl:ml-0">
           <div className="absolute -top-14 -bottom-10 w-full xl:-top-6 xl:-bottom-8 md:-top-4.5 md:-bottom-4.5 sm:hidden">
-            <div className="aspect-square w-full max-w-[520px] 3xl:-ml-2 3xl:max-w-[510px] xl:ml-0 xl:max-w-[410px] md:max-w-full">
-              <RiveComponent />
-            </div>
+            <ImagePlaceholder
+              className="aspect-square w-full max-w-[520px] 3xl:-ml-2 3xl:max-w-[510px] xl:ml-0 xl:max-w-[410px] md:max-w-full"
+              width={520}
+              height={520}
+            >
+              {containerIntersected && <RiveComponent />}
+            </ImagePlaceholder>
           </div>
           <Image
             className="hidden sm:absolute sm:-right-[86px] sm:-top-[84px] sm:block"
@@ -74,11 +85,12 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
               <button className="flex-shrink-0 rounded-r-full bg-black py-6 px-11 text-16 font-bold uppercase leading-none hover:bg-[#17225B] xl:py-4 md:py-3 md:px-5 sm:px-5 sm:py-3">
                 <span className="md:hidden">Subscribe</span>{' '}
                 <img
+                  className="hidden h-6 w-6 md:block"
                   src="/images/arrow-form.svg"
                   alt=""
                   width={24}
                   height={24}
-                  className="hidden h-6 w-6 md:block"
+                  loading="lazy"
                 />
               </button>
             </p>
