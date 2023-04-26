@@ -1,16 +1,19 @@
-const throttle = <T extends (...args: any[]) => void>(func: T, wait: number): T => {
-  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+type ThrottledFunction<T extends any[]> = (this: void, ...args: T) => void;
 
-  const throttledFunc = function (this: any, ...args: Parameters<T>) {
-    if (!timeoutId) {
-      timeoutId = setTimeout(() => {
-        func.apply(this, args);
-        timeoutId = undefined;
-      }, wait);
+function throttle<T extends any[]>(
+  callback: ThrottledFunction<T>,
+  limit: number,
+): ThrottledFunction<T> {
+  let waiting = false;
+  return function (this: void, ...args: T) {
+    if (!waiting) {
+      callback.apply(this, args);
+      waiting = true;
+      setTimeout(() => {
+        waiting = false;
+      }, limit);
     }
   };
-
-  return throttledFunc as T;
-};
+}
 
 export default throttle;

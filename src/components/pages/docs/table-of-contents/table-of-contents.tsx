@@ -35,7 +35,7 @@ const TableOfContents = ({ items }: { items: TOCProps[] }) => {
   }, [anchors]);
 
   useEffect(() => {
-    const handleScrollThrottled = throttle(handleScroll, 200);
+    const handleScrollThrottled = throttle(handleScroll, 100);
     window.addEventListener('scroll', handleScrollThrottled);
     return () => window.removeEventListener('scroll', handleScrollThrottled);
   }, [handleScroll]);
