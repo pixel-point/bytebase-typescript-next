@@ -29,7 +29,7 @@ const Crew = () => (
           </p>
         </li>
       ))}
-      <li className="col-span-3 flex justify-center sm:col-span-2">
+      <li className="col-span-3 place-self-center sm:col-span-2">
         <Link className="group flex flex-col items-center" href={ROUTE.JOBS}>
           <Image src="/images/page/about/join.webp" alt="" width={244} height={244} />
           <span className="mt-4.5 block w-fit border-b-[3px] border-secondary-2 pb-1 text-16 font-bold uppercase leading-none tracking-wide transition-colors duration-200 group-hover:border-tones-green-dark group-active:border-tones-green-dark md:text-13">
