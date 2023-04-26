@@ -29,21 +29,6 @@ const founder = {
   },
 };
 
-const themeList = {
-  blue: {
-    positionColor: 'text-tones-deep-blue-dark',
-    insideStyle: 'shadow-[inset_0_0_0_1px_rgba(156,186,201,0.5)] pr-2 pl-8',
-    outsideStyle:
-      'bg-tones-blue-light shadow-[inset_6px_6px_0_#fff,0_5px_15px_rgba(172,178,210,0.5)]',
-  },
-  green: {
-    positionColor: 'text-tones-deep-green-dark',
-    insideStyle: 'shadow-[inset_0_0_0_1px_rgba(143,188,169,0.4)] pl-2 pr-8',
-    outsideStyle:
-      'bg-tones-green-light shadow-[inset_6px_6px_0_#fff,0_5px_20px_rgba(143,188,169,0.4)]',
-  },
-};
-
 const Founder = ({ id, className }: { id: keyof typeof founder; className?: string }) => {
   const { position, name, image, about } = founder[id];
 
