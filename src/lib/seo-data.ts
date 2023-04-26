@@ -1,4 +1,4 @@
-import Route from './route';
+import Route from '@/lib/route';
 
 const SEO_DATA = {
   INDEX: {

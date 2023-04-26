@@ -19,6 +19,7 @@ import {
   getBlogPostsPerPage,
 } from '@/lib/api-blog';
 import { getTableOfContents } from '@/lib/api-docs';
+import Route from '@/lib/route';
 import SEO_DATA from '@/lib/seo-data';
 
 export default function Blog({ params }: { params: { slug: string } }) {
@@ -82,13 +83,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = params;
 
-  if (+slug >= 1) {
-    return getMetadata(SEO_DATA.BLOG);
-  }
-
   const post = getBlogPostBySlug(slug);
 
-  if (!post) return notFound();
+  if (!post) return getMetadata(SEO_DATA.BLOG);
 
   const { content, title, feature_image } = post;
 
@@ -97,7 +94,7 @@ export async function generateMetadata({
   return getMetadata({
     title,
     description,
-    pathname: `/${slug}`,
+    pathname: `${Route.BLOG}/${slug}`,
     imagePath: feature_image,
   });
 }
