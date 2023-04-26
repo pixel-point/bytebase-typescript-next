@@ -92,7 +92,7 @@ const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
                   'before:bg-primary-1': currentAnchor === id,
                 },
               )}
-              key={idx}
+              key={id}
             >
               <a
                 className={clsx(
