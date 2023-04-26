@@ -67,7 +67,7 @@ const Burger = ({
           }}
         />
         <m.span
-          className="absolute top-[14px] right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
+          className="absolute top-3.5 right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
           variants={{
             initial: {
               rotate: '0deg',
@@ -82,7 +82,7 @@ const Burger = ({
           }}
         />
         <m.span
-          className="absolute top-[14px] right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
+          className="absolute top-3.5 right-0 hidden h-0.5 w-7 rounded-full bg-gray-15 transition-colors duration-200"
           variants={{
             initial: {
               rotate: '0deg',

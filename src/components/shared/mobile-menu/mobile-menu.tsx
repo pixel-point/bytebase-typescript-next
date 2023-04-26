@@ -84,20 +84,24 @@ const MobileMenu = () => {
 
   return (
     <>
-      <Burger className="hidden md:block" isToggled={isOpen} onClick={() => setIsOpen(!isOpen)} />
+      <Burger
+        className="hidden md:block"
+        isToggled={isOpen}
+        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+      />
       <LazyMotion features={domAnimation}>
         <m.nav
           className="safe-paddings fixed inset-0 z-40 hidden bg-black bg-opacity-80"
           initial="from"
           animate={controls}
           variants={menuVariants}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
         >
           <div
             className="ml-auto h-full w-1/2 bg-white pt-[60px] sm:w-full"
             onClick={(evt) => evt.stopPropagation()}
           >
-            <div className="flex h-full flex-col justify-between overflow-y-auto px-7 pb-8 pt-[12px] xs:px-4 xs:pb-5">
+            <div className="flex h-full flex-col justify-between overflow-y-auto px-7 pb-8 pt-3 md:px-5 sm:px-4 xs:pb-5">
               <ul className="flex flex-col items-stretch divide-y divide-gray-90">
                 {MENUS.mobile.map(({ title, href = '', items }, idx) => (
                   <li key={idx} className="relative first:-mt-4 last:border-b last:border-gray-90">
@@ -128,7 +132,7 @@ const MobileMenu = () => {
                         href={href}
                         className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                       >
-                        <span>{title}</span>
+                        {title}
                       </Link>
                     )}
                     <LazyMotion features={domAnimation}>
