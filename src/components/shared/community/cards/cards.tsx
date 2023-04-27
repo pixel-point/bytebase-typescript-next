@@ -60,7 +60,7 @@ const Card = ({
   action: string;
 }) => {
   return (
-    <NextLink className={clsx('group block h-full sm:h-auto')} href={href}>
+    <NextLink className="group block h-full sm:h-auto" href={href}>
       <article
         className={clsx(
           'flex h-full flex-col items-center border border-solid p-9 pb-14 transition-shadow duration-300 3xl:p-8 xl:px-6 xl:py-7 md:px-5 sm:h-auto sm:items-start sm:px-6 sm:pb-5',
