@@ -24,6 +24,7 @@ export default function BlogCategoryPage({
 
   return (
     <>
+      {/* TODO: h1 */}
       <BlogPostHero post={posts[0]} isBlogPost={false} />
       <RecentPosts posts={posts.slice(1, 5)} />
       <SubscribeCta />
