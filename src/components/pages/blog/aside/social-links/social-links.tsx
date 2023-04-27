@@ -33,7 +33,7 @@ const SocialLinks = ({ items }: SocialLinksProps) => {
         const { Icon, className } = icons[network];
         return (
           <li key={network}>
-            <Link className={className} href={url} aria-label={`author on ${network}`}>
+            <Link className={className} href={url} aria-label={`Author on ${network}`}>
               <Icon className="h-[26px] w-[26px]" role="presentation" />
             </Link>
           </li>
