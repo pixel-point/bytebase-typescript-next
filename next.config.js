@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+/* eslint @typescript-eslint/no-var-requires: "off" */
+const generateRedirects = require('./src/lib/generate-redirects');
 
 module.exports = {
   poweredByHeader: false,
@@ -14,6 +16,12 @@ module.exports = {
         destination: '/docs/introduction/what-is-bytebase',
         permanent: true,
       },
+      {
+        source: '/tutorials',
+        destination: '/docs/tutorials/overview/',
+        permanent: true,
+      },
+      ...generateRedirects(),
     ];
   },
   webpack: (config) => {
