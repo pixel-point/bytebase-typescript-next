@@ -85,7 +85,7 @@ const Benefits = () => {
                   height={44}
                   className="ml-1.5 h-11 w-11 xl:ml-0 xl:h-[38px] xl:w-[38px] md:h-8 md:w-8 sm:h-7 sm:w-7"
                 />
-                <p className="text-30 font-bold leading-extra-tight xl:text-24 md:text-20 sm:text-18">
+                <p className="text-30 font-bold leading-extra-tight tracking-tighter xl:text-24 md:text-20 sm:text-18">
                   {title}
                 </p>
               </div>

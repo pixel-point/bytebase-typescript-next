@@ -61,7 +61,7 @@ const Logos = () => {
       <div className="container flex flex-col items-center">
         <h2 className="max-w-3xl text-center font-title text-72 font-semibold leading-none xl:max-w-2xl xl:text-56 md:max-w-lg md:text-48 sm:text-40">
           Trusted by{' '}
-          <mark className="whitespace-nowrap bg-transparent text-center text-primary-1 sm:whitespace-normal">
+          <mark className="whitespace-nowrap bg-transparent text-center text-primary-1">
             fast-growing
           </mark>{' '}
           companies worldwide

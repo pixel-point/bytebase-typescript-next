@@ -33,9 +33,9 @@ const DBScheme = () => {
   }, [rive, isIntersecting]);
 
   return (
-    <section className="mt-[244px] 3xl:mt-[140px] xl:mt-32 md:mt-[90px] sm:mt-[74px]" ref={ref}>
+    <section className="mt-40 3xl:mt-36 xl:mt-32 md:mt-[90px] sm:mt-[74px]" ref={ref}>
       <header className="container">
-        <h2 className="mx-auto max-w-[1219px] text-center font-title text-88 font-semibold leading-none xl:text-68 xl:leading-104 md:text-54 md:leading-none sm:text-48 sm:leading-95">
+        <h2 className="mx-auto max-w-4xl text-center font-title text-72 font-semibold leading-none xl:text-56 xl:leading-none md:text-48 md:leading-none sm:text-48 sm:leading-95">
           Change, Query, Secure, Govern{' '}
           <mark className="whitespace-nowrap bg-transparent text-center text-primary-1">
             all databases
