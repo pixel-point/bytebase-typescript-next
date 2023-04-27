@@ -58,8 +58,8 @@ const logos = [
 const Logos = () => {
   return (
     <section className="mt-40 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0)34.28%,rgba(240,242,255,0.5)100%)] py-36 2xl:mt-36 2xl:py-32 xl:mt-32 xl:py-28 md:mt-24 md:py-24 sm:mt-20 sm:py-16">
-      <div className="container flex flex-col items-center">
-        <h2 className="max-w-3xl text-center font-title text-72 font-semibold leading-none xl:max-w-2xl xl:text-56 md:max-w-lg md:text-48 sm:text-40">
+      <div className="container">
+        <h2 className="mx-auto max-w-3xl text-center font-title text-72 font-semibold leading-none xl:max-w-2xl xl:text-56 md:max-w-lg md:text-48 sm:text-40">
           Trusted by{' '}
           <mark className="whitespace-nowrap bg-transparent text-center text-primary-1">
             fast-growing
