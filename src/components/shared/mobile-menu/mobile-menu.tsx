@@ -81,18 +81,18 @@ const MobileMenu = () => {
     }
   }, [isOpen, controls]);
 
-  const openMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+  const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <>
-      <Burger className="hidden md:block" isToggled={isOpen} onClick={openMenu} />
+      <Burger className="hidden md:block" isToggled={isOpen} onClick={toggleMenu} />
       <LazyMotion features={domAnimation}>
         <m.nav
           className="safe-paddings fixed inset-0 z-40 hidden bg-black bg-opacity-80"
           initial="from"
           animate={controls}
           variants={menuVariants}
-          onClick={openMenu}
+          onClick={toggleMenu}
         >
           <div
             className="ml-auto h-full w-1/2 bg-white pt-[60px] sm:w-full"
@@ -139,6 +139,7 @@ const MobileMenu = () => {
                         <Link
                           className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                           href={href}
+                          onClick={toggleMenu}
                         >
                           {title}
                         </Link>
@@ -162,6 +163,10 @@ const MobileMenu = () => {
                                       size="lg"
                                       theme="gray"
                                       href={linkUrl}
+                                      onClick={() => {
+                                        toggleMenu();
+                                        setOpenedDropdown(-1);
+                                      }}
                                     >
                                       <div className="flex flex-col gap-y-1">
                                         <div className="flex items-center gap-x-2 group-hover:text-primary-1">
