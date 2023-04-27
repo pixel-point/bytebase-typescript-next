@@ -42,7 +42,7 @@ const Table = () => {
         <h2 className="sr-only">Rate plans comparison</h2>
         <div className="relative z-20 col-span-3 col-start-2 3xl:col-span-4 3xl:col-start-1 sm:col-span-6">
           <Image
-            src="/images/page/pricing/table-decor.png"
+            src="/images/page/pricing/table-decor.webp"
             width={338}
             height={330}
             alt=""

@@ -20,7 +20,7 @@ type TCard = {
 
 const cards: TCard[] = [
   {
-    image: '/images/page/pricing/free.jpg',
+    image: '/images/page/pricing/free.webp',
     planTitle: 'free',
     price: 0,
     description: 'Unlimited users, environments and instances',
@@ -37,7 +37,7 @@ const cards: TCard[] = [
     ],
   },
   {
-    image: '/images/page/pricing/team.jpg',
+    image: '/images/page/pricing/team.webp',
     planTitle: 'pro',
     price: 100,
     priceDescription: '/&nbsp;instances at month',
@@ -57,7 +57,7 @@ const cards: TCard[] = [
     ],
   },
   {
-    image: '/images/page/pricing/enterprise.jpg',
+    image: '/images/page/pricing/enterprise.webp',
     planTitle: 'enterprise',
     price: 'Custom',
     description: 'Customized, billed&nbsp;annually',
