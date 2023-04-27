@@ -60,7 +60,7 @@ const Subscription = ({ className }: { className?: string }) => {
     >
       <div className="container gap-x-grid grid grid-cols-12 overflow-x-clip sm:flex sm:flex-col">
         <div className="relative col-span-5 col-start-2 -ml-10 xl:col-span-6 xl:col-start-1 xl:ml-0">
-          <div className="absolute -top-14 -bottom-10 w-full xl:-top-6 xl:-bottom-8 md:-top-4.5 md:-bottom-4.5 sm:hidden">
+          <div className="absolute -top-12 -bottom-10 w-full 3xl:-top-10 xl:-top-6 md:-top-8 sm:hidden">
             <div
               className="aspect-square w-full max-w-[520px] 3xl:-ml-2 3xl:max-w-[510px] xl:ml-0 xl:max-w-[410px] md:max-w-[370px] sm:max-w-full"
               ref={setRiveRef}
@@ -76,7 +76,7 @@ const Subscription = ({ className }: { className?: string }) => {
             alt=""
           />
         </div>
-        <div className="col-span-5 col-start-7 xl:col-span-6 xl:col-start-7 md:col-span-6 md:col-start-7  sm:max-w-[80%] 2xs:max-w-none">
+        <div className="col-span-5 col-start-7 xl:col-start-7 xl:col-end-12 md:col-start-7 md:col-end-13 sm:max-w-[80%] 2xs:max-w-none">
           <div className="-ml-10 pt-16 pb-[75px] 3xl:ml-0 xl:-ml-6 xl:pb-[60px] xl:pt-[51px] md:ml-0 md:pt-10 md:pb-11 sm:pt-9 sm:pb-11">
             <h3 className="font-title text-88 font-semibold leading-none xl:text-68 xl:leading-104 md:text-56 md:leading-none sm:text-48 sm:leading-95">
               Subscribe to&nbsp;Newsletter
