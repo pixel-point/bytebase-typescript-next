@@ -50,7 +50,7 @@ const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
       .filter((anchor): anchor is HTMLElement => anchor !== null);
   }, []);
 
-  const getCurrentAnchor = useCallback(() => {
+  const updateCurrentAnchor = useCallback(() => {
     const currentTitleIdx = titles.current.findIndex(
       (anchor) => anchor.getBoundingClientRect().top - CURRENT_ANCHOR_GAP_PX >= 0,
     );
@@ -63,10 +63,10 @@ const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
     setCurrentAnchor(currentTitle.id);
   }, []);
 
-  const onScroll = useThrottleCallback(getCurrentAnchor, 5);
+  const onScroll = useThrottleCallback(updateCurrentAnchor, 5);
 
   useEffect(() => {
-    getCurrentAnchor();
+    updateCurrentAnchor();
 
     window.addEventListener('scroll', onScroll);
 
