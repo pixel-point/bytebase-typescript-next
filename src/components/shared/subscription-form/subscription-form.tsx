@@ -12,15 +12,13 @@ import clsx from 'clsx';
 
 import Route from '@/lib/route';
 
-import ImagePlaceholder from '../image-placeholder';
-
 const SubscriptionForm = ({ className }: { className?: string }) => {
   const ref = useRef(null);
 
   const { isIntersecting } = useIntersectionObserver(ref);
   const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
-  const { rive, RiveComponent } = useRive({
+  const { rive, RiveComponent, setContainerRef } = useRive({
     src: '/rive/rocket.riv',
     autoplay: false,
     stateMachines: 'SM',
@@ -54,13 +52,12 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
       >
         <div className="relative col-span-5 col-start-2 -ml-10 xl:col-span-6 xl:col-start-1 xl:ml-0">
           <div className="absolute -top-14 -bottom-10 w-full xl:-top-6 xl:-bottom-8 md:-top-4.5 md:-bottom-4.5 sm:hidden">
-            <ImagePlaceholder
+            <div
               className="aspect-square w-full max-w-[520px] 3xl:-ml-2 3xl:max-w-[510px] xl:ml-0 xl:max-w-[410px] md:max-w-[370px] sm:max-w-full"
-              width={520}
-              height={520}
+              ref={setContainerRef}
             >
               {containerIntersected && <RiveComponent />}
-            </ImagePlaceholder>
+            </div>
           </div>
           <Image
             className="hidden sm:absolute sm:-right-[86px] sm:-top-[84px] sm:block"

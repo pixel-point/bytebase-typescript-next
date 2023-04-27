@@ -8,7 +8,6 @@ import useTriggerOnce from '@/hooks/use-trigger-once';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
-import ImagePlaceholder from '@/components/shared/image-placeholder';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 import Pill from '@/components/shared/pill';
 
@@ -18,7 +17,7 @@ const PromoSecurity = () => {
   const { isIntersecting } = useIntersectionObserver(ref, { rootMargin: '-150px', threshold: 0.3 });
   const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
-  const { rive, RiveComponent } = useRive({
+  const { rive, RiveComponent, setContainerRef } = useRive({
     src: '/rive/security.riv',
     autoplay: false,
     stateMachines: 'SM',
@@ -54,13 +53,12 @@ const PromoSecurity = () => {
           </LinkUnderlined>
         </div>
         <div className="relative col-start-5 col-end-13 self-stretch pt-[95px] before:absolute before:bottom-0 before:top-0 before:right-[166px] before:w-[252px] before:bg-security 3xl:col-start-7 3xl:pt-[80px] 3xl:before:right-[104px] xl:col-start-6 xl:before:right-[106px] xl:before:w-[216px] md:col-auto md:-mx-7 md:pt-[49px] md:pb-[39px] md:before:right-0 md:before:top-auto md:before:h-[427px] md:before:w-full md:before:bg-security-phone sm:-mx-4 sm:pb-[32px] sm:pt-[31px] sm:before:h-[324px]">
-          <ImagePlaceholder
-            className="mr-[9px] ml-auto aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-7 xl:mr-0 md:hidden"
-            width={710}
-            height={670}
+          <div
+            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-7 xl:mr-0 md:hidden"
+            ref={setContainerRef}
           >
             {containerIntersected && <RiveComponent />}
-          </ImagePlaceholder>
+          </div>
           <Image
             className="relative mx-auto hidden md:block sm:hidden"
             src="/images/page/main/security-tablet.png"

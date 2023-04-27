@@ -8,15 +8,13 @@ import useTriggerOnce from '@/hooks/use-trigger-once';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
-import ImagePlaceholder from '@/components/shared/image-placeholder';
-
 const DBScheme = () => {
   const ref = useRef(null);
 
   const { isIntersecting } = useIntersectionObserver(ref, { rootMargin: '-150px' });
   const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
-  const { rive, RiveComponent } = useRive({
+  const { rive, RiveComponent, setContainerRef } = useRive({
     src: '/rive/db-scheme.riv',
     autoplay: false,
     artboard: 'scheme',
@@ -48,13 +46,12 @@ const DBScheme = () => {
         </h2>
       </header>
       <div className="mt-14 3xl:mt-12 xl:mt-10 md:mt-9 sm:mt-5">
-        <ImagePlaceholder
+        <div
           className="mx-auto aspect-[2.2676470588] h-auto w-auto max-w-[1542px] sm:hidden"
-          width={1542}
-          height={680}
+          ref={setContainerRef}
         >
           {containerIntersected && <RiveComponent />}
-        </ImagePlaceholder>
+        </div>
         <Image
           className="mx-auto hidden sm:block"
           src="/images/page/main/db-scheme.png"

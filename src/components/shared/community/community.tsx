@@ -8,7 +8,6 @@ import useTriggerOnce from '@/hooks/use-trigger-once';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 
-import ImagePlaceholder from '../image-placeholder';
 import Cards from './cards';
 
 const Community = () => {
@@ -17,7 +16,7 @@ const Community = () => {
   const { isIntersecting } = useIntersectionObserver(ref);
   const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
 
-  const { rive, RiveComponent } = useRive({
+  const { rive, RiveComponent, setContainerRef } = useRive({
     src: '/rive/community.riv',
     autoplay: true,
     stateMachines: 'SM',
@@ -76,13 +75,12 @@ const Community = () => {
             width={328}
             height={270}
           />
-          <ImagePlaceholder
+          <div
             className="aspect-square w-full 3xl:ml-auto 3xl:max-w-[600px] xl:max-w-[400px] md:w-full sm:hidden"
-            width={590}
-            height={590}
+            ref={setContainerRef}
           >
             {containerIntersected && <RiveComponent />}
-          </ImagePlaceholder>
+          </div>
         </div>
       </header>
       <Cards />
