@@ -140,7 +140,7 @@ const MobileMenu = () => {
                         <Link
                           className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                           href={href}
-                          prefetch={href !== Route.BLOG}
+                          prefetch={href !== Route.BLOG ? false : undefined}
                           onClick={toggleMenu}
                         >
                           {title}
