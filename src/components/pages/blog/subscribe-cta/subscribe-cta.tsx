@@ -43,6 +43,7 @@ const SubscribeCta = () => {
                 alt=""
                 width={24}
                 height={24}
+                loading="lazy"
               />
             </button>
           </div>
