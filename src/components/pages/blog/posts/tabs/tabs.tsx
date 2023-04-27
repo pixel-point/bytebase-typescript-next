@@ -57,7 +57,7 @@ const Tabs = ({ items, currentSlug = '' }: TabsProps) => {
         {items.map(({ label, slug = '' }, index) => (
           <li key={index}>
             <Link
-              aria-label={!slug ? `${label}` : `posts of ${label} category`}
+              aria-label={!slug ? `${label}` : `Posts of ${label} category`}
               className={clsx(
                 getTabStyles(slug as keyof typeof tabThemes | '', currentSlug),
                 slug === currentSlug && 'text-white',
