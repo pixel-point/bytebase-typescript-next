@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 
-import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
-import useIntersectionObserver from '@react-hook/intersection-observer';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
 const DBScheme = () => {
   const containerRef = useRef(null);
   const animationRef = useRef(null);
 
-  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+  const { isIntersecting } = useIntersectionObserver(containerRef, {
+    once: true,
     rootMargin: '500px 0px 0px 0px',
   });
   const { isIntersecting: isVisible } = useIntersectionObserver(animationRef, {
