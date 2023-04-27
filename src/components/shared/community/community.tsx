@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 
-import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 
 import Cards from './cards';
@@ -12,7 +12,8 @@ import Cards from './cards';
 const Community = () => {
   const containerRef = useRef(null);
 
-  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+  const { isIntersecting } = useIntersectionObserver(containerRef, {
+    once: true,
     rootMargin: '500px 0px 0px 0px',
   });
 

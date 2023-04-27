@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { useEffect, useRef, useState } from 'react';
 
-import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 
@@ -50,7 +50,8 @@ const PromoSQLEditor = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+  const { isIntersecting } = useIntersectionObserver(containerRef, {
+    once: true,
     rootMargin: '500px 0px 0px 0px',
   });
 

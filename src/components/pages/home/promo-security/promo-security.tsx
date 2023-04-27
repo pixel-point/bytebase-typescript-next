@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 
-import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
@@ -14,10 +14,12 @@ const PromoSecurity = () => {
   const containerRef = useRef(null);
   const animationRef = useRef(null);
 
-  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+  const { isIntersecting } = useIntersectionObserver(containerRef, {
+    once: true,
     rootMargin: '500px 0px 0px 0px',
   });
-  const { isIntersecting: isVisible } = useIntersectionObserverOnce(animationRef, {
+  const { isIntersecting: isVisible } = useIntersectionObserver(animationRef, {
+    once: true,
     threshold: 0.4,
   });
 

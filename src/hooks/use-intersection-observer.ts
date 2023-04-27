@@ -7,17 +7,23 @@ import useIntersectionObserver, {
 
 const useIntersectionObserverOnce = <T extends HTMLElement = HTMLElement>(
   ref: React.RefObject<T> | T | null,
-  options?: IntersectionObserverOptions,
+  options?: IntersectionObserverOptions & { once?: boolean },
 ): MockIntersectionObserverEntry | IntersectionObserverEntry => {
+  const { once = false, ...restOptions } = options || {};
+
   const wasCalledRef = useRef(false);
 
-  const { isIntersecting, ...rest } = useIntersectionObserver(ref, options);
+  const { isIntersecting, ...rest } = useIntersectionObserver(ref, restOptions);
 
   useEffect(() => {
     if (!wasCalledRef.current && isIntersecting) {
       wasCalledRef.current = true;
     }
   }, [isIntersecting]);
+
+  if (!once) {
+    return { isIntersecting, ...rest };
+  }
 
   if (wasCalledRef.current) {
     return { isIntersecting: true, ...rest };

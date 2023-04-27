@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 
 import { useEffect, useRef, useState } from 'react';
 
-import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import useLocalStorage from '@/hooks/use-local-storage';
 import useSegment from '@/hooks/use-segment';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
@@ -55,7 +55,8 @@ const SubscriptionForm = ({ className }: { className?: string }) => {
   const [errorMessage, setErrorMessage] = useState('');
   const { analytics } = useSegment();
 
-  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+  const { isIntersecting } = useIntersectionObserver(containerRef, {
+    once: true,
     rootMargin: '500px 0px 0px 0px',
   });
 
