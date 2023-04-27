@@ -1,7 +1,9 @@
+import Image from 'next/image';
+
 const Logos = () => {
   return (
     <div className="relative mt-[162px] 3xl:mt-[143px] xl:mt-[130px] md:mt-[93px] sm:mt-[76px]">
-      <img
+      <Image
         src="/images/page/main/logos-caption.svg"
         alt="Built by engineers knowing database development flow"
         width={321}
