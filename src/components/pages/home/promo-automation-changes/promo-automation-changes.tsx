@@ -4,19 +4,28 @@ import Image from 'next/image';
 
 import { useEffect, useRef } from 'react';
 
-import useTriggerOnce from '@/hooks/use-trigger-once';
-import useIntersectionObserver from '@react-hook/intersection-observer';
+import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 import Pill from '@/components/shared/pill';
 
 const PromoAutomationChanges = () => {
-  const ref = useRef(null);
-  const { isIntersecting } = useIntersectionObserver(ref, { rootMargin: '-150px', threshold: 0.3 });
-  const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
 
-  const { rive, RiveComponent, setContainerRef } = useRive({
+  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+    rootMargin: '500px 0px 0px 0px',
+  });
+  const { isIntersecting: isVisible } = useIntersectionObserverOnce(animationRef, {
+    threshold: 0.4,
+  });
+
+  const {
+    rive,
+    RiveComponent,
+    setContainerRef: setRiveRef,
+  } = useRive({
     src: '/rive/automation-changes.riv',
     autoplay: false,
     stateMachines: 'SM',
@@ -30,17 +39,17 @@ const PromoAutomationChanges = () => {
   });
 
   useEffect(() => {
-    if (rive && isIntersecting) {
+    if (rive && isVisible) {
       rive.play();
     }
-  }, [rive, isIntersecting]);
+  }, [rive, isVisible]);
 
   return (
     <section
       className="mt-[146px] overflow-hidden bg-black text-white 3xl:mt-[117px] xl:mt-[100px] lg:mt-20"
-      ref={ref}
+      ref={containerRef}
     >
-      <div className="container gap-x-grid grid grid-cols-12 md:grid-cols-none" ref={containerRef}>
+      <div className="container gap-x-grid grid grid-cols-12 md:grid-cols-none">
         <div className="col-start-1 col-end-5 py-[175px] 3xl:py-[160px] xl:col-end-6 xl:py-[140px] md:col-auto md:py-0 md:pt-16 sm:pt-[60px]">
           <Pill theme="primary-1">Change</Pill>
           <h2 className="mt-3 font-title text-112 font-semibold leading-none 3xl:mt-3.5 xl:mt-2.5 xl:text-90 xl:leading-95 lg:mt-3 lg:text-80 md:mt-1.5 sm:mt-2 sm:text-48">
@@ -54,12 +63,15 @@ const PromoAutomationChanges = () => {
             Learn more
           </LinkUnderlined>
         </div>
-        <div className="relative col-start-5 col-end-13 self-stretch pt-[100px] before:absolute before:bottom-0 before:top-0 before:right-[166px] before:w-[252px] before:bg-automation-changes 3xl:pt-[84px] 3xl:before:right-[40px] xl:col-start-6 xl:pt-[115px] xl:before:right-[20px] xl:before:w-[216px]  md:col-auto md:-mx-7 md:pt-10 md:pb-10 md:before:right-0 md:before:top-auto md:before:h-[315px] md:before:w-full md:before:bg-automation-changes-phone sm:-mx-4 sm:pb-7 sm:pt-[30px] sm:before:h-[260px]">
+        <div
+          className="relative col-start-5 col-end-13 self-stretch pt-[100px] before:absolute before:bottom-0 before:top-0 before:right-[166px] before:w-[252px] before:bg-automation-changes 3xl:pt-[84px] 3xl:before:right-[40px] xl:col-start-6 xl:pt-[115px] xl:before:right-[20px] xl:before:w-[216px]  md:col-auto md:-mx-7 md:pt-10 md:pb-10 md:before:right-0 md:before:top-auto md:before:h-[315px] md:before:w-full md:before:bg-automation-changes-phone sm:-mx-4 sm:pb-7 sm:pt-[30px] sm:before:h-[260px]"
+          ref={animationRef}
+        >
           <div
             className="relative ml-auto mr-[64px] aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-[60px] xl:-mr-[46px] md:hidden"
-            ref={setContainerRef}
+            ref={setRiveRef}
           >
-            {containerIntersected && <RiveComponent />}
+            {isIntersecting ? <RiveComponent /> : null}
           </div>
           <Image
             src="/images/page/main/automation-changes-tablet.png"

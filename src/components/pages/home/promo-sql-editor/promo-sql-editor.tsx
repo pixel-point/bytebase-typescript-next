@@ -4,8 +4,7 @@ import Image from 'next/image';
 
 import { useEffect, useRef, useState } from 'react';
 
-import useTriggerOnce from '@/hooks/use-trigger-once';
-import useIntersectionObserver from '@react-hook/intersection-observer';
+import useIntersectionObserverOnce from '@/hooks/use-intersection-observer-once';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 
@@ -47,13 +46,19 @@ const data: AccordionData[] = [
 ];
 
 const PromoSQLEditor = () => {
-  const ref = useRef(null);
+  const containerRef = useRef(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const { isIntersecting } = useIntersectionObserver(ref);
-  const { ref: containerRef, intersected: containerIntersected } = useTriggerOnce();
+  const { isIntersecting } = useIntersectionObserverOnce(containerRef, {
+    rootMargin: '500px 0px 0px 0px',
+  });
 
-  const { rive, RiveComponent } = useRive({
+  const {
+    rive,
+    RiveComponent,
+    setContainerRef: setRiveRef,
+  } = useRive({
     src: '/rive/ufo.riv',
     autoplay: false,
     stateMachines: 'SM',
@@ -82,12 +87,15 @@ const PromoSQLEditor = () => {
   return (
     <section
       className="container relative mt-[62px] pt-[98px] pb-[192px] 3xl:mt-[62px] 3xl:pt-[84px] 3xl:pb-[144px] xl:mt-[40px] xl:pt-[88px] xl:pb-[126px] md:mt-[30px] md:pt-[66px] md:pb-[96px] sm:mt-20 sm:overflow-hidden sm:pt-0 sm:pb-[78px]"
-      ref={ref}
+      ref={containerRef}
     >
-      <div className="absolute top-0 right-[96px] aspect-square h-auto w-[270px] 3xl:right-[76px] xl:w-[250px] md:right-[30px] md:w-[200px] sm:hidden">
-        {containerIntersected && <RiveComponent />}
+      <div
+        className="absolute top-0 right-[96px] aspect-square h-auto w-[270px] 3xl:right-[76px] xl:w-[250px] md:right-[30px] md:w-[200px] sm:hidden"
+        ref={setRiveRef}
+      >
+        {isIntersecting ? <RiveComponent /> : null}
       </div>
-      <header ref={containerRef}>
+      <header>
         <Pill theme="secondary-1">Query</Pill>
         <h2 className="mt-3 max-w-3xl font-title text-88 font-semibold leading-none xl:mt-3 xl:max-w-2xl xl:text-68 xl:leading-104 md:mt-3 md:max-w-lg md:text-54 md:leading-none sm:text-48 sm:leading-95">
           Explore data with <span className="whitespace-nowrap">all-in-one</span>{' '}
