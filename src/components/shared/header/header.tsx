@@ -63,7 +63,7 @@ const Header = () => {
                   {href ? (
                     <Link
                       className="px-3 py-[9px] font-medium"
-                      prefetch={href !== Route.BLOG ? false : undefined}
+                      prefetch={href === Route.BLOG ? false : undefined}
                       href={href}
                       size="md"
                       theme="gray"

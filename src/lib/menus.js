@@ -4,7 +4,7 @@ const OLD_SITE_URL = process.env.NEXT_PUBLIC_OLD_SITE_URL || '';
 
 export const MENUS = {
   header: [
-    { title: 'Solutions', href: ROUTE.SOLUTIONS },
+    { title: 'Solutions', href: OLD_SITE_URL + ROUTE.USECASE_DBA },
     { title: 'Blog', href: ROUTE.BLOG },
     {
       title: 'Docs',
