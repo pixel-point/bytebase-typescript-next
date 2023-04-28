@@ -20,7 +20,7 @@ title: Overview
 
 <TutorialWideCard title="Database Change Management with Snowflake" url="/blog/database-change-management-with-snowflake" date="2022/12/22" logos="snowflake"></TutorialWideCard>
 
-<TutorialWideCard title="How to Synchronize Database Schemas" url="/blog/database-change-management-with-snowflake" date="2022/11/24"></TutorialWideCard>
+<TutorialWideCard title="How to Synchronize Database Schemas" url="/blog/how-to-synchronize-database-schemas" date="2022/11/24"></TutorialWideCard>
 
 ## Intermediate
 
