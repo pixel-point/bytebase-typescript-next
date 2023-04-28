@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+
+// TODO: switch external redirects to rewrites
 /* eslint @typescript-eslint/no-var-requires: "off" */
 const generateRedirects = require('./src/lib/generate-redirects');
 
