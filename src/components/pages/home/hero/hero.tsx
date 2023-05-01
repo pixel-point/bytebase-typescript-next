@@ -134,12 +134,29 @@ const Hero = () => {
           <LinkUnderlined href={Route.INDEX}>See Live Demo</LinkUnderlined>
         </footer>
       </section>
-      <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px] sm:hidden" />
+      <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px] sm:col-auto sm:row-auto sm:mt-8 sm:h-auto">
+        <div className="mx-auto hidden w-fit border border-gray-40 shadow-[0_5px_15px_0_rgba(15,22,36,0.2)] sm:block">
+          <video
+            className="aspect-[0.7754137116]"
+            controls={false}
+            width={464}
+            height={604}
+            loop
+            playsInline
+            autoPlay
+            muted
+          >
+            {cards[0].videos.map((video) => (
+              <source key={video.type} src={video.src} type={video.type} />
+            ))}
+          </video>
+        </div>
+      </div>
       <div
-        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8 sm:min-h-0"
+        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8"
         ref={anchorRef}
       >
-        <Card className="sticky top-[200px]" {...cards[0]} />
+        <Card className="sticky top-[200px] sm:static" {...cards[0]} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:pt-[30px] sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
         <Card className="sticky top-[200px] delay-150 sm:static" {...cards[1]} />
