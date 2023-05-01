@@ -6,7 +6,7 @@ import { ChangelogPost } from '@/types/changelog-post';
 
 import Route from '@/lib/route';
 
-import Pagination from '../../../shared/pagination';
+import Pagination from '@/components/shared/pagination';
 
 type PostsProps = {
   posts: ChangelogPost[];
