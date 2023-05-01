@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 // TODO: switch external redirects to rewrites
-/* eslint @typescript-eslint/no-var-requires: "off" */
-const generateHeaders = require('./src/lib/generate-headers');
 
 module.exports = {
   poweredByHeader: false,
@@ -12,9 +10,7 @@ module.exports = {
     appDir: true,
   },
   async headers() {
-    const OLD_SITE_URL = process.env.NEXT_PUBLIC_OLD_SITE_URL || '';
-
-    if (!OLD_SITE_URL) return [];
+    if (!process.env.NEXT_PUBLIC_OLD_SITE_URL) return [];
 
     return ['/', '/about', '/pricing', '/blog/:path*', '/docs/:path*'].map((path) => ({
       source: path,
