@@ -122,7 +122,7 @@ const Hero = () => {
             </p>
           </div>
         </header>
-        <footer className="mt-14 flex items-center gap-9 xl:mt-11 md:mt-7 sm:mt-6 sm:gap-3.5">
+        <footer className="mt-14 flex items-center gap-9 2xl:gap-8 xl:mt-11 xl:gap-6 md:mt-7 sm:mt-6 sm:gap-3.5">
           <Button
             href={Route.INDEX}
             theme="primary-filled"
