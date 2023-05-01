@@ -4,23 +4,20 @@ import { useRouter } from 'next/navigation';
 
 import ReactPaginate from 'react-paginate';
 
-import ROUTE from '@/lib/route';
-
 import Arrow from '@/svgs/arrow.inline.svg';
 
 type PaginationProps = {
   currentPageIndex: number;
   pageCount: number;
-  categoryPath?: string;
+  path: string;
 };
 
 // TODO: design disable state for prev/next links
-const Pagination = ({ currentPageIndex, pageCount, categoryPath = '' }: PaginationProps) => {
+const Pagination = ({ currentPageIndex, pageCount, path = '' }: PaginationProps) => {
   const router = useRouter();
 
   const handlePageClick = ({ selected }: { selected: number }) => {
-    const blogPath = !categoryPath ? ROUTE.BLOG : `${ROUTE.BLOG_CATEGORY}/${categoryPath}`;
-    const navigateTo = blogPath + (!selected ? '' : `/${selected + 1}`);
+    const navigateTo = path + (!selected ? '' : `/${selected + 1}`);
     router.push(navigateTo);
   };
 
