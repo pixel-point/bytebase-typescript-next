@@ -15,6 +15,8 @@ const Route = {
   DOCS_HOW_TO: '/docs/how-to/sql-review/postgres-sql-review-guide',
   DOCS_TUTORIALS: '/docs/tutorials/overview',
   SOLUTIONS: '/solutions',
+  LIVE_DEMO: 'https://demo.bytebase.com',
+  REQUEST_DEMO: 'https://cal.com/adela-bytebase/30min',
   DISCORD: 'https://discord.com/invite/huyw7gRsyA',
   TWITTER: 'https://twitter.com/Bytebase',
   GITHUB: 'https://github.com/bytebase/bytebase',

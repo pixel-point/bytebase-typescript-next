@@ -2,7 +2,6 @@ import ROUTE from './route.ts';
 
 export const MENUS = {
   header: [
-    { title: 'Solutions', href: ROUTE.SOLUTIONS },
     { title: 'Blog', href: ROUTE.BLOG },
     {
       title: 'Docs',
@@ -37,7 +36,6 @@ export const MENUS = {
     { title: 'About us', href: ROUTE.ABOUT },
   ],
   mobile: [
-    { title: 'Solutions', href: ROUTE.SOLUTIONS },
     { title: 'Blog', href: ROUTE.BLOG },
     {
       title: 'Docs',

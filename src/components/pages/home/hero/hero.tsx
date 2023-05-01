@@ -124,14 +124,14 @@ const Hero = () => {
         </header>
         <footer className="mt-14 flex items-center gap-9 xl:mt-11 md:mt-7 sm:mt-6 sm:gap-3.5">
           <Button
-            href={Route.INDEX}
+            href={Route.REQUEST_DEMO}
             theme="primary-filled"
             size="lg"
             className="sm:!w-fit sm:!px-6"
           >
             Request a Demo
           </Button>
-          <LinkUnderlined href={Route.INDEX}>See Live Demo</LinkUnderlined>
+          <LinkUnderlined href={Route.LIVE_DEMO}>See Live Demo</LinkUnderlined>
         </footer>
       </section>
       <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px] sm:hidden" />
