@@ -36,10 +36,10 @@ const Card = ({ color, className, cover, videos, title, href, description }: Car
         </div>
         <div className="rotate-y-180 backface-hidden col-span-full row-span-full">
           <Image
-            className={clsx('h-auto w-full', {
-              'shadow-blue': color === 'blue',
-              'shadow-green': color === 'green',
-              'shadow-red': color === 'red',
+            className={clsx('h-auto w-full border', {
+              'border-tones-blue-dark shadow-blue': color === 'blue',
+              'border-tones-green-dark shadow-green': color === 'green',
+              'border-tones-pink-dark shadow-red': color === 'red',
             })}
             src={cover}
             width={464}
