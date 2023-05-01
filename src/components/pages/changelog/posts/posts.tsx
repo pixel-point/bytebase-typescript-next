@@ -28,8 +28,8 @@ const Posts = ({ posts, page, pageCount }: PostsProps) => {
               <li key={index}>
                 <article className="gap-x-grid grid auto-rows-min grid-cols-12">
                   <header
-                    className="relative col-span-3 flex h-min flex-col gap-y-2.5 pl-5 before:absolute before:top-0
-                      before:left-0 before:h-full before:w-0.5 before:-translate-x-1/2 before:rounded-full before:bg-primary-1 md:gap-y-2 md:pl-4 sm:col-span-full sm:pl-0 sm:before:hidden"
+                    className="sticky top-[60px] col-span-3 flex h-min flex-col gap-y-2.5 pl-5 before:absolute  before:top-0 before:left-0 before:h-full
+                      before:w-0.5 before:-translate-x-1/2 before:rounded-full before:bg-primary-1 lg:top-[52px] md:top-10 md:gap-y-2 md:pl-4 sm:relative sm:top-auto sm:col-span-full sm:pl-0 sm:before:hidden"
                   >
                     <time
                       className="text-14 font-semibold uppercase leading-none tracking-tight"
