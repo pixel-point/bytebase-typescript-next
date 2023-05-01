@@ -2,7 +2,7 @@
 
 // TODO: switch external redirects to rewrites
 /* eslint @typescript-eslint/no-var-requires: "off" */
-const generateHeaders = require('./src/lib/generate-headers');
+const generateRedirects = require('./src/lib/generate-redirects');
 
 module.exports = {
   poweredByHeader: false,
@@ -10,21 +10,6 @@ module.exports = {
   swcMinify: false,
   experimental: {
     appDir: true,
-  },
-  async headers() {
-    const OLD_SITE_URL = process.env.NEXT_PUBLIC_OLD_SITE_URL || '';
-
-    if (!OLD_SITE_URL) return [];
-
-    return ['/', '/about', '/pricing', '/blog/:path*', '/docs/:path*'].map((path) => ({
-      source: path,
-      headers: [
-        {
-          key: 'x-dont-redirect',
-          value: 'yes',
-        },
-      ],
-    }));
   },
   async redirects() {
     return [
@@ -38,17 +23,7 @@ module.exports = {
         destination: '/docs/tutorials/overview/',
         permanent: true,
       },
-      {
-        source: '/:path*',
-        missing: [
-          {
-            type: 'header',
-            key: 'x-dont-redirect',
-          },
-        ],
-        destination: `${process.env.NEXT_PUBLIC_OLD_SITE_URL}/:path*`,
-        permanent: false,
-      },
+      ...generateRedirects(),
     ];
   },
   webpack: (config) => {
