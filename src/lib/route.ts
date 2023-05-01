@@ -35,6 +35,7 @@ const Route = {
   USECASE_DEVELOPER: '/usecase/developer',
   LIVE_DEMO: 'https://demo.bytebase.com',
   REQUEST_DEMO: 'https://cal.com/adela-bytebase/30min',
+  SELF_HOST: '/docs/get-started/install/deploy-with-docker',
   DISCORD: 'https://discord.com/invite/huyw7gRsyA',
   TWITTER: 'https://twitter.com/Bytebase',
   GITHUB: 'https://github.com/bytebase/bytebase',
