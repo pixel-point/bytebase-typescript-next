@@ -133,7 +133,7 @@ const Header = () => {
           </ul>
           <div className="flex items-center gap-5 md:hidden">
             <Link
-              href="#"
+              href={Route.GITHUB}
               className="inline-flex items-center gap-2 text-14 font-bold uppercase leading-none"
             >
               {/* TODO: add github stars fetching */}
@@ -141,9 +141,10 @@ const Header = () => {
               4.7k
             </Link>
             <span className="h-5 w-px bg-gray-80" />
-            <Button href="#" theme="primary-outline" size="sm">
+            <Button href={Route.SELF_HOST} theme="primary-outline" size="sm">
               Self host
             </Button>
+            {/* TODO: add auth0 */}
             <Button href="#" theme="gray-filled" size="sm">
               Sign Up for Cloud
             </Button>

@@ -193,7 +193,7 @@ const MobileMenu = () => {
                 <li className="relative first:-mt-4 last:border-b last:border-gray-90">
                   <Link
                     className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
-                    href=""
+                    href={Route.GITHUB}
                     prefetch={false}
                   >
                     GitHub
@@ -201,10 +201,11 @@ const MobileMenu = () => {
                 </li>
               </ul>
               <div className="mt-10 flex flex-col gap-4">
+                {/* TODO: add auth0 */}
                 <Button href="/" theme="gray-filled" size="md">
                   Sign up for Cloud
                 </Button>
-                <Button href="/" theme="primary-outline" size="md">
+                <Button href={Route.SELF_HOST} theme="primary-outline" size="md">
                   Self host
                 </Button>
               </div>
