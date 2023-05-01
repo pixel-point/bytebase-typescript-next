@@ -70,7 +70,7 @@ const PromoAutomationChanges = () => {
           ref={animationRef}
         >
           <div
-            className="relative ml-auto mr-[64px] aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-[60px] xl:-mr-[46px] md:hidden"
+            className="relative ml-auto mr-[64px] aspect-[1.0597014925] w-[710px] 3xl:-mr-[60px] xl:-mr-[46px] xl:w-[560px] md:hidden"
             ref={setRiveRef}
           >
             {isIntersecting ? <RiveComponent /> : null}

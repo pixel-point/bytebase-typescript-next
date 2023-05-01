@@ -67,7 +67,7 @@ const PromoSecurity = () => {
           ref={animationRef}
         >
           <div
-            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-7 xl:mr-0 md:hidden"
+            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-[710px] 3xl:-mr-6 xl:mr-0 xl:w-[560px] md:hidden"
             ref={setRiveRef}
           >
             {isIntersecting ? <RiveComponent /> : null}
