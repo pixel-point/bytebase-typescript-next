@@ -85,6 +85,10 @@
       }
     }
 
+    h2 {
+      @apply text-30 lg:text-24 md:text-20 sm:text-18;
+    }
+
     h1,
     h2,
     h3,
