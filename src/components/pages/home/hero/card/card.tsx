@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { useEffect, useRef } from 'react';
+
 import clsx from 'clsx';
 
 import { LinkUnderlined } from '@/components/shared/link-underlined';
@@ -12,9 +14,27 @@ export type CardProps = {
   title: string;
   description: string;
   className?: string;
+  autoplay: boolean;
+  onLoad: () => void;
 };
 
-const Card = ({ color, className, cover, videos, title, href, description }: CardProps) => {
+const Card = ({
+  color,
+  className,
+  cover,
+  videos,
+  title,
+  href,
+  description,
+  autoplay,
+  onLoad,
+}: CardProps) => {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    ref.current?.play();
+  }, [autoplay]);
+
   return (
     <article className={clsx('perspective-1000', className)}>
       <div className="group-[.done]:rotate-y-180 transform-3d sm:rotate-y-180 grid transition-transform delay-[inherit] duration-1000 sm:transition-none">
@@ -24,10 +44,11 @@ const Card = ({ color, className, cover, videos, title, href, description }: Car
             controls={false}
             width={464}
             height={604}
+            ref={ref}
             loop
             playsInline
-            autoPlay
             muted
+            onLoad={onLoad}
           >
             {videos.map((video) => (
               <source key={video.type} src={video.src} type={video.type} />
