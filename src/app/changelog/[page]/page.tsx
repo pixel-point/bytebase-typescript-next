@@ -3,14 +3,12 @@ import { notFound } from 'next/navigation';
 import getMetadata from '@/utils/get-metadata';
 
 import Posts from '@/components/pages/changelog/posts';
-import Pagination from '@/components/shared/pagination';
 
 import {
   POSTS_PER_PAGE,
   getAllChangelogPosts,
   getChangelogPostsPerPage,
 } from '@/lib/api-changelog';
-import Route from '@/lib/route';
 import SEO_DATA from '@/lib/seo-data';
 
 export const metadata = getMetadata(SEO_DATA.CHANGELOG);

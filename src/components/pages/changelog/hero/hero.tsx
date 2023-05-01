@@ -9,7 +9,7 @@ const Hero = () => {
         <h1 className="font-title text-90 font-semibold leading-none lg:text-68 md:text-56 sm:text-40">
           Bytebase <mark className="bg-transparent text-primary-1">Changelog</mark>
         </h1>
-        <p className="mt-4 border-b border-gray-90 pb-11 text-18 lg:mt-3 lg:text-16 md:mt-2 md:leading-snug">
+        <p className="mt-4 border-b border-gray-90 pb-11 text-18 lg:mt-3 lg:pb-9 lg:text-16 md:mt-2 md:pb-8 md:leading-snug sm:pb-6">
           Reliable Database change for DevOps and DBA teams.
           <br />
           Want to be notifed? Follow us on{' '}

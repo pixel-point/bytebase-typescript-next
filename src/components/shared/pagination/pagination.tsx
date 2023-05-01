@@ -25,7 +25,8 @@ const Pagination = ({ currentPageIndex, pageCount, path = '' }: PaginationProps)
     <div className="mt-16 border-t border-gray-90 pt-8 xl:mt-14 md:mt-12 sm:mt-8">
       <ReactPaginate
         breakLabel="..."
-        pageRangeDisplayed={2}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
         pageCount={pageCount}
         forcePage={currentPageIndex - 1}
         containerClassName="flex justify-center items-center gap-x-5 sm:gap-x-2.5"
