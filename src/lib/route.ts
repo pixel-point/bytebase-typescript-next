@@ -40,6 +40,7 @@ const Route = {
   GITHUB: 'https://github.com/bytebase/bytebase',
   STAR_HISTORY: 'https://star-history.com/#bytebase/bytebase',
   DB_COST: 'https://www.dbcost.com/',
+  REFUND: '/refund',
   TERMS: '/terms',
   PRIVACY: '/privacy',
   JOBS: '/jobs',
