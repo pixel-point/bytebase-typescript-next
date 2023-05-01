@@ -84,7 +84,7 @@ const Hero = () => {
   // TODO: update on resize
   useEffect(() => {
     if (containerRef.current) {
-      const topPosition = topPositionRef.current - 200; // 200 is the same value as used for sticky top property value
+      const topPosition = topPositionRef.current - window.innerWidth > 1280 ? 500 : 200;
       const isDone = containerRef.current.classList.contains('done');
 
       if (scrollY >= topPosition && !isDone) {
