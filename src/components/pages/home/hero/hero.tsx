@@ -14,7 +14,7 @@ import SmallArrowIcon from '@/svgs/small-arrow.inline.svg';
 import Card, { type CardProps } from './card';
 
 // TODO: prepare webm videos and optimize them
-const cards: CardProps[] = [
+const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
   {
     videos: [
       {
