@@ -35,8 +35,8 @@ const Pagination = ({ currentPageIndex, pageCount, path = '' }: PaginationProps)
         activeLinkClassName="bg-primary-1 text-white pointer-events-none"
         previousClassName="mr-auto"
         nextClassName="ml-auto"
-        previousLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
-        nextLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0"
+        previousLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0 3xs:hidden"
+        nextLinkClassName="flex items-center text-18 gap-x-2 px-5 bg-gray-97 rounded-full h-10 font-medium transition-colors hover:bg-gray-90 md:w-10 md:justify-center md:px-0 3xs:hidden"
         disabledLinkClassName="pointer-events-none text-gray-60"
         previousLabel={
           <>
