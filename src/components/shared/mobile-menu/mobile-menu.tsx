@@ -164,7 +164,7 @@ const MobileMenu = () => {
                                       size="lg"
                                       theme="gray"
                                       href={linkUrl}
-                                      prefetch={false}
+                                      prefetch={isDropdownOpened && items ? false : undefined}
                                       onClick={() => {
                                         toggleMenu();
                                         setOpenedDropdown(-1);
