@@ -4,10 +4,8 @@ import { notFound } from 'next/navigation';
 import getMetadata from '@/utils/get-metadata';
 import slugifyText from '@/utils/slugify-text';
 
-import BlogPostHero from '@/components/pages/blog/blog-post-hero';
 import Posts from '@/components/pages/blog/posts';
-import RecentPosts from '@/components/pages/blog/recent-posts/recent-posts';
-import SubscribeCta from '@/components/pages/blog/subscribe-cta';
+import Tabs from '@/components/pages/blog/tabs/tabs';
 
 import { getAllBlogPosts, getBlogPostsPerPage, getTagNameBySlug } from '@/lib/api-blog';
 import Route from '@/lib/route';
@@ -19,15 +17,19 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
 
   if (!data) return notFound();
 
-  const { posts, recentPosts, tags, pageCount } = data;
+  const { posts, tags, pageCount } = data;
 
   return (
     <>
       {/* TODO: h1 */}
-      <BlogPostHero post={recentPosts[0]} isBlogPost={false} />
-      <RecentPosts posts={recentPosts.slice(1, 5)} />
-      <SubscribeCta />
-      <Posts posts={posts} tabs={tags} page={1} pageCount={pageCount} category={category} />
+      <Tabs items={tags} currentSlug={category} />
+      <Posts
+        title={getTagNameBySlug(category)}
+        posts={posts}
+        page={1}
+        pageCount={pageCount}
+        category={category}
+      />
     </>
   );
 }
