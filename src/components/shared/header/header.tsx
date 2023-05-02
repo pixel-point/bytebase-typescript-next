@@ -144,8 +144,7 @@ const Header = () => {
             <Button href={Route.SELF_HOST} theme="primary-outline" size="sm">
               Self host
             </Button>
-            {/* TODO: add auth0 */}
-            <Button href="#" theme="gray-filled" size="sm">
+            <Button href="https://hub.bytebase.com/workspace" theme="gray-filled" size="sm">
               Sign Up for Cloud
             </Button>
           </div>

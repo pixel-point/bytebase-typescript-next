@@ -201,8 +201,7 @@ const MobileMenu = () => {
                 </li>
               </ul>
               <div className="mt-10 flex flex-col gap-4">
-                {/* TODO: add auth0 */}
-                <Button href="/" theme="gray-filled" size="md">
+                <Button href="https://hub.bytebase.com/workspace" theme="gray-filled" size="md">
                   Sign up for Cloud
                 </Button>
                 <Button href={Route.SELF_HOST} theme="primary-outline" size="md">
