@@ -19,13 +19,13 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
 
   if (!data) return notFound();
 
-  const { posts, tags, pageCount } = data;
+  const { posts, recentPosts, tags, pageCount } = data;
 
   return (
     <>
       {/* TODO: h1 */}
-      <BlogPostHero post={posts[0]} isBlogPost={false} />
-      <RecentPosts posts={posts.slice(1, 5)} />
+      <BlogPostHero post={recentPosts[0]} isBlogPost={false} />
+      <RecentPosts posts={recentPosts.slice(1, 5)} />
       <SubscribeCta />
       <Posts posts={posts} tabs={tags} page={1} pageCount={pageCount} category={category} />
     </>
