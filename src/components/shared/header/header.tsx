@@ -72,7 +72,7 @@ const Header = () => {
                 <li key={title} className="group relative inline-block">
                   {href ? (
                     <Link
-                      className="px-3 py-[9px] font-medium"
+                      className="px-3 py-[9px] font-sans font-medium"
                       prefetch={href === Route.BLOG ? false : undefined}
                       href={href}
                       size="md"
@@ -83,7 +83,7 @@ const Header = () => {
                   ) : (
                     <button
                       className={clsx(
-                        'rounded-[44px] px-3 py-[9px] text-16 font-medium leading-none transition-colors duration-200',
+                        'rounded-[44px] px-3 py-[9px] font-sans text-16 font-medium leading-none transition-colors duration-200',
                         {
                           'group-hover:bg-gray-94': items,
                         },
@@ -154,10 +154,15 @@ const Header = () => {
               4.7k
             </Link>
             <span className="h-5 w-px bg-gray-80" />
-            <Button href={Route.SELF_HOST} theme="primary-outline" size="sm">
+            <Button href={Route.SELF_HOST} theme="primary-outline" className="w-[116px]" size="sm">
               Self host
             </Button>
-            <Button href="https://hub.bytebase.com/workspace" theme="gray-filled" size="sm">
+            <Button
+              href="https://hub.bytebase.com/workspace"
+              className="w-[183px]"
+              theme="gray-filled"
+              size="sm"
+            >
               Sign Up for Cloud
             </Button>
           </div>
