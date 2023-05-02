@@ -1,3 +1,9 @@
+'use client';
+
+import { usePathname, useRouter } from 'next/navigation';
+
+import { MouseEvent, useEffect } from 'react';
+
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
@@ -51,6 +57,28 @@ const getTabStyles = (slug: keyof typeof tabThemes | '', currentSlug: string) =>
 };
 
 const Tabs = ({ items, currentSlug = '' }: TabsProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const { scrollTop } = document.documentElement;
+
+    const { href } = e.target as HTMLAnchorElement;
+
+    if (history.pushState) {
+      history.pushState({ scrollTop }, '', href);
+    }
+    router.push(href);
+  };
+
+  useEffect(() => {
+    const state = window.history.state as { scrollTop: number } | null;
+    if (state) {
+      document.documentElement.scrollTop = state.scrollTop;
+    }
+  }, [pathname]);
+
   return (
     <nav className="scrollbar-hidden mt-10 overflow-auto lg:-mx-11 lg:mt-12 lg:px-11 md:-mx-7 md:mt-6 md:px-7 xs:-mx-4 xs:mt-5 xs:px-4">
       <ul className="flex w-max gap-x-4 text-black lg:gap-x-3 md:gap-x-2">
@@ -64,6 +92,7 @@ const Tabs = ({ items, currentSlug = '' }: TabsProps) => {
                 'block rounded-full border-2 px-[18px] py-[7px] text-16 font-medium leading-none md:text-14 xs:text-12',
               )}
               href={!slug ? ROUTE.BLOG : `${ROUTE.BLOG_CATEGORY}/${slug}`}
+              onClick={handleClick}
             >
               {label}
             </Link>
