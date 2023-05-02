@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import useScrollPosition from '@react-hook/window-scroll';
 
@@ -14,7 +14,7 @@ import SmallArrowIcon from '@/svgs/small-arrow.inline.svg';
 import Card, { type CardProps } from './card';
 
 // TODO: prepare webm videos and optimize them
-const cards: CardProps[] = [
+const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
   {
     videos: [
       {
@@ -72,6 +72,8 @@ const cards: CardProps[] = [
 ];
 
 const Hero = () => {
+  const [autoplay, setAutoplay] = useState(false);
+  const loadRef = useRef<boolean[]>([]);
   const containerRef = useRef<null | HTMLDivElement>(null);
   const anchorRef = useRef<null | HTMLDivElement>(null);
   const topPositionRef = useRef<number>(0);
@@ -84,7 +86,7 @@ const Hero = () => {
   // TODO: update on resize
   useEffect(() => {
     if (containerRef.current) {
-      const topPosition = topPositionRef.current - 200; // 200 is the same value as used for sticky top property value
+      const topPosition = topPositionRef.current - window.innerWidth >= 1280 ? 500 : 200;
       const isDone = containerRef.current.classList.contains('done');
 
       if (scrollY >= topPosition && !isDone) {
@@ -95,6 +97,13 @@ const Hero = () => {
       }
     }
   }, [scrollY]);
+
+  const onLoad = useCallback(() => {
+    loadRef.current.push(true);
+    if (loadRef.current.length === cards.length) {
+      setAutoplay(true);
+    }
+  }, []);
 
   return (
     <div
@@ -122,7 +131,7 @@ const Hero = () => {
             </p>
           </div>
         </header>
-        <footer className="mt-14 flex items-center gap-9 xl:mt-11 md:mt-7 sm:mt-6 sm:gap-3.5">
+        <footer className="mt-14 flex items-center gap-9 2xl:gap-8 xl:mt-11 xl:gap-6 md:mt-7 sm:mt-6 sm:gap-3.5">
           <Button
             href={Route.REQUEST_DEMO}
             theme="primary-filled"
@@ -134,18 +143,50 @@ const Hero = () => {
           <LinkUnderlined href={Route.LIVE_DEMO}>See Live Demo</LinkUnderlined>
         </footer>
       </section>
-      <div className="col-span-full col-start-1 row-start-2 h-20 3xl:h-[72px] xl:h-20 md:h-[60px] sm:hidden" />
+      <div className="col-span-full col-start-1 row-start-2 h-20 md:h-[60px] sm:col-auto sm:row-auto sm:mt-8 sm:h-auto">
+        <div className="mx-auto hidden w-fit border border-gray-40 shadow-[0_5px_15px_0_rgba(15,22,36,0.2)] sm:block">
+          <video
+            className="aspect-[0.7754137116]"
+            controls={false}
+            width={464}
+            height={604}
+            loop
+            playsInline
+            autoPlay
+            muted
+          >
+            {cards[0].videos.map((video) => (
+              <source key={video.type} src={video.src} type={video.type} />
+            ))}
+          </video>
+        </div>
+      </div>
       <div
-        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8 sm:min-h-0"
+        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8"
         ref={anchorRef}
       >
-        <Card className="sticky top-[200px]" {...cards[0]} />
+        <Card
+          {...cards[0]}
+          className="sticky top-[200px] sm:static"
+          autoplay={autoplay}
+          onLoad={onLoad}
+        />
       </div>
-      <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:pt-[30px] sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
-        <Card className="sticky top-[200px] delay-150 sm:static" {...cards[1]} />
+      <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:-mt-5 xl:pt-0 lg:mt-0 lg:pt-7 sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
+        <Card
+          {...cards[1]}
+          className="sticky top-[200px] delay-150 sm:static"
+          autoplay={autoplay}
+          onLoad={onLoad}
+        />
       </div>
-      <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] xl:row-start-2 xl:-mt-[40px] xl:pt-0 md:-mt-[29px] sm:col-auto sm:row-auto sm:mt-8">
-        <Card className="sticky top-[200px] delay-300 sm:static" {...cards[2]} />
+      <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] lg:row-start-2 lg:-mt-20 lg:pt-0 md:-mt-7 sm:col-auto sm:row-auto sm:mt-8">
+        <Card
+          {...cards[2]}
+          className="sticky top-[200px] delay-300 sm:static"
+          autoplay={autoplay}
+          onLoad={onLoad}
+        />
       </div>
     </div>
   );

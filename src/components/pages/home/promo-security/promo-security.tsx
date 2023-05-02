@@ -11,8 +11,8 @@ import { LinkUnderlined } from '@/components/shared/link-underlined';
 import Pill from '@/components/shared/pill';
 
 const PromoSecurity = () => {
-  const containerRef = useRef(null);
-  const animationRef = useRef(null);
+  const containerRef = useRef<null | HTMLDivElement>(null);
+  const animationRef = useRef<null | HTMLDivElement>(null);
 
   const { isIntersecting } = useIntersectionObserver(containerRef, {
     once: true,
@@ -58,7 +58,10 @@ const PromoSecurity = () => {
             Bytebase streamlines database deployment from non-prod to prod by integrating with
             version control systems for a GitOps workflow.
           </p>
-          <LinkUnderlined className="mt-8 xl:mt-6 md:mt-4 sm:mt-3" href="#">
+          <LinkUnderlined
+            className="mt-8 text-white hover:text-secondary-2 xl:mt-6 md:mt-4 sm:mt-3"
+            href="#"
+          >
             Learn more
           </LinkUnderlined>
         </div>
@@ -67,7 +70,7 @@ const PromoSecurity = () => {
           ref={animationRef}
         >
           <div
-            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-full max-w-[710px] 3xl:-mr-7 xl:mr-0 md:hidden"
+            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-[710px] 3xl:-mr-6 xl:mr-0 xl:w-[560px] md:hidden"
             ref={setRiveRef}
           >
             {isIntersecting ? <RiveComponent /> : null}
