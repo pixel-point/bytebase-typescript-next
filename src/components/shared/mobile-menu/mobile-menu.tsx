@@ -203,7 +203,7 @@ const MobileMenu = () => {
                 <Button href="https://hub.bytebase.com/workspace" theme="gray-filled" size="md">
                   Sign up for Cloud
                 </Button>
-                <Button href={Route.SELF_HOST} theme="primary-outline" size="md">
+                <Button href={Route.DOCS_SELF_HOST} theme="primary-outline" size="md">
                   Self host
                 </Button>
               </div>

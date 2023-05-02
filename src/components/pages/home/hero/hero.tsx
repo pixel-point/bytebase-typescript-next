@@ -27,7 +27,7 @@ const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
       },
     ],
     color: 'blue',
-    href: '#',
+    href: Route.DOCS_CHANGE_DATABASE,
     cover: '/images/page/main/hero/change-database.webp',
     title: 'Change database',
     description:
@@ -45,7 +45,7 @@ const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
       },
     ],
     color: 'green',
-    href: '#',
+    href: Route.DOCS_SQL_EDITOR,
     cover: '/images/page/main/hero/query-data.webp',
     title: 'Query data',
     description:
@@ -63,7 +63,7 @@ const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
       },
     ],
     color: 'red',
-    href: '#',
+    href: Route.DOCS_ADMINISTRATION,
     cover: '/images/page/main/hero/secure-access.webp',
     title: 'Secure access',
     description:
