@@ -18,14 +18,14 @@ export default async function Blog() {
 
   if (!data) return notFound();
 
-  const { posts, tags, pageCount } = data;
+  const { posts, recentPosts, tags, pageCount } = data;
 
   return (
     <>
       <h1 className="sr-only">Bytebase blog</h1>
       <Tabs items={tags} />
-      <BlogPostHero post={posts[0]} isBlogPost={false} />
-      <RecentPosts posts={posts.slice(1, 5)} />
+      <BlogPostHero post={recentPosts[0]} isBlogPost={false} />
+      <RecentPosts posts={recentPosts.slice(1, 5)} />
       <SubscribeCta />
       <Posts title="Bytebase blog" posts={posts} page={1} pageCount={pageCount} />
     </>
