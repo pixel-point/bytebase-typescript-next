@@ -6,10 +6,10 @@ import clsx from 'clsx';
 import { AnimatePresence, LazyMotion, domAnimation, m, useAnimation } from 'framer-motion';
 
 import Button from '@/components/shared/button';
-import GithubStarsButton from '@/components/shared/github-stars-button';
 import Link from '@/components/shared/link';
 
 import { MENUS } from '@/lib/menus.js';
+import Route from '@/lib/route';
 
 import APIIcon from '@/svgs/api.inline.svg';
 import CLIIcon from '@/svgs/cli.inline.svg';
@@ -139,6 +139,7 @@ const MobileMenu = () => {
                         <Link
                           className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
                           href={href}
+                          prefetch={href === Route.BLOG ? false : undefined}
                           onClick={toggleMenu}
                         >
                           {title}
@@ -163,6 +164,7 @@ const MobileMenu = () => {
                                       size="lg"
                                       theme="gray"
                                       href={linkUrl}
+                                      prefetch={false}
                                       onClick={() => {
                                         toggleMenu();
                                         setOpenedDropdown(-1);
@@ -188,11 +190,23 @@ const MobileMenu = () => {
                     </li>
                   );
                 })}
+                <li className="relative first:-mt-4 last:border-b last:border-gray-90">
+                  <Link
+                    className="flex w-full flex-col items-start justify-center whitespace-nowrap py-5 text-20 font-medium leading-none tracking-tight transition-colors duration-200 hover:cursor-pointer"
+                    href={Route.GITHUB}
+                    prefetch={false}
+                  >
+                    GitHub
+                  </Link>
+                </li>
               </ul>
               <div className="mt-10 flex flex-col gap-4">
-                <GithubStarsButton />
+                {/* TODO: add auth0 */}
                 <Button href="/" theme="gray-filled" size="md">
                   Sign up for Cloud
+                </Button>
+                <Button href={Route.SELF_HOST} theme="primary-outline" size="md">
+                  Self host
                 </Button>
               </div>
             </div>

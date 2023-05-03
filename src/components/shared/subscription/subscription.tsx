@@ -13,6 +13,7 @@ import Route from '@/lib/route';
 
 import Form from './form';
 
+// TODO: remove className prop
 const Subscription = ({
   className = 'mt-[124px] 3xl:mt-[110px] xl:mt-[97px] md:mt-[54px] sm:mt-4.5',
 }: {
@@ -56,7 +57,7 @@ const Subscription = ({
 
   return (
     <section className={clsx('bg-primary-1 text-white', className)} ref={containerRef}>
-      <div className="container gap-x-grid grid grid-cols-12 overflow-x-clip sm:flex sm:flex-col">
+      <div className="container gap-x-grid grid grid-cols-12 sm:flex sm:flex-col sm:overflow-x-clip">
         <div className="relative col-span-5 col-start-2 -ml-10 xl:col-span-6 xl:col-start-1 xl:ml-0">
           <div className="absolute -top-12 -bottom-10 w-full 3xl:-top-10 xl:-top-6 md:-top-8 sm:hidden">
             <div
