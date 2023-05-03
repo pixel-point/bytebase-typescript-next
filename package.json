@@ -21,6 +21,7 @@
     "@rive-app/react-canvas": "^3.0.43",
     "@segment/analytics-next": "^1.51.6",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "algoliasearch": "^4.17.0",
     "clsx": "^1.2.1",
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^2.29.3",
