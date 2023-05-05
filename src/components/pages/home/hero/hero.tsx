@@ -88,10 +88,10 @@ const Hero = () => {
     if (containerRef.current) {
       const isDone = containerRef.current.classList.contains('done');
 
-      if (scrollY >= topPositionRef.current - 264 && !isDone) {
+      if (scrollY >= topPositionRef.current - 214 && !isDone) {
         containerRef.current.classList.add('done');
       }
-      if (scrollY < topPositionRef.current - 264 && isDone) {
+      if (scrollY < topPositionRef.current - 214 && isDone) {
         containerRef.current.classList.remove('done');
       }
     }
