@@ -1,0 +1,86 @@
+@import '@docsearch/css';
+
+.DocSearch {
+  &-Button {
+    @apply relative ml-0 flex h-10 w-full max-w-[314px] items-center justify-between rounded-full !bg-gray-97 py-3 px-5 leading-none
+    after:absolute after:top-1/2 after:right-5 after:h-4 after:w-[46px] after:-translate-y-1/2 after:bg-[url(/images/page/docs/key-ctrl_k.inline.svg)]
+    md:absolute md:right-[72px] md:top-[22px] md:z-30 md:h-7 md:w-7 md:justify-center md:!bg-transparent md:p-0 after:md:hidden sm:right-16;
+
+    &-Placeholder {
+      @apply pl-2.5 text-14 font-medium text-gray-40 md:hidden;
+    }
+    &-Container {
+      @apply flex items-center;
+    }
+    &-Keys {
+      @apply hidden;
+    }
+  }
+
+  &-Cancel {
+    @apply absolute right-5 top-1/2 ml-0 -translate-y-1/2 rounded-full !bg-gray-94 p-2 text-14 font-medium leading-none text-gray-40 md:right-7 md:block sm:right-4;
+  }
+
+  &-SearchBar {
+    @apply relative border-b border-gray-80 p-0;
+  }
+
+  &-MagnifierLabel {
+    @apply hidden;
+  }
+
+  &-Search-Icon {
+    @apply h-4 w-4 md:h-5 md:w-5;
+  }
+
+  &-Form {
+    @apply p-0 shadow-none;
+  }
+
+  &-Input {
+    @apply h-[60px] w-full p-5 text-18 md:pr-28 sm:text-16;
+  }
+
+  &-Container {
+    @apply flex items-center justify-center bg-transparent;
+  }
+
+  &-Dropdown {
+    @apply max-h-none grow px-5 md:pb-[60px];
+  }
+
+  &-Hit {
+    & a {
+      @apply shadow-none;
+    }
+
+    &-source {
+      @apply bg-white;
+    }
+  }
+
+  &-Reset {
+    @apply absolute top-1/2 right-4 h-6 w-6 -translate-y-1/2 p-0 md:right-[107px] sm:right-[95px] [&>svg]:h-full [&>svg]:w-full;
+  }
+
+  &-Modal {
+    @apply m-0 flex h-[560px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl border border-gray-80 bg-white shadow-dark-big md:h-full md:w-full md:max-w-full md:rounded-none md:border-none;
+  }
+
+  &-Footer {
+    @apply h-auto border-t border-gray-80 p-5 shadow-none;
+  }
+
+  &-Label {
+    @apply pl-1 text-15 text-gray-40;
+  }
+
+  &-Commands {
+    @apply md:hidden;
+
+    &-Key {
+      --docsearch-key-gradient: rgb(237 239 242);
+      @apply mr-1 h-5 rounded-full text-gray-40 shadow-none;
+    }
+  }
+}
