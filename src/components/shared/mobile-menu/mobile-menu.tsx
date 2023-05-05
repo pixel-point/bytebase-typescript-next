@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { AnimatePresence, LazyMotion, domAnimation, m, useAnimation } from 'framer-motion';
 
+import AlgoliaSearch from '@/components/pages/docs/algolia-search';
 import Button from '@/components/shared/button';
 import Link from '@/components/shared/link';
 
@@ -64,7 +65,7 @@ const dropdownVariants = {
   },
 };
 
-const MobileMenu = () => {
+const MobileMenu = ({ isDocs }: { isDocs: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openedDropdown, setOpenedDropdown] = useState(-1);
   const controls = useAnimation();
@@ -85,6 +86,9 @@ const MobileMenu = () => {
 
   return (
     <>
+      {isDocs && (
+        <AlgoliaSearch className={clsx(isOpen ? 'z-40' : 'z-50', 'pelative hidden md:block')} />
+      )}
       <Burger className="hidden md:block" isToggled={isOpen} onClick={toggleMenu} />
       <LazyMotion features={domAnimation}>
         <m.nav
