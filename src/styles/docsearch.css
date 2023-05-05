@@ -2,12 +2,12 @@
 
 .DocSearch {
   &-Button {
-    @apply relative ml-0 flex h-10 w-full max-w-[314px] items-center justify-between rounded-full !bg-gray-97 py-3 px-5 leading-none
-    after:absolute after:top-1/2 after:right-5 after:h-4 after:w-[46px] after:-translate-y-1/2 after:bg-[url(/images/page/docs/key-ctrl_k.inline.svg)]
+    @apply relative ml-0 flex h-10 w-full max-w-[314px] items-center justify-between rounded-full !bg-gray-97 py-3 px-5 leading-none text-gray-40 transition duration-200 after:absolute
+    after:top-1/2 after:right-5 after:h-4 after:w-[46px] after:-translate-y-1/2 after:bg-[url(/images/page/docs/key-ctrl_k.inline.svg)] after:text-gray-30 hover:text-gray-15 hover:shadow-none hover:after:bg-[url(/images/page/docs/key-ctrl_k-hover.inline.svg)]
     md:absolute md:right-[72px] md:top-[22px] md:z-30 md:h-7 md:w-7 md:justify-center md:!bg-transparent md:p-0 after:md:hidden sm:right-16;
 
     &-Placeholder {
-      @apply pl-2.5 text-14 font-medium text-gray-40 md:hidden;
+      @apply pl-2.5 text-14 font-medium md:hidden;
     }
     &-Container {
       @apply flex items-center;
@@ -22,7 +22,7 @@
   }
 
   &-SearchBar {
-    @apply relative border-b border-gray-80 p-0;
+    @apply relative border-b border-gray-90 p-0;
   }
 
   &-MagnifierLabel {
@@ -34,7 +34,7 @@
   }
 
   &-Form {
-    @apply p-0 shadow-none;
+    @apply h-[60px] p-0 shadow-none;
   }
 
   &-Input {
@@ -42,21 +42,108 @@
   }
 
   &-Container {
-    @apply flex items-center justify-center bg-transparent;
+    @apply bg-transparent;
   }
 
   &-Dropdown {
     @apply max-h-none grow px-5 md:pb-[60px];
   }
 
+  &-Screen-Icon {
+    @apply mx-auto h-24 w-24 bg-[url(/images/page/docs/not-found.svg)] bg-contain pb-0 [&>svg]:hidden;
+  }
+
+  &-Title {
+    @apply mt-2.5 text-20 leading-normal text-gray-50 line-clamp-1;
+
+    & strong {
+      @apply font-medium text-gray-15;
+    }
+  }
+
+  &-Hits {
+    @apply mt-2;
+  }
   &-Hit {
+    @apply mb-2 pb-0;
+
+    &[aria-selected='true'] {
+      & a {
+        @apply bg-primary-1;
+      }
+
+      & mark {
+        @apply underline underline-offset-2;
+      }
+    }
+
     & a {
-      @apply shadow-none;
+      @apply bg-gray-97 shadow-none;
+    }
+
+    &-Tree {
+      @apply hidden;
+    }
+
+    &-source {
+      @apply mb-3 text-14 font-semibold leading-normal text-gray-30;
+    }
+
+    & mark {
+      @apply text-primary-1;
+    }
+
+    &-title {
+      @apply mb-1.5 text-14 font-medium leading-snug text-black sm:mb-1.5 sm:text-16;
+    }
+
+    &-path {
+      @apply text-12 font-medium leading-extra-tight text-black sm:text-14;
     }
 
     &-source {
       @apply bg-white;
     }
+
+    &-content-wrapper {
+      @apply ml-3;
+    }
+  }
+
+  &-StartScreen {
+    @apply flex min-h-[144px] items-center justify-center p-0;
+  }
+
+  &-NoResults {
+    @apply w-full pb-[30px] pt-8;
+
+    &-Prefill-List {
+      @apply w-full;
+
+      & .DocSearch-Help {
+        @apply mt-10 text-14 font-semibold leading-normal text-gray-30;
+      }
+
+      & ul {
+        @apply block pt-3;
+      }
+
+      & li {
+        @apply mb-2 list-none;
+
+        &::last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+  &-Prefill {
+    @apply relative w-full rounded !bg-gray-97 py-4 pl-3 text-left text-14 font-medium leading-snug text-black transition-colors duration-200 after:absolute after:right-3 after:top-1/2 after:h-5
+            after:w-5 after:-translate-y-1/2 after:bg-[url(/images/page/docs/arrow-enter.svg)] after:bg-contain after:opacity-0 after:transition-opacity after:duration-200 hover:!bg-primary-1 hover:text-white hover:no-underline hover:after:opacity-100;
+  }
+
+  &-Help {
+    @apply text-16 text-gray-60;
   }
 
   &-Reset {
@@ -64,19 +151,40 @@
   }
 
   &-Modal {
-    @apply m-0 flex h-[560px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl border border-gray-80 bg-white shadow-dark-big md:h-full md:w-full md:max-w-full md:rounded-none md:border-none;
+    @apply mt-[160px] flex max-h-[560px] min-h-[264px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl bg-white shadow-dark-big md:h-full md:w-full md:max-w-full md:rounded-none md:border-none;
   }
 
   &-Footer {
-    @apply h-auto border-t border-gray-80 p-5 shadow-none;
+    @apply h-[60px] border-t border-gray-90 px-5 py-4 shadow-none;
+  }
+
+  &-Logo {
+    a {
+      @apply items-center;
+    }
+
+    & svg {
+      @apply h-[18px] w-auto;
+    }
   }
 
   &-Label {
-    @apply pl-1 text-15 text-gray-40;
+    @apply pl-0.5 text-15 text-gray-40;
   }
 
   &-Commands {
-    @apply md:hidden;
+    @apply flex-row-reverse gap-x-4 md:hidden;
+
+    & li,
+    & li:not(:last-of-type) {
+      @apply mr-0;
+    }
+
+    & li:last-child {
+      & .DocSearch-Commands-Key {
+        @apply w-7;
+      }
+    }
 
     &-Key {
       --docsearch-key-gradient: rgb(237 239 242);
