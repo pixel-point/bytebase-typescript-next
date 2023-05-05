@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import useScrollPosition from '@react-hook/window-scroll';
-// import { useWindowWidth } from '@react-hook/window-size';
+import { useWindowWidth } from '@react-hook/window-size';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -72,45 +72,43 @@ const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
   },
 ];
 
-const DESKTOP_MOBILE_BORDER = 1280;
-const DESKTOP_FLIP_GAP_PX = 50;
-const MOBILE_FLIP_GAP_PX = 250;
-
 const Hero = () => {
   const [autoplay, setAutoplay] = useState(false);
   const loadRef = useRef<boolean[]>([]);
   const containerRef = useRef<null | HTMLDivElement>(null);
-  const stopAnchorRef = useRef<null | HTMLElement>(null);
-  const stickyAnchorRef = useRef<null | HTMLElement>(null);
+  const stopAnchorRef = useRef<null | HTMLDivElement>(null);
+  const stickyAnchorRef = useRef<null | HTMLDivElement>(null);
   const [stopValue, setStopValue] = useState<number>(0);
   const [stickyTopValue, setStickyTopValue] = useState<number>(0);
   const [isDone, setIsDone] = useState<boolean>(false);
   const scrollY = useScrollPosition();
-  // const width = useWindowWidth({ wait: 300 });
+  const width = useWindowWidth({ wait: 300 });
 
   const calcSticky = useCallback(() => {
-    setStopValue(stopAnchorRef.current?.getBoundingClientRect().top || 0);
-    setStickyTopValue(stickyAnchorRef.current?.getBoundingClientRect().top || 0);
+    const paddingTop = stickyAnchorRef.current
+      ? getComputedStyle(stickyAnchorRef.current).getPropertyValue('padding-top').replace('px', '')
+      : '0';
+
+    setStopValue(window.scrollY + (stopAnchorRef.current?.getBoundingClientRect().top || 0));
+    setStickyTopValue(
+      window.scrollY +
+        (stickyAnchorRef.current?.getBoundingClientRect().top || 0) +
+        parseInt(paddingTop, 0),
+    );
   }, []);
 
-  // TODO: update on resize
-  // it was bad idea to use card as anchor, we should use its' container
   useEffect(() => {
     calcSticky();
-    // }, [width, calcSticky]);
-  }, [calcSticky]);
+  }, [width, calcSticky]);
 
   useEffect(() => {
     if (containerRef.current) {
-      const deadline =
-        stopValue - stickyTopValue + window.innerWidth < DESKTOP_MOBILE_BORDER
-          ? MOBILE_FLIP_GAP_PX
-          : DESKTOP_FLIP_GAP_PX;
+      const deadline = stopValue - stickyTopValue;
 
-      if (scrollY >= deadline && !isDone) {
+      if (scrollY >= deadline) {
         setIsDone(true);
       }
-      if (scrollY < deadline && isDone) {
+      if (scrollY < deadline) {
         setIsDone(false);
       }
     }
@@ -184,8 +182,11 @@ const Hero = () => {
           </video>
         </div>
       </div>
-      <div className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8">
-        <Card {...cards[0]} autoplay={autoplay} ref={stopAnchorRef} onLoad={onLoad} />
+      <div
+        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8"
+        ref={stopAnchorRef}
+      >
+        <Card {...cards[0]} autoplay={autoplay} onLoad={onLoad} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:-mt-5 xl:pt-0 lg:mt-0 lg:pt-7 sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
         <Card
@@ -196,13 +197,15 @@ const Hero = () => {
           onLoad={onLoad}
         />
       </div>
-      <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] lg:row-start-2 lg:-mt-20 lg:pt-0 md:-mt-7 sm:col-auto sm:row-auto sm:mt-8">
+      <div
+        className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] lg:row-start-2 lg:-mt-20 lg:pt-0 md:-mt-7 sm:col-auto sm:row-auto sm:mt-8"
+        ref={stickyAnchorRef}
+      >
         <Card
           {...cards[2]}
           style={{ top: stickyTopValue }}
           className="sticky delay-300 sm:static"
           autoplay={autoplay}
-          ref={stickyAnchorRef}
           onLoad={onLoad}
         />
       </div>
