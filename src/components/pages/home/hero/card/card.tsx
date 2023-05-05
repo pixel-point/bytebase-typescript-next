@@ -19,10 +19,10 @@ export type CardProps = {
   style?: React.CSSProperties;
 };
 
-const Card = (
-  { color, className, cover, videos, title, href, description, autoplay, onLoad, style }: CardProps,
-  ref: React.RefObject<HTMLElement>,
-) => {
+const Card = forwardRef<HTMLElement, CardProps>(function CardComponent(
+  { color, className, cover, videos, title, href, description, autoplay, onLoad, style },
+  ref,
+) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -76,6 +76,6 @@ const Card = (
       </div>
     </article>
   );
-};
+});
 
-export default forwardRef(Card);
+export default Card;
