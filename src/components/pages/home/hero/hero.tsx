@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import useScrollPosition from '@react-hook/window-scroll';
+// import { useWindowWidth } from '@react-hook/window-size';
+import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
@@ -13,7 +15,6 @@ import SmallArrowIcon from '@/svgs/small-arrow.inline.svg';
 
 import Card, { type CardProps } from './card';
 
-// TODO: prepare webm videos and optimize them
 const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
   {
     videos: [
@@ -71,31 +72,49 @@ const cards: Omit<CardProps, 'autoplay' | 'onLoad'>[] = [
   },
 ];
 
+const DESKTOP_MOBILE_BORDER = 1280;
+const DESKTOP_FLIP_GAP_PX = 50;
+const MOBILE_FLIP_GAP_PX = 250;
+
 const Hero = () => {
   const [autoplay, setAutoplay] = useState(false);
   const loadRef = useRef<boolean[]>([]);
   const containerRef = useRef<null | HTMLDivElement>(null);
-  const anchorRef = useRef<null | HTMLDivElement>(null);
-  const topPositionRef = useRef<number>(0);
+  const stopAnchorRef = useRef<null | HTMLElement>(null);
+  const stickyAnchorRef = useRef<null | HTMLElement>(null);
+  const [stopValue, setStopValue] = useState<number>(0);
+  const [stickyTopValue, setStickyTopValue] = useState<number>(0);
+  const [isDone, setIsDone] = useState<boolean>(false);
   const scrollY = useScrollPosition();
+  // const width = useWindowWidth({ wait: 300 });
 
-  useEffect(() => {
-    topPositionRef.current = anchorRef.current ? anchorRef.current.getBoundingClientRect().top : 0;
+  const calcSticky = useCallback(() => {
+    setStopValue(stopAnchorRef.current?.getBoundingClientRect().top || 0);
+    setStickyTopValue(stickyAnchorRef.current?.getBoundingClientRect().top || 0);
   }, []);
 
   // TODO: update on resize
+  // it was bad idea to use card as anchor, we should use its' container
+  useEffect(() => {
+    calcSticky();
+    // }, [width, calcSticky]);
+  }, [calcSticky]);
+
   useEffect(() => {
     if (containerRef.current) {
-      const isDone = containerRef.current.classList.contains('done');
+      const deadline =
+        stopValue - stickyTopValue + window.innerWidth < DESKTOP_MOBILE_BORDER
+          ? MOBILE_FLIP_GAP_PX
+          : DESKTOP_FLIP_GAP_PX;
 
-      if (scrollY >= topPositionRef.current - 214 && !isDone) {
-        containerRef.current.classList.add('done');
+      if (scrollY >= deadline && !isDone) {
+        setIsDone(true);
       }
-      if (scrollY < topPositionRef.current - 214 && isDone) {
-        containerRef.current.classList.remove('done');
+      if (scrollY < deadline && isDone) {
+        setIsDone(false);
       }
     }
-  }, [scrollY]);
+  }, [scrollY, isDone, stopValue, stickyTopValue]);
 
   const onLoad = useCallback(() => {
     loadRef.current.push(true);
@@ -106,7 +125,12 @@ const Hero = () => {
 
   return (
     <div
-      className="container gap-x-grid group mt-32 grid grid-cols-12 2xl:mt-[120px] lg:mt-[120px] md:mt-[104px] sm:mt-24 sm:grid-cols-none"
+      className={clsx(
+        'container gap-x-grid group mt-32 grid grid-cols-12 2xl:mt-[120px] lg:mt-[120px] md:mt-[104px] sm:mt-24 sm:grid-cols-none',
+        {
+          done: isDone,
+        },
+      )}
       ref={containerRef}
     >
       <section className="col-start-1 col-end-8 row-start-1 row-end-2 3xl:col-end-9 xl:col-end-10 md:col-end-12 sm:col-auto sm:row-auto">
@@ -160,16 +184,13 @@ const Hero = () => {
           </video>
         </div>
       </div>
-      <div
-        className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8"
-        ref={anchorRef}
-      >
-        <Card {...cards[0]} className="" autoplay={autoplay} onLoad={onLoad} />
+      <div className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8">
+        <Card {...cards[0]} autoplay={autoplay} ref={stopAnchorRef} onLoad={onLoad} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:-mt-5 xl:pt-0 lg:mt-0 lg:pt-7 sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
         <Card
           {...cards[1]}
-          style={{ top: 589 }}
+          style={{ top: stickyTopValue }}
           className="sticky delay-150 sm:static"
           autoplay={autoplay}
           onLoad={onLoad}
@@ -178,9 +199,10 @@ const Hero = () => {
       <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] lg:row-start-2 lg:-mt-20 lg:pt-0 md:-mt-7 sm:col-auto sm:row-auto sm:mt-8">
         <Card
           {...cards[2]}
-          style={{ top: 264 }}
+          style={{ top: stickyTopValue }}
           className="sticky delay-300 sm:static"
           autoplay={autoplay}
+          ref={stickyAnchorRef}
           onLoad={onLoad}
         />
       </div>
