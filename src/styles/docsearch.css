@@ -33,12 +33,16 @@
     @apply h-4 w-4 md:h-5 md:w-5;
   }
 
+  &-LoadingIndicator {
+    @apply absolute right-4 top-1/2 -translate-y-1/2 md:right-[103px] sm:right-[90px];
+  }
+
   &-Form {
-    @apply h-[60px] p-0 shadow-none;
+    @apply h-[60px] p-0 shadow-none sm:h-[54px];
   }
 
   &-Input {
-    @apply h-[60px] w-full p-5 text-18 md:pr-28 sm:text-16;
+    @apply h-[60px] w-full p-5 text-18 md:pl-7 md:pr-28 sm:h-auto sm:py-4 sm:pl-4 sm:pr-32 sm:text-16;
   }
 
   &-Container {
@@ -46,7 +50,7 @@
   }
 
   &-Dropdown {
-    @apply max-h-none grow px-5 md:pb-[60px];
+    @apply max-h-none grow px-5 md:px-7 md:pb-[60px] sm:px-4;
   }
 
   &-Screen-Icon {
@@ -94,11 +98,11 @@
     }
 
     &-title {
-      @apply mb-1.5 text-14 font-medium leading-snug text-black sm:mb-1.5 sm:text-16;
+      @apply mb-1.5 text-14 font-medium leading-snug text-black;
     }
 
     &-path {
-      @apply text-12 font-medium leading-extra-tight text-black sm:text-14;
+      @apply text-12 font-medium leading-extra-tight text-black;
     }
 
     &-source {
@@ -111,11 +115,11 @@
   }
 
   &-StartScreen {
-    @apply flex min-h-[144px] items-center justify-center p-0;
+    @apply flex h-full min-h-[144px] items-center justify-center p-0;
   }
 
   &-NoResults {
-    @apply w-full pb-[30px] pt-8;
+    @apply w-full pb-[30px] pt-8 md:flex md:h-full md:flex-col md:justify-center;
 
     &-Prefill-List {
       @apply w-full;
@@ -143,15 +147,15 @@
   }
 
   &-Help {
-    @apply text-16 text-gray-60;
+    @apply text-16 text-gray-60 md:text-20;
   }
 
   &-Reset {
-    @apply absolute top-1/2 right-4 h-6 w-6 -translate-y-1/2 p-0 md:right-[107px] sm:right-[95px] [&>svg]:h-full [&>svg]:w-full;
+    @apply absolute top-1/2 right-4 h-6 w-6 -translate-y-1/2 p-0 md:right-[103px] sm:right-[90px] [&>svg]:h-full [&>svg]:w-full;
   }
 
   &-Modal {
-    @apply mt-[160px] flex max-h-[560px] min-h-[264px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl bg-white shadow-dark-big md:h-full md:w-full md:max-w-full md:rounded-none md:border-none;
+    @apply mt-[160px] flex max-h-[560px] min-h-[264px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl bg-white shadow-dark-big md:mt-0 md:h-full md:max-h-full md:w-full md:max-w-full md:rounded-none md:border-none;
   }
 
   &-Footer {
