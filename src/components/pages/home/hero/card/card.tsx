@@ -16,6 +16,7 @@ export type CardProps = {
   className?: string;
   autoplay: boolean;
   onLoad: () => void;
+  style?: Record<string, string | number>;
 };
 
 const Card = ({
@@ -28,6 +29,7 @@ const Card = ({
   description,
   autoplay,
   onLoad,
+  style,
 }: CardProps) => {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -36,7 +38,7 @@ const Card = ({
   }, [autoplay]);
 
   return (
-    <article className={clsx('perspective-1000', className)}>
+    <article className={clsx('perspective-1000', className)} style={style}>
       <div className="group-[.done]:rotate-y-180 transform-3d sm:rotate-y-180 grid transition-transform delay-[inherit] duration-1000 sm:transition-none">
         <div className="backface-hidden col-span-full row-span-full border border-gray-40 shadow-[0_5px_15px_0_rgba(15,22,36,0.2)] sm:hidden">
           <video

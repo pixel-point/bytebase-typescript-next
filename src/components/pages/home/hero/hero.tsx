@@ -86,13 +86,12 @@ const Hero = () => {
   // TODO: update on resize
   useEffect(() => {
     if (containerRef.current) {
-      const topPosition = topPositionRef.current - window.innerWidth >= 1280 ? 500 : 200;
       const isDone = containerRef.current.classList.contains('done');
 
-      if (scrollY >= topPosition && !isDone) {
+      if (scrollY >= topPositionRef.current - 264 && !isDone) {
         containerRef.current.classList.add('done');
       }
-      if (scrollY < topPosition && isDone) {
+      if (scrollY < topPositionRef.current - 264 && isDone) {
         containerRef.current.classList.remove('done');
       }
     }
@@ -165,17 +164,13 @@ const Hero = () => {
         className="col-start-1 col-end-5 row-start-3 row-end-4 sm:col-auto sm:row-auto sm:mt-8"
         ref={anchorRef}
       >
-        <Card
-          {...cards[0]}
-          className="sticky top-[200px] sm:static"
-          autoplay={autoplay}
-          onLoad={onLoad}
-        />
+        <Card {...cards[0]} className="" autoplay={autoplay} onLoad={onLoad} />
       </div>
       <div className="col-start-5 col-end-9 row-start-1 row-end-4 pt-[461px] 3xl:pt-[459px] xl:row-start-2 xl:-mt-5 xl:pt-0 lg:mt-0 lg:pt-7 sm:col-auto sm:row-auto sm:mt-8 sm:pt-0">
         <Card
           {...cards[1]}
-          className="sticky top-[200px] delay-150 sm:static"
+          style={{ top: 589 }}
+          className="sticky delay-150 sm:static"
           autoplay={autoplay}
           onLoad={onLoad}
         />
@@ -183,7 +178,8 @@ const Hero = () => {
       <div className="col-start-9 col-end-13 row-start-1 row-end-4 pt-[136px] 3xl:pt-[140px] lg:row-start-2 lg:-mt-20 lg:pt-0 md:-mt-7 sm:col-auto sm:row-auto sm:mt-8">
         <Card
           {...cards[2]}
-          className="sticky top-[200px] delay-300 sm:static"
+          style={{ top: 264 }}
+          className="sticky delay-300 sm:static"
           autoplay={autoplay}
           onLoad={onLoad}
         />
