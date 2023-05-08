@@ -8,6 +8,8 @@ import Route from '@/lib/route';
 
 import GitHubIcon from '@/svgs/github.inline.svg';
 
+const API_URL = 'https://api.github.com/repos/bytebase/bytebase';
+
 const GithubStarCounter = () => {
   const [starsCount, setStarsCount] = useState(null);
 
@@ -21,7 +23,7 @@ const GithubStarCounter = () => {
     }
 
     async function getStarCount() {
-      const updatedStarsCount = await fetch('https://api.github.com/repos/bytebase/bytebase')
+      const updatedStarsCount = await fetch(API_URL)
         .then((res) => res.json())
         .then((json) => json.stargazers_count);
 
@@ -33,17 +35,15 @@ const GithubStarCounter = () => {
     getStarCount();
   }, []);
 
-  if (!starsCount) {
-    return null;
-  }
-
   return (
     <Link
       href={Route.GITHUB}
       className="inline-flex items-center gap-2 text-14 font-bold uppercase leading-none"
     >
       <GitHubIcon width={22} height={22} />
-      {(starsCount / 1000).toFixed(1)}k
+      <span className="w-8 whitespace-nowrap">
+        {starsCount ? `${(starsCount / 1000).toFixed(1)}k` : '...'}
+      </span>
     </Link>
   );
 };
