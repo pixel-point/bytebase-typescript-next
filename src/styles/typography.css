@@ -137,10 +137,27 @@
 
     & h2 {
       @apply md:text-24 sm:text-20;
+
+      & + h3 {
+        @apply my-5 lg:my-4;
+      }
+    }
+    & h3 {
+      @apply mt-11 text-24 lg:mt-10 lg:text-20 md:mt-9 sm:mt-8 sm:text-18;
+
+      & + h4 {
+        @apply my-5 lg:my-4;
+      }
     }
 
-    ul,
+    & h4 {
+      @apply mt-9 text-20 leading-snug lg:mt-7 lg:text-18 md:mt-6 sm:mt-5 sm:text-16;
+    }
+
     ol {
+      @apply pl-[39px] lg:pl-9 md:pl-[33px] sm:pl-[25px];
+    }
+    ul {
       @apply lg:pl-[30px] sm:pl-[22px];
     }
 

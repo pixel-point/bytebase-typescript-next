@@ -6,10 +6,12 @@ export default function Page() {
       <h1 className="font-title text-90 font-semibold leading-none lg:text-68 md:text-56 sm:text-40">
         Privacy Policy
       </h1>
-      <p className="text-gray-50 sm:my-3">Last modified: Aug 1, 2021</p>
+      <p className="text-gray-50 sm:my-3">
+        Last modified: <time>Aug 1, 2021</time>
+      </p>
       <p className="sm:mt-3">
         This Privacy Policy describes how your personal information is collected, used, and shared
-        when you visit or make a purchase from bytebase.com (the “Site”).
+        when you visit or make a purchase from bytebase.com (the &ldquo;Site&rdquo;).
       </p>
       <h2>Personal information we collect</h2>
       <p>
@@ -18,38 +20,38 @@ export default function Page() {
         that are installed on your device. Additionally, as you browse the Site, we collect
         information about the individual web pages or products that you view, what websites or
         search terms referred you to the Site, and information about how you interact with the Site.
-        We refer to this automatically-collected information as “Device Information.”
+        We refer to this automatically-collected information as &ldquo;Device Information.&rdquo;
       </p>
       <p>We collect Device Information using the following technologies:</p>
       <ul>
         <li>
-          “Cookies” are data files that are placed on your device or computer and often include an
-          anonymous unique identifier. For more information about cookies, and how to disable
-          cookies, visit{' '}
+          &ldquo;Cookies&rdquo; are data files that are placed on your device or computer and often
+          include an anonymous unique identifier. For more information about cookies, and how to
+          disable cookies, visit{' '}
           <Link href="http://www.allaboutcookies.org" target="_blank">
             http://www.allaboutcookies.org
           </Link>
           .
         </li>
         <li>
-          “Log files” track actions occurring on the Site, and collect data including your IP
-          address, browser type, Internet service provider, referring/exit pages, and date/time
-          stamps.
+          &ldquo;Log files&rdquo; track actions occurring on the Site, and collect data including
+          your IP address, browser type, Internet service provider, referring/exit pages, and
+          date/time stamps.
         </li>
         <li>
-          “Web beacons,” “tags,” and “pixels” are electronic files used to record information about
-          how you browse the Site.
+          &ldquo;Web beacons,&rdquo; &ldquo;tags,&rdquo; and &ldquo;pixels&rdquo; are electronic
+          files used to record information about how you browse the Site.
         </li>
       </ul>
       <p>
         Additionally when you make a purchase or attempt to make a purchase through the Site, we
         collect certain information from you, including your name, billing address, shipping
         address, payment information (including credit card numbers, email address, and phone
-        number). We refer to this information as “Order Information.”
+        number). We refer to this information as &ldquo;Order Information.&rdquo;
       </p>
       <p>
-        When we talk about “Personal Information” in this Privacy Policy, we are talking both about
-        Device Information and Order Information.
+        When we talk about &ldquo;Personal Information&rdquo; in this Privacy Policy, we are talking
+        both about Device Information and Order Information.
       </p>
       <h2>How do we use your personal information</h2>
       <p>
@@ -85,8 +87,8 @@ export default function Page() {
       </p>
       <h2>Do not track</h2>
       <p>
-        Please note that we do not alter our Site’s data collection and use practices when we see a
-        Do Not Track signal from your browser.
+        Please note that we do not alter our Site&rsquo;s data collection and use practices when we
+        see a Do Not Track signal from your browser.
       </p>
       <h2>Your rights</h2>
       <p>
