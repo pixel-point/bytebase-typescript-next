@@ -1,4 +1,10 @@
+import getMetadata from '@/utils/get-metadata';
+
 import Link from '@/components/shared/link';
+
+import SEO_DATA from '@/lib/seo-data';
+
+export const metadata = getMetadata(SEO_DATA.PRIVACY);
 
 export default function Page() {
   return (

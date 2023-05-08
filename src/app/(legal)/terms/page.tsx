@@ -1,12 +1,17 @@
+import getMetadata from '@/utils/get-metadata';
+
 import Link from '@/components/shared/link';
 
 import Route from '@/lib/route';
+import SEO_DATA from '@/lib/seo-data';
+
+export const metadata = getMetadata(SEO_DATA.TERMS);
 
 export default function Page() {
   return (
     <>
       <h1 className="font-title text-90 font-semibold leading-none lg:text-68 md:text-56 sm:text-40">
-        Privacy Policy
+        Terms of service
       </h1>
       <p className="text-gray-50 sm:my-3">
         Last modified: <time>Feb 11, 2022</time>
