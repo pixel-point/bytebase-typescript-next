@@ -13,8 +13,13 @@ import Route from '@/lib/route';
 
 import Form from './form';
 
-const Subscription = ({ className }: { className?: string }) => {
-  const containerRef = useRef<null | HTMLDivElement>(null);
+// TODO: remove className prop
+const Subscription = ({
+  className = 'mt-[124px] 3xl:mt-[110px] xl:mt-[97px] md:mt-[54px] sm:mt-4.5',
+}: {
+  className?: string;
+}) => {
+  const containerRef = useRef(null);
 
   const { isIntersecting } = useIntersectionObserver(containerRef, {
     once: true,
@@ -51,13 +56,7 @@ const Subscription = ({ className }: { className?: string }) => {
   }, [input]);
 
   return (
-    <section
-      className={clsx(
-        'mt-[124px] bg-primary-1 text-white 3xl:mt-[110px] xl:mt-[97px] md:mt-[54px] sm:mt-4.5',
-        className,
-      )}
-      ref={containerRef}
-    >
+    <section className={clsx('bg-primary-1 text-white', className)} ref={containerRef}>
       <div className="container gap-x-grid grid grid-cols-12 sm:flex sm:flex-col sm:overflow-x-clip">
         <div className="relative col-span-5 col-start-2 -ml-10 xl:col-span-6 xl:col-start-1 xl:ml-0">
           <div className="absolute -top-12 -bottom-10 w-full 3xl:-top-10 xl:-top-6 md:-top-8 sm:hidden">
@@ -83,10 +82,10 @@ const Subscription = ({ className }: { className?: string }) => {
             </h3>
             <Form fireInput={fireInput} />
             <p
-              aria-label="By subscribing, you agree with Revue's Terms of Service and Privacy Policy."
+              aria-label="By subscribing, you agree with Bytebase's Terms of Service and Privacy Policy."
               className="mt-5 text-14 leading-snug xl:mt-3 xl:max-w-[290px] md:mt-2"
             >
-              By subscribing, you agree with Revue&apos;s{' '}
+              By subscribing, you agree with Bytebase&apos;s{' '}
               <NextLink href={Route.TERMS} className="border-b-2 border-white border-opacity-40">
                 Terms of Service
               </NextLink>{' '}
