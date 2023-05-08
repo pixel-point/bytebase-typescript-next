@@ -130,4 +130,24 @@
       }
     }
   }
+
+  .content-legal {
+    @apply text-18 leading-normal lg:text-16 lg:leading-snug sm:text-14;
+    @apply prose-headings:mt-16 prose-headings:leading-tight lg:prose-headings:mt-14 md:prose-headings:mt-12 sm:prose-headings:mt-10;
+
+    & h2 {
+      @apply md:text-24 sm:text-20;
+    }
+
+    ul,
+    ol {
+      @apply lg:pl-[30px] sm:pl-[22px];
+    }
+
+    & li {
+      &::marker {
+        @apply text-gray-15;
+      }
+    }
+  }
 }
