@@ -1,5 +1,7 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 import { ReactNode } from 'react';
 
 import { DocSearch } from '@docsearch/react';
@@ -21,8 +23,24 @@ const AlgoliaSearch = ({ className }: { className?: string }) => {
 };
 
 const Hit = ({ hit, children }: { hit: any; children: ReactNode }) => {
+  const pathname = usePathname();
+
+  const handleClick = () => {
+    const [path, hash] = hit.url.split('#');
+    if (path === pathname && hash) {
+      setTimeout(
+        () =>
+          document.querySelector(`#${hash}`)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          }),
+        0,
+      );
+    }
+  };
+
   return (
-    <Link href={hit.url} className="DocSearch-Hit--Child">
+    <Link href={hit.url} className="DocSearch-Hit--Child" onClick={handleClick}>
       {children}
     </Link>
   );
