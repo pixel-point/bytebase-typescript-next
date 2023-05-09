@@ -122,7 +122,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           if (!line.startsWith('#')) {
             textContent += line.trim() + ' ';
           } else {
-            if (heading !== '') {
+            if (heading != '') {
               recordId++;
               dataObject = generateIndexElement(url, textContent, heading, dataObject, recordId);
               resultObj.push(dataObject);
