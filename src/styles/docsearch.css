@@ -119,7 +119,7 @@
   }
 
   &-NoResults {
-    @apply w-full pb-[30px] pt-8 md:flex md:h-full md:flex-col md:justify-center;
+    @apply w-full pb-[30px] pt-8 md:flex md:min-h-full md:flex-col md:justify-center;
 
     &-Prefill-List {
       @apply w-full;
