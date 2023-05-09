@@ -6,11 +6,8 @@ export const getExcerpt = ({ content, length = 5000 }: { content: string; length
     .replace(/<[^>]*>/g, '') // remove html tags
     .replace(emojiRegex, '') // remove emojis
     .replace(/[\r\n]+/gm, ' ') // replace new lines with spaces
-    .replace(/\[([^\]]+)]\([^)]+\)/g, '$1') // replace markdown links with link text
-    // remove tables
-    .replace(/--+/g, '') // remove long dashes
-    .replace(/\|/g, '') // remove all pipe characters
     .replace(/\s+/g, ' ') // replace multiple spaces with single space
+    .replace(/\[([^\]]+)]\([^)]+\)/g, '$1') // replace markdown links with link text
     .replace(/([*~`#])/g, '') // remove markdown formatting
     .trim();
 
