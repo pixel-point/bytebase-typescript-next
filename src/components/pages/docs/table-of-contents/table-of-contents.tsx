@@ -43,6 +43,7 @@ const CURRENT_ANCHOR_GAP_PX = 16;
 const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
   const titles = useRef<HTMLElement[]>([]);
   const [currentAnchor, setCurrentAnchor] = useState<string | null>(null);
+  const [hash, setHash] = useState<string | null>(null);
 
   useEffect(() => {
     titles.current = items
@@ -64,6 +65,18 @@ const TableOfContents = ({ items, hasBackToTop }: TableOfContentsProps) => {
   }, []);
 
   const onScroll = useThrottleCallback(updateCurrentAnchor, 5);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      setHash(window.location.hash);
+    }
+    if (hash) {
+      document.querySelector(hash)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [hash]);
 
   useEffect(() => {
     updateCurrentAnchor();
