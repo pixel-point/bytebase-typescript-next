@@ -1,5 +1,7 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 import { useEffect, useState } from 'react';
 
 import clsx from 'clsx';
@@ -65,10 +67,11 @@ const dropdownVariants = {
   },
 };
 
-const MobileMenu = ({ isDocs }: { isDocs: boolean }) => {
+const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openedDropdown, setOpenedDropdown] = useState(-1);
   const controls = useAnimation();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isOpen) {
@@ -83,6 +86,8 @@ const MobileMenu = ({ isDocs }: { isDocs: boolean }) => {
   }, [isOpen, controls]);
 
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+
+  const isDocs = pathname?.startsWith(Route.DOCS);
 
   return (
     <>

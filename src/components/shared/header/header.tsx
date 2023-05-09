@@ -37,7 +37,7 @@ type Header = {
   items?: MenuItem[];
 };
 
-const Header = ({ isDocs }: { isDocs: boolean }) => {
+const Header = () => {
   return (
     <>
       <header className="safe-paddings absolute top-0 left-0 right-0 z-30 h-[72px] w-full md:py-[22px] sm:z-50">
@@ -151,7 +151,7 @@ const Header = ({ isDocs }: { isDocs: boolean }) => {
           </div>
         </nav>
       </header>
-      <MobileMenu isDocs={isDocs} />
+      <MobileMenu />
     </>
   );
 };
