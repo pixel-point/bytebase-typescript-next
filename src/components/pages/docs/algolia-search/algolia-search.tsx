@@ -2,13 +2,29 @@
 
 import { usePathname } from 'next/navigation';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { DocSearch } from '@docsearch/react';
 
 import Link from '@/components/shared/link';
 
 const AlgoliaSearch = ({ className }: { className?: string }) => {
+  const scrollToHash = () => {
+    setTimeout(() => {
+      const hash = window.location.hash;
+      if (hash) {
+        document.querySelector(hash)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }, 0);
+  };
+
+  useEffect(() => {
+    scrollToHash();
+  }, []);
+
   return (
     <div className={className}>
       <DocSearch
