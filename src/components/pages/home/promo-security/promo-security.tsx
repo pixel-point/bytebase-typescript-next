@@ -10,6 +10,8 @@ import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 import Pill from '@/components/shared/pill';
 
+import Route from '@/lib/route';
+
 const PromoSecurity = () => {
   const containerRef = useRef<null | HTMLDivElement>(null);
   const animationRef = useRef<null | HTMLDivElement>(null);
@@ -55,12 +57,12 @@ const PromoSecurity = () => {
             <mark className="bg-transparent text-secondary-3">Security</mark> by&nbsp;design
           </h2>
           <p className="mr-12 mt-8 text-20 leading-normal 3xl:-mr-9 xl:mt-5 xl:mr-0 xl:text-18 xl:leading-snug md:mt-3 md:max-w-xl md:text-16">
-            Bytebase streamlines database deployment from non-prod to prod by integrating with
-            version control systems for a GitOps workflow.
+            Bytebase employs a security-first approach to protect your data with access control,
+            data anonymization, watermarking, audit log and more.
           </p>
           <LinkUnderlined
             className="mt-8 text-white hover:text-secondary-2 xl:mt-6 md:mt-4 sm:mt-3"
-            href="#"
+            href={Route.DOCS_ADMINISTRATION}
           >
             Learn more
           </LinkUnderlined>
@@ -70,7 +72,7 @@ const PromoSecurity = () => {
           ref={animationRef}
         >
           <div
-            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-[710px] 3xl:-mr-6 xl:mr-0 xl:w-[560px] md:hidden"
+            className="relative mr-[9px] ml-auto aspect-[1.0597014925] w-[710px] 3xl:-mr-14 xl:-mr-2 xl:w-[560px] lg:mx-auto lg:mr-0 lg:w-[530px] md:hidden"
             ref={setRiveRef}
           >
             {isIntersecting ? <RiveComponent /> : null}

@@ -10,6 +10,8 @@ import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import { LinkUnderlined } from '@/components/shared/link-underlined';
 import Pill from '@/components/shared/pill';
 
+import Route from '@/lib/route';
+
 const PromoAutomationChanges = () => {
   const containerRef = useRef<null | HTMLDivElement>(null);
   const animationRef = useRef<null | HTMLDivElement>(null);
@@ -48,22 +50,22 @@ const PromoAutomationChanges = () => {
 
   return (
     <section
-      className="mt-[146px] overflow-hidden bg-black text-white 3xl:mt-[117px] xl:mt-[100px] lg:mt-[80px]"
+      className="mt-[146px] overflow-hidden bg-black text-white 3xl:mt-[117px] xl:mt-[100px] lg:mt-20"
       ref={containerRef}
     >
       <div className="container gap-x-grid grid grid-cols-12 md:grid-cols-none">
-        <div className="col-start-1 col-end-5 py-[175px] 3xl:py-[160px] xl:col-end-6 xl:py-[140px] md:col-auto md:py-0 md:pt-16 sm:pt-[60px]">
+        <div className="col-start-1 col-end-5 py-[175px] 3xl:py-40 xl:col-end-6 xl:py-[140px] md:col-auto md:py-0 md:pt-16 sm:pt-[60px]">
           <Pill theme="primary-1">Change</Pill>
           <h2 className="mt-3 font-title text-112 font-semibold leading-none 3xl:mt-3.5 xl:mt-2.5 xl:text-90 xl:leading-95 md:mt-3 md:text-80 sm:mt-2 sm:text-48">
             <mark className="bg-transparent text-secondary-1">Automate</mark> database changes
           </h2>
           <p className="-mr-10 mt-8 text-20 leading-normal xl:mt-5 xl:mr-0 xl:text-18 xl:leading-snug md:mt-4 md:max-w-xl md:text-16 sm:mt-3 sm:max-w-none">
-            Bytebase streamlines database deployment from non-prod to prod by integrating with
-            version control systems for a GitOps workflow.
+            Bytebase streamlines database deployment from non-prod to prod with change review
+            workflow and optional GitOps integration.
           </p>
           <LinkUnderlined
             className="mt-8 text-white hover:text-secondary-2 xl:mt-7 md:mt-4 sm:mt-3"
-            href="#"
+            href={Route.DOCS_CHANGE_DATABASE}
           >
             Learn more
           </LinkUnderlined>
