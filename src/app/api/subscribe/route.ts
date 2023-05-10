@@ -5,6 +5,8 @@ import md5 from 'md5';
 export async function POST(request: NextRequest) {
   const { email } = await request.json();
 
+  // TODO: add additional validation for email on server side
+
   if (!email) {
     return NextResponse.json({ error: 'Email is required' }, { status: 400 });
   }
