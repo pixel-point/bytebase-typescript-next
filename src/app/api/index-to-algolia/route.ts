@@ -78,58 +78,70 @@ const generateIndexElement = (
   } as AlgoliaIndexObject;
 };
 
+const getRecords = () => {
+  const docs = getAllPosts();
+
+  const resultObj: AlgoliaIndexObject[] = [];
+
+  docs.map(({ content, title, slug }) => {
+    const category = getCategoryName(slug.split('/')[0]);
+    const url = `${Route.DOCS}/${slug}/`;
+    const cleanTitle = getExcerpt({ content: title });
+
+    // update default data object on each new file
+    let dataObject: AlgoliaIndexObject = {
+      objectID: undefined,
+      title: cleanTitle,
+      url,
+      type: 'lvl1',
+      hierarchy: {
+        lvl0: category,
+        lvl1: cleanTitle,
+        lvl2: null,
+        lvl3: null,
+        lvl4: null,
+        lvl5: null,
+        lvl6: null,
+      },
+      content: '',
+    };
+
+    let textContent = '';
+    let heading = '';
+    let recordId = 0;
+    content
+      .split('\n')
+      .filter((str) => str !== '')
+      .forEach((line) => {
+        if (!line.startsWith('#')) {
+          textContent += line.trim() + ' ';
+        } else {
+          if (heading != '') {
+            recordId++;
+            dataObject = generateIndexElement(url, textContent, heading, dataObject, recordId);
+            resultObj.push(dataObject);
+          }
+          heading = line;
+          textContent = '';
+        }
+      });
+    recordId++;
+    dataObject = generateIndexElement(url, textContent, heading, dataObject, recordId);
+    resultObj.push(dataObject);
+  });
+
+  return resultObj;
+};
+
 export async function POST(request: NextRequest) {
   try {
-    const docs = getAllPosts();
+    if (
+      request.headers.get('x-vercel-signature') !== process.env.NEXT_PUBLIC_ALGOLIA_WEBHOOK_SECRET
+    ) {
+      return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    }
 
-    const resultObj: AlgoliaIndexObject[] = [];
-
-    docs.map(({ content, title, slug }) => {
-      const category = getCategoryName(slug.split('/')[0]);
-      const url = `${Route.DOCS}/${slug}/`;
-      const cleanTitle = getExcerpt({ content: title });
-
-      // update default data object on each new file
-      let dataObject: AlgoliaIndexObject = {
-        objectID: undefined,
-        title: cleanTitle,
-        url,
-        type: 'lvl1',
-        hierarchy: {
-          lvl0: category,
-          lvl1: cleanTitle,
-          lvl2: null,
-          lvl3: null,
-          lvl4: null,
-          lvl5: null,
-          lvl6: null,
-        },
-        content: '',
-      };
-
-      let textContent = '';
-      let heading = '';
-      let recordId = 0;
-      content
-        .split('\n')
-        .filter((str) => str !== '')
-        .forEach((line) => {
-          if (!line.startsWith('#')) {
-            textContent += line.trim() + ' ';
-          } else {
-            if (heading != '') {
-              recordId++;
-              dataObject = generateIndexElement(url, textContent, heading, dataObject, recordId);
-              resultObj.push(dataObject);
-            }
-            heading = line;
-            textContent = '';
-          }
-        });
-      recordId++;
-      dataObject = generateIndexElement(url, textContent, heading, dataObject, recordId);
-      resultObj.push(dataObject);
-    });
+    const records = getRecords();
 
     algoliaIndex.setSettings({
       searchableAttributes: [
@@ -148,10 +160,10 @@ export async function POST(request: NextRequest) {
     });
 
     await algoliaIndex.clearObjects();
-    await algoliaIndex.saveObjects(resultObj);
+    await algoliaIndex.saveObjects(records);
     return NextResponse.json(
       {
-        message: `Indexed ${resultObj.length} records to Algolia`,
+        message: `Indexed ${records.length} records to Algolia`,
       },
       { status: 200 },
     );
