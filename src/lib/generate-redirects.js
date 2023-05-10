@@ -7,8 +7,6 @@ const generateRedirects = () => {
     '/brand',
     '/jobs',
     '/techstack',
-    '/changelog',
-    '/changelog/:path*',
     '/sql-review-guide',
     '/bytebase-plus',
     '/database/mysql',
