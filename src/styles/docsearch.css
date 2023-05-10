@@ -2,8 +2,10 @@
 
 .DocSearch {
   &-Button {
-    @apply relative ml-0 flex h-10 w-full max-w-[314px] items-center justify-between rounded-full !bg-gray-97 py-3 px-5 leading-none text-gray-40 transition duration-200 after:absolute
-    after:top-1/2 after:right-5 after:h-4 after:w-[46px] after:-translate-y-1/2 after:bg-[url(/images/page/docs/key-ctrl_k.inline.svg)] after:text-gray-30 hover:text-gray-15 hover:shadow-none hover:after:bg-[url(/images/page/docs/key-ctrl_k-hover.inline.svg)]
+    @apply relative ml-0 flex h-10 w-full max-w-[314px] items-center justify-between rounded-full !bg-gray-97 py-3 px-5 leading-none text-gray-40 transition duration-200 
+    before:absolute before:top-1/2 before:right-5 before:h-4 before:w-[46px] before:-translate-y-1/2 before:bg-[url(/images/page/docs/key-ctrl_k-hover.inline.svg)] before:opacity-0 before:transition-opacity before:duration-200 after:absolute
+    after:top-1/2 after:right-5 after:h-4 after:w-[46px] after:-translate-y-1/2 after:bg-[url(/images/page/docs/key-ctrl_k.inline.svg)] after:opacity-100 after:transition-opacity after:duration-200 hover:text-gray-15 hover:shadow-none
+    hover:before:opacity-100 hover:after:opacity-0
     md:absolute md:right-[72px] md:top-[22px] md:z-30 md:h-7 md:w-7 md:justify-center md:!bg-transparent md:p-0 after:md:hidden sm:right-16;
 
     &-Placeholder {
@@ -42,11 +44,11 @@
   }
 
   &-Input {
-    @apply h-[60px] w-full p-5 text-18 md:pl-7 md:pr-28 sm:h-auto sm:py-4 sm:pl-4 sm:pr-32 sm:text-16;
+    @apply h-[60px] w-full p-5 text-18 !outline-none md:pl-7 md:pr-28 sm:h-auto sm:py-4 sm:pl-4 sm:pr-32 sm:text-16;
   }
 
   &-Container {
-    @apply bg-transparent;
+    @apply bg-[#0F1624] bg-opacity-30;
   }
 
   &-Dropdown {
@@ -155,7 +157,7 @@
   }
 
   &-Modal {
-    @apply mt-[160px] flex max-h-[560px] min-h-[264px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl bg-white shadow-dark-big md:mt-0 md:h-full md:max-h-full md:w-full md:max-w-full md:rounded-none md:border-none;
+    @apply mt-[160px] flex max-h-[560px] min-h-[264px] w-full max-w-[564px] justify-between overflow-hidden rounded-2xl bg-white shadow-dark-big xl:mt-24 md:mt-0 md:h-full md:max-h-full md:w-full md:max-w-full md:rounded-none md:border-none;
   }
 
   &-Footer {
