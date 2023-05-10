@@ -44,23 +44,23 @@ module.exports = {
       beforeFiles: [
         {
           source: '/_nuxt/:path*',
-          destination: `${process.env.NEXT_PUBLIC_OLD_SITE_URL}/_nuxt/:path*`,
+          destination: 'https://old.bytebase.com/_nuxt/:path*',
         },
         {
           source: '/bytebase-brand-kit.zip',
-          destination: `${process.env.NEXT_PUBLIC_OLD_SITE_URL}/bytebase-brand-kit.zip`,
+          destination: 'https://old.bytebase.com/bytebase-brand-kit.zip',
         },
       ],
       afterFiles: [
         ...rewrites.map((section) => ({
           source: `${section}/:path*`,
-          destination: `${process.env.NEXT_PUBLIC_OLD_SITE_URL}/${section}/:path*`,
+          destination: `https://old.bytebase.com${section}/:path*`,
         })),
       ],
       fallback: [
         {
           source: '/zh/:path*/',
-          destination: `${process.env.NEXT_PUBLIC_OLD_SITE_URL}/zh/:path*/`,
+          destination: 'https://old.bytebase.com/zh/:path*/',
         },
       ],
     };
