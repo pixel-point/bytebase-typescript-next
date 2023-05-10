@@ -46,9 +46,7 @@ const PLANS: { free: Plan; pro: Plan; enterprise: Plan } = {
     changeManagement: {
       user: 'Unlimited',
       environment: 'Unlimited',
-      instance: {
-        value: 'Up to 20',
-      },
+      instance: 'Up to 20',
       'state-based-change': true,
       'migration-based-change': true,
       'sql-check': true,
