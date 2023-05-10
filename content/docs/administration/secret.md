@@ -48,7 +48,7 @@ Use `${{ secrets.SECRET_NAME }}` in the change script, and Bytebase will replace
 
 <HintBlock type="info">
 
-If a secret has not been set, Bytebase will not replace the ${{ secrets.SECRET_NAME }} with a secret value. This means that expressions are retained as is upon execution.
+If a secret has not been set, Bytebase will not replace the `${{ secrets.SECRET_NAME }}` with a secret value. This means that expressions are retained as is upon execution.
 
 </HintBlock>
 
