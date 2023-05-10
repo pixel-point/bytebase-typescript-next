@@ -37,7 +37,7 @@ Tenant projects empowers you to:
 2. Progressively roll out through different stages, and only proceed to the next stage when all of rollouts in the current stage are successful.
 3. When there is a new tenant database created, it will inherit the same schema structures.
 
-<img src="/docs/batch-change/cmt-create-project.webp" width="50%" style="margin:1% 0;" alt="cmt-create-project" />
+<img src="/docs/batch-change/cmt-create-project.webp" width="50%" style={{ margin: '1% 0' }} alt="cmt-create-project" />
 
 ## Create Databases with Tenant Labels
 
@@ -52,7 +52,7 @@ Within the project, click **New DB** to create four databases as following and t
 
 In real life case, another way is to click **Transfer in DB** to transfer in your existing databases and then go into a specific database to edit the **Tenant**.
 
-<img src="/docs/batch-change/cmt-db-edit-tenant.webp" width="65%" style="margin:1% 0;" alt="cmt-db-edit-tenant" />
+<img src="/docs/batch-change/cmt-db-edit-tenant.webp" width="65%" style={{ margin: '1% 0' }} alt="cmt-db-edit-tenant" />
 
 ## Adjust Deployment Configuration
 
