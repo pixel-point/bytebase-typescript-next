@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
 import { getExcerpt } from '@/utils/get-excerpt';
 import slugifyText from '@/utils/slugify-text';
@@ -78,12 +78,7 @@ const generateIndexElement = (
   } as AlgoliaIndexObject;
 };
 
-type ResponseData = {
-  message: string;
-  error?: any;
-};
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
+export async function POST(request: NextRequest) {
   try {
     const docs = getAllPosts();
 
@@ -154,8 +149,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     await algoliaIndex.clearObjects();
     await algoliaIndex.saveObjects(resultObj);
-    res.status(200).json({ message: `Indexed ${resultObj.length} records to Algolia` });
+    return NextResponse.json(
+      {
+        message: `Indexed ${resultObj.length} records to Algolia`,
+      },
+      { status: 200 },
+    );
   } catch (error) {
-    res.status(500).json({ message: 'Server error', error });
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }
